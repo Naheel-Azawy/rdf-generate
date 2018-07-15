@@ -1,4 +1,4 @@
-let find = require("./find-lov.js");
+let find = require("./find-swoogle.js");
 
 find(process.argv[process.argv.length-1]).then(s => {
     let prefixes = [];
