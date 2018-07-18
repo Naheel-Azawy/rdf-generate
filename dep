@@ -1,3 +1,5 @@
 xmlhttprequest
 request
 rdflib
+JSONPath
+string-template
