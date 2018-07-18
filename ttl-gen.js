@@ -38,7 +38,7 @@ async function main(args) {
             let item = `<${format(e[path].iri, values[i])}>`;
             item += ` a <${e[path].type}>`;
             let keys = Object.keys(values[i]);
-            keys = keys.filter((value, index, array) => {
+            keys = keys.filter((value, index, array) => { // ignoring non preemptive types for simplicity. TODO: implement nesting
                 let v = values[i][keys[index]];
                 return !((typeof v === "object") && (v !== null));
             });
@@ -48,8 +48,9 @@ async function main(args) {
                 }
                 let s = x.struct[path + '.' + keys[j]];
                 let p = s.suggested_predicates[0]; // TODO: 1st one, just for testing
+                let t = s.data_types[0]; // TODO: 1st one, just for testing. Checking for datatypes should be here and not in the extractor.
                 prefixes[p.prefix_name] = x.prefixes[p.prefix_name];
-                item += `\t<${p.prefix_name}:${p.predicate}> "${values[i][keys[j]]}"^^${s.data_types[0]}`; // TODO: 1st one, just for testing
+                item += `\t<${p.prefix_name}:${p.predicate}> "${values[i][keys[j]]}"^^${t}`;
             }
             item += " .\n";
             items.push(item);
