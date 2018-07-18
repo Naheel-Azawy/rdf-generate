@@ -1,13 +1,21 @@
 const print = s => console.log(s);
 
+// output
+let out;
 // the possible entities.
-let entities = {};
+let entities;
+// RDF prefixes; { name: prefix }
+let prefixes;
+// RDF prefixes (reversed); { prefix: name }
+let prefixes_rev;
+// RDF prefixes count
+let prefixes_count;
 // keeps track of the current path in the tree.
-let path_stack = [];
+let path_stack;
 // catch the structure of the entities. if the structure is the same, get the type from the catch.
-let catched_types = {};
+let catched_types;
 // predicates catch
-let catched_predicates = {};
+let catched_predicates;
 
 const APIS = {
     test: prop => [{
@@ -39,67 +47,38 @@ async function find_predicates(item) {
     if (p === undefined) {
         p = await APIS.test(item.key);
         catched_predicates[item.key] = p;
+        let ns, pr;
+        for (let i in p) {
+            if (prefixes_rev[p[i].prefix] === undefined) {
+                ns = "ns" + prefixes_count++;
+                pr = p[i].prefix;
+                prefixes_rev[pr] = ns;
+                prefixes[ns] = pr;
+            }
+            p[i].prefix_name = prefixes_rev[p[i].prefix];
+            p[i].prefix = undefined;
+        }
     }
     return p;
 }
 
-async function find_data_type(item) { // TODO: improve finding the datatypes?
+async function find_data_types(values) { // TODO: improve finding the datatypes?
     // More types: https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
-    if (typeof(item.val) === "boolean") {
-        return "xsd:boolean";
-    } else if (typeof(item.val) === "number") {
-        return "xsd:decimal";
-    } else if (!isNaN(Date.parse(item.val))) {
-        return "xsd:date";
-    } else if (typeof(item.val) === "string") {
-        return "xsd:string";
-    } else {
-        return null;
-    }
-}
-
-async function handle_item(item, predicates, ignore_value) {
-    let v = ignore_value ? undefined : item.val;
-    return {
-        path: get_path(),
-        attribute: item.key,
-        value: v,
-        suggested_predicates: predicates,
-        data_type: await find_data_type(item)
-    };
-}
-
-async function handle_array(arr) {
-    path_stack.push("[*]");
-    let keys = {};
-    for (let i in arr) {
-        for (let key of Object.keys(arr[i])) {
-            keys[key] = arr[i][key]; // TODO: if not all of them are of the same type. example: [ {a:1}, {a:"a"} ]
+    let res = [];
+    let v;
+    for (let i in values) {
+        v = values[i];
+        if (typeof(v) === "boolean") {
+            res.push("xsd:boolean");
+        } else if (typeof(v) === "number") {
+            res.push("xsd:decimal");
+        } else if (!isNaN(Date.parse(v))) {
+            res.push("xsd:date");
+        } else if (typeof(v) === "string") {
+            res.push("xsd:string");
         }
     }
-    let current_predicates = {};
-    let struct = Object.assign({}, keys);
-    for (let key of Object.keys(keys)) {
-        path_stack.push(key);
-        let item = { key: key, val:keys[key] };
-        let p = await find_predicates(item);
-        //struct[key] = await handle_item(item, p, true);
-        struct[key] = await iter(item.val, key, current_predicates, true);
-        current_predicates[get_path()] = p;
-        path_stack.pop();
-    }
-    let keys_keys = Object.keys(keys);
-    if (await is_entity(keys, keys_keys)) {
-        entities[get_path()] = {
-            type: await find_object_type(current_predicates, keys_keys)
-        };
-    }
-    path_stack.pop();
-    return {
-        __type: "array",
-        struct: struct,
-        values: arr
-    };
+    return res;
 }
 
 async function is_entity(obj, keys) { // TODO: actual implementation for is_entity
@@ -136,26 +115,46 @@ async function find_object_type(predicates, obj_keys) { // TODO: actual implemen
     return res;
 }
 
-async function iter(obj, key, parent_current_predicates, ignore_value) {
+async function iter(obj, key, parent_current_predicates, datatypes_values) {
     if (Array.isArray(obj)) {
-        /*let arr = [];
-        for (let i = 0; i < obj.length; ++i) {
-            path_stack.push(i);
-            arr.push(await iter(obj[i]));
+        path_stack.push("[*]");
+        let keys = {};
+        let types = {};
+        for (let i in obj) {
+            for (let key of Object.keys(obj[i])) {
+                keys[key] = obj[i][key]; // TODO: if not all of them are of the same type. example: [ {a:1}, {a:"a"} ]
+                // data_type is an array, check the type while generating the ttl, if not in the array, throw an exceptioon.
+                if (types[key] === undefined)
+                    types[key] = {}; // This is an object and not an array to keep it unique
+                types[key][typeof(keys[key])] = keys[key]; // TODO: what if string but different types? (ie string and date)
+            }
+        }
+        let current_predicates = {};
+        for (let key of Object.keys(keys)) {
+            path_stack.push(key);
+            let item = { key: key, val:keys[key] };
+            let p = await find_predicates(item);
+            await iter(item.val, key, current_predicates, types[key]);
+            current_predicates[get_path()] = p;
             path_stack.pop();
         }
-        return arr;*/
-        return handle_array(obj);
+        let keys_keys = Object.keys(keys);
+        if (await is_entity(keys, keys_keys)) {
+            entities[get_path()] = {
+                type: await find_object_type(current_predicates, keys_keys)
+                // TODO: whitelist and blacklist; jsonpath for nested items
+            };
+        }
+        path_stack.pop();
     } else if ((typeof obj === "object") && (obj !== null)) {
         let path = get_path();
         let keys = Object.keys(obj);
-        let o = {};
         let val;
         let current_predicates = {};
         for (const key of keys) {
             val = obj[key];
             path_stack.push(key);
-            o[key] = await iter(val, key, current_predicates);
+            await iter(val, key, current_predicates);
             path_stack.pop();
         }
         if (await is_entity(obj, keys)) {
@@ -163,22 +162,42 @@ async function iter(obj, key, parent_current_predicates, ignore_value) {
                 type: await find_object_type(current_predicates, keys)
             };
         }
-        return o;
     } else {
         let item = {key:key, val:obj};
         let p = await find_predicates(item);
-        let res = await handle_item(item, p, ignore_value);
-        parent_current_predicates[get_path()] = p;
-        return res;
+        let types;
+        if (datatypes_values === undefined) {
+            types = [item.val];
+        } else {
+            types = Object.values(datatypes_values);
+        }
+        res = {
+            attribute: item.key,
+            suggested_predicates: p,
+            data_type: await find_data_types(types)
+        };
+        let path = get_path();
+        parent_current_predicates[path] = p;
+        out[path] = res;
     }
 }
 
 module.exports = {
     extract: async src => {
-        let items = await iter(src);
+        out = {};
+        entities = {};
+        prefixes = {};
+        prefixes_rev = {};
+        prefixes_count = 0;
+        path_stack = [];
+        catched_types = {};
+        catched_predicates = {};
+        await iter(src);
         return {
-            items: items,
-            entities: entities
+            prefixes: prefixes,
+            struct: out,
+            entities: entities,
+            values: src
         };
     }
 };

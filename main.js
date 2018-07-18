@@ -17,6 +17,7 @@ async function main(args) {
             { name: "aaa", id: 1, thing: {a: 'a'} },
             { name: "bbb", id: 2 },
             { name: "aaa", id: 3, thing: {a: 'a'} },
+            { name: "zzz", id: "a" }
         ]
     })));
 }

@@ -1,0 +1,155 @@
+#+TITLE  RDF GENERATE
+#+AUTHOR Naheel
+#+DATE   2018-07-01
+#+EMAIL  nk1508530@qu.edu.qa
+
+* DONE Reading:
+** RDF:
+- http://www.dlib.org/dlib/may98/miller/05miller.html
+- https://en.wikipedia.org/wiki/Resource_Description_Framework
+- https://www.w3.org/TR/rdf-concepts/
+** SPARQL:
+- https://www.w3.org/TR/rdf-sparql-query/
+** Turtle:
+- https://www.w3.org/TR/turtle/
+** RDF DBs (will be using Virtuoso):
+- https://en.wikipedia.org/wiki/Triplestore
+- https://en.wikipedia.org/wiki/Comparison_of_triplestores
+* DONE Tried "JSON-LD" with "LinkedPipes":
+** links:
+- https://etl.linkedpipes.com/
+- https://etl.linkedpipes.com/components/t-jsontojsonld
+** json-ld context (by Mariam):
+#+BEGIN_SRC json
+{
+  "@context": {
+    "@version": 1.1,
+    "id": "http://rdfs.org/sioc/ns#id",
+    "full_text": "http://rdfs.org/sioc/ns#description",
+    "user":"@nest",
+        "id": {"@id":"http://rdfs.org/sioc/ns#id"},
+        "screen_name": {"@id":"http://rdfs.org/sioc/ns#name"},
+        "following": {"@id":"http://rdfs.org/sioc/ns#follows"},
+        "followers_count":{"@id":"http://rdfs.org/sioc/ns#has_subscriber"},
+        "verified":{"@id":"http://rdfs.org/sioc/ns#has_group"},
+        "description":{"@id":"http://rdfs.org/sioc/ns#description"},
+        "location":{"@id":"http://geonames.org/ontology#locatedIn"},
+        "lang":{"@id":"http://purl.org/dc/terms/language"},
+        "created_at":{"@id":"http://dublincore.org/2012/06/14/dcterms#W3CDTF"},
+        "profile_image_url_https": {
+              "@id": "http://schema.org/image",
+              "@type": "@id"},
+        "url": {
+              "@id": "http://schema.org/url",
+              "@type": "@id"}
+
+
+  }
+}
+#+END_SRC
+** LinkedPipes does not support nesting :(
+moved to sparql-generate
+* DONE SPARQL-GENERATE:
+- https://ci.mines-stetienne.fr/sparql-generate/index.html
+- https://ci.mines-stetienne.fr/sparql-generate/tutorial.html
+- check `sparql-generate` dir
+#+BEGIN_SRC sparql
+BASE <http://example.com/>
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sto: <https://w3id.org/i40/sto#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX sioc: <http://rdfs.org/sioc/ns#>
+PREFIX schema: <http://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX dcterms: <http://purl.org/dc/terms/language>
+PREFIX st: <http://semweb.mmlab.be/ns/stoptimes#>
+PREFIX seas: <https://w3id.org/seas/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcterm: <http://purl.org/dc/terms/>
+
+
+GENERATE {
+  ?iri sioc:id ?id ;
+  sioc:description ?full_text;
+  sto:hasTg ?hashtags;
+  sioc:mentions ?user_mentions;
+  sioc:links_to ?urls;
+  dcterms:language ?Tweetlang ;
+  gn:locatedin ?Tweetlocation ;
+  seas:Device ?sourceDevice;
+  sioc:reply_of ?in_reply_to_screen_name;
+  prov:wasQuotedFrom ?is_quote_status;
+  dcterm:references ?retweeted_status;
+  dcterm:created ?Tweetcreated_at;
+  schema:creator [
+                   sioc:id ?user_id ;
+                   sioc:name ?screen_name ;
+                   foaf:name ?name ;
+                   sioc:link ?url ;
+                   sioc:follows ?friends_count ;
+                   sioc:has_subscriber ?followers_count ;
+                   sioc:avatar ?profile_image_url ;
+                   sioc:has_user_group ?verified ;
+                   gn:locatedin ?location ;
+                   dcterms:language ?lang ;
+                   dcterms:created ?created_at
+                 ] .
+}
+
+SOURCE <file:///home/naheel/Documents/There/QU/research/arabic-knowledge-base/sparql-generate/src.json> AS ?source
+ITERATOR iter:JSONPath(?source, "$[*]") AS ?work
+WHERE {
+  BIND (fun:JSONPath(?work, "$.id") AS ?id)
+  BIND (fun:JSONPath(?work, "$.full_text") AS ?full_text)
+  BIND (fun:JSONPath(?work, "$.lang") AS ?Tweetlang)
+  BIND (fun:JSONPath(?work, "$.lang") AS ?Tweetlocation)
+  BIND (fun:JSONPath(?work, "$.source") AS ?sourceDevice)
+  BIND (fun:JSONPath(?work, "$.in_reply_to_screen_name") AS ?in_reply_to_screen_name)
+  BIND (fun:JSONPath(?work, "$.is_quote_status") AS ?is_quote_status)
+  BIND (fun:JSONPath(?work, "$.retweeted_status") AS ?retweeted_status)
+  BIND (fun:JSONPath(?work, "$.created_at") AS ?Tweetcreated_at)
+  BIND (fun:JSONPath(?work, "$.user.id") AS ?user_id)
+  BIND (fun:JSONPath(?work, "$.user.screen_name") AS ?screen_name)
+  BIND (fun:JSONPath(?work, "$.user.name") AS ?name)
+  BIND (fun:JSONPath(?work, "$.user.friends_count") AS ?friends_count)
+  BIND (fun:JSONPath(?work, "$.user.followers_count") AS ?followers_count)
+  BIND (fun:JSONPath(?work, "$.user.profile_image_url") AS ?profile_image_url)
+  BIND (fun:JSONPath(?work, "$.user.verified") AS ?verified)
+  BIND (fun:JSONPath(?work, "$.user.location") AS ?location)
+  BIND (fun:JSONPath(?work, "$.user.lang") AS ?lang)
+  BIND (fun:JSONPath(?work, "$.user.created_at") AS ?created_at)
+  BIND (fun:JSONPath(?work, "$.entities.hashtags") AS ?hashtags)
+  BIND (fun:JSONPath(?work, "$.entities.user_mentions") AS ?user_mentions)
+  BIND (fun:JSONPath(?work, "$.entities.urls") AS ?urls)
+  BIND (IRI(CONCAT("https://twitter.com/", ?screen_name, "/status/", str(?id)) ) AS ?iri)
+}
+#+END_SRC
+
+* Ontologies APIs:
+** Links:
+- https://www.w3.org/wiki/VocabularyMarket
+- http://watson.kmi.open.ac.uk/WatsonWUI/
+- http://swoogle.umbc.edu/2006//index.php?option=com_swoogle_manual&manual=search_overview#Search%20ontology
+- https://prefix.cc/
+** Options:
+- Find an appropriate API.
+- Build our own API.
+** Similarity measure
+- get the results from different apis
+- compare them and give everyone a score
+* Web interface
+** Use bootstrap https://getbootstrap.com/
+** find subjects; user selects the entities
+** match predicates to subjects; add or remove predicates from a subject
+** show generated sparql-gen 
+** don't show large jsons, only 1st object
+* Build the "extractor":
+** extract the details from the original object and add all the necessary data to construct the turtle.
+** check this paper:
+http://users.encs.concordia.ca/~shiri/
+An Empirical Comparison of Ontology Matching Techniques
+** Forget about sparql-generate!
