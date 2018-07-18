@@ -8,14 +8,12 @@ let entities;
 let prefixes;
 // RDF prefixes (reversed); { prefix: name }
 let prefixes_rev;
-// RDF prefixes count
-let prefixes_count;
 // keeps track of the current path in the tree.
 let path_stack;
 // catch the structure of the entities. if the structure is the same, get the type from the catch.
-let catched_types;
+let catched_types = {};
 // predicates catch
-let catched_predicates;
+let catched_predicates = {};
 
 const APIS = {
     test: prop => [{
@@ -27,6 +25,26 @@ const APIS = {
     swoogle: require("./find-swoogle.js"),
     lov: require("./find-lov.js")
 };
+
+async function find_predicates(item) {
+    let p = catched_predicates[item.key];
+    if (p === undefined) {
+        p = await APIS.lov(item.key);
+        catched_predicates[item.key] = p;
+        let ns, pr;
+        for (let i in p) {
+            if (prefixes_rev[p[i].prefix] === undefined) {
+                ns = p[i].prefix_name;
+                pr = p[i].prefix;
+                prefixes_rev[pr] = ns;
+                prefixes[ns] = pr;
+            }
+            p[i].prefix_name = prefixes_rev[p[i].prefix];
+            p[i].prefix = undefined;
+        }
+    }
+    return p;
+}
 
 function get_path() {
     let res = "$";
@@ -42,43 +60,23 @@ function get_path() {
     return res;
 }
 
-async function find_predicates(item) {
-    let p = catched_predicates[item.key];
-    if (p === undefined) {
-        p = await APIS.test(item.key);
-        catched_predicates[item.key] = p;
-        let ns, pr;
-        for (let i in p) {
-            if (prefixes_rev[p[i].prefix] === undefined) {
-                ns = "ns" + prefixes_count++;
-                pr = p[i].prefix;
-                prefixes_rev[pr] = ns;
-                prefixes[ns] = pr;
-            }
-            p[i].prefix_name = prefixes_rev[p[i].prefix];
-            p[i].prefix = undefined;
-        }
-    }
-    return p;
-}
-
 async function find_data_types(values) { // TODO: improve finding the datatypes?
     // More types: https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
-    let res = [];
+    let map = {}; // This is an object and not an array to keep it unique
     let v;
     for (let i in values) {
         v = values[i];
         if (typeof(v) === "boolean") {
-            res.push("xsd:boolean");
+            map["xsd:boolean"] = 0;
         } else if (typeof(v) === "number") {
-            res.push("xsd:decimal");
+            map["xsd:decimal"] = 0;
         } else if (!isNaN(Date.parse(v))) {
-            res.push("xsd:date");
+            map["xsd:date"] = 0;
         } else if (typeof(v) === "string") {
-            res.push("xsd:string");
+            map["xsd:string"] = 0;
         }
     }
-    return res;
+    return Object.keys(map);
 }
 
 async function is_entity(obj, keys) { // TODO: actual implementation for is_entity
@@ -119,14 +117,13 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
     if (Array.isArray(obj)) {
         path_stack.push("[*]");
         let keys = {};
-        let types = {};
+        let values = {}; // stores the values for every key. Important for finding the types.
         for (let i in obj) {
             for (let key of Object.keys(obj[i])) {
-                keys[key] = obj[i][key]; // TODO: if not all of them are of the same type. example: [ {a:1}, {a:"a"} ]
-                // data_type is an array, check the type while generating the ttl, if not in the array, throw an exceptioon.
-                if (types[key] === undefined)
-                    types[key] = {}; // This is an object and not an array to keep it unique
-                types[key][typeof(keys[key])] = keys[key]; // TODO: what if string but different types? (ie string and date)
+                keys[key] = obj[i][key];
+                if (values[key] === undefined)
+                    values[key] = [];
+                values[key].push(keys[key]);
             }
         }
         let current_predicates = {};
@@ -134,7 +131,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
             path_stack.push(key);
             let item = { key: key, val:keys[key] };
             let p = await find_predicates(item);
-            await iter(item.val, key, current_predicates, types[key]);
+            await iter(item.val, key, current_predicates, values[key]);
             current_predicates[get_path()] = p;
             path_stack.pop();
         }
@@ -165,20 +162,19 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
     } else {
         let item = {key:key, val:obj};
         let p = await find_predicates(item);
-        let types;
+        let values;
         if (datatypes_values === undefined) {
-            types = [item.val];
+            values = [item.val];
         } else {
-            types = Object.values(datatypes_values);
+            values = datatypes_values;
         }
-        res = {
-            attribute: item.key,
-            suggested_predicates: p,
-            data_type: await find_data_types(types)
-        };
         let path = get_path();
         parent_current_predicates[path] = p;
-        out[path] = res;
+        out[path] = {
+            attribute: item.key,
+            suggested_predicates: p,
+            data_types: await find_data_types(values)
+        };
     }
 }
 
@@ -188,10 +184,7 @@ module.exports = {
         entities = {};
         prefixes = {};
         prefixes_rev = {};
-        prefixes_count = 0;
         path_stack = [];
-        catched_types = {};
-        catched_predicates = {};
         await iter(src);
         return {
             prefixes: prefixes,

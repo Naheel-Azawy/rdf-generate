@@ -149,7 +149,8 @@ WHERE {
 ** don't show large jsons, only 1st object
 * Build the "extractor":
 ** extract the details from the original object and add all the necessary data to construct the turtle.
-** check this paper:
+** TODO check this paper:
 http://users.encs.concordia.ca/~shiri/
 An Empirical Comparison of Ontology Matching Techniques
 ** Forget about sparql-generate!
+** TODO realtime processing; use `read` for input data

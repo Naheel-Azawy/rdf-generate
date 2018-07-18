@@ -16,8 +16,9 @@ async function main(args) {
         followers: [
             { name: "aaa", id: 1, thing: {a: 'a'} },
             { name: "bbb", id: 2 },
-            { name: "aaa", id: 3, thing: {a: 'a'} },
-            { name: "zzz", id: "a" }
+            { name: "ccc", id: 3, thing: {a: 'a'} },
+            { name: "ddd", id: "a" },
+            { name: "eee", id: "2018-07-18" }
         ]
     })));
 }
