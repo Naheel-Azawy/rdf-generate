@@ -27,53 +27,33 @@ function find_helper(results, property) {
     return arr;
 }
 
-function find(property) {
+async function find(property) {
     const URL = "http://lov.okfn.org/dataset/lov/api/v2/term/search?type=property&q=";
-    return new Promise((resolve, reject) => {
-        base.request_json(URL + property).then(
-            response => {
-                try {
-                    let results = response.results;
-                    if (results.length == 0) {
-                        suggest(property.replace("_", "+")).then(
-                            response => {
-                                let suggestions = response.suggestions;
-                                let arr = [];
-                                let promises = [];
-                                for (let i = 0; i < suggestions.length; ++i) {
-                                    property = suggestions[i].text;
-                                    promises.push(base.request_json(URL + property).then(
-                                        response => {
-                                            try {
-                                                let results = response.results;
-                                                results = find_helper(results, property);
-                                                arr = arr.concat(results);
-                                            } catch (error) {
-                                                reject(error);
-                                            }
-                                        },
-                                        error => reject(error)
-                                    ));
-                                }
-                                Promise.all(promises).then(() => {
-                                    arr.sort((a, b) => b.score - a.score);
-                                    resolve(arr);
-                                });
-                            },
-                            error => reject(error)
-                        );
-                    } else {
-                        let arr = find_helper(results, property);
-                        arr.sort((a, b) => b.score - a.score);
-                        resolve(arr);
-                    }
-                } catch (error) {
-                    reject(error);
-                }
-            },
-            error => reject(error)
-        );
-    });
+    try {
+        let response = await base.request_json(URL + property);
+        let results = response.results;
+        let arr;
+        if (results.length === 0) {
+            arr = [];
+            let suggestions_res = await suggest(property.replace("_", "+"));
+            let suggestions = suggestions_res.suggestions;
+            for (let i = 0; i < suggestions.length; ++i) {
+                property = suggestions[i].text;
+                let new_response = await base.request_json(URL + property);
+                let results = new_response.results;
+                results = find_helper(results, property);
+                arr = arr.concat(results);
+            }
+            arr.sort((a, b) => b.score - a.score);
+        } else {
+            arr = find_helper(results, property);
+            arr.sort((a, b) => b.score - a.score);
+        }
+        return arr;
+    } catch (err) {
+        console.log(err);
+        return err;
+    }
 }
 
 module.exports = find;
