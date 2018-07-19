@@ -5,8 +5,6 @@ const PathFollower = require("./path-follower.js");
 let out;
 // the possible entities.
 let entities;
-// entities counter used for naming
-let entities_count;
 // RDF prefixes; { name: prefix }
 let prefixes;
 // RDF prefixes (reversed); { prefix: name }
@@ -32,7 +30,7 @@ const APIS = {
 async function find_predicates(item) {
     let p = catched_predicates[item.key];
     if (p === undefined) {
-        p = await APIS.lov(item.key);
+        p = await APIS.test(item.key);
         catched_predicates[item.key] = p;
         let ns, pr;
         for (let i in p) {
@@ -76,16 +74,6 @@ async function is_entity(obj, keys) { // TODO: actual implementation for is_enti
         }
     }
     return false;
-}
-
-async function entity_check(obj, keys, path, predicates) {
-    if (await is_entity(obj, keys)) {
-        entities["entity_" + entities_count++] = {
-            includes: [ path ],
-            type: await find_object_type(predicates, keys),
-            iri_template: `https://example.com/{${keys[0]}}`
-        };
-    }
 }
 
 async function find_object_type(predicates, obj_keys) { // TODO: actual implementation for find_object_type
@@ -135,7 +123,12 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
             path_follower_inst.pop();
         }
         let keys_keys = Object.keys(keys);
-        await entity_check(keys, keys_keys, path_follower_inst.get_path(), current_predicates);
+        if (await is_entity(keys, keys_keys)) {
+            entities[path_follower_inst.get_path()] = {
+                type: await find_object_type(current_predicates, keys_keys)
+                // TODO: whitelist and blacklist; jsonpath for nested items
+            };
+        }
         path_follower_inst.pop();
     } else if ((typeof obj === "object") && (obj !== null)) {
         let path = path_follower_inst.get_path();
@@ -148,7 +141,11 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
             await iter(val, key, current_predicates);
             path_follower_inst.pop();
         }
-        await entity_check(obj, keys, path, current_predicates);
+        if (await is_entity(obj, keys)) {
+            entities[path] = {
+                type: await find_object_type(current_predicates, keys)
+            };
+        }
     } else {
         let path = path_follower_inst.get_path();
         let item = {key:key, val:obj};
@@ -174,7 +171,6 @@ module.exports = {
     extract: async src => {
         out = {};
         entities = {};
-        entities_count = 0;
         prefixes = {};
         prefixes_rev = {};
         path_follower_inst = new PathFollower();
@@ -182,7 +178,8 @@ module.exports = {
         return {
             prefixes: prefixes,
             struct: out,
-            entities: entities
+            entities: entities,
+            values: src
         };
     }
 };
