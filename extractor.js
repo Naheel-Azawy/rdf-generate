@@ -30,7 +30,7 @@ const APIS = {
 async function find_predicates(item) {
     let p = catched_predicates[item.key];
     if (p === undefined) {
-        p = await APIS.lov(item.key);
+        p = await APIS.test(item.key);
         catched_predicates[item.key] = p;
         let ns, pr;
         for (let i in p) {
@@ -147,6 +147,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
             };
         }
     } else {
+        let path = path_follower_inst.get_path();
         let item = {key:key, val:obj};
         let p = await find_predicates(item);
         let values;
@@ -155,8 +156,9 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
         } else {
             values = datatypes_values;
         }
-        let path = path_follower_inst.get_path();
-        parent_current_predicates[path] = p;
+        if (parent_current_predicates !== undefined) {
+            parent_current_predicates[path] = p;
+        }
         out[path] = {
             attribute: item.key,
             suggested_predicates: p,

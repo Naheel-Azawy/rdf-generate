@@ -3,3 +3,4 @@ request
 rdflib
 JSONPath
 string-template
+bluebird

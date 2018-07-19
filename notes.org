@@ -145,8 +145,10 @@ WHERE {
 ** Use bootstrap https://getbootstrap.com/
 ** find subjects; user selects the entities
 ** match predicates to subjects; add or remove predicates from a subject
-** show generated sparql-gen 
-** don't show large jsons, only 1st object
+** show generated sparql-gen. UPDATE: forget about sparql-generate; show our descriptor file.
+** take user selection as a new descriptor; the descriptor is the json of the entities and the struct.
+** don't show large jsons, only 1st few objects
+** check ajax; results will be updated based on user selections
 * Build the "extractor":
 ** extract the details from the original object and add all the necessary data to construct the turtle.
 ** TODO check this paper:
@@ -154,3 +156,12 @@ http://users.encs.concordia.ca/~shiri/
 An Empirical Comparison of Ontology Matching Techniques
 ** Forget about sparql-generate!
 ** TODO realtime processing; use `read` for input data
+** TODO give the find APIs the type; check lov "type" parameter
+** TODO entities := `e1: { included: [ ... ], type: ..., iri_template: ... }`.
+*** included: array of jsonpaths of the included keys in this entity. by default it is the jsonpath of the object .*; eg: "$.test.*".
+*** type: ttl type of this entity.
+*** iri_template: the template of the iri of this entity. eg: "https://example.com/{id}" where {id} is the name of the json key in an object.
+*** TODO don't create an entity item if one of the keys in the iri_template is undefined.
+** TODO put the prefixes back to the suggested_prefixes, seperate the struct and the entities; find the entities 1st and then build the struct. This is important so that the user can specify the types 1st and then get the predicates suggestions based on it.
+* TTL-GEN:
+** TODO use rdflib to generate triples
