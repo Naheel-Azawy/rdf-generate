@@ -29,6 +29,11 @@ const APIS = {
     lov: require("./find-lov.js")
 };
 
+/**
+ * A function for finding predicates for a given Json Attribute (Item).
+ * @param {Object} item - An object the contains a key and a value for a Json Attribute. // TODO: Check for  writing OBJECT as a datatype here
+ * @returns {Promise<*>} A list of predicates.
+ */
 async function find_predicates(item) {
     let p = catched_predicates[item.key];
     if (p === undefined) {
@@ -49,6 +54,11 @@ async function find_predicates(item) {
     return p;
 }
 
+/**
+ * A function for finding the data type of a given Json Attribute value.
+ * @param {*[]} values.
+ * @returns {Promise<string[]>} a promise object that represents an array of data types of the passed Json values.
+ */
 async function find_data_types(values) { // TODO: improve finding the datatypes?
     // More types: https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
     let map = {}; // This is an object and not an array to keep it unique
@@ -66,6 +76,13 @@ async function find_data_types(values) { // TODO: improve finding the datatypes?
     return Object.keys(map);
 }
 
+/**
+ * A function for determining whether a given object is an entity.
+ * @param {Object} obj
+ * @param {string} keys
+ * @returns {Promise<boolean>} A promise object represents true if the object is an entity, false otherwise.
+ */
+
 async function is_entity(obj, keys) { // TODO: actual implementation for is_entity
     for (let key of keys) {
         key = key.toLowerCase();
@@ -75,18 +92,31 @@ async function is_entity(obj, keys) { // TODO: actual implementation for is_enti
     }
     return false;
 }
+/**
+ * A function for adding an entity to the entities list and assigning the appropriate attributes such as include, type, and the iri.
+ * @param {object} obj
+ * @param {string[]} keys
+ * @param {string} path
+ * @param {Object} predicates
+ * @returns {Promise<void>}
+ */
 
 async function entity_check(obj, keys, path, predicates) {
     if (await is_entity(obj, keys)) {
         entities["entity_" + entities_count++] = {
             include: [ path ],
-            type: await find_object_type(predicates, keys),
+            type: await find_entity_type(predicates, keys),
             iri_template: `https://example.com/{${keys[0]}}`
         };
     }
 }
-
-async function find_object_type(predicates, obj_keys) { // TODO: actual implementation for find_object_type
+/**
+ *
+ * @param {Object} predicates
+ * @param {string[]} obj_keys
+ * @returns {Promise<string>}
+ */
+async function find_entity_type(predicates, obj_keys) { // TODO: actual implementation for find_object_type
     let catch_key = obj_keys.sort().join();
     let res = catched_types[catch_key];
     if (res === undefined) {
@@ -110,6 +140,14 @@ async function find_object_type(predicates, obj_keys) { // TODO: actual implemen
     return res;
 }
 
+/**
+ * A Function for iterating through a json object or an array of json objects to generate the structure of the descriptor.
+ * @param {*} obj
+ * @param {string} key
+ * @param {Object} parent_current_predicates
+ * @param {*[]} datatypes_values
+ * @returns {Promise<void>}
+ */
 async function iter(obj, key, parent_current_predicates, datatypes_values) {
     if (Array.isArray(obj)) {
         path_follower_inst.push("[*]");
@@ -169,6 +207,11 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
 }
 
 module.exports = {
+    /**
+     * A Function for building the descriptor.
+     * @param {*} src
+     * @returns {Promise<Object>}
+     */
     build: async src => {
         out = {};
         entities = {};
