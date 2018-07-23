@@ -20,7 +20,7 @@ let catched_predicates = {};
 
 const APIS = {
     test: prop => [{
-        prefix: "http://example.com",
+        prefix: "https://example.com",
         prefix_name: "e",
         predicate: prop,
         score: 0
@@ -103,7 +103,8 @@ async function is_entity(obj, keys) { // TODO: actual implementation for is_enti
 
 async function entity_check(obj, keys, path, predicates) {
     if (await is_entity(obj, keys)) {
-        entities["entity_" + entities_count++] = {
+        //entities["entity_" + entities_count++] = {
+        entities[path] = {
             include: [ path ],
             type: await find_entity_type(predicates, keys),
             iri_template: `https://example.com/{${keys[0]}}`
@@ -150,6 +151,12 @@ async function find_entity_type(predicates, obj_keys) { // TODO: actual implemen
  */
 async function iter(obj, key, parent_current_predicates, datatypes_values) {
     if (Array.isArray(obj)) {
+        out[path_follower_inst.get_path()] = {
+            node_type: "array",
+            attribute: key,
+            suggested_predicates: await find_predicates({key:key}),
+            data_types: undefined
+        };
         path_follower_inst.push("[*]");
         let keys = {};
         let values = {}; // stores the values for every key. Important for finding the types.
@@ -175,6 +182,12 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
         path_follower_inst.pop();
     } else if ((typeof obj === "object") && (obj !== null)) {
         let path = path_follower_inst.get_path();
+        out[path] = {
+            node_type: "object",
+            attribute: key,
+            suggested_predicates: await find_predicates({key:key}),
+            data_types: undefined
+        };
         let keys = Object.keys(obj);
         let val;
         let current_predicates = {};
@@ -199,6 +212,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
             parent_current_predicates[path] = p;
         }
         out[path] = {
+            node_type: "value",
             attribute: item.key,
             suggested_predicates: p,
             data_types: await find_data_types(values)

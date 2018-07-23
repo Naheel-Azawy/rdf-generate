@@ -6,15 +6,76 @@ const des_builder = require("./descriptor-builder.js");
 const JSONPath = require("JSONPath");
 const PathFollower = require("./path-follower.js");
 const format = require("./string-template/index.js");
-const N3 = require("n3");
-const { DataFactory } = N3;
-const { namedNode, literal, defaultGraph, quad } = DataFactory;
+const $rdf = require("rdflib");
 
 // TODO: this isn't even a thing yet!!!
 
+function str_format(str, obj) {
+    return format(str, obj, {rejectNoMatch: true}); // TODO: implement my own formatter that accepts a jsonpath
+}
+
+function get_values_from(paths, src) {
+    let path = paths[0]; // TODO: check all the included paths
+    return JSONPath({path: path, json: src});
+}
+
+function get_entity_or_unlabeled(src, entity_check) {
+    let rdf_obj;
+    if (entity_check === undefined) {
+        // TODO: create an unlabeled blank node
+        rdf_obj = $rdf.literal("nothing");
+    } else {
+        rdf_obj = $rdf.sym(str_format(
+            entity_check.iri_template,
+            get_values_from(entity_check.include, src)[0] // It should be only one element as it is a normal object and not an array
+        ));
+    }
+    return rdf_obj;
+}
+
+function handle_item(src, store, prefixes, des, path, key, subject, obj) {
+    let s = des.struct[path + '.' + key];
+    let p = s.suggested_predicates[0];
+    let pred = des.prefixes[p.prefix_name];
+    if (pred.endsWith('/')) {
+        pred = pred.substring(0, pred.length - 2);
+    }
+    pred += "#" + p.predicate;
+    let rdf_subj = subject === undefined ? $rdf.bnode() : $rdf.sym(subject);
+    if (s.node_type === 'array') {
+        // TODO: implement if it is an array
+        let content_path = path + "[*]";
+        let arr = get_values_from(content_path);
+        let rdf_list = [];
+        for (let i in arr) {
+            rdf_list.push(handle_item(src, store, prefixes, des, content_path, i, undefined, get_entity_or_unlabeled(src, des.entities[path + '.' + key])));
+        }
+        return [
+            rdf_subj,
+            $rdf.sym(pred),
+            store.list(rdf_list)
+        ];
+    } else if (s.node_type === 'object') {
+        return [
+            rdf_subj,
+            $rdf.sym(pred),
+            get_entity_or_unlabeled(src, des.entities[path + '.' + key])
+        ];
+    } else {
+        obj = `${obj}`; // rdflib require everything to be string
+        let datatype = s.data_types[0];
+        prefixes[p.prefix_name] = des.prefixes[p.prefix_name];
+        return [
+            rdf_subj,
+            store.sym(pred),
+            store.literal(obj, undefined, $rdf.sym(`${prefixes["xsd"]}${datatype.split(":")[1]}`))
+        ];
+    }
+}
+
 async function main(args) {
 
-    /*let src = {
+    let src = {
         id: 0,
         name: "naheel",
         age: 21,
@@ -32,76 +93,40 @@ async function main(args) {
             { name: "ddd", id: "a" },
             { name: "eee", id: "2018-07-18" }
         ]
-    };*/
-    let src = JSON.parse(await fs.readFileAsync("src.json", "utf-8"));
-    let x = await des_builder.build(src);
+    };
+    //let src = JSON.parse(await fs.readFileAsync("src.json", "utf-8"));
+    let des = await des_builder.build(src);
+
+    let store = $rdf.graph();
 
     let prefixes = { xsd: "http://www.w3.org/2001/XMLSchema#" };
-    let items = [];
-    let quads = [];
-    let entities = x.entities;
-    let e, path, item, q, subject, pred, object, datatype;
-    for (let k of Object.keys(entities)) {
-        item = "";
-        e = entities[k];
-        path = e.includes[0];
-        let values = JSONPath({path: path, json: src});
+    for (let k of Object.keys(des.entities)) {
+        let e = des.entities[k];
+        let path = k;
+        let values = get_values_from(e.include, src);
         for (let i in values) {
-            // TODO: use rdflib
+            let subject;
             try {
-                subject = format(e.iri_template, values[i], {rejectNoMatch: true}); // TODO: implement my own formatter that accepts a jsonpath
+                subject = str_format(e.iri_template, values[i]);
             } catch (err) {
                 //print("INFO: Entity skipped because of not fitting in the iri template " + e.iri_template);
                 continue;
             }
-            item += `<${subject}>`;
             if (e.type !== undefined) {
-                item += ` a <${e.type}>`;
-                quads.push(quad(
-                    namedNode(subject),
-                    namedNode('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
-                    namedNode(e.type)
-                ));
+                store.add(
+                    $rdf.sym(subject),
+                    $rdf.sym('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+                    $rdf.sym(e.type)
+                );
             }
-            let keys = Object.keys(values[i]);
-            keys = keys.filter((value, index, array) => { // ignoring non preemptive types for simplicity. TODO: implement nesting
-                let v = values[i][keys[index]];
-                return !((typeof v === "object") && (v !== null));
-            });
-            for (let j in keys) {
-                if (j !== keys.length - 1) {
-                    item += " ;\n\t";
-                }
-                let s = x.struct[path + '.' + keys[j]];
-                let p = s.suggested_predicates[0];
-                pred = `${p.prefix_name}:${p.predicate}`;
-                object = values[i][keys[j]];
-                datatype = s.data_types[0];
-                prefixes[p.prefix_name] = x.prefixes[p.prefix_name];
-                item += `<${pred}> "${object}"^^${datatype}`;
-                quads.push(quad(
-                    namedNode(subject),
-                    namedNode(pred),
-                    literal(object) // TODO: datatype?
-                ));
+            for (let key of Object.keys(values[i])) {
+                let res = handle_item(src, store, prefixes, des, path, key, subject, values[i][key]);
+                store.add(res[0], res[1], res[2]);
             }
-            item += " .\n";
         }
-        items.push(item);
     }
 
-    const writer = N3.Writer(process.stdout, { end: false, prefixes: prefixes });
-    for (let q of quads)
-        writer.addQuad(q);
-    writer.end();
-/*
-    for (let p of Object.keys(prefixes)) {
-        print(`@prefix ${p}: ${prefixes[p]} .`);
-    }
-    print("");
-    for (let i of items) {
-        print(i);
-    }*/
+    print($rdf.Serializer(store).statementsToN3(store.statementsMatching()));
 
 }
 
