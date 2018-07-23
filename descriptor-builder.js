@@ -32,7 +32,7 @@ const APIS = {
 async function find_predicates(item) {
     let p = catched_predicates[item.key];
     if (p === undefined) {
-        p = await APIS.lov(item.key);
+        p = await APIS.test(item.key);
         catched_predicates[item.key] = p;
         let ns, pr;
         for (let i in p) {
@@ -52,9 +52,7 @@ async function find_predicates(item) {
 async function find_data_types(values) { // TODO: improve finding the datatypes?
     // More types: https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
     let map = {}; // This is an object and not an array to keep it unique
-    let v;
-    for (let i in values) {
-        v = values[i];
+    for (let v of values) {
         if (typeof(v) === "boolean") {
             map["xsd:boolean"] = 0;
         } else if (typeof(v) === "number") {
@@ -81,7 +79,7 @@ async function is_entity(obj, keys) { // TODO: actual implementation for is_enti
 async function entity_check(obj, keys, path, predicates) {
     if (await is_entity(obj, keys)) {
         entities["entity_" + entities_count++] = {
-            includes: [ path ],
+            include: [ path ],
             type: await find_object_type(predicates, keys),
             iri_template: `https://example.com/{${keys[0]}}`
         };
@@ -171,7 +169,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
 }
 
 module.exports = {
-    extract: async src => {
+    build: async src => {
         out = {};
         entities = {};
         entities_count = 0;

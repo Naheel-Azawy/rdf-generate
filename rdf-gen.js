@@ -1,11 +1,11 @@
 const print = s => console.log(s);
 const printj = s => console.log(JSON.stringify(s));
 const Promise = require("bluebird");
-const extractor = require("./extractor.js");
+const fs = Promise.promisifyAll(require("fs"));
+const des_builder = require("./descriptor-builder.js");
 const JSONPath = require("JSONPath");
 const PathFollower = require("./path-follower.js");
 const format = require("./string-template/index.js");
-const fs = Promise.promisifyAll(require("fs"));
 const N3 = require("n3");
 const { DataFactory } = N3;
 const { namedNode, literal, defaultGraph, quad } = DataFactory;
@@ -34,7 +34,7 @@ async function main(args) {
         ]
     };*/
     let src = JSON.parse(await fs.readFileAsync("src.json", "utf-8"));
-    let x = await extractor.extract(src);
+    let x = await des_builder.build(src);
 
     let prefixes = { xsd: "http://www.w3.org/2001/XMLSchema#" };
     let items = [];

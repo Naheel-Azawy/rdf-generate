@@ -152,7 +152,7 @@ WHERE {
 ** check ajax; results will be updated based on user selections
 * Build the "extractor":
 ** extract the details from the original object and add all the necessary data to construct the turtle.
-** TODO check this paper:
+** DONE check this paper:
 http://users.encs.concordia.ca/~shiri/
 An Empirical Comparison of Ontology Matching Techniques
 ** Forget about sparql-generate!
@@ -163,9 +163,9 @@ An Empirical Comparison of Ontology Matching Techniques
 *** included: array of jsonpaths of the included keys in this entity. by default it is the jsonpath of the object .*; eg: "$.test.*".
 *** type: ttl type of this entity.
 *** iri_template: the template of the iri of this entity. eg: "https://example.com/{id}" where {id} is the name of the json key in an object.
-** TODO what if the API gave no results?
 * TTL-GEN:
-** TODO use rdflib to generate triples. UPDATE: Nope, use N3.
+** DONE use rdflib to generate triples. UPDATE: Nope, use N3.
 ** DONE don't create an entity item if one of the keys in the iri_template is undefined.
 ** DONE add xsd to the prefixes if needed for datatypes
 ** TODO accept any jsonpath from "includes"
+** TODO what if the API gave no results?
