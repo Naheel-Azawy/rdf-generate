@@ -1,0 +1,2876 @@
+{
+  "prefixes": {
+    "e": "https://example.com"
+  },
+  "struct": {
+    "$": {
+      "node_type": "array",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].contributors": {
+      "node_type": "value",
+      "attribute": "contributors",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "contributors",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].truncated": {
+      "node_type": "value",
+      "attribute": "truncated",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "truncated",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].is_quote_status": {
+      "node_type": "value",
+      "attribute": "is_quote_status",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "is_quote_status",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].in_reply_to_status_id": {
+      "node_type": "value",
+      "attribute": "in_reply_to_status_id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_status_id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].favorite_count": {
+      "node_type": "value",
+      "attribute": "favorite_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "favorite_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].full_text": {
+      "node_type": "value",
+      "attribute": "full_text",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "full_text",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].entities": {
+      "node_type": "object",
+      "attribute": "entities",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "entities",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].entities.symbols": {
+      "node_type": "array",
+      "attribute": "symbols",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "symbols",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].entities.user_mentions": {
+      "node_type": "array",
+      "attribute": "user_mentions",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "user_mentions",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].entities.user_mentions[*].id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].entities.user_mentions[*].indices": {
+      "node_type": "array",
+      "attribute": "indices",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "indices",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].entities.user_mentions[*].id_str": {
+      "node_type": "value",
+      "attribute": "id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].entities.user_mentions[*].screen_name": {
+      "node_type": "value",
+      "attribute": "screen_name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "screen_name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].entities.user_mentions[*].name": {
+      "node_type": "value",
+      "attribute": "name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].entities.hashtags": {
+      "node_type": "array",
+      "attribute": "hashtags",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "hashtags",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].entities.urls": {
+      "node_type": "array",
+      "attribute": "urls",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "urls",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted": {
+      "node_type": "value",
+      "attribute": "retweeted",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "retweeted",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].coordinates": {
+      "node_type": "value",
+      "attribute": "coordinates",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "coordinates",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].source": {
+      "node_type": "value",
+      "attribute": "source",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "source",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].in_reply_to_screen_name": {
+      "node_type": "value",
+      "attribute": "in_reply_to_screen_name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_screen_name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].in_reply_to_user_id": {
+      "node_type": "value",
+      "attribute": "in_reply_to_user_id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_user_id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].display_text_range": {
+      "node_type": "array",
+      "attribute": "display_text_range",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "display_text_range",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweet_count": {
+      "node_type": "value",
+      "attribute": "retweet_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "retweet_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].id_str": {
+      "node_type": "value",
+      "attribute": "id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].favorited": {
+      "node_type": "value",
+      "attribute": "favorited",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "favorited",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status": {
+      "node_type": "object",
+      "attribute": "retweeted_status",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "retweeted_status",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.contributors": {
+      "node_type": "value",
+      "attribute": "contributors",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "contributors",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.truncated": {
+      "node_type": "value",
+      "attribute": "truncated",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "truncated",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.is_quote_status": {
+      "node_type": "value",
+      "attribute": "is_quote_status",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "is_quote_status",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.in_reply_to_status_id": {
+      "node_type": "value",
+      "attribute": "in_reply_to_status_id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_status_id",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.favorite_count": {
+      "node_type": "value",
+      "attribute": "favorite_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "favorite_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.full_text": {
+      "node_type": "value",
+      "attribute": "full_text",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "full_text",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities": {
+      "node_type": "object",
+      "attribute": "entities",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "entities",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.symbols": {
+      "node_type": "array",
+      "attribute": "symbols",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "symbols",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.user_mentions": {
+      "node_type": "array",
+      "attribute": "user_mentions",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "user_mentions",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.hashtags": {
+      "node_type": "array",
+      "attribute": "hashtags",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "hashtags",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.urls": {
+      "node_type": "array",
+      "attribute": "urls",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "urls",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media": {
+      "node_type": "array",
+      "attribute": "media",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "media",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].expanded_url": {
+      "node_type": "value",
+      "attribute": "expanded_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "expanded_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].display_url": {
+      "node_type": "value",
+      "attribute": "display_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "display_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].url": {
+      "node_type": "value",
+      "attribute": "url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].media_url_https": {
+      "node_type": "value",
+      "attribute": "media_url_https",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "media_url_https",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].id_str": {
+      "node_type": "value",
+      "attribute": "id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes": {
+      "node_type": "object",
+      "attribute": "sizes",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "sizes",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.large": {
+      "node_type": "object",
+      "attribute": "large",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "large",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.large.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.large.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.large.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.small": {
+      "node_type": "object",
+      "attribute": "small",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "small",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.small.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.small.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.small.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.medium": {
+      "node_type": "object",
+      "attribute": "medium",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "medium",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.medium.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.medium.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.medium.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.thumb": {
+      "node_type": "object",
+      "attribute": "thumb",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "thumb",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.thumb.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.thumb.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].sizes.thumb.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].indices": {
+      "node_type": "array",
+      "attribute": "indices",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "indices",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].type": {
+      "node_type": "value",
+      "attribute": "type",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "type",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.entities.media[*].media_url": {
+      "node_type": "value",
+      "attribute": "media_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "media_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.retweeted": {
+      "node_type": "value",
+      "attribute": "retweeted",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "retweeted",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.coordinates": {
+      "node_type": "value",
+      "attribute": "coordinates",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "coordinates",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.source": {
+      "node_type": "value",
+      "attribute": "source",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "source",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.in_reply_to_screen_name": {
+      "node_type": "value",
+      "attribute": "in_reply_to_screen_name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_screen_name",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.in_reply_to_user_id": {
+      "node_type": "value",
+      "attribute": "in_reply_to_user_id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_user_id",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.display_text_range": {
+      "node_type": "array",
+      "attribute": "display_text_range",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "display_text_range",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.retweet_count": {
+      "node_type": "value",
+      "attribute": "retweet_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "retweet_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.id_str": {
+      "node_type": "value",
+      "attribute": "id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.favorited": {
+      "node_type": "value",
+      "attribute": "favorited",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "favorited",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user": {
+      "node_type": "object",
+      "attribute": "user",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "user",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.user.follow_request_sent": {
+      "node_type": "value",
+      "attribute": "follow_request_sent",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "follow_request_sent",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.has_extended_profile": {
+      "node_type": "value",
+      "attribute": "has_extended_profile",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "has_extended_profile",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_use_background_image": {
+      "node_type": "value",
+      "attribute": "profile_use_background_image",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_use_background_image",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.default_profile_image": {
+      "node_type": "value",
+      "attribute": "default_profile_image",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "default_profile_image",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_background_image_url_https": {
+      "node_type": "value",
+      "attribute": "profile_background_image_url_https",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_image_url_https",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.verified": {
+      "node_type": "value",
+      "attribute": "verified",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "verified",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.translator_type": {
+      "node_type": "value",
+      "attribute": "translator_type",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "translator_type",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_text_color": {
+      "node_type": "value",
+      "attribute": "profile_text_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_text_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_image_url_https": {
+      "node_type": "value",
+      "attribute": "profile_image_url_https",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_image_url_https",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_sidebar_fill_color": {
+      "node_type": "value",
+      "attribute": "profile_sidebar_fill_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_sidebar_fill_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].retweeted_status.user.entities": {
+      "node_type": "object",
+      "attribute": "entities",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "entities",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.user.entities.description": {
+      "node_type": "object",
+      "attribute": "description",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "description",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.user.entities.description.urls": {
+      "node_type": "array",
+      "attribute": "urls",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "urls",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.user.followers_count": {
+      "node_type": "value",
+      "attribute": "followers_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "followers_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_sidebar_border_color": {
+      "node_type": "value",
+      "attribute": "profile_sidebar_border_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_sidebar_border_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].retweeted_status.user.id_str": {
+      "node_type": "value",
+      "attribute": "id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_background_color": {
+      "node_type": "value",
+      "attribute": "profile_background_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].retweeted_status.user.listed_count": {
+      "node_type": "value",
+      "attribute": "listed_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "listed_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.user.is_translation_enabled": {
+      "node_type": "value",
+      "attribute": "is_translation_enabled",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "is_translation_enabled",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.utc_offset": {
+      "node_type": "value",
+      "attribute": "utc_offset",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "utc_offset",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.user.statuses_count": {
+      "node_type": "value",
+      "attribute": "statuses_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "statuses_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.user.description": {
+      "node_type": "value",
+      "attribute": "description",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "description",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.friends_count": {
+      "node_type": "value",
+      "attribute": "friends_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "friends_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.user.location": {
+      "node_type": "value",
+      "attribute": "location",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "location",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_link_color": {
+      "node_type": "value",
+      "attribute": "profile_link_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_link_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_image_url": {
+      "node_type": "value",
+      "attribute": "profile_image_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_image_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.following": {
+      "node_type": "value",
+      "attribute": "following",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "following",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.geo_enabled": {
+      "node_type": "value",
+      "attribute": "geo_enabled",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "geo_enabled",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_banner_url": {
+      "node_type": "value",
+      "attribute": "profile_banner_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_banner_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_background_image_url": {
+      "node_type": "value",
+      "attribute": "profile_background_image_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_image_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.screen_name": {
+      "node_type": "value",
+      "attribute": "screen_name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "screen_name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.lang": {
+      "node_type": "value",
+      "attribute": "lang",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "lang",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.profile_background_tile": {
+      "node_type": "value",
+      "attribute": "profile_background_tile",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_tile",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.favourites_count": {
+      "node_type": "value",
+      "attribute": "favourites_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "favourites_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.user.name": {
+      "node_type": "value",
+      "attribute": "name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.notifications": {
+      "node_type": "value",
+      "attribute": "notifications",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "notifications",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.url": {
+      "node_type": "value",
+      "attribute": "url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "url",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.user.created_at": {
+      "node_type": "value",
+      "attribute": "created_at",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "created_at",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].retweeted_status.user.contributors_enabled": {
+      "node_type": "value",
+      "attribute": "contributors_enabled",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "contributors_enabled",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.time_zone": {
+      "node_type": "value",
+      "attribute": "time_zone",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "time_zone",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.user.protected": {
+      "node_type": "value",
+      "attribute": "protected",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "protected",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.default_profile": {
+      "node_type": "value",
+      "attribute": "default_profile",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "default_profile",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.user.is_translator": {
+      "node_type": "value",
+      "attribute": "is_translator",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "is_translator",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.geo": {
+      "node_type": "value",
+      "attribute": "geo",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "geo",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.in_reply_to_user_id_str": {
+      "node_type": "value",
+      "attribute": "in_reply_to_user_id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_user_id_str",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.possibly_sensitive": {
+      "node_type": "value",
+      "attribute": "possibly_sensitive",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "possibly_sensitive",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].retweeted_status.lang": {
+      "node_type": "value",
+      "attribute": "lang",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "lang",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.created_at": {
+      "node_type": "value",
+      "attribute": "created_at",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "created_at",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].retweeted_status.in_reply_to_status_id_str": {
+      "node_type": "value",
+      "attribute": "in_reply_to_status_id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_status_id_str",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.place": {
+      "node_type": "value",
+      "attribute": "place",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "place",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].retweeted_status.extended_entities": {
+      "node_type": "object",
+      "attribute": "extended_entities",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "extended_entities",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media": {
+      "node_type": "array",
+      "attribute": "media",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "media",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].expanded_url": {
+      "node_type": "value",
+      "attribute": "expanded_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "expanded_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].display_url": {
+      "node_type": "value",
+      "attribute": "display_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "display_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].url": {
+      "node_type": "value",
+      "attribute": "url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].media_url_https": {
+      "node_type": "value",
+      "attribute": "media_url_https",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "media_url_https",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].id_str": {
+      "node_type": "value",
+      "attribute": "id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes": {
+      "node_type": "object",
+      "attribute": "sizes",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "sizes",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.large": {
+      "node_type": "object",
+      "attribute": "large",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "large",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.large.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.large.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.large.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.small": {
+      "node_type": "object",
+      "attribute": "small",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "small",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.small.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.small.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.small.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.medium": {
+      "node_type": "object",
+      "attribute": "medium",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "medium",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.medium.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.medium.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.medium.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.thumb": {
+      "node_type": "object",
+      "attribute": "thumb",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "thumb",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.thumb.h": {
+      "node_type": "value",
+      "attribute": "h",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "h",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.thumb.resize": {
+      "node_type": "value",
+      "attribute": "resize",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "resize",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].sizes.thumb.w": {
+      "node_type": "value",
+      "attribute": "w",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "w",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].indices": {
+      "node_type": "array",
+      "attribute": "indices",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "indices",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].type": {
+      "node_type": "value",
+      "attribute": "type",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "type",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].retweeted_status.extended_entities.media[*].media_url": {
+      "node_type": "value",
+      "attribute": "media_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "media_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.metadata": {
+      "node_type": "object",
+      "attribute": "metadata",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "metadata",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].retweeted_status.metadata.iso_language_code": {
+      "node_type": "value",
+      "attribute": "iso_language_code",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "iso_language_code",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].retweeted_status.metadata.result_type": {
+      "node_type": "value",
+      "attribute": "result_type",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "result_type",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user": {
+      "node_type": "object",
+      "attribute": "user",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "user",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].user.follow_request_sent": {
+      "node_type": "value",
+      "attribute": "follow_request_sent",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "follow_request_sent",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.has_extended_profile": {
+      "node_type": "value",
+      "attribute": "has_extended_profile",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "has_extended_profile",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.profile_use_background_image": {
+      "node_type": "value",
+      "attribute": "profile_use_background_image",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_use_background_image",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.default_profile_image": {
+      "node_type": "value",
+      "attribute": "default_profile_image",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "default_profile_image",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].user.profile_background_image_url_https": {
+      "node_type": "value",
+      "attribute": "profile_background_image_url_https",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_image_url_https",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].user.verified": {
+      "node_type": "value",
+      "attribute": "verified",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "verified",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.translator_type": {
+      "node_type": "value",
+      "attribute": "translator_type",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "translator_type",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.profile_text_color": {
+      "node_type": "value",
+      "attribute": "profile_text_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_text_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].user.profile_image_url_https": {
+      "node_type": "value",
+      "attribute": "profile_image_url_https",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_image_url_https",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.profile_sidebar_fill_color": {
+      "node_type": "value",
+      "attribute": "profile_sidebar_fill_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_sidebar_fill_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.entities": {
+      "node_type": "object",
+      "attribute": "entities",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "entities",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].user.entities.description": {
+      "node_type": "object",
+      "attribute": "description",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "description",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].user.entities.description.urls": {
+      "node_type": "array",
+      "attribute": "urls",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "urls",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].user.followers_count": {
+      "node_type": "value",
+      "attribute": "followers_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "followers_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].user.profile_sidebar_border_color": {
+      "node_type": "value",
+      "attribute": "profile_sidebar_border_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_sidebar_border_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.id_str": {
+      "node_type": "value",
+      "attribute": "id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.profile_background_color": {
+      "node_type": "value",
+      "attribute": "profile_background_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.listed_count": {
+      "node_type": "value",
+      "attribute": "listed_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "listed_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].user.is_translation_enabled": {
+      "node_type": "value",
+      "attribute": "is_translation_enabled",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "is_translation_enabled",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.utc_offset": {
+      "node_type": "value",
+      "attribute": "utc_offset",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "utc_offset",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].user.statuses_count": {
+      "node_type": "value",
+      "attribute": "statuses_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "statuses_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].user.description": {
+      "node_type": "value",
+      "attribute": "description",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "description",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.friends_count": {
+      "node_type": "value",
+      "attribute": "friends_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "friends_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].user.location": {
+      "node_type": "value",
+      "attribute": "location",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "location",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.profile_link_color": {
+      "node_type": "value",
+      "attribute": "profile_link_color",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_link_color",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.profile_image_url": {
+      "node_type": "value",
+      "attribute": "profile_image_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_image_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.following": {
+      "node_type": "value",
+      "attribute": "following",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "following",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.geo_enabled": {
+      "node_type": "value",
+      "attribute": "geo_enabled",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "geo_enabled",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.profile_banner_url": {
+      "node_type": "value",
+      "attribute": "profile_banner_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_banner_url",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.profile_background_image_url": {
+      "node_type": "value",
+      "attribute": "profile_background_image_url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_image_url",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].user.screen_name": {
+      "node_type": "value",
+      "attribute": "screen_name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "screen_name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.lang": {
+      "node_type": "value",
+      "attribute": "lang",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "lang",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.profile_background_tile": {
+      "node_type": "value",
+      "attribute": "profile_background_tile",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "profile_background_tile",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.favourites_count": {
+      "node_type": "value",
+      "attribute": "favourites_count",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "favourites_count",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$[*].user.name": {
+      "node_type": "value",
+      "attribute": "name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].user.notifications": {
+      "node_type": "value",
+      "attribute": "notifications",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "notifications",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.url": {
+      "node_type": "value",
+      "attribute": "url",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "url",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].user.created_at": {
+      "node_type": "value",
+      "attribute": "created_at",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "created_at",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].user.contributors_enabled": {
+      "node_type": "value",
+      "attribute": "contributors_enabled",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "contributors_enabled",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.time_zone": {
+      "node_type": "value",
+      "attribute": "time_zone",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "time_zone",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].user.protected": {
+      "node_type": "value",
+      "attribute": "protected",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "protected",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.default_profile": {
+      "node_type": "value",
+      "attribute": "default_profile",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "default_profile",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].user.is_translator": {
+      "node_type": "value",
+      "attribute": "is_translator",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "is_translator",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$[*].geo": {
+      "node_type": "value",
+      "attribute": "geo",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "geo",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].in_reply_to_user_id_str": {
+      "node_type": "value",
+      "attribute": "in_reply_to_user_id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_user_id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].lang": {
+      "node_type": "value",
+      "attribute": "lang",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "lang",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].created_at": {
+      "node_type": "value",
+      "attribute": "created_at",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "created_at",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$[*].in_reply_to_status_id_str": {
+      "node_type": "value",
+      "attribute": "in_reply_to_status_id_str",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "in_reply_to_status_id_str",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].place": {
+      "node_type": "value",
+      "attribute": "place",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "place",
+          "score": 0
+        }
+      ],
+      "data_types": []
+    },
+    "$[*].metadata": {
+      "node_type": "object",
+      "attribute": "metadata",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "metadata",
+          "score": 0
+        }
+      ]
+    },
+    "$[*].metadata.iso_language_code": {
+      "node_type": "value",
+      "attribute": "iso_language_code",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "iso_language_code",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$[*].metadata.result_type": {
+      "node_type": "value",
+      "attribute": "result_type",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "result_type",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    }
+  },
+  "entities": {
+    "$[*].entities.user_mentions[*]": {
+      "include": [
+        "$[*].entities.user_mentions[*]"
+      ],
+      "type": "http://schema.org/Thing",
+      "iri_template": "https://example.com/{id}"
+    },
+    "$[*].retweeted_status.entities.media[*]": {
+      "include": [
+        "$[*].retweeted_status.entities.media[*]"
+      ],
+      "iri_template": "https://example.com/{display_url}"
+    },
+    "$[*].retweeted_status.user": {
+      "include": [
+        "$[*].retweeted_status.user"
+      ],
+      "type": "http://schema.org/Thing",
+      "iri_template": "https://example.com/{contributors_enabled}"
+    },
+    "$[*].retweeted_status.extended_entities.media[*]": {
+      "include": [
+        "$[*].retweeted_status.extended_entities.media[*]"
+      ],
+      "iri_template": "https://example.com/{display_url}"
+    },
+    "$[*].retweeted_status": {
+      "include": [
+        "$[*].retweeted_status"
+      ],
+      "iri_template": "https://example.com/{contributors}"
+    },
+    "$[*].user": {
+      "include": [
+        "$[*].user"
+      ],
+      "type": "http://schema.org/Thing",
+      "iri_template": "https://example.com/{contributors_enabled}"
+    },
+    "$[*]": {
+      "include": [
+        "$[*]"
+      ],
+      "iri_template": "https://example.com/{contributors}"
+    }
+  }
+}

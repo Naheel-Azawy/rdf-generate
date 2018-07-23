@@ -5,14 +5,10 @@ const fs = Promise.promisifyAll(require("fs"));
 const des_builder = require("./descriptor-builder.js");
 const JSONPath = require("JSONPath");
 const PathFollower = require("./path-follower.js");
-const format = require("./string-template/index.js");
+const str_format = require("./str-format.js");
 const $rdf = require("rdflib");
 
 // TODO: this isn't even a thing yet!!!
-
-function str_format(str, obj) {
-    return format(str, obj, {rejectNoMatch: true}); // TODO: implement my own formatter that accepts a jsonpath
-}
 
 function get_values_from(paths, src) {
     let path = paths[0]; // TODO: check all the included paths
@@ -35,6 +31,7 @@ function get_entity_or_unlabeled(src, entity_check) {
 
 function handle_item(src, store, prefixes, des, path, key, subject, obj) {
     let s = des.struct[path + '.' + key];
+    //print(path + '.' + key); // FIXME: from src.json: 's' is undefined at '$[*].retweeted_status.extended_entities.media[*].additional_media_info'
     let p = s.suggested_predicates[0];
     let pred = des.prefixes[p.prefix_name];
     if (pred.endsWith('/')) {
@@ -50,6 +47,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         for (let i in arr) {
             rdf_list.push(handle_item(src, store, prefixes, des, content_path, i, undefined, get_entity_or_unlabeled(src, des.entities[path + '.' + key])));
         }
+        //print(arr);
         return [
             rdf_subj,
             $rdf.sym(pred),
@@ -64,38 +62,25 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
     } else {
         obj = `${obj}`; // rdflib require everything to be string
         let datatype = s.data_types[0];
+        let rdf_datatype = datatype === undefined ? undefined : $rdf.sym(`${prefixes["xsd"]}${datatype.split(":")[1]}`);
         prefixes[p.prefix_name] = des.prefixes[p.prefix_name];
         return [
             rdf_subj,
             store.sym(pred),
-            store.literal(obj, undefined, $rdf.sym(`${prefixes["xsd"]}${datatype.split(":")[1]}`))
+            store.literal(obj, undefined, rdf_datatype)
         ];
     }
 }
 
+// TODO: doc: i||only one: input file, d: only gen des, x: out xml
 async function main(args) {
-
-    let src = {
-        id: 0,
-        name: "naheel",
-        age: 21,
-        birthday: "1997-03-28",
-        working: true,
-        test: {
-            id: 3,
-            name: "nnnnnn",
-            age: 91
-        },
-        followers: [
-            { name: "aaa", id: 1, thing: {a: 'a'} },
-            { name: "bbb", id: 2 },
-            { name: "ccc", id: 3, thing: {a: 'a'} },
-            { name: "ddd", id: "a" },
-            { name: "eee", id: "2018-07-18" }
-        ]
-    };
-    //let src = JSON.parse(await fs.readFileAsync("src.json", "utf-8"));
+    let src = JSON.parse(await fs.readFileAsync(args.i || args._[0], "utf-8"));
     let des = await des_builder.build(src);
+
+    if (args.d) {
+        printj(des);
+        return;
+    }
 
     let store = $rdf.graph();
 
@@ -126,8 +111,12 @@ async function main(args) {
         }
     }
 
-    print($rdf.Serializer(store).statementsToN3(store.statementsMatching()));
+    if (args.x) {
+        print($rdf.Serializer(store).statementsToXML(store.statementsMatching()));
+    } else {
+        print($rdf.Serializer(store).statementsToN3(store.statementsMatching()));
+    }
 
 }
 
-main(process.argv);
+main(require('minimist')(process.argv.slice(2)));

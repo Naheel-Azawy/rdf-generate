@@ -2,6 +2,5 @@ xmlhttprequest
 request
 rdflib
 JSONPath
-string-template
 bluebird
-n3
+minimist
