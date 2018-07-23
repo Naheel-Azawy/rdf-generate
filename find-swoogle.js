@@ -1,6 +1,12 @@
 const base = require("./find-base.js");
 const $rdf = require("rdflib");
 
+/**
+ *  A function  for finding predicates from the API for a given property.
+ * @param {string} property
+ * @returns {Promise<*>} The result of the property look up request parsed into json.
+ * @throws {err}
+ */
 async function find(property) {
     const URL = "http://swoogle.umbc.edu/2006/index.php?option=com_frontpage&service=search&queryType=search_swd_ontology&view=raw&searchString=";
     try {
