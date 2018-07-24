@@ -4,3 +4,4 @@ rdflib
 JSONPath
 bluebird
 minimist
+xml2js

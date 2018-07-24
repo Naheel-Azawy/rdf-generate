@@ -1,5 +1,6 @@
 const print = s => console.log(s);
 const PathFollower = require("./path-follower.js");
+const Finder = require("./find.js");
 
 // output
 let out;
@@ -13,46 +14,10 @@ let prefixes;
 let prefixes_rev;
 // keeps track of the current path in the tree.
 let path_follower_inst;
+// Finds predicates from different places
+let finder_inst;
 // catch the structure of the entities. if the structure is the same, get the type from the catch.
 let catched_types = {};
-// predicates catch
-let catched_predicates = {};
-
-const APIS = {
-    test: prop => [{
-        prefix: "https://example.com",
-        prefix_name: "e",
-        predicate: prop,
-        score: 0
-    }],
-    swoogle: require("./find-swoogle.js"),
-    lov: require("./find-lov.js")
-};
-
-/**
- * A function for finding predicates for a given Json Attribute (Item).
- * @param {Object} item - An object the contains a key and a value for a Json Attribute. // TODO: Check for  writing OBJECT as a datatype here
- * @returns {Promise<*>} A list of predicates.
- */
-async function find_predicates(item) {
-    let p = catched_predicates[item.key];
-    if (p === undefined) {
-        p = await APIS.test(item.key);
-        catched_predicates[item.key] = p;
-        let ns, pr;
-        for (let i in p) {
-            if (prefixes_rev[p[i].prefix] === undefined) {
-                ns = p[i].prefix_name;
-                pr = p[i].prefix;
-                prefixes_rev[pr] = ns;
-                prefixes[ns] = pr;
-            }
-            p[i].prefix_name = prefixes_rev[p[i].prefix];
-            p[i].prefix = undefined;
-        }
-    }
-    return p;
-}
 
 /**
  * A function for finding the data type of a given Json Attribute value.
@@ -82,7 +47,6 @@ async function find_data_types(values) { // TODO: improve finding the datatypes?
  * @param {string} keys
  * @returns {Promise<boolean>} A promise object represents true if the object is an entity, false otherwise.
  */
-
 async function is_entity(obj, keys) { // TODO: actual implementation for is_entity
     for (let key of keys) {
         key = key.toLowerCase();
@@ -92,6 +56,7 @@ async function is_entity(obj, keys) { // TODO: actual implementation for is_enti
     }
     return false;
 }
+
 /**
  * A function for adding an entity to the entities list and assigning the appropriate attributes such as include, type, and the iri.
  * @param {object} obj
@@ -100,7 +65,6 @@ async function is_entity(obj, keys) { // TODO: actual implementation for is_enti
  * @param {Object} predicates
  * @returns {Promise<void>}
  */
-
 async function entity_check(obj, keys, path, predicates) {
     if (await is_entity(obj, keys)) {
         //entities["entity_" + entities_count++] = {
@@ -111,6 +75,7 @@ async function entity_check(obj, keys, path, predicates) {
         };
     }
 }
+
 /**
  *
  * @param {Object} predicates
@@ -154,7 +119,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
         out[path_follower_inst.get_path()] = {
             node_type: "array",
             attribute: key,
-            suggested_predicates: await find_predicates({key:key}),
+            suggested_predicates: await finder_inst.find(key),
             data_types: undefined
         };
         path_follower_inst.push("[*]");
@@ -172,7 +137,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
         for (let key of Object.keys(keys)) {
             path_follower_inst.push(key);
             let item = { key: key, val:keys[key] };
-            let p = await find_predicates(item);
+            let p = await finder_inst.find(item.key);
             await iter(item.val, key, current_predicates, values[key]);
             current_predicates[path_follower_inst.get_path()] = p;
             path_follower_inst.pop();
@@ -185,7 +150,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
         out[path] = {
             node_type: "object",
             attribute: key,
-            suggested_predicates: await find_predicates({key:key}),
+            suggested_predicates: await finder_inst.find(key),
             data_types: undefined
         };
         let keys = Object.keys(obj);
@@ -201,7 +166,7 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
     } else {
         let path = path_follower_inst.get_path();
         let item = {key:key, val:obj};
-        let p = await find_predicates(item);
+        let p = await finder_inst.find(item.key);
         let values;
         if (datatypes_values === undefined) {
             values = [item.val];
@@ -226,13 +191,14 @@ module.exports = {
      * @param {*} src
      * @returns {Promise<Object>}
      */
-    build: async src => {
+    build: async (src, api) => {
         out = {};
         entities = {};
         entities_count = 0;
         prefixes = {};
         prefixes_rev = {};
         path_follower_inst = new PathFollower();
+        finder_inst = new Finder(prefixes, prefixes_rev, api);
         await iter(src);
         return {
             prefixes: prefixes,

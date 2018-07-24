@@ -1,0 +1,50 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:onto="http://www.atelier12.it/ontoatelier12.owl#"
+ xmlns:wgs="http://www.w3.org/2003/01/geo/wgs84_pos#">
+    <rdf:Description rdf:about="https://example.com/91">
+        <onto:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91</onto:age>
+        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</onto:ID>
+        <onto:Name>nnnnnn</onto:Name>
+        <rdf:type rdf:resource="http://schema.org/Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/1">
+        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</onto:ID>
+        <onto:Name>aaa</onto:Name>
+        <onto:Thing>nothing</onto:Thing>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/2">
+        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</onto:ID>
+        <onto:Name>bbb</onto:Name>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/3">
+        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</onto:ID>
+        <onto:Name>ccc</onto:Name>
+        <onto:Thing>nothing</onto:Thing>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/a">
+        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">a</onto:ID>
+        <onto:Name>ddd</onto:Name>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/2018-07-18">
+        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2018-07-18</onto:ID>
+        <onto:Name>eee</onto:Name>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/21">
+        <onto:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</onto:age>
+        <onto:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-03-28</onto:birthday>
+        <onto:Followers rdf:parseType="Collection">
+            </onto:Followers>
+        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</onto:ID>
+        <onto:Name>naheel</onto:Name>
+        <onto:Ttt>nothing</onto:Ttt>
+        <onto:Working rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</onto:Working>
+        <rdf:type rdf:resource="http://schema.org/Person"/>
+        <wgs:test rdf:resource="https://example.com/91"/>
+    </rdf:Description>
+</rdf:RDF>

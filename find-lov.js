@@ -36,12 +36,11 @@ function find_helper(results, property) {
     return arr;
 }
 /**
- *  A function  for finding predicates from the API for a given property.
- * @param {string} property
- * @returns {Promise<*>} The result of the property look up request parsed into json.
- * @throws {err} //CHECK
+ * A function for finding predicates from the API for a given property.
+ * @param {string} property - THe property name to be found
+ * @returns {Promise<Object[]>} A list of predicates.
  */
-async function find(property) {
+async function find(property, type) {
     const URL = "http://lov.okfn.org/dataset/lov/api/v2/term/search?type=property&q=";
     try {
         let response = await base.request_json(URL + property);

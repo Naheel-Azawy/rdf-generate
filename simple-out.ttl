@@ -1,0 +1,28 @@
+@prefix ex: <https://example.com/>.
+@prefix schem: <http://schema.org/>.
+@prefix onto: <http://www.atelier12.it/ontoatelier12.owl#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+
+ex:1 a schem:Thing; onto:ID 1.0; onto:Name "aaa"; onto:Thing "nothing".
+
+ex:2 a schem:Thing; onto:ID 2.0; onto:Name "bbb".
+
+ex:2018-07-18 a schem:Thing; onto:ID 2018-07-18.0; onto:Name "eee".
+
+ex:21
+    a schem:Person;
+    onto:age 21.0;
+    onto:birthday "1997-03-28"^^XML:date;
+    onto:Followers ( );
+    onto:ID 0.0;
+    onto:Name "naheel";
+    onto:Ttt "nothing";
+    onto:Working false;
+    wgs:test ex:91.
+ex:3 a schem:Thing; onto:ID 3.0; onto:Name "ccc"; onto:Thing "nothing".
+
+ex:91 a schem:Person; onto:age 91.0; onto:ID 3.0; onto:Name "nnnnnn".
+
+ex:a a schem:Thing; onto:ID a.0; onto:Name "ddd".
+
