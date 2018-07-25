@@ -151,6 +151,7 @@ WHERE {
 ** take user selection as a new descriptor; the descriptor is the json of the entities and the struct.
 ** don't show large jsons, only 1st few objects
 ** check ajax; results will be updated based on user selections
+** when client makes changes it removes all other elements in the array and keep only the selected item (in predicates and datatypes).
 * Build the "extractor":
 ** extract the details from the original object and add all the necessary data to construct the turtle.
 ** DONE check this paper:
@@ -158,8 +159,7 @@ http://users.encs.concordia.ca/~shiri/
 An Empirical Comparison of Ontology Matching Techniques
 ** Forget about sparql-generate!
 ** TODO realtime processing; use `read` for input data
-** TODO seperate the struct and the entities; find the entities 1st and then build the struct. This is important so that the user can specify the types 1st and then get the predicates suggestions based on it. /OR/ even better, allow initial descriptor; this will be used initially, if it does not previde something then provide suggestions. This most probable case is this 1st time it will be empty, we provide suggestions, user make changes, accept the changes as our new initial descriptor, we provide better suggestions, profit.
-** TODO when client makes changes it removes all other elements in the array and keep only the selected item (in predicates and datatypes).
+** DONE seperate the struct and the entities; find the entities 1st and then build the struct. This is important so that the user can specify the types 1st and then get the predicates suggestions based on it. /OR/ even better, allow initial descriptor; this will be used initially, if it does not previde something then provide suggestions. The most probable case is that 1st time it will be empty, we provide suggestions, user make changes, accept the changes as our new initial descriptor, we provide better suggestions, profit.
 ** DONE entities := `e1: { included: [ ... ], type: ..., iri_template: ... }`.
 *** included: array of jsonpaths of the included keys in this entity. by default it is the jsonpath of the object .*; eg: "$.test.*".
 *** type: ttl type of this entity.

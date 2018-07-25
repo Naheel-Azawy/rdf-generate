@@ -85,6 +85,7 @@ async function main(args) {
     if (!args.in) args.in = args.i || args._[0];
     if (!args.out_descriptor) args.out_descriptor = args.d;
     if (!args.out_rdf) args.out_rdf = args.r;
+    if (!args.init_base) args.init_base = args.b;
     if (!args.format) args.format = args.f;
     if (!args.format && args.out_rdf) args.format = args.out_rdf.split(".")[1] || "ttl";
     if (!args.api) args.api = args.a || "swoogle";
@@ -95,6 +96,7 @@ async function main(args) {
 -i, --in=FILE                input file
 -d, --out_descriptor=FILE    out descriptor file
 -r, --out_rdf=FILE           out RDF file
+-b, --init_base=FILE         initial descriptor json file used as a base for the generated descriptor
 -f, --format=FORMAT          out RDF format (ttl, xml)
 -a, --api=API                predicates finding API (lov, swoogle, test)
 -h, --help                   display this help and exit
@@ -122,7 +124,8 @@ node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogl
         return;
     }
 
-    let des = await des_builder.build(src, args.api);
+    let init = args.init_base ? JSON.parse(await fs.readFileAsync(args.init_base, "utf-8")) : undefined;
+    let des = await des_builder.build(src, args.api, init);
 
     if (args.out_descriptor !== undefined) {
         fs.writeFileAsync(args.out_descriptor, JSON.stringify(des, null, 2));

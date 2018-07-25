@@ -1,0 +1,45 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:onto="http://www.atelier12.it/ontoatelier12.owl#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:wgs="http://www.w3.org/2003/01/geo/wgs84_pos#">
+    <rdf:Description rdf:about="https://example.com/1/sokoboko">
+        <onto:Name>aaa</onto:Name>
+        <onto:Thing>nothing</onto:Thing>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <owl:id>1</owl:id>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/2/sokoboko">
+        <onto:Name>bbb</onto:Name>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <owl:id>2</owl:id>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/3/sokoboko">
+        <onto:Name>ccc</onto:Name>
+        <onto:Thing>nothing</onto:Thing>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <owl:id>3</owl:id>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/a/sokoboko">
+        <onto:Name>ddd</onto:Name>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <owl:id>a</owl:id>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/2018-07-18/sokoboko">
+        <onto:Name>eee</onto:Name>
+        <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <owl:id>2018-07-18</owl:id>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://example.com/0">
+        <onto:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</onto:age>
+        <onto:birthday>1997-03-28</onto:birthday>
+        <onto:Followers rdf:parseType="Collection">
+            </onto:Followers>
+        <onto:Name>naheel</onto:Name>
+        <onto:Ttt>nothing</onto:Ttt>
+        <onto:Working rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</onto:Working>
+        <rdf:type rdf:resource="http://schema.org/Person"/>
+        <owl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</owl:id>
+        <wgs:test>nothing</wgs:test>
+    </rdf:Description>
+</rdf:RDF>

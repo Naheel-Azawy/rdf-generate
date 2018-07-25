@@ -1,50 +1,49 @@
 <rdf:RDF
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
- xmlns:onto="http://www.atelier12.it/ontoatelier12.owl#"
- xmlns:wgs="http://www.w3.org/2003/01/geo/wgs84_pos#">
+ xmlns:ex="https://example.com#">
     <rdf:Description rdf:about="https://example.com/91">
-        <onto:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91</onto:age>
-        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</onto:ID>
-        <onto:Name>nnnnnn</onto:Name>
         <rdf:type rdf:resource="http://schema.org/Person"/>
+        <ex:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91</ex:age>
+        <ex:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ex:id>
+        <ex:name>nnnnnn</ex:name>
     </rdf:Description>
     <rdf:Description rdf:about="https://example.com/1">
-        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</onto:ID>
-        <onto:Name>aaa</onto:Name>
-        <onto:Thing>nothing</onto:Thing>
         <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <ex:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ex:id>
+        <ex:name>aaa</ex:name>
+        <ex:thing>nothing</ex:thing>
     </rdf:Description>
     <rdf:Description rdf:about="https://example.com/2">
-        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</onto:ID>
-        <onto:Name>bbb</onto:Name>
         <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <ex:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ex:id>
+        <ex:name>bbb</ex:name>
     </rdf:Description>
     <rdf:Description rdf:about="https://example.com/3">
-        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</onto:ID>
-        <onto:Name>ccc</onto:Name>
-        <onto:Thing>nothing</onto:Thing>
         <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <ex:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ex:id>
+        <ex:name>ccc</ex:name>
+        <ex:thing>nothing</ex:thing>
     </rdf:Description>
     <rdf:Description rdf:about="https://example.com/a">
-        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">a</onto:ID>
-        <onto:Name>ddd</onto:Name>
         <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <ex:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">a</ex:id>
+        <ex:name>ddd</ex:name>
     </rdf:Description>
     <rdf:Description rdf:about="https://example.com/2018-07-18">
-        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2018-07-18</onto:ID>
-        <onto:Name>eee</onto:Name>
         <rdf:type rdf:resource="http://schema.org/Thing"/>
+        <ex:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2018-07-18</ex:id>
+        <ex:name>eee</ex:name>
     </rdf:Description>
     <rdf:Description rdf:about="https://example.com/21">
-        <onto:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</onto:age>
-        <onto:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-03-28</onto:birthday>
-        <onto:Followers rdf:parseType="Collection">
-            </onto:Followers>
-        <onto:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</onto:ID>
-        <onto:Name>naheel</onto:Name>
-        <onto:Ttt>nothing</onto:Ttt>
-        <onto:Working rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</onto:Working>
         <rdf:type rdf:resource="http://schema.org/Person"/>
-        <wgs:test rdf:resource="https://example.com/91"/>
+        <ex:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</ex:age>
+        <ex:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-03-28</ex:birthday>
+        <ex:followers rdf:parseType="Collection">
+            </ex:followers>
+        <ex:id rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ex:id>
+        <ex:name>naheel</ex:name>
+        <ex:test rdf:resource="https://example.com/91"/>
+        <ex:ttt>nothing</ex:ttt>
+        <ex:working rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ex:working>
     </rdf:Description>
 </rdf:RDF>

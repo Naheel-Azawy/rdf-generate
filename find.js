@@ -37,7 +37,7 @@ module.exports = class Finder {
 
     /**
      * A function for finding predicates for a given Json Attribute (Item).
-     * @param {string} property - THe property name to be found
+     * @param {string} property - The property name to be found
      * @param {string} type - The type of the object containing this predicate (optional)
      * @param {string} api - The source of the data (optional)
      * @returns {Promise<Object[]>} A list of predicates.
@@ -59,7 +59,9 @@ module.exports = class Finder {
             } catch (err) {
                 p = await APIS[api](property);
                 //if (Object.keys(p).length !== 0) // write to disk if p is not empty
-                    fs.writeFileAsync(f, JSON.stringify(p, null, 2), "utf-8"); // No need to await
+                // or keep them? because this means that there are no results and there's no
+                // need to keep requesting everytime
+                fs.writeFileAsync(f, JSON.stringify(p, null, 2), "utf-8"); // No need to await
             }
             this.catched_predicates[property] = p;
             let ns, pr;

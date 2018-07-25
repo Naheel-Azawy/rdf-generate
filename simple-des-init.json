@@ -1,0 +1,69 @@
+{
+  "prefixes": {
+    "p0": "http://www.atelier12.it/ontoatelier12.owl",
+    "p1": "http://www.w3.org/2002/07/owl",
+    "p2": "http://www.w3.org/2003/01/geo/wgs84_pos"
+  },
+  "struct": {
+    "$.id": {
+      "suggested_predicates": [
+        {
+          "prefix_name": "p1",
+          "predicate": "id",
+          "score": 0
+        }
+      ]
+    },
+    "$.birthday": {
+      "suggested_predicates": [
+        {
+          "prefix_name": "p0",
+          "predicate": "birthday",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$.test": {
+      "node_type": "objectttttttttttttttttt",
+      "attribute": "testttttttttttttttttttt",
+      "suggested_predicates": [
+        {
+          "prefix_name": "p2",
+          "predicate": "test",
+          "score": 0
+        }
+      ]
+    },
+    "$.followers[*].id": {
+      "suggested_predicates": [
+        {
+          "prefix_name": "p1",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    }
+  },
+  "entities": {
+    "$.followers[*]": {
+      "include": [
+          "$.followers[*]", "$.followers[*].thing.a"
+      ],
+      "type": "http://schema.org/Thing",
+      "iri_template": "https://example.com/{id}/sokoboko"
+    },
+    "$": {
+      "include": [
+        "$"
+      ],
+      "type": "http://schema.org/Person",
+      "iri_template": "https://example.com/{id}"
+    }
+  }
+}

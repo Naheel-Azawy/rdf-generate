@@ -2,185 +2,221 @@ const print = s => console.log(s);
 const PathFollower = require("./path-follower.js");
 const Finder = require("./find.js");
 
-// output
-let out;
-// the possible entities.
-let entities;
-// entities counter used for naming
-let entities_count;
-// RDF prefixes; { name: prefix }
-let prefixes;
-// RDF prefixes (reversed); { prefix: name }
-let prefixes_rev;
-// keeps track of the current path in the tree.
-let path_follower_inst;
-// Finds predicates from different places
-let finder_inst;
-// catch the structure of the entities. if the structure is the same, get the type from the catch.
-let catched_types = {};
+class Builder {
 
-/**
- * A function for finding the data type of a given Json Attribute value.
- * @param {*[]} values.
- * @returns {Promise<string[]>} a promise object that represents an array of data types of the passed Json values.
- */
-async function find_data_types(values) { // TODO: improve finding the datatypes?
-    // More types: https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
-    let map = {}; // This is an object and not an array to keep it unique
-    for (let v of values) {
-        if (typeof(v) === "boolean") {
-            map["xsd:boolean"] = 0;
-        } else if (typeof(v) === "number") {
-            map["xsd:decimal"] = 0;
-        } else if (!isNaN(Date.parse(v))) {
-            map["xsd:date"] = 0;
-        } else if (typeof(v) === "string") {
-            map["xsd:string"] = 0;
+    /**
+     * The constructor of the Builder class
+     * @param {string} api - The API used to find the predicates
+     */
+    constructor(api, init) {
+        // initial descriptor used as a base for the generated descriptor
+        this.init = init;
+        // output
+        this.out = {};
+        // the possible entities.
+        this.entities = {};
+        // RDF prefixes; { name: prefix }
+        this.prefixes = {};
+        // RDF prefixes (reversed); { prefix: name }
+        this.prefixes_rev = {};
+        // keeps track of the current path in the tree.
+        this.path_follower_inst = new PathFollower();
+        // Finds predicates from different places
+        this.finder_inst = new Finder(this.prefixes, this.prefixes_rev, api);
+        // catch the structure of the entities. if the structure is the same, get the type from the catch.
+        this.catched_types = {};
+    }
+
+    /**
+     * A function for finding the data type of a given Json Attribute value.
+     * @param {*[]} values - Values of different types to determine the types
+     * @returns {Promise<string[]>} a promise object that represents an array of data types of the passed Json values.
+     */
+    async find_data_types(values) { // TODO: improve finding the datatypes?
+        // More types: https://www.w3.org/2011/rdf-wg/wiki/XSD_Datatypes
+        let map = {}; // This is an object and not an array to keep it unique
+        for (let v of values) {
+            if (typeof(v) === "boolean") {
+                map["xsd:boolean"] = 0;
+            } else if (typeof(v) === "number") {
+                map["xsd:decimal"] = 0;
+            } else if (!isNaN(Date.parse(v))) {
+                map["xsd:date"] = 0;
+            } else if (typeof(v) === "string") {
+                map["xsd:string"] = 0;
+            }
         }
+        return Object.keys(map);
     }
-    return Object.keys(map);
-}
 
-/**
- * A function for determining whether a given object is an entity.
- * @param {Object} obj
- * @param {string} keys
- * @returns {Promise<boolean>} A promise object represents true if the object is an entity, false otherwise.
- */
-async function is_entity(obj, keys) { // TODO: actual implementation for is_entity
-    for (let key of keys) {
-        key = key.toLowerCase();
-        if (key === "id" || key === "identifier") {
-            return true;
+    /**
+     * A function for determining whether a given object is an entity.
+     * @param {Object} obj - The object to be checked
+     * @param {string} keys - The keys of that object
+     * @returns {Promise<boolean>} A promise object represents true if the object is an entity, false otherwise.
+     */
+    async is_entity(obj, keys) { // TODO: actual implementation for is_entity
+        for (let key of keys) {
+            key = key.toLowerCase();
+            if (key === "id" || key === "identifier") {
+                return true;
+            }
         }
+        return false;
     }
-    return false;
-}
 
-/**
- * A function for adding an entity to the entities list and assigning the appropriate attributes such as include, type, and the iri.
- * @param {object} obj
- * @param {string[]} keys
- * @param {string} path
- * @param {Object} predicates
- * @returns {Promise<void>}
- */
-async function entity_check(obj, keys, path, predicates) {
-    if (await is_entity(obj, keys)) {
-        //entities["entity_" + entities_count++] = {
-        entities[path] = {
-            include: [ path ],
-            type: await find_entity_type(predicates, keys),
-            iri_template: `https://example.com/{${keys[0]}}`
-        };
-    }
-}
-
-/**
- *
- * @param {Object} predicates
- * @param {string[]} obj_keys
- * @returns {Promise<string>}
- */
-async function find_entity_type(predicates, obj_keys) { // TODO: actual implementation for find_object_type
-    let catch_key = obj_keys.sort().join();
-    let res = catched_types[catch_key];
-    if (res === undefined) {
-        let keys = Object.keys(predicates);
-        let p, arr;
-        for (const key of keys) {
-            arr = predicates[key];
-            for (let i = 0; i < arr.length; ++i) {
-                p = arr[i].predicate.toLowerCase();
-                if (p === "age") {
-                    res = "http://schema.org/Person";
-                    break;
-                } else if (p === "name") {
-                    res = "http://schema.org/Thing";
-                    break;
+    /**
+     *
+     * @param {Object} predicates - Predicates associated with the object
+     * @param {string[]} obj_keys - Keys of the object
+     * @returns {Promise<string>} The type
+     */
+    async find_entity_type(predicates, obj_keys) { // TODO: actual implementation for find_object_type
+        let catch_key = obj_keys.sort().join();
+        let res = this.catched_types[catch_key];
+        if (res === undefined) {
+            let keys = Object.keys(predicates);
+            let p, arr;
+            for (const key of keys) {
+                arr = predicates[key];
+                for (let i = 0; i < arr.length; ++i) {
+                    p = arr[i].predicate.toLowerCase();
+                    if (p === "age") {
+                        res = "http://schema.org/Person";
+                        break;
+                    } else if (p === "name") {
+                        res = "http://schema.org/Thing";
+                        break;
+                    }
                 }
             }
+            this.catched_types[catch_key] = res;
         }
-        catched_types[catch_key] = res;
+        return res;
     }
-    return res;
-}
 
-/**
- * A Function for iterating through a json object or an array of json objects to generate the structure of the descriptor.
- * @param {*} obj
- * @param {string} key
- * @param {Object} parent_current_predicates
- * @param {*[]} datatypes_values
- * @returns {Promise<void>}
- */
-async function iter(obj, key, parent_current_predicates, datatypes_values) {
-    if (Array.isArray(obj)) {
-        out[path_follower_inst.get_path()] = {
-            node_type: "array",
-            attribute: key,
-            suggested_predicates: await finder_inst.find(key),
-            data_types: undefined
-        };
-        path_follower_inst.push("[*]");
-        let keys = {};
-        let values = {}; // stores the values for every key. Important for finding the types.
-        for (let i in obj) {
-            for (let key of Object.keys(obj[i])) {
-                keys[key] = obj[i][key];
-                if (values[key] === undefined)
-                    values[key] = [];
-                values[key].push(keys[key]);
+    /**
+     * A function for adding an entity to the entities map and assigning the appropriate attributes such as include, type, and the iri. It also uses the values from the 'init' object if available.
+     * @param {object} obj - The object to be checked
+     * @param {string[]} keys - The keys of that object
+     * @param {string} path - Path of that object
+     * @param {Object} predicates - Predicates associated with that object
+     * @returns {Promise<void>}
+     */
+    async entity_check(obj, keys, path, predicates) {
+        let i, i_inc, i_type, i_tmp;
+        if (this.init && this.init.entities && (i = this.init.entities[path])) {
+            i_inc = i.include;
+            i_type = i.type;
+            i_tmp = i.iri_template;
+        }
+        if (this.init && this.init.entities && !i) { // if init file provided and entity is not there
+            return; // do not add it regardless
+        }
+        if (await this.is_entity(obj, keys)) {
+            this.entities[path] = {
+                include: i_inc || [ path ],
+                type: i_type || await this.find_entity_type(predicates, keys),
+                iri_template: i_tmp || `https://example.com/{${keys[0]}}`
+            };
+        }
+    }
+
+    /**
+     * A Function for iterating through an object or an array of objects to generate the structure of the descriptor. The result ends up in 'this.out'.
+     * @param {*} obj - The object to be iterated
+     * @param {string} key - The key of this object from the parent node (undefined for the root node)
+     * @param {Object} parent_current_predicates - Reference to the predicates object from the parent node
+     * @param {*[]} datatypes_values - Values of different types to determine the types of leafs in the object tree.
+     * @returns {Promise<void>}
+     */
+    async iter(obj, key, parent_current_predicates, datatypes_values) {
+        let path = this.path_follower_inst.get_path();
+        let init, init_p, init_dt;
+        if (this.init && this.init.struct && (init = this.init.struct[path])) {
+            // node_type and attribute should not be considered here as they should not be changed
+            init_p = init.suggested_predicates;
+            init_dt = init.data_types;
+        }
+        if (Array.isArray(obj)) {
+            this.out[path] = {
+                node_type: "array",
+                attribute: key,
+                suggested_predicates: init_p || await this.finder_inst.find(key),
+                data_types: undefined // init_dt is ignored here
+            };
+            this.path_follower_inst.push("[*]");
+            let keys = {};
+            let values = {}; // stores the values for every key. Important for finding the types.
+            for (let i in obj) {
+                for (let key of Object.keys(obj[i])) {
+                    keys[key] = obj[i][key];
+                    if (values[key] === undefined)
+                        values[key] = [];
+                    values[key].push(keys[key]);
+                }
             }
-        }
-        let current_predicates = {};
-        for (let key of Object.keys(keys)) {
-            path_follower_inst.push(key);
-            let item = { key: key, val:keys[key] };
-            let p = await finder_inst.find(item.key);
-            await iter(item.val, key, current_predicates, values[key]);
-            current_predicates[path_follower_inst.get_path()] = p;
-            path_follower_inst.pop();
-        }
-        let keys_keys = Object.keys(keys);
-        await entity_check(keys, keys_keys, path_follower_inst.get_path(), current_predicates);
-        path_follower_inst.pop();
-    } else if ((typeof obj === "object") && (obj !== null)) {
-        let path = path_follower_inst.get_path();
-        out[path] = {
-            node_type: "object",
-            attribute: key,
-            suggested_predicates: await finder_inst.find(key),
-            data_types: undefined
-        };
-        let keys = Object.keys(obj);
-        let val;
-        let current_predicates = {};
-        for (const key of keys) {
-            val = obj[key];
-            path_follower_inst.push(key);
-            await iter(val, key, current_predicates);
-            path_follower_inst.pop();
-        }
-        await entity_check(obj, keys, path, current_predicates);
-    } else {
-        let path = path_follower_inst.get_path();
-        let item = {key:key, val:obj};
-        let p = await finder_inst.find(item.key);
-        let values;
-        if (datatypes_values === undefined) {
-            values = [item.val];
+            let current_predicates = {};
+            for (let key of Object.keys(keys)) {
+                this.path_follower_inst.push(key);
+                let item = { key: key, val:keys[key] };
+                let p = await this.finder_inst.find(item.key);
+                await this.iter(item.val, key, current_predicates, values[key]);
+                current_predicates[this.path_follower_inst.get_path()] = p;
+                this.path_follower_inst.pop();
+            }
+            let keys_keys = Object.keys(keys);
+            await this.entity_check(keys, keys_keys, this.path_follower_inst.get_path(), current_predicates);
+            this.path_follower_inst.pop();
+        } else if ((typeof obj === "object") && (obj !== null)) {
+            this.out[path] = {
+                node_type: "object",
+                attribute: key,
+                suggested_predicates: init_p || await this.finder_inst.find(key),
+                data_types: undefined // init_dt is ignored here
+            };
+            let keys = Object.keys(obj);
+            let val;
+            let current_predicates = {};
+            for (const key of keys) {
+                val = obj[key];
+                this.path_follower_inst.push(key);
+                await this.iter(val, key, current_predicates);
+                this.path_follower_inst.pop();
+            }
+            await this.entity_check(obj, keys, path, current_predicates);
         } else {
-            values = datatypes_values;
+            let p = init_p || await this.finder_inst.find(key);
+            let dt = init_dt;
+            if (!dt) {
+                let values;
+                if (datatypes_values === undefined) {
+                    values = [obj];
+                } else {
+                    values = datatypes_values;
+                }
+                if (parent_current_predicates !== undefined) {
+                    parent_current_predicates[path] = p;
+                }
+                dt = await this.find_data_types(values);
+            }
+            this.out[path] = {
+                node_type: "value",
+                attribute: key,
+                suggested_predicates: p,
+                data_types: dt
+            };
         }
-        if (parent_current_predicates !== undefined) {
-            parent_current_predicates[path] = p;
-        }
-        out[path] = {
-            node_type: "value",
-            attribute: item.key,
-            suggested_predicates: p,
-            data_types: await find_data_types(values)
+    }
+
+    async build(src) {
+        await this.iter(src);
+        if (this.init && this.init.prefixes)
+            this.prefixes = {...this.prefixes, ...this.init.prefixes};
+        return {
+            prefixes: this.prefixes,
+            struct: this.out,
+            entities: this.entities
         };
     }
 }
@@ -188,23 +224,11 @@ async function iter(obj, key, parent_current_predicates, datatypes_values) {
 module.exports = {
     /**
      * A Function for building the descriptor.
-     * @param {*} src
-     * @returns {Promise<Object>}
+     * @param {*} src - The source object
+     * @param {string} api - The API used to find the predicates
+     * @param {Object} init - Initial descriptor used as a base for the generated descriptor
+     * @returns {Promise<Object>} The descriptor!
      */
-    build: async (src, api) => {
-        out = {};
-        entities = {};
-        entities_count = 0;
-        prefixes = {};
-        prefixes_rev = {};
-        path_follower_inst = new PathFollower();
-        finder_inst = new Finder(prefixes, prefixes_rev, api);
-        await iter(src);
-        return {
-            prefixes: prefixes,
-            struct: out,
-            entities: entities
-        };
-    }
+    build: async (src, api, init) => new Builder(api, init).build(src)
 };
 

@@ -1,0 +1,261 @@
+{
+  "prefixes": {
+    "e": "https://example.com"
+  },
+  "struct": {
+    "$": {
+      "node_type": "object"
+    },
+    "$.id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.name": {
+      "node_type": "value",
+      "attribute": "name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$.age": {
+      "node_type": "value",
+      "attribute": "age",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "age",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.birthday": {
+      "node_type": "value",
+      "attribute": "birthday",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "birthday",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:date"
+      ]
+    },
+    "$.working": {
+      "node_type": "value",
+      "attribute": "working",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "working",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:boolean"
+      ]
+    },
+    "$.test": {
+      "node_type": "object",
+      "attribute": "test",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "test",
+          "score": 0
+        }
+      ]
+    },
+    "$.test.id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.test.name": {
+      "node_type": "value",
+      "attribute": "name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$.test.age": {
+      "node_type": "value",
+      "attribute": "age",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "age",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.ttt": {
+      "node_type": "object",
+      "attribute": "ttt",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "ttt",
+          "score": 0
+        }
+      ]
+    },
+    "$.ttt.def": {
+      "node_type": "value",
+      "attribute": "def",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "def",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.ttt.ghi": {
+      "node_type": "value",
+      "attribute": "ghi",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "ghi",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.followers": {
+      "node_type": "array",
+      "attribute": "followers",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "followers",
+          "score": 0
+        }
+      ]
+    },
+    "$.followers[*].name": {
+      "node_type": "value",
+      "attribute": "name",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "name",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    },
+    "$.followers[*].id": {
+      "node_type": "value",
+      "attribute": "id",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "id",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal",
+        "xsd:string",
+        "xsd:date"
+      ]
+    },
+    "$.followers[*].thing": {
+      "node_type": "object",
+      "attribute": "thing",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "thing",
+          "score": 0
+        }
+      ]
+    },
+    "$.followers[*].thing.a": {
+      "node_type": "value",
+      "attribute": "a",
+      "suggested_predicates": [
+        {
+          "prefix_name": "e",
+          "predicate": "a",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:string"
+      ]
+    }
+  },
+  "entities": {
+    "$.test": {
+      "include": [
+        "$.test"
+      ],
+      "type": "http://schema.org/Person",
+      "iri_template": "https://example.com/{age}"
+    },
+    "$.followers[*]": {
+      "include": [
+        "$.followers[*]"
+      ],
+      "type": "http://schema.org/Thing",
+      "iri_template": "https://example.com/{id}"
+    },
+    "$": {
+      "include": [
+        "$"
+      ],
+      "type": "http://schema.org/Person",
+      "iri_template": "https://example.com/{age}"
+    }
+  }
+}
