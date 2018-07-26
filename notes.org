@@ -141,8 +141,9 @@ WHERE {
 ** Similarity measure
 - get the results from different apis
 - compare them and give everyone a score
-** DONE give the find APIs the type; check lov "type" parameter. UPDATE: Non of the apis actually support that :(
-** DONE 2nd level disk catch
+** TODO give the find APIs the type; check lov "type" parameter. UPDATE: Non of the apis actually support that :(. UPDATE: You can do it!
+*** In LOV: A:= q=$class&type=class -> B:= q=%prop&type=property, modify the score on $B according to the ontologies on $A
+** DONE 2nd level disk cache
 * Web interface
 ** Use bootstrap https://getbootstrap.com/
 ** find subjects; user selects the entities
@@ -165,10 +166,13 @@ An Empirical Comparison of Ontology Matching Techniques
 *** type: ttl type of this entity.
 *** iri_template: the template of the iri of this entity. eg: "https://example.com/{id}" where {id} is the name of the json key in an object.
 * TTL-GEN:
-** DONE use rdflib to generate triples. UPDATE: Nope, use N3.
+** DONE use rdflib to generate triples. UPDATE: Nope, use N3. UPDATE: Nope, use rdflib:
+- http://dig.csail.mit.edu/2005/ajar/ajaw/Developer.html
+- https://github.com/solid/solid-tutorial-rdflib.js
 ** DONE don't create an entity item if one of the keys in the iri_template is undefined.
 ** DONE add xsd to the prefixes if needed for datatypes
 ** TODO accept any jsonpath from "includes"
 ** DONE what if the API gave no results? Just throw an error.
 ** DONE accept xml
 ** DONE cmd line interface
+** DONE no-pred option. UPDATE: Done but this is a bad idea. Predicates are need initially to find the types of the entites.

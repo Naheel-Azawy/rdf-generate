@@ -8,7 +8,7 @@
     "p5": "http://www.svgopen.org/2002/papers/herman_dardailler__svg_linearization_and_accessibility/axsvg-schema.rdf",
     "p6": "http://www.daml.org/2001/03/daml+oil",
     "p7": "http://www.w3.org/Consortium/Offices/Presentations/SemanticWeb/rdfs/axsvg-schema.rdf",
-    "p8": "http://www.daml.org/2001/12/factbook/factbook-ont",
+    "p8": "http://trac.informatik.uni-bremen.de:8080/hets/export/7765/branches/Tina050817/OWL_DL/owlFile/Test_re2.owl",
     "p9": "http://www.geonames.org/ontology"
   },
   "struct": {
@@ -361,6 +361,104 @@
         {
           "prefix_name": "p9",
           "predicate": "age",
+          "score": 0
+        }
+      ],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.test.aaa": {
+      "node_type": "object",
+      "attribute": "aaa",
+      "suggested_predicates": [
+        {
+          "prefix_name": "p0",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p1",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p2",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p3",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p4",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p5",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p6",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p7",
+          "predicate": "AAA",
+          "score": 0
+        },
+        {
+          "prefix_name": "p8",
+          "predicate": "AAA",
+          "score": 0
+        }
+      ]
+    },
+    "$.test.aaa.a": {
+      "node_type": "value",
+      "attribute": "a",
+      "suggested_predicates": [],
+      "data_types": [
+        "xsd:decimal"
+      ]
+    },
+    "$.test.aaa.b": {
+      "node_type": "value",
+      "attribute": "b",
+      "suggested_predicates": [
+        {
+          "prefix_name": "p1",
+          "predicate": "b",
+          "score": 0
+        },
+        {
+          "prefix_name": "p1",
+          "predicate": "B",
+          "score": 0
+        },
+        {
+          "prefix_name": "p2",
+          "predicate": "B",
+          "score": 0
+        },
+        {
+          "prefix_name": "p6",
+          "predicate": "B",
+          "score": 0
+        },
+        {
+          "prefix_name": "p4",
+          "predicate": "B",
+          "score": 0
+        },
+        {
+          "prefix_name": "p5",
+          "predicate": "B",
           "score": 0
         }
       ],

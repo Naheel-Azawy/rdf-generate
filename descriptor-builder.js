@@ -7,10 +7,14 @@ class Builder {
     /**
      * The constructor of the Builder class
      * @param {string} api - The API used to find the predicates
+     * @param {Object} init - Initial descriptor used as a base for the generated descriptor
+     * @param {boolean} no_pred - Prevent finding the predicates
      */
-    constructor(api, init) {
+    constructor(api, init, no_pred) {
         // initial descriptor used as a base for the generated descriptor
         this.init = init;
+        // allows adding predicates suggestions or not
+        this.no_pred = no_pred;
         // output
         this.out = {};
         // the possible entities.
@@ -23,8 +27,8 @@ class Builder {
         this.path_follower_inst = new PathFollower();
         // Finds predicates from different places
         this.finder_inst = new Finder(this.prefixes, this.prefixes_rev, api);
-        // catch the structure of the entities. if the structure is the same, get the type from the catch.
-        this.catched_types = {};
+        // cache the structure of the entities. if the structure is the same, get the type from the cache.
+        this.cached_types = {};
     }
 
     /**
@@ -72,8 +76,9 @@ class Builder {
      * @returns {Promise<string>} The type
      */
     async find_entity_type(predicates, obj_keys) { // TODO: actual implementation for find_object_type
-        let catch_key = obj_keys.sort().join();
-        let res = this.catched_types[catch_key];
+        if (this.no_pred) return undefined;
+        let cache_key = obj_keys.sort().join();
+        let res = this.cached_types[cache_key];
         if (res === undefined) {
             let keys = Object.keys(predicates);
             let p, arr;
@@ -90,7 +95,7 @@ class Builder {
                     }
                 }
             }
-            this.catched_types[catch_key] = res;
+            this.cached_types[cache_key] = res;
         }
         return res;
     }
@@ -139,10 +144,14 @@ class Builder {
             init_dt = init.data_types;
         }
         if (Array.isArray(obj)) {
+            let preds;
+            if (!this.no_pred) {
+                preds = init_p || await this.finder_inst.find(key);
+            }
             this.out[path] = {
                 node_type: "array",
                 attribute: key,
-                suggested_predicates: init_p || await this.finder_inst.find(key),
+                suggested_predicates: preds,
                 data_types: undefined // init_dt is ignored here
             };
             this.path_follower_inst.push("[*]");
@@ -160,7 +169,10 @@ class Builder {
             for (let key of Object.keys(keys)) {
                 this.path_follower_inst.push(key);
                 let item = { key: key, val:keys[key] };
-                let p = await this.finder_inst.find(item.key);
+                let p;
+                if (!this.no_pred) {
+                    p = await this.finder_inst.find(item.key);
+                }
                 await this.iter(item.val, key, current_predicates, values[key]);
                 current_predicates[this.path_follower_inst.get_path()] = p;
                 this.path_follower_inst.pop();
@@ -169,10 +181,14 @@ class Builder {
             await this.entity_check(keys, keys_keys, this.path_follower_inst.get_path(), current_predicates);
             this.path_follower_inst.pop();
         } else if ((typeof obj === "object") && (obj !== null)) {
+            let preds;
+            if (!this.no_pred) {
+                preds = init_p || await this.finder_inst.find(key);
+            }
             this.out[path] = {
                 node_type: "object",
                 attribute: key,
-                suggested_predicates: init_p || await this.finder_inst.find(key),
+                suggested_predicates: preds,
                 data_types: undefined // init_dt is ignored here
             };
             let keys = Object.keys(obj);
@@ -186,7 +202,10 @@ class Builder {
             }
             await this.entity_check(obj, keys, path, current_predicates);
         } else {
-            let p = init_p || await this.finder_inst.find(key);
+            let p;
+            if (!this.no_pred) {
+                p = init_p || await this.finder_inst.find(key);
+            }
             let dt = init_dt;
             if (!dt) {
                 let values;
@@ -227,8 +246,9 @@ module.exports = {
      * @param {*} src - The source object
      * @param {string} api - The API used to find the predicates
      * @param {Object} init - Initial descriptor used as a base for the generated descriptor
+     * @param {boolean} no_pred - Prevent finding the predicates
      * @returns {Promise<Object>} The descriptor!
      */
-    build: async (src, api, init) => new Builder(api, init).build(src)
+    build: async (src, api, init, no_pred) => new Builder(api, init, no_pred).build(src)
 };
 

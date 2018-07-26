@@ -10,7 +10,55 @@ const PathFollower = require("./path-follower.js");
 const str_format = require("./str-format.js");
 const $rdf = require("rdflib");
 
+// Finds the position of common parts in strs
+// eg: [aaabbb, aaxcc] returns 2
+// TODO: fix it!
+function common_in_str(strs) {
+    let min = strs[0].length;
+    for (let i in strs) { // for every string
+        for (let j in strs[i]) { // for every letter
+            for (let k = i + 1; k < strs.length; ++k) { // for every other string
+                if (strs[i][j] !== strs[k][j]) {
+                    if (j < min) {
+                        min = j;
+                    }
+                    break;
+                }
+            }
+        }
+    }
+    return min;
+}
+
+let sss = {
+    test: [
+        {id: 0, name: "aaa"},
+        {id: 1, name: "bbb"},
+        {id: 2, name: "ccc", aaa: {a:1, b:2}}
+    ]
+};
+let aaa = ["$.test[*].id", "$.test[*].aaa.a"];
 function get_values_from_paths(paths, src) {
+    /*return common_in_str(paths);
+    let common = [];
+    let arr = [];
+    for (let path of paths) {
+        path = path.split('.');
+        let k = path.pop();
+        path = path.join('.');
+        let res = JSONPath({path: path, json: src});
+        for (let i in res) {
+            if (!arr[i]) {
+                arr[i] = {};
+            }
+            if (k === "*") {
+                arr[i] = {...arr[i], ...res[i]};
+            } else {
+                arr[i][k] = res[i][k];
+            }
+        }
+    }
+    return arr;*/
     let path = paths[0]; // TODO: check all the included paths
     return JSONPath({path: path, json: src});
 }
@@ -79,33 +127,15 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
     }
 }
 
-// TODO: doc: i||only one: input file, d: only gen des, x: out xml
-async function main(args) {
+/**
+ * The main function here that will generate the output.
+ * @param {Object} args - Options to this function: { in: FILE, out_descriptor: FILE, out_rdf: FILE, init_base: FILE, no_pred: BOOL, format: FORMAT, api: API }
+ * @returns {Promise<void>}
+ */
+async function run(args) {
 
-    if (!args.in) args.in = args.i || args._[0];
-    if (!args.out_descriptor) args.out_descriptor = args.d;
-    if (!args.out_rdf) args.out_rdf = args.r;
-    if (!args.init_base) args.init_base = args.b;
-    if (!args.format) args.format = args.f;
-    if (!args.format && args.out_rdf) args.format = args.out_rdf.split(".")[1] || "ttl";
-    if (!args.api) args.api = args.a || "swoogle";
-
-    if (args.help || args.h || !args.in || (!args.out_descriptor && !args.out_rdf)) {
-        print(
-            `Usage: node rdf-gen.js [OPTION]...
--i, --in=FILE                input file
--d, --out_descriptor=FILE    out descriptor file
--r, --out_rdf=FILE           out RDF file
--b, --init_base=FILE         initial descriptor json file used as a base for the generated descriptor
--f, --format=FORMAT          out RDF format (ttl, xml)
--a, --api=API                predicates finding API (lov, swoogle, test)
--h, --help                   display this help and exit
-
-Example usage:
-node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
-`);
-        return;
-    }
+//    printj(get_values_from_paths(aaa, sss));
+//    return;
 
     let sp = args.in.split(".");
     let fname = sp[0];
@@ -125,7 +155,7 @@ node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogl
     }
 
     let init = args.init_base ? JSON.parse(await fs.readFileAsync(args.init_base, "utf-8")) : undefined;
-    let des = await des_builder.build(src, args.api, init);
+    let des = await des_builder.build(src, args.api, init, args.no_pred);
 
     if (args.out_descriptor !== undefined) {
         fs.writeFileAsync(args.out_descriptor, JSON.stringify(des, null, 2));
@@ -171,4 +201,37 @@ node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogl
 
 }
 
+async function main(args) {
+
+    if (!args.in) args.in = args.i || args._[0];
+    if (!args.out_descriptor) args.out_descriptor = args.d;
+    if (!args.out_rdf) args.out_rdf = args.r;
+    if (!args.init_base) args.init_base = args.b;
+    if (!args.format) args.format = args.f;
+    if (!args.format && args.out_rdf) args.format = args.out_rdf.split(".")[1] || "ttl";
+    if (!args.api) args.api = args.a || "swoogle";
+
+    if (args.help || args.h || !args.in || (!args.out_descriptor && !args.out_rdf)) {
+        print(
+            `Usage: node rdf-gen.js [OPTION]...
+-i, --in=FILE                input file
+-d, --out_descriptor=FILE    out descriptor file
+-r, --out_rdf=FILE           out RDF file
+-b, --init_base=FILE         initial descriptor json file used as a base for the generated descriptor
+-f, --format=FORMAT          out RDF format (ttl, xml)
+-a, --api=API                predicates finding API (lov, swoogle, test)
+-h, --help                   display this help and exit
+
+Example usage:
+node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
+`);
+        return;
+    }
+
+    run(args);
+
+}
+
 main(require('minimist')(process.argv.slice(2)));
+
+module.exports = run;

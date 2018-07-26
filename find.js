@@ -12,7 +12,7 @@ const APIS = {
 };
 
 function mkdirs(api) {
-    let dir = "find-catch";
+    let dir = "find-cache";
     if (!fs.existsSync(dir))
         fs.mkdirSync(dir);
     dir += "/" + api;
@@ -29,7 +29,7 @@ module.exports = class Finder {
      * @param {Object} prefixes_rev - Pointer to the reversed prefixes
      */
     constructor(prefixes, prefixes_rev, api) {
-        this.catched_predicates = {};
+        this.cached_predicates = {};
         this.prefixes = prefixes;
         this.prefixes_rev = prefixes_rev;
         this.api = api;
@@ -45,7 +45,7 @@ module.exports = class Finder {
     async find(property, type, api) {
         if (property === undefined)
             return undefined;
-        let p = this.catched_predicates[property];
+        let p = this.cached_predicates[property];
         if (p === undefined) {
             if (api === undefined)
                 api = this.api || "lov";
@@ -63,7 +63,7 @@ module.exports = class Finder {
                 // need to keep requesting everytime
                 fs.writeFileAsync(f, JSON.stringify(p, null, 2), "utf-8"); // No need to await
             }
-            this.catched_predicates[property] = p;
+            this.cached_predicates[property] = p;
             let ns, pr;
             for (let i in p) {
                 if (this.prefixes_rev[p[i].prefix] === undefined) {
