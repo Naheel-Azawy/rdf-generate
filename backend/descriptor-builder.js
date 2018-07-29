@@ -120,7 +120,8 @@ class Builder {
         }
         if (await this.is_entity(obj, keys)) {
             this.entities[path] = {
-                include: i_inc || [ path ],
+                jsonpath: path,
+                include: i_inc || [ "*" ],
                 type: i_type || await this.find_entity_type(predicates, keys),
                 iri_template: i_tmp || `https://example.com/{${keys[0]}}`
             };

@@ -705,16 +705,18 @@
   },
   "entities": {
     "$.followers[*]": {
+      "jsonpath": "$.followers[*]",
       "include": [
-        "$.followers[*]",
-        "$.followers[*].thing.a"
+        "name",
+        "thing.a"
       ],
       "type": "http://schema.org/Thing",
       "iri_template": "https://example.com/{id}/sokoboko"
     },
     "$": {
+      "jsonpath": "$",
       "include": [
-        "$"
+        "*"
       ],
       "type": "http://schema.org/Person",
       "iri_template": "https://example.com/{id}"

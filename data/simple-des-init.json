@@ -53,14 +53,14 @@
   "entities": {
     "$.followers[*]": {
       "include": [
-          "$.followers[*]", "$.followers[*].thing.a"
+          "name", "thing.a"
       ],
       "type": "http://schema.org/Thing",
       "iri_template": "https://example.com/{id}/sokoboko"
     },
     "$": {
       "include": [
-        "$"
+        "*"
       ],
       "type": "http://schema.org/Person",
       "iri_template": "https://example.com/{id}"

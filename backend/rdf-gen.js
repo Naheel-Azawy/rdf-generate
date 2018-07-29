@@ -10,57 +10,98 @@ const PathFollower = require("./path-follower.js");
 const str_format = require("./str-format.js");
 const $rdf = require("rdflib");
 
-// Finds the position of common parts in strs
-// eg: [aaabbb, aaxcc] returns 2
-// TODO: fix it!
-function common_in_str(strs) {
-    let min = strs[0].length;
-    for (let i in strs) { // for every string
-        for (let j in strs[i]) { // for every letter
-            for (let k = i + 1; k < strs.length; ++k) { // for every other string
-                if (strs[i][j] !== strs[k][j]) {
-                    if (j < min) {
-                        min = j;
-                    }
-                    break;
-                }
-            }
+function nullify(obj) {
+    for (let k of Object.keys(obj)) {
+        if ((typeof obj[k] === "object") && (obj[k] !== null)) {
+            obj[k] = nullify(obj[k]);
+        } else {
+            obj[k] = null;
         }
     }
-    return min;
+    return obj;
+}
+
+function get_values_from_paths_helper(obj, path) {
+    if (path.length === 0) {
+        return obj;
+    }
+    path.shift();
+    if (Array.isArray(obj)) {
+        for (let i = 0; i < obj.length; ++i) {
+            obj[i] = get_values_from_paths_helper(obj[i], path);
+        }
+    } else if ((typeof obj === "object") && (obj !== null)) {
+        for (let k of Object.keys(obj)) {
+            obj[k] = get_values_from_paths_helper(obj[k], path);
+        }
+    }
+    return obj;
 }
 
 let sss = {
+    aaa: 123,
     test: [
         {id: 0, name: "aaa"},
-        {id: 1, name: "bbb"},
-        {id: 2, name: "ccc", aaa: {a:1, b:2}}
+        {id: 1, name: "bbb", aaa: {i:1}},
+        {id: 2, name: "ccc"},
+        {id: 3, name: "ddd", aaa: {i:2, j:943, k: {l:5}}}
     ]
 };
-let aaa = ["$.test[*].id", "$.test[*].aaa.a"];
-function get_values_from_paths(paths, src) {
-    /*return common_in_str(paths);
-    let common = [];
-    let arr = [];
+let aaa = ["id", "aaa.i", "aaa.k.l"];
+let bbb = "$.test[*]";
+function get_values_from_paths(base, paths, src) { // TODO: continue here
+    return JSONPath({flatten: true}, "$.test[*].aaa", src);
+    let arr = []; // the final result
     for (let path of paths) {
+        if (base) {
+            path = `${base}.${path}`;
+        }
         path = path.split('.');
         let k = path.pop();
         path = path.join('.');
         let res = JSONPath({path: path, json: src});
+        // checking the parent if it contains this element
+        let p_parent = path.split('.');
+        let k_parent = p_parent.pop();
+        p_parent = p_parent.join('.');
+        p_parent = JSONPath({path: p_parent, json: src});
+        let availability_array = [];
+        for (let i in p_parent) {
+            if (p_parent[i][k_parent]) {
+                availability_array.push(i);
+            }
+        }
+        // adding the results to 'arr'
         for (let i in res) {
-            if (!arr[i]) {
-                arr[i] = {};
+            let j = availability_array[i] || i;
+            if (!arr[j]) {
+                arr[j] = {};
             }
             if (k === "*") {
-                arr[i] = {...arr[i], ...res[i]};
+                arr[j] = {...arr[j], ...res[i]};
             } else {
-                arr[i][k] = res[i][k];
+                arr[j][k] = res[i][k];
             }
         }
     }
-    return arr;*/
-    let path = paths[0]; // TODO: check all the included paths
-    return JSONPath({path: path, json: src});
+    // removing garbage
+    for (let i = 0; i < arr.length; ++i) {
+        if (!arr[i]) { // removing undefined items
+            arr.splice(i, 1);
+        } else { // removing items with keys of undefined values. e.g. : { aaa: undefined }
+            let keys = Object.keys(arr[i]);
+            let all_undefined = true;
+            for (let k of keys) {
+                if (arr[i][k]) {
+                    all_undefined = false;
+                }
+            }
+            if (all_undefined) {
+                arr.splice(i, 1);
+            }
+        }
+    }
+    return arr;
 }
 
 function get_entity_or_unlabeled(src, entity_check) {
@@ -71,7 +112,7 @@ function get_entity_or_unlabeled(src, entity_check) {
     } else {
         rdf_obj = $rdf.sym(str_format(
             entity_check.iri_template,
-            get_values_from_paths(entity_check.include, src)[0] // It should be only one element as it is a normal object and not an array
+            get_values_from_paths(entity_check.jsonpath, entity_check.include, src)[0] // It should be only one element as it is a normal object and not an array
         ));
     }
     return rdf_obj;
@@ -96,7 +137,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
     if (s.node_type === 'array') {
         // TODO: implement if it is an array
         content_path += "[*]";
-        let arr = get_values_from_paths([content_path], src);
+        let arr = JSONPath({path: content_path, json: src});
         let rdf_list = [];
         for (let i in arr) {
             for (let k of Object.keys(arr[i])) {
@@ -134,10 +175,11 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
  */
 async function run(args) {
 
-//    printj(get_values_from_paths(aaa, sss));
-//    return;
+    printj(get_values_from_paths(bbb, aaa, sss));
+    return;
 
-    let sp = args.in.split(".");
+    let sp = args.in.split("/");
+    sp = sp[sp.length - 1].split(".");
     let fname = sp[0];
     let fext = sp[1];
 
@@ -167,7 +209,8 @@ async function run(args) {
         for (let k of Object.keys(des.entities)) {
             let e = des.entities[k];
             let path = k;
-            let values = get_values_from_paths(e.include, src);
+            let values = get_values_from_paths(e.jsonpath, e.include, src);
+            print(values);
             for (let i in values) {
                 let subject;
                 try {
