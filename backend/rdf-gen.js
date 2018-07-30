@@ -42,15 +42,21 @@ let sss = {
     aaa: 123,
     test: [
         {id: 0, name: "aaa"},
-        {id: 1, name: "bbb", aaa: {i:1}},
+        {id: 1, name: "bbb", aaa: {i:1,y:[{i:0, j:1}]}},
         {id: 2, name: "ccc"},
         {id: 3, name: "ddd", aaa: {i:2, j:943, k: {l:5}}}
     ]
 };
 let aaa = ["id", "aaa.i", "aaa.k.l"];
 let bbb = "$.test[*]";
-function get_values_from_paths(base, paths, src) { // TODO: continue here
-    return JSONPath({flatten: true}, "$.test[*].aaa", src);
+
+function get_values_from_paths(base, paths, src) {
+    // This is just for testing
+    let p = `${base}.${paths[0]}`.split('.');
+    p.pop(); // considering the last element to be '*'
+    p = p.join('.');
+    return JSONPath({path: p, json: src}); // TODO: implement get_values_from_paths correctly
+
     let arr = []; // the final result
     for (let path of paths) {
         if (base) {
@@ -175,8 +181,8 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
  */
 async function run(args) {
 
-    printj(get_values_from_paths(bbb, aaa, sss));
-    return;
+    //printj(get_values_from_paths(bbb, aaa, sss));
+    //return;
 
     let sp = args.in.split("/");
     sp = sp[sp.length - 1].split(".");
@@ -210,7 +216,7 @@ async function run(args) {
             let e = des.entities[k];
             let path = k;
             let values = get_values_from_paths(e.jsonpath, e.include, src);
-            print(values);
+            //print(values);
             for (let i in values) {
                 let subject;
                 try {

@@ -144,7 +144,7 @@ WHERE {
 ** TODO give the find APIs the type; check lov "type" parameter. UPDATE: Non of the apis actually support that :(. UPDATE: You can do it!
 *** In LOV: A:= q=$class&type=class -> B:= q=%prop&type=property, modify the score on $B according to the ontologies on $A
 ** DONE 2nd level disk cache
-* Web interface
+* TODO Web interface
 ** Use bootstrap https://getbootstrap.com/
 ** find subjects; user selects the entities
 ** match predicates to subjects; add or remove predicates from a subject

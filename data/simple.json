@@ -1,48 +1,46 @@
-{
-  "id": 0,
-  "name": "naheel",
-  "age": 21,
-  "birthday": "1997-03-28",
-  "working": true,
-  "test": {
-    "id": 3,
-    "name": "nnnnnn",
-      "age": 91,
-      "aaa": {
-          "a": 1,
-          "b": 2
-      }
-  },
-    "ttt": {
-        "def": 123,
-        "ghi" : 456
-    },
-  "followers": [
-    {
-      "name": "aaa",
-      "id": 1,
-      "thing": {
-        "a": "a"
-      }
-    },
-    {
-      "name": "bbb",
-      "id": 2
-    },
-    {
-      "name": "ccc",
+[
+  {
+    "id": 0,
+    "name": "Mariam",
+    "age": 21,
+    "birthday": "1997-03-28",
+    "working": true,
+    "test": {
       "id": 3,
-      "thing": {
-        "a": "a"
+      "name": "nnnnnn",
+      "age": 91
+    },
+    "followers": [
+      {
+        "name": "aaa",
+        "id": 1,
+        "thing": {
+          "a": "a"
+        }
+      },
+      {
+        "name": "bbb",
+        "id": 2
+      },
+      {
+        "name": "ccc",
+        "id": 3,
+        "thing": {
+          "a": "a"
+        }
+      },
+      {
+        "name": "ddd",
+        "id": "a"
+      },
+      {
+        "name": "eee",
+        "id": "2018-07-18"
       }
-    },
-    {
-      "name": "ddd",
-      "id": "a"
-    },
-    {
-      "name": "eee",
-      "id": "2018-07-18"
-    }
-  ]
-}
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Naheel"
+  }
+]
