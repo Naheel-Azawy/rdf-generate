@@ -1,0 +1,128 @@
+body {
+    background-color: #171717;
+    color: #cecece;
+}
+
+th {
+    font-weight: normal;
+}
+
+#jsoneditor {
+    width: 49.5%;
+    height: 80%;
+    position: absolute;
+    left: 6px;
+}
+
+#desContainer {
+    border: 1px;
+    overflow-y: hidden;
+    width: 49.5%;
+    height: 80%;
+    position: absolute;
+    right: 6px;
+}
+
+.trStyle{
+    width: 50%;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    background-color: #171717;
+    color: #cecece;
+}
+
+.contentText {
+    font-family:'dejavu sans mono', 'droid sans mono', consolas, monaco, 'lucida console', 'courier new', courier, monospace, sans-serif;
+    font-size: 13px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.paddingRL {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#entityTable{
+    margin-left: 10px
+}
+
+#btnsDiv {
+    position: absolute;
+    bottom: 4%;
+    right: 6px;
+}
+
+.dialogHeader {
+    padding: 5px 5px;
+    font-size: 18px;
+    color: #2F72AB;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+dialog {
+    width: 600px;
+    font-family:sans-serif;
+    padding: 5px 10px 20px 20px;
+    background-color: #171717;
+    color: #cecece;
+}
+
+/* THE DRAMATIC ARROW */
+
+#arrowAnim {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 230px;
+}
+
+.arrow {
+    width: 2vw;
+    height: 2vw;
+    border: 0.7vw solid;
+    border-color: white transparent transparent white;
+    transform: rotate(-45deg);
+}
+
+.arrowSliding {
+    position: absolute;
+    -webkit-animation: slide 4s linear infinite;
+    animation: slide 4s linear infinite;
+}
+
+.delay1 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.delay2 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.delay3 {
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+    0% { opacity:0; transform: translateX(15vw); }
+    20% { opacity:1; transform: translateX(9vw); }
+    80% { opacity:1; transform: translateX(-9vw); }
+    100% { opacity:0; transform: translateX(-15vw); }
+}
+@keyframes slide {
+    0% { opacity:0; transform: translateX(15vw); }
+    20% { opacity:1; transform: translateX(9vw); }
+    80% { opacity:1; transform: translateX(-9vw); }
+    100% { opacity:0; transform: translateX(-15vw); }
+}
+
+/* THE DRAMATIC ARROW (END) */
+
+.bkgStyle {
+    background-color: #171717;
+    color: #cecece;
+}

@@ -172,7 +172,7 @@ WHERE {
 ** DONE don't show large jsons, only 1st few objects. UPDATE: first, user will be asked to enter one typical object. In the final stage, the user can 'upload' the full data and get the output
 ** DONE check ajax; results will be updated based on user selections
 ** DONE when client makes changes it removes all other elements in the array and keep only the selected item (in predicates and datatypes).
-** TODO fix the descriptors mess
+** DONE fix the descriptors mess
 ** DONE Add input box for entity name
 ** DONE step 1: add entity dialog: dark theme
 ** DONE step 1: add entity dialog: use the same order of input items as used in the table
