@@ -18,7 +18,7 @@ module.exports = class PathFollower {
      * A function for returning the last item added to the stack.
      */
     pop() {
-        this.path_stack.pop();
+        return this.path_stack.pop();
     }
 
     /**
@@ -37,5 +37,19 @@ module.exports = class PathFollower {
             }
         }
         return res;
-    };
+    }
+
+    /**
+     * A funtion for creating and formatting the path of the parent.
+     * @returns {string} A full formatted path of the parent.
+     */
+    parent() {
+        if (!this.path_stack || this.path_stack.length === 0 || this.path_stack.length === 1) {
+            return undefined;
+        }
+        let t = this.pop();
+        let res = this.get_path();
+        this.push(t);
+        return res;
+    }
 };

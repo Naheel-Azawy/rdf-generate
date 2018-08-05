@@ -128,6 +128,18 @@ class Builder {
         }
     }
 
+    parent_type() {
+        let e = this.init;
+        if (!e) return undefined;
+        e = e.entities;
+        if (!e) return undefined;
+        let t = this.path_follower_inst.parent();
+        if (!t) return undefined;
+        t = e[t];
+        if (!t) return undefined;
+        return t.type;
+    }
+
     /**
      * A Function for iterating through an object or an array of objects to generate the structure of the descriptor. The result ends up in 'this.out'.
      * @param {*} obj - The object to be iterated
@@ -147,7 +159,7 @@ class Builder {
         if (Array.isArray(obj)) {
             let preds;
             if (!this.no_pred) {
-                preds = init_p || await this.finder_inst.find(key);
+                preds = init_p || await this.finder_inst.find(key, this.parent_type());
             }
             this.out[path] = {
                 node_type: "array",
@@ -172,7 +184,7 @@ class Builder {
                 let item = { key: key, val:keys[key] };
                 let p;
                 if (!this.no_pred) {
-                    p = await this.finder_inst.find(item.key);
+                    p = await this.finder_inst.find(item.key, this.parent_type());
                 }
                 await this.iter(item.val, key, current_predicates, values[key]);
                 current_predicates[this.path_follower_inst.get_path()] = p;
@@ -184,7 +196,7 @@ class Builder {
         } else if ((typeof obj === "object") && (obj !== null)) {
             let preds;
             if (!this.no_pred) {
-                preds = init_p || await this.finder_inst.find(key);
+                preds = init_p || await this.finder_inst.find(key, this.parent_type());
             }
             this.out[path] = {
                 node_type: "object",
@@ -205,7 +217,7 @@ class Builder {
         } else {
             let p;
             if (!this.no_pred) {
-                p = init_p || await this.finder_inst.find(key);
+                p = init_p || await this.finder_inst.find(key, this.parent_type());
             }
             let dt = init_dt;
             if (!dt) {

@@ -43,6 +43,15 @@ module.exports = class Finder {
      * @returns {Promise<Object[]>} A list of predicates.
      */
     async find(property, type, api) {
+        if (type) {
+            if (type.includes('#')) {
+                type = type.split('#');
+                type = type[type.length - 1];
+            } else if (type.includes('/')) {
+                type = type.split('/');
+                type = type[type.length - 1];
+            }
+        }
         if (property === undefined)
             return undefined;
         let p = this.cached_predicates[property];
@@ -57,7 +66,7 @@ module.exports = class Finder {
             try {
                 p = JSON.parse(await fs.readFileAsync(f, "utf-8"));
             } catch (err) {
-                p = await APIS[api](property);
+                p = await APIS[api](property, type);
                 //if (Object.keys(p).length !== 0) // write to disk if p is not empty
                 // or keep them? because this means that there are no results and there's no
                 // need to keep requesting everytime
