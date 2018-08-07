@@ -201,7 +201,7 @@ async function setStep(i) {
         document.getElementById("finalDestination").innerHTML = "";
         document.getElementById("desContainer").style["overflow-y"] = "scroll";
         checkEntities();
-        des = await getDescriptor(undefined, newDes);
+        des = await getDescriptor(editor.get()[0], newDes);
         delete des.struct["$"];
         addPropertiesTable();
         break;
@@ -213,12 +213,12 @@ async function setStep(i) {
         let formatRadioBtns = document.getElementsByName("formatRadio");
         for (let b of formatRadioBtns) {
             b.onclick = async () => {
-                out = await getOutput(formatRadioBtns[0].checked ? "ttl" : "xml");
+                out = await getOutput(editor.get()[0], filteredDes, formatRadioBtns[0].checked ? "ttl" : "xml");
                 addFinalContainer(out);
             };
         }
         setPropPrefixes();
-        out = await getOutput("ttl");
+        out = await getOutput(editor.get()[0], filteredDes, "ttl");
         addFinalContainer(out);
         break;
     case 4: // TODO Convert

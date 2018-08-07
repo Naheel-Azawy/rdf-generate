@@ -1095,6 +1095,16 @@ const FAKE_OUT_XML = `
 </rdf:RDF>
 `;
 
+const REAL = true;
+
+function promiseAjax(obj) {
+    return new Promise((fulfill, reject) => {
+        obj.success = fulfill;
+        obj.error = (xhr, ajaxOptions, thrownError) => reject(thrownError);
+        $.ajax(obj);
+    });
+}
+
 /** TODO: implement getDescriptor
  * Gives the full descriptor based on the descriptor modified by the user
  * @param {Object} baseDescriptor - the descriptor modified by the user
@@ -1102,7 +1112,11 @@ const FAKE_OUT_XML = `
  * @returns {Promise<Object>} - The complete descriptor
  */
 async function getDescriptor(jsonElement, baseDescriptor) {
-    return baseDescriptor ? {...FAKE_DES, ...baseDescriptor} : FAKE_DES;
+    return REAL ? JSON.parse(await promiseAjax({
+        url: "/des",
+        type: "POST",
+        data: { json: [jsonElement], base_des: baseDescriptor },
+    })) : baseDescriptor ? {...FAKE_DES, ...baseDescriptor} : FAKE_DES;
 }
 
 /** TODO: implement getOutput
@@ -1110,6 +1124,10 @@ async function getDescriptor(jsonElement, baseDescriptor) {
  * @param {string} type - The type of the output (ttl or xml)
  * @returns {Promise<string>} - The output!
  */
-async function getOutput(type) {
-    return type === "ttl" ? FAKE_OUT : FAKE_OUT_XML;
+async function getOutput(jsonElement, baseDescriptor, type) {
+    return REAL ? await promiseAjax({
+        url: "/out",
+        type: "POST",
+        data: { json: jsonElement, base_des: baseDescriptor, type: type },
+    }) : type === "ttl" ? FAKE_OUT : FAKE_OUT_XML;
 }

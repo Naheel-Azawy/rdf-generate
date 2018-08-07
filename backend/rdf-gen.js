@@ -184,32 +184,33 @@ async function run(args) {
     //printj(get_values_from_paths(bbb, aaa, sss));
     //return;
 
-    let sp = args.in.split("/");
-    sp = sp[sp.length - 1].split(".");
-    let fname = sp[0];
-    let fext = sp[1];
+    let sp = args.in ? args.in.split("/") : undefined;
+    sp = sp ? sp[sp.length - 1].split(".") : undefined;
+    let fname = sp ? sp[0] : undefined;
+    let fext = sp ? sp[1] : undefined;
 
     let src;
     switch (fext) {
+    case undefined:
     case "json":
-        src = JSON.parse(await fs.readFileAsync(args.in, "utf-8"));
-        break;
-    case "xml":
-        src = await xml2js.parseStringAsync(args.in);
+        src = args.in_str || JSON.parse(await fs.readFileAsync(args.in, "utf-8"));
         break;
     default:
         throw `Unsupported file extension '${fext}'`;
-        return;
+        return undefined;
     }
 
     let init = args.init_base ? JSON.parse(await fs.readFileAsync(args.init_base, "utf-8")) : undefined;
     let des = await des_builder.build(src, args.api, init, args.no_pred);
 
-    if (args.out_descriptor !== undefined) {
-        fs.writeFileAsync(args.out_descriptor, JSON.stringify(des, null, 2));
+    if (args.out_descriptor || args.returned_value === "DES") {
+        let des_str = JSON.stringify(des, null, 2);
+        if (args.out_descriptor)
+            fs.writeFileAsync(args.out_descriptor, des_str);
+        return des_str;
     }
 
-    if (args.out_rdf !== undefined) {
+    if (args.out_rdf || args.returned_value === "OUT") {
         let store = $rdf.graph();
         let prefixes = { xsd: "http://www.w3.org/2001/XMLSchema#" };
         for (let k of Object.keys(des.entities)) {
@@ -245,9 +246,12 @@ async function run(args) {
         } else {
             out = $rdf.Serializer(store).statementsToN3(store.statementsMatching());
         }
-        fs.writeFileAsync(args.out_rdf, out);
+        if (args.out_rdf)
+            fs.writeFileAsync(args.out_rdf, out);
+        return out;
     }
 
+    return undefined;
 }
 
 async function main(args) {
@@ -270,6 +274,8 @@ async function main(args) {
 -f, --format=FORMAT          out RDF format (ttl, xml)
 -a, --api=API                predicates finding API (lov, swoogle, test)
 -h, --help                   display this help and exit
+--in_str=STR                 input as a string
+--returned_value=RET         request a return for the function (DES, OUT)
 
 Example usage:
 node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
@@ -281,6 +287,6 @@ node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogl
 
 }
 
-main(require('minimist')(process.argv.slice(2)));
+//main(require('minimist')(process.argv.slice(2)));
 
 module.exports = run;
