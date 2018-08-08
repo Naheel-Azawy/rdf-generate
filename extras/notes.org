@@ -178,8 +178,12 @@ WHERE {
 ** DONE step 1: add entity dialog: use the same order of input items as used in the table
 ** TODO step 2: option to add a predicate that is not listed in the dropdown
 ** TODO step 2: show the datatype as [["unlabeled", "entity"], "list"] for items with no datatype
-** TODO connect to the backend
+** DONE connect to the backend
 ** TODO (low priority) step 1: include: dropdown with autocomplete
+** TODO fix grouping. Try adding a new entity.
+** TODO implement uploading the full data. Useful links:
+- https://carlosrymer.com/using-node-streams-to-handle-large-file-uploads-24c1a0141b9c
+- http://resumablejs.com/
 * Build the "descriptor builder":
 ** extract the details from the original object and add all the necessary data to construct the turtle.
 ** DONE check this paper:

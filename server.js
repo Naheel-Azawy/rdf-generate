@@ -20,29 +20,29 @@ app.use(express.static(path.join(__dirname, 'www')));
 app.post('/des', async (req, res) => {
 	  res.setHeader('Content-Type', 'application/json');
 
-		res.send(JSON.stringify(await rdf_gen({ // FIXME: something wrong here
-        in_str: req.body.json,
-        init_base: req.body.base_des,
+    req.body = JSON.parse(req.body.data);
+		res.send(JSON.stringify(await rdf_gen({
+        in_obj: req.body.json,
+        init_base_obj: req.body.base_des,
         returned_value: "DES"
     })));
 
 	  console.log("post to des");
-    //console.log(JSON.stringify(req.body, null, 2));
 });
 
 //tell express what to do when the /form route is requested
 app.post('/out', async (req, res) => {
 	  res.setHeader('Content-Type', 'application/json');
 
-		res.send(JSON.stringify(await rdf_gen({
-        in_str: req.body.json,
-        init_base: req.body.base_des,
+    req.body = JSON.parse(req.body.data);
+		res.send(JSON.stringify({ data: await rdf_gen({
+        in_obj: req.body.json,
+        init_base_obj: req.body.base_des,
         format: req.body.type,
         returned_value: "OUT"
-    })));
+    }) }));
 
 	  console.log("post to out");
-    //console.log(JSON.stringify(req.body, null, 2));
 });
 
 //wait for a connection

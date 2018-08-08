@@ -110,7 +110,7 @@ function get_values_from_paths(base, paths, src) {
     return arr;
 }
 
-function get_entity_or_unlabeled(src, entity_check) {
+function get_entity_or_unlabeled(src, entity_check, path) {
     let rdf_obj;
     if (entity_check === undefined) {
         // TODO: create an unlabeled blank node
@@ -118,7 +118,7 @@ function get_entity_or_unlabeled(src, entity_check) {
     } else {
         rdf_obj = $rdf.sym(str_format(
             entity_check.iri_template,
-            get_values_from_paths(entity_check.jsonpath, entity_check.include, src)[0] // It should be only one element as it is a normal object and not an array
+            get_values_from_paths(path, entity_check.include, src)[0] // It should be only one element as it is a normal object and not an array
         ));
     }
     return rdf_obj;
@@ -147,7 +147,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         let rdf_list = [];
         for (let i in arr) {
             for (let k of Object.keys(arr[i])) {
-                rdf_list.push(handle_item(src, store, prefixes, des, content_path, k, undefined, get_entity_or_unlabeled(src, des.entities[path + '.' + key])));
+                rdf_list.push(handle_item(src, store, prefixes, des, content_path, k, undefined, get_entity_or_unlabeled(src, des.entities[path + '.' + key], k)));
             }
         }
         return [
@@ -159,7 +159,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         return [
             rdf_subj,
             store.sym(pred),
-            get_entity_or_unlabeled(src, des.entities[path + '.' + key])
+            get_entity_or_unlabeled(src, des.entities[path + '.' + key], path + '.' + key)
         ];
     } else {
         obj = `${obj}`; // rdflib require everything to be string
@@ -176,13 +176,15 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
 
 /**
  * The main function here that will generate the output.
- * @param {Object} args - Options to this function: { in: FILE, out_descriptor: FILE, out_rdf: FILE, init_base: FILE, no_pred: BOOL, format: FORMAT, api: API }
+ * @param {Object} args - Options to this function: { returned_value: (DES or OUT), in_obj: OBJ, init_base_obj: OBJ, in: FILE, out_descriptor: FILE, out_rdf: FILE, init_base: FILE, no_pred: BOOL, format: FORMAT, api: API }
  * @returns {Promise<void>}
  */
 async function run(args) {
 
     //printj(get_values_from_paths(bbb, aaa, sss));
     //return;
+
+    //printj(args.in_obj);
 
     let sp = args.in ? args.in.split("/") : undefined;
     sp = sp ? sp[sp.length - 1].split(".") : undefined;
@@ -193,14 +195,14 @@ async function run(args) {
     switch (fext) {
     case undefined:
     case "json":
-        src = args.in_str || JSON.parse(await fs.readFileAsync(args.in, "utf-8"));
+        src = args.in_obj || JSON.parse(await fs.readFileAsync(args.in, "utf-8"));
         break;
     default:
         throw `Unsupported file extension '${fext}'`;
         return undefined;
     }
 
-    let init = args.init_base ? JSON.parse(await fs.readFileAsync(args.init_base, "utf-8")) : undefined;
+    let init = args.init_base_obj || (args.init_base ? JSON.parse(await fs.readFileAsync(args.init_base, "utf-8")) : undefined);
     let des = await des_builder.build(src, args.api, init, args.no_pred);
 
     if (args.out_descriptor || args.returned_value === "DES") {
@@ -216,7 +218,7 @@ async function run(args) {
         for (let k of Object.keys(des.entities)) {
             let e = des.entities[k];
             let path = k;
-            let values = get_values_from_paths(e.jsonpath, e.include, src);
+            let values = get_values_from_paths(k, e.include, src);
             //print(values);
             for (let i in values) {
                 let subject;
@@ -274,8 +276,6 @@ async function main(args) {
 -f, --format=FORMAT          out RDF format (ttl, xml)
 -a, --api=API                predicates finding API (lov, swoogle, test)
 -h, --help                   display this help and exit
---in_str=STR                 input as a string
---returned_value=RET         request a return for the function (DES, OUT)
 
 Example usage:
 node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle

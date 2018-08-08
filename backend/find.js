@@ -75,13 +75,13 @@ module.exports = class Finder {
             this.cached_predicates[property] = p;
             let ns, pr;
             for (let i in p) {
-                if (this.prefixes_rev[p[i].prefix] === undefined) {
-                    ns = p[i].prefix_name;
-                    pr = p[i].prefix;
+                ns = p[i].prefix_name;
+                pr = p[i].prefix.split("#")[0];
+                if (this.prefixes_rev[pr] === undefined) {
                     this.prefixes_rev[pr] = ns;
                     this.prefixes[ns] = pr;
                 }
-                p[i].prefix_name = this.prefixes_rev[p[i].prefix];
+                p[i].prefix_name = this.prefixes_rev[pr];
                 p[i].prefix = undefined;
             }
         }

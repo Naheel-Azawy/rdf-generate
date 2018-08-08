@@ -18,7 +18,7 @@ function shallowClone(o) {
 }
 
 function deepClone(o) {
-    return JSON.parse(JSON.stringify(o));
+    return o ? JSON.parse(JSON.stringify(o)) : undefined;
 }
 
 async function main() {
@@ -96,7 +96,6 @@ function setEntityInput() {
     }
     checkEntities();
     newDes.entities[json_path.value] = {
-        json_path: json_path.value,
         include: inc,
         type: type.value,
         iri_template: iri_template.value
@@ -188,28 +187,31 @@ async function setStep(i) {
         document.getElementById("entityTable").innerHTML = THE_DRAMATIC_INTRO;
         break;
     case 1: // Entities
+        des = await getDescriptor(editor.get()[0], undefined);
         document.getElementById("nextBtn").innerHTML = "NEXT";
         document.getElementById("prevBtn").style.display = "inline-block";
         document.getElementById("finalDestination").innerHTML = "";
         document.getElementById("desContainer").style["overflow-y"] = "scroll";
-        des = await getDescriptor(editor.get()[0], undefined);
         addEntitiesTable(des.entities);
         break;
     case 2: // Properties
+        checkEntities();
+        des = await getDescriptor(editor.get()[0], newDes);
         document.getElementById("nextBtn").innerHTML = "NEXT";
         document.getElementById("prevBtn").style.display = "inline-block";
         document.getElementById("finalDestination").innerHTML = "";
         document.getElementById("desContainer").style["overflow-y"] = "scroll";
-        checkEntities();
-        des = await getDescriptor(editor.get()[0], newDes);
         delete des.struct["$"];
         addPropertiesTable();
         break;
     case 3: // FINAL
+        setPropPrefixes();
+        out = await getOutput(editor.get()[0], filteredDes, "ttl");
         document.getElementById("nextBtn").innerHTML = "CONVERT";
         document.getElementById("prevBtn").style.display = "inline-block";
         document.getElementById("finalDestination").innerHTML = FINAL_STUFF;
         document.getElementById("desContainer").style["overflow-y"] = "hidden";
+        addFinalContainer(out);
         let formatRadioBtns = document.getElementsByName("formatRadio");
         for (let b of formatRadioBtns) {
             b.onclick = async () => {
@@ -217,9 +219,6 @@ async function setStep(i) {
                 addFinalContainer(out);
             };
         }
-        setPropPrefixes();
-        out = await getOutput(editor.get()[0], filteredDes, "ttl");
-        addFinalContainer(out);
         break;
     case 4: // TODO Convert
         break;
