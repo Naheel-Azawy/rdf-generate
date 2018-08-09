@@ -45,4 +45,25 @@ e:Alice foaf:knows e:Bob .
 - Investigating the RDF conversion pipeline to identify the main modules.
 
 * Work done
+** Backend
+- The backend is responsible of the actual convertion of semi-structured data to RDF.
+- Built with Node.js
+- Can be used as a command-line tool
+#+BEGIN_SRC
+Usage: node rdf-gen.js [OPTION]...
+-i, --in=FILE                input file
+-d, --out_descriptor=FILE    out descriptor file
+-r, --out_rdf=FILE           out RDF file
+-b, --init_base=FILE         initial descriptor json file used as a base for the generated descriptor
+-f, --format=FORMAT          out RDF format (ttl, xml)
+-a, --api=API                predicates finding API (lov, swoogle, test)
+-h, --help                   display this help and exit
+--in_str=STR                 input as a string
+--returned_value=RET         request a return for the function (DES, OUT)
 
+Example usage:
+node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
+#+END_SRC
+** Frontend
+A demo can help!
+* Questions?

@@ -26,56 +26,63 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h2 class="author">Naheel</h2><p class="date">Created: 2018-08-07 Tue 23:42</p>
+<section id="sec-title-slide"><h2 class="author">Naheel</h2><p class="date">Created: 2018-08-09 Thu 10:40</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org3c8c4d1">1. Concepts</a>
+<li><a href="#/slide-orgac591d7">1. Concepts</a>
 <ul>
-<li><a href="#/slide-orgb5acf55">1.1. RDF</a>
+<li><a href="#/slide-orgb7aa897">1.1. RDF</a>
 <ul>
-<li><a href="#/slide-orga893e2f">1.1.1. Triples</a></li>
-<li><a href="#/slide-org6a4abc6">1.1.2. Nodes</a></li>
-<li><a href="#/slide-orgf3cc07f">1.1.3. Example</a></li>
+<li><a href="#/slide-org86435e7">1.1.1. Triples</a></li>
+<li><a href="#/slide-org7be252d">1.1.2. Nodes</a></li>
+<li><a href="#/slide-org3f09764">1.1.3. Example</a></li>
 </ul>
 </li>
-<li><a href="#/slide-org548f246">1.2. Representations</a>
+<li><a href="#/slide-org12eb50b">1.2. Representations</a>
 <ul>
-<li><a href="#/slide-orgcb1e4f0">1.2.1. RDF/XML</a></li>
-<li><a href="#/slide-org3d658b2">1.2.2. Turtle (TTL)</a></li>
+<li><a href="#/slide-orgf609818">1.2.1. RDF/XML</a></li>
+<li><a href="#/slide-org21abc5d">1.2.2. Turtle (TTL)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#/slide-orgf9e3b5f">2. Objective</a></li>
+<li><a href="#/slide-org4d37775">2. Objective</a></li>
+<li><a href="#/slide-org7f36a77">3. Work done</a>
+<ul>
+<li><a href="#/slide-org4cf4198">3.1. Backend</a></li>
+<li><a href="#/slide-orgfba7ad9">3.2. Frontend</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org6e956f6">4. Questions?</a></li>
 </ul>
 </div>
 </div>
 </section>
 <section>
-<section id="slide-org3c8c4d1">
-<h2 id="org3c8c4d1"><span class="section-number-2">1</span> Concepts</h2>
+<section id="slide-orgac591d7">
+<h2 id="orgac591d7"><span class="section-number-2">1</span> Concepts</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 </section>
-<section id="slide-orgb5acf55">
-<h3 id="orgb5acf55"><span class="section-number-3">1.1</span> RDF</h3>
+<section id="slide-orgb7aa897">
+<h3 id="orgb7aa897"><span class="section-number-3">1.1</span> RDF</h3>
 <p>
 Resource Description Framework (RDF) is a framework for data representation in the web.
 </p>
 </section>
-<section id="slide-orga893e2f">
-<h4 id="orga893e2f"><span class="section-number-4">1.1.1</span> Triples</h4>
+<section id="slide-org86435e7">
+<h4 id="org86435e7"><span class="section-number-4">1.1.1</span> Triples</h4>
 <p>
 In RDF data is stored in triples and represented as graphs. Each triple consists of a <b>subject</b>, a <b>predicate</b>, and an <b>object</b>
 </p>
 <img src="images/g1.png">
 </section>
-<section id="slide-org6a4abc6">
-<h4 id="org6a4abc6"><span class="section-number-4">1.1.2</span> Nodes</h4>
+<section id="slide-org7be252d">
+<h4 id="org7be252d"><span class="section-number-4">1.1.2</span> Nodes</h4>
 <p>
 Nodes can be blank nodes, litrals, or URI references
 </p>
@@ -84,17 +91,17 @@ Nodes can be blank nodes, litrals, or URI references
 </pre>
 <img src="images/g2.png">
 </section>
-<section id="slide-orgf3cc07f">
-<h4 id="orgf3cc07f"><span class="section-number-4">1.1.3</span> Example</h4>
+<section id="slide-org3f09764">
+<h4 id="org3f09764"><span class="section-number-4">1.1.3</span> Example</h4>
 <img src="images/g3.png">
 </section>
-<section id="slide-org548f246">
-<h3 id="org548f246"><span class="section-number-3">1.2</span> Representations</h3>
+<section id="slide-org12eb50b">
+<h3 id="org12eb50b"><span class="section-number-3">1.2</span> Representations</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
 </section>
-<section id="slide-orgcb1e4f0">
-<h4 id="orgcb1e4f0"><span class="section-number-4">1.2.1</span> RDF/XML</h4>
+<section id="slide-orgf609818">
+<h4 id="orgf609818"><span class="section-number-4">1.2.1</span> RDF/XML</h4>
 <div class="org-src-container">
 
 <pre  class="src src-xml">&lt;<span style="color: #4f97d7;">rdf</span>:<span style="color: #bc6ec5; font-weight: bold;">RDF</span>
@@ -107,8 +114,8 @@ Nodes can be blank nodes, litrals, or URI references
 </pre>
 </div>
 </section>
-<section id="slide-org3d658b2">
-<h4 id="org3d658b2"><span class="section-number-4">1.2.2</span> Turtle (TTL)</h4>
+<section id="slide-org21abc5d">
+<h4 id="org21abc5d"><span class="section-number-4">1.2.2</span> Turtle (TTL)</h4>
 <pre  class="example">
 @prefix e: &lt;http://example.org/#&gt; .
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -119,8 +126,8 @@ e:Alice foaf:knows e:Bob .
 </section>
 </section>
 <section>
-<section id="slide-orgf9e3b5f">
-<h2 id="orgf9e3b5f"><span class="section-number-2">2</span> Objective</h2>
+<section id="slide-org4d37775">
+<h2 id="org4d37775"><span class="section-number-2">2</span> Objective</h2>
 <ul>
 <li>Find a mechanism for converting non-structured or semi-structured data (JSON, XML, CSV, etc..) to RDF.</li>
 <li>Building a tool to automate the conversion using node.js.</li>
@@ -128,6 +135,49 @@ e:Alice foaf:knows e:Bob .
 <li>Investigating the RDF conversion pipeline to identify the main modules.</li>
 
 </ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org7f36a77">
+<h2 id="org7f36a77"><span class="section-number-2">3</span> Work done</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-org4cf4198">
+<h3 id="org4cf4198"><span class="section-number-3">3.1</span> Backend</h3>
+<ul>
+<li>The backend is responsible of the actual convertion of semi-structured data to RDF.</li>
+<li>Built with Node.js</li>
+<li>Can be used as a command-line tool</li>
+
+</ul>
+<pre  class="example">
+Usage: node rdf-gen.js [OPTION]...
+-i, --in=FILE                input file
+-d, --out_descriptor=FILE    out descriptor file
+-r, --out_rdf=FILE           out RDF file
+-b, --init_base=FILE         initial descriptor json file used as a base for the generated descriptor
+-f, --format=FORMAT          out RDF format (ttl, xml)
+-a, --api=API                predicates finding API (lov, swoogle, test)
+-h, --help                   display this help and exit
+--in_str=STR                 input as a string
+--returned_value=RET         request a return for the function (DES, OUT)
+
+Example usage:
+node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
+</pre>
+</section>
+<section id="slide-orgfba7ad9">
+<h3 id="orgfba7ad9"><span class="section-number-3">3.2</span> Frontend</h3>
+<p>
+A demo can help!
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org6e956f6">
+<h2 id="org6e956f6"><span class="section-number-2">4</span> Questions?</h2>
 </section>
 </section>
 </div>
