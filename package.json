@@ -1,0 +1,44 @@
+{
+    "name": "rdf-generate",
+    "version": "1.0.0",
+    "description": "* KEEP OUT! Under development..",
+    "main": "server.js",
+    "directories": {
+        "test": "tests"
+    },
+    "dependencies": {
+        "JSONPath": "^0.11.2",
+        "bluebird": "^3.5.1",
+        "jsonpath": "^1.0.0",
+        "minimist": "^1.2.0",
+        "request": "^2.87.0",
+        "rdflib": "^0.17.0",
+        "xml2js": "^0.4.19",
+        "xmlhttprequest": "^1.8.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Naheel-Azawy/rdf-generate.git"
+    },
+    "keywords": [
+        "rdf",
+        "ttl",
+        "turtle",
+        "xml",
+        "json"
+    ],
+    "contributors": [
+        "Naheel Azawy",
+        "Mariam Elsayem"
+    ],
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/Naheel-Azawy/rdf-generate/issues"
+    },
+    "homepage": "https://github.com/Naheel-Azawy/rdf-generate#readme"
+}
