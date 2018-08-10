@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://ns.nature.com/terms/name",
+    "prefix_name": "npg",
+    "predicate": "name",
+    "score": 2.6231161000000003
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/name",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "name",
+    "score": 2.4686279
+  },
+  {
+    "prefix": "http://purl.org/ontology/wo/name",
+    "prefix_name": "wlo",
+    "predicate": "name",
+    "score": 2.111111
+  },
+  {
+    "prefix": "http://data.archiveshub.ac.uk/def/name",
+    "prefix_name": "locah",
+    "predicate": "name",
+    "score": 2.01757885
+  },
+  {
+    "prefix": "http://rdfs.co/bevon/name",
+    "prefix_name": "bevon",
+    "predicate": "name",
+    "score": 2.01282043
+  },
+  {
+    "prefix": "http://rdfs.co/juso/name",
+    "prefix_name": "juso",
+    "predicate": "name",
+    "score": 2.01282043
+  },
+  {
+    "prefix": "http://usefulinc.com/ns/doap#name",
+    "prefix_name": "doap",
+    "predicate": "name",
+    "score": 2.01172063
+  },
+  {
+    "prefix": "http://schema.mobivoc.org/name",
+    "prefix_name": "mv",
+    "predicate": "name",
+    "score": 1.989503
+  },
+  {
+    "prefix": "http://www.w3.org/2000/01/rdf-schema#label",
+    "prefix_name": "rdfs",
+    "predicate": "label",
+    "score": 0.4919894
+  },
+  {
+    "prefix": "http://gov.genealogy.net/ontology.owl#hasName",
+    "prefix_name": "gov",
+    "predicate": "hasName",
+    "score": 0.44806877
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://bblfish.net/work/atom-owl/2006-06-06/#lang",
+    "prefix_name": "awol",
+    "predicate": "lang",
+    "score": 2.25962744
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#lang",
+    "prefix_name": "datex",
+    "predicate": "lang",
+    "score": 2.25962744
+  },
+  {
+    "prefix": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#lang",
+    "prefix_name": "nif",
+    "predicate": "lang",
+    "score": 2.23254371
+  },
+  {
+    "prefix": "http://purl.org/dita/ns#lang",
+    "prefix_name": "dita",
+    "predicate": "lang",
+    "score": 2.2238631399999997
+  },
+  {
+    "prefix": "http://www.w3.org/ns/csvw#lang",
+    "prefix_name": "csvw",
+    "predicate": "lang",
+    "score": 2.2233269399999998
+  },
+  {
+    "prefix": "http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#lang",
+    "prefix_name": "d2rq",
+    "predicate": "lang",
+    "score": 2.2233269399999998
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/language",
+    "prefix_name": "dcterms",
+    "predicate": "language",
+    "score": 0.70407194
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/language",
+    "prefix_name": "dce",
+    "predicate": "language",
+    "score": 0.45886612
+  },
+  {
+    "prefix": "http://www.europeana.eu/schemas/edm/language",
+    "prefix_name": "edm",
+    "predicate": "language",
+    "score": 0.420996
+  },
+  {
+    "prefix": "http://schema.org/inLanguage",
+    "prefix_name": "schema",
+    "predicate": "inLanguage",
+    "score": 0.30634376
+  }
+]

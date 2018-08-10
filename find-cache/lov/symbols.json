@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.uniprot.org/core/chain",
+    "prefix_name": "uniprot",
+    "predicate": "chain",
+    "score": 0.2940229
+  },
+  {
+    "prefix": "http://purl.oclc.org/NET/ssnx/qu/qu#symbolicExpression",
+    "prefix_name": "qu",
+    "predicate": "symbolicExpression",
+    "score": 0.21951395
+  },
+  {
+    "prefix": "http://rdvocab.info/Elements/fontSizeManifestation",
+    "prefix_name": "rdag1",
+    "predicate": "fontSizeManifestation",
+    "score": 0.16181812
+  },
+  {
+    "prefix": "http://rdvocab.info/Elements/formOfMusicalNotation",
+    "prefix_name": "rdag1",
+    "predicate": "formOfMusicalNotation",
+    "score": 0.16181812
+  },
+  {
+    "prefix": "http://rdvocab.info/Elements/fontSize",
+    "prefix_name": "rdag1",
+    "predicate": "fontSize",
+    "score": 0.15553021
+  },
+  {
+    "prefix": "http://rdvocab.info/Elements/formOfNotatedMovementExpression",
+    "prefix_name": "rdag1",
+    "predicate": "formOfNotatedMovementExpression",
+    "score": 0.15553021
+  },
+  {
+    "prefix": "http://iflastandards.info/ns/fr/frad/P3021",
+    "prefix_name": "frad",
+    "predicate": "P3021",
+    "score": 0.14692965
+  },
+  {
+    "prefix": "http://rdvocab.info/Elements/formOfMusicalNotationExpression",
+    "prefix_name": "rdag1",
+    "predicate": "formOfMusicalNotationExpression",
+    "score": 0.14118236
+  },
+  {
+    "prefix": "http://schema.org/price",
+    "prefix_name": "schema",
+    "predicate": "price",
+    "score": 0.1378764
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/e/P20064",
+    "prefix_name": "rdae",
+    "predicate": "P20064",
+    "score": 0.13608894
+  }
+]

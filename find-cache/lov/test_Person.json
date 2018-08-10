@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://www.w3.org/ns/earl#test",
+    "prefix_name": "earl",
+    "predicate": "test",
+    "score": 2.2245305
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/latestReleaseVersion",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "latestReleaseVersion",
+    "score": 0.81575424
+  },
+  {
+    "prefix": "http://vocab.org/transit/terms/routeStop",
+    "prefix_name": "transit",
+    "predicate": "routeStop",
+    "score": 0.6689749
+  },
+  {
+    "prefix": "http://linkedscience.org/lsc/ns#tests",
+    "prefix_name": "lsc",
+    "predicate": "tests",
+    "score": 0.45885557
+  },
+  {
+    "prefix": "http://usefulinc.com/ns/doap#tester",
+    "prefix_name": "doap",
+    "predicate": "tester",
+    "score": 0.35924867
+  },
+  {
+    "prefix": "http://ontologi.es/doap-deps#test-recommendation",
+    "prefix_name": "deps",
+    "predicate": "test-recommendation",
+    "score": 0.3312675
+  },
+  {
+    "prefix": "http://ontologi.es/doap-deps#test-requirement",
+    "prefix_name": "deps",
+    "predicate": "test-requirement",
+    "score": 0.3312675
+  },
+  {
+    "prefix": "http://ontologi.es/doap-deps#test-suggestion",
+    "prefix_name": "deps",
+    "predicate": "test-suggestion",
+    "score": 0.30608618
+  },
+  {
+    "prefix": "http://www.w3.org/2006/03/test-description#expectedResults",
+    "prefix_name": "test",
+    "predicate": "expectedResults",
+    "score": 0.29179087
+  },
+  {
+    "prefix": "http://www.w3.org/2006/03/test-description#informationResourceInput",
+    "prefix_name": "test",
+    "predicate": "informationResourceInput",
+    "score": 0.29179087
+  }
+]

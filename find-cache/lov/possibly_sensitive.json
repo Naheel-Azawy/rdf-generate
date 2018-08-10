@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.org/configurationontology#possible",
+    "prefix_name": "cold",
+    "predicate": "possible",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/bibliographicCitation",
+    "prefix_name": "dcterms",
+    "predicate": "bibliographicCitation",
+    "score": 0.4296515
+  },
+  {
+    "prefix": "http://purl.org/vocab/lifecycle/schema#possibleState",
+    "prefix_name": "lcy",
+    "predicate": "possibleState",
+    "score": 0.4021959
+  },
+  {
+    "prefix": "http://purl.org/vocab/lifecycle/schema#possibleTransition",
+    "prefix_name": "lcy",
+    "predicate": "possibleTransition",
+    "score": 0.3472222
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLanguage",
+    "prefix_name": "ebucore",
+    "predicate": "hasLanguage",
+    "score": 0.34266594
+  },
+  {
+    "prefix": "http://purl.org/configurationontology#impossible",
+    "prefix_name": "cold",
+    "predicate": "impossible",
+    "score": 0.32171428
+  },
+  {
+    "prefix": "https://w3id.org/saref#isInterruptionPossible",
+    "prefix_name": "saref",
+    "predicate": "isInterruptionPossible",
+    "score": 0.3083124
+  },
+  {
+    "prefix": "http://www.agls.gov.au/agls/terms/aggregationLevel",
+    "prefix_name": "agls",
+    "predicate": "aggregationLevel",
+    "score": 0.0770781
+  },
+  {
+    "prefix": "http://www.gsi.dit.upm.es/ontologies/marl/ns#maxPolarityValue",
+    "prefix_name": "marl",
+    "predicate": "maxPolarityValue",
+    "score": 0.061308034
+  },
+  {
+    "prefix": "http://www.gsi.dit.upm.es/ontologies/marl/ns#minPolarityValue",
+    "prefix_name": "marl",
+    "predicate": "minPolarityValue",
+    "score": 0.061308034
+  }
+]

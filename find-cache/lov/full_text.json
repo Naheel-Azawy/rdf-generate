@@ -1,0 +1,302 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/fuel",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "fuel",
+    "score": 6.8949738
+  },
+  {
+    "prefix": "http://data.archiveshub.ac.uk/def/file",
+    "prefix_name": "locah",
+    "predicate": "file",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/film",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "film",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://purl.org/limo-ontology/limo#file",
+    "prefix_name": "limo",
+    "predicate": "file",
+    "score": 1.9308410999999999
+  },
+  {
+    "prefix": "http://schema.mobivoc.org/fillRate",
+    "prefix_name": "mv",
+    "predicate": "fillRate",
+    "score": 1.8218749
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#FillMode",
+    "prefix_name": "dicom",
+    "predicate": "FillMode",
+    "score": 1.7596126
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#FillPattern",
+    "prefix_name": "dicom",
+    "predicate": "FillPattern",
+    "score": 1.7379838
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0070.0256",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0070.0256",
+    "score": 1.7379838
+  },
+  {
+    "prefix": "http://www.disit.org/km4city/schema#fillRate",
+    "prefix_name": "km4c",
+    "predicate": "fillRate",
+    "score": 1.6742113
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#fuelType",
+    "prefix_name": "datex",
+    "predicate": "fuelType",
+    "score": 1.6202707
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/fuelType",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "fuelType",
+    "score": 1.6202707
+  },
+  {
+    "prefix": "http://purl.org/vso/ns#fuelType",
+    "prefix_name": "vso",
+    "predicate": "fuelType",
+    "score": 1.5829673
+  },
+  {
+    "prefix": "http://schema.org/fuelType",
+    "prefix_name": "schema",
+    "predicate": "fuelType",
+    "score": 1.5829673
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0070.0257",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0070.0257",
+    "score": 1.5792774
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/fuelTypeName",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "fuelTypeName",
+    "score": 1.5513406
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P86_falls_within",
+    "prefix_name": "crm",
+    "predicate": "P86_falls_within",
+    "score": 1.5285331
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P89_falls_within",
+    "prefix_name": "crm",
+    "predicate": "P89_falls_within",
+    "score": 1.5226502
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P10_falls_within",
+    "prefix_name": "crm",
+    "predicate": "P10_falls_within",
+    "score": 1.4631314
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/fuelSystem",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "fuelSystem",
+    "score": 1.3868396
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/fuelConsumption",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "fuelConsumption",
+    "score": 1.3868396
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#FillStyleSequence",
+    "prefix_name": "dicom",
+    "predicate": "FillStyleSequence",
+    "score": 1.3502053
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/cargoFuel",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "cargoFuel",
+    "score": 1.3481109
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#fuelType2",
+    "prefix_name": "datex",
+    "predicate": "fuelType2",
+    "score": 1.3481109
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0070.0233",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0070.0233",
+    "score": 1.2634219
+  },
+  {
+    "prefix": "http://erlangen-crm.org/current/P86_falls_within",
+    "prefix_name": "ecrm",
+    "predicate": "P86_falls_within",
+    "score": 1.2228265
+  },
+  {
+    "prefix": "http://erlangen-crm.org/current/P89_falls_within",
+    "prefix_name": "ecrm",
+    "predicate": "P89_falls_within",
+    "score": 1.2181202
+  },
+  {
+    "prefix": "http://erlangen-crm.org/current/P10_falls_within",
+    "prefix_name": "ecrm",
+    "predicate": "P10_falls_within",
+    "score": 1.1705052
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#GraphicFilled",
+    "prefix_name": "dicom",
+    "predicate": "GraphicFilled",
+    "score": 0.947804
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/fillingStation",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "fillingStation",
+    "score": 0.8088665
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/genre",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "genre",
+    "score": 0.5122019
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/movie",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "movie",
+    "score": 0.51147854
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/format",
+    "prefix_name": "dcterms",
+    "predicate": "format",
+    "score": 0.44460264
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/fmd",
+    "prefix_name": "mrel",
+    "predicate": "fmd",
+    "score": 0.34832248
+  },
+  {
+    "prefix": "http://ns.nature.com/terms/fileExtension",
+    "prefix_name": "npg",
+    "predicate": "fileExtension",
+    "score": 0.3474209
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/flm",
+    "prefix_name": "mrel",
+    "predicate": "flm",
+    "score": 0.34722224
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/format",
+    "prefix_name": "dce",
+    "predicate": "format",
+    "score": 0.34242466
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/fmp",
+    "prefix_name": "mrel",
+    "predicate": "fmp",
+    "score": 0.3418259
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/fds",
+    "prefix_name": "mrel",
+    "predicate": "fds",
+    "score": 0.3393497
+  },
+  {
+    "prefix": "http://data.ordnancesurvey.co.uk/ontology/postcode/nhsHA",
+    "prefix_name": "postcode",
+    "predicate": "nhsHA",
+    "score": 0.33755133
+  },
+  {
+    "prefix": "http://eprints.org/ontology/hasFile",
+    "prefix_name": "ep",
+    "predicate": "hasFile",
+    "score": 0.32713938
+  },
+  {
+    "prefix": "http://data.ordnancesurvey.co.uk/ontology/postcode/nhsRegionalHA",
+    "prefix_name": "postcode",
+    "predicate": "nhsRegionalHA",
+    "score": 0.32361802
+  },
+  {
+    "prefix": "http://data.ordnancesurvey.co.uk/ontology/spatialrelations/twentyKMGridReference",
+    "prefix_name": "osspr",
+    "predicate": "twentyKMGridReference",
+    "score": 0.32361802
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/type",
+    "prefix_name": "dcterms",
+    "predicate": "type",
+    "score": 0.3087065
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename",
+    "prefix_name": "ebucore",
+    "predicate": "filename",
+    "score": 0.30729476
+  },
+  {
+    "prefix": "http://data.ordnancesurvey.co.uk/ontology/postcode/county",
+    "prefix_name": "postcode",
+    "predicate": "county",
+    "score": 0.30248523
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#FilmDestination",
+    "prefix_name": "dicom",
+    "predicate": "FilmDestination",
+    "score": 0.30114406
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/type",
+    "prefix_name": "dce",
+    "predicate": "type",
+    "score": 0.26669374
+  },
+  {
+    "prefix": "http://usefulinc.com/ns/doap#file-release",
+    "prefix_name": "doap",
+    "predicate": "file-release",
+    "score": 0.2621058
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.2010.0040",
+    "prefix_name": "dicom",
+    "predicate": "Tag.2010.0040",
+    "score": 0.25891435
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.2000.0040",
+    "prefix_name": "dicom",
+    "predicate": "Tag.2000.0040",
+    "score": 0.25891435
+  }
+]

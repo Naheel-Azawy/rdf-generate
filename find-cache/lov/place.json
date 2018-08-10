@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.org/NET/c4dm/event.owl#place",
+    "prefix_name": "event",
+    "predicate": "place",
+    "score": 2.7464412
+  },
+  {
+    "prefix": "http://www.kanzaki.com/ns/whois#place",
+    "prefix_name": "whois",
+    "predicate": "place",
+    "score": 2.4287761
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/place",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "place",
+    "score": 2.4235964
+  },
+  {
+    "prefix": "http://purl.org/ontology/po/place",
+    "prefix_name": "po",
+    "predicate": "place",
+    "score": 2.3890309
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#place",
+    "prefix_name": "gndo",
+    "predicate": "place",
+    "score": 2.3798499
+  },
+  {
+    "prefix": "http://purl.org/vocab/bio/0.1/place",
+    "prefix_name": "bio",
+    "predicate": "place",
+    "score": 2.35609532
+  },
+  {
+    "prefix": "http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/hasPlace",
+    "prefix_name": "eac-cpf",
+    "predicate": "hasPlace",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/prp",
+    "prefix_name": "mrel",
+    "predicate": "prp",
+    "score": 0.5040281
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/evp",
+    "prefix_name": "mrel",
+    "predicate": "evp",
+    "score": 0.49399155
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/mfp",
+    "prefix_name": "mrel",
+    "predicate": "mfp",
+    "score": 0.45701337
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "prefix": "http://purl.org/NET/raul#list",
+    "prefix_name": "raul",
+    "predicate": "list",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://www.w3.org/1999/xhtml/vocab#list",
+    "prefix_name": "xhv",
+    "predicate": "list",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://www.w3.org/2008/05/skos-xl#literalForm",
+    "prefix_name": "skosxl",
+    "predicate": "literalForm",
+    "score": 0.8148148
+  },
+  {
+    "prefix": "http://purl.org/ontology/daia/limitedBy",
+    "prefix_name": "daia",
+    "predicate": "limitedBy",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://www.linkedmodel.org/schema/dtype#literal",
+    "prefix_name": "dtype",
+    "predicate": "literal",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P71_lists",
+    "prefix_name": "crm",
+    "predicate": "P71_lists",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/linkedTo",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "linkedTo",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://purl.org/ontology/service#limitedBy",
+    "prefix_name": "service",
+    "predicate": "limitedBy",
+    "score": 0.531531
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/description",
+    "prefix_name": "dcterms",
+    "predicate": "description",
+    "score": 0.52205
+  },
+  {
+    "prefix": "http://dati.camera.it/ocd/lista",
+    "prefix_name": "ocd",
+    "predicate": "lista",
+    "score": 0.5060257
+  },
+  {
+    "prefix": "http://rdfs.org/scot/ns#delimited",
+    "prefix_name": "scot",
+    "predicate": "delimited",
+    "score": 0.50464946
+  },
+  {
+    "prefix": "http://www.w3.org/ns/org#linkedTo",
+    "prefix_name": "org",
+    "predicate": "linkedTo",
+    "score": 0.48380905
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/format",
+    "prefix_name": "dcterms",
+    "predicate": "format",
+    "score": 0.4723355
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority",
+    "prefix_name": "mads",
+    "predicate": "isIdentifiedByAuthority",
+    "score": 0.46310028
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#literarySource",
+    "prefix_name": "gndo",
+    "predicate": "literarySource",
+    "score": 0.44260225
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/linkedSpace",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "linkedSpace",
+    "score": 0.44215044
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/expression#is-linked-to",
+    "prefix_name": "oc",
+    "predicate": "is-linked-to",
+    "score": 0.4390749
+  },
+  {
+    "prefix": "http://purl.org/linked-data/cube#codeList",
+    "prefix_name": "qb",
+    "predicate": "codeList",
+    "score": 0.43504438
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/primaryTopic",
+    "prefix_name": "foaf",
+    "predicate": "primaryTopic",
+    "score": 0.43445635
+  },
+  {
+    "prefix": "https://data.nasa.gov/ontologies/atmonto/data#limitedVisibilityDistance",
+    "prefix_name": "atd",
+    "predicate": "limitedVisibilityDistance",
+    "score": 0.4251664
+  },
+  {
+    "prefix": "http://purl.org/ontology/bibo/authorList",
+    "prefix_name": "bibo",
+    "predicate": "authorList",
+    "score": 0.4248204
+  },
+  {
+    "prefix": "http://purl.org/ontology/wo/redListStatus",
+    "prefix_name": "wlo",
+    "predicate": "redListStatus",
+    "score": 0.41456407
+  },
+  {
+    "prefix": "http://vocab.deri.ie/ppo#hasLiteral",
+    "prefix_name": "ppo",
+    "predicate": "hasLiteral",
+    "score": 0.41235566
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/expression#is-not-linked-to",
+    "prefix_name": "oc",
+    "predicate": "is-not-linked-to",
+    "score": 0.40756282
+  },
+  {
+    "prefix": "http://purl.org/configurationontology#linkedConf",
+    "prefix_name": "cold",
+    "predicate": "linkedConf",
+    "score": 0.40638155
+  },
+  {
+    "prefix": "http://lod.nl.go.kr/ontology/dateLinked",
+    "prefix_name": "nlon",
+    "predicate": "dateLinked",
+    "score": 0.40515742
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#elementList",
+    "prefix_name": "mads",
+    "predicate": "elementList",
+    "score": 0.39756817
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/homepage",
+    "prefix_name": "foaf",
+    "predicate": "homepage",
+    "score": 0.38973013
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/description",
+    "prefix_name": "dce",
+    "predicate": "description",
+    "score": 0.3891873
+  },
+  {
+    "prefix": "http://erlangen-crm.org/current/P71_lists",
+    "prefix_name": "ecrm",
+    "predicate": "P71_lists",
+    "score": 0.3759706
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#citationNote",
+    "prefix_name": "mads",
+    "predicate": "citationNote",
+    "score": 0.37158272
+  },
+  {
+    "prefix": "http://geovocab.org/geometry#posList",
+    "prefix_name": "ngeo",
+    "predicate": "posList",
+    "score": 0.37142175
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/illiteracy",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "illiteracy",
+    "score": 0.3703704
+  },
+  {
+    "prefix": "http://www.eurocris.org/ontologies/cerif/1.3#isLinkedByEntity",
+    "prefix_name": "cerif",
+    "predicate": "isLinkedByEntity",
+    "score": 0.37037036
+  },
+  {
+    "prefix": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+    "prefix_name": "rdf",
+    "predicate": "first",
+    "score": 0.3598796
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/literaryGenre",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "literaryGenre",
+    "score": 0.3240741
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#hasSource",
+    "prefix_name": "mads",
+    "predicate": "hasSource",
+    "score": 0.29847565
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#adminMetadata",
+    "prefix_name": "mads",
+    "predicate": "adminMetadata",
+    "score": 0.29650745
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#authoritativeLabel",
+    "prefix_name": "mads",
+    "predicate": "authoritativeLabel",
+    "score": 0.2964892
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSCollection",
+    "prefix_name": "mads",
+    "predicate": "isMemberOfMADSCollection",
+    "score": 0.2964892
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/percentageLiterate",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "percentageLiterate",
+    "score": 0.29648653
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#hasBroaderAuthority",
+    "prefix_name": "mads",
+    "predicate": "hasBroaderAuthority",
+    "score": 0.2964586
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSScheme",
+    "prefix_name": "mads",
+    "predicate": "isMemberOfMADSScheme",
+    "score": 0.2964586
+  },
+  {
+    "prefix": "http://purl.org/olia/ubyCat.owl#transliteration",
+    "prefix_name": "uby",
+    "predicate": "transliteration",
+    "score": 0.2777778
+  },
+  {
+    "prefix": "http://purl.org/NET/c4dm/event.owl#literal_factor",
+    "prefix_name": "event",
+    "predicate": "literal_factor",
+    "score": 0.2777778
+  },
+  {
+    "prefix": "http://www.lexinfo.net/ontology/2.0/lexinfo#transliteration",
+    "prefix_name": "lexinfo",
+    "predicate": "transliteration",
+    "score": 0.2777778
+  },
+  {
+    "prefix": "https://data.nasa.gov/ontologies/atmonto/data#unlimitedVisibility",
+    "prefix_name": "atd",
+    "predicate": "unlimitedVisibility",
+    "score": 0.20185979
+  },
+  {
+    "prefix": "http://iflastandards.info/ns/isbd/elements/P1079",
+    "prefix_name": "isbd",
+    "predicate": "P1079",
+    "score": 0.144004
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#broaderTermPartitive",
+    "prefix_name": "gndo",
+    "predicate": "broaderTermPartitive",
+    "score": 0.10390468
+  },
+  {
+    "prefix": "http://purl.org/openorg/access",
+    "prefix_name": "oo",
+    "predicate": "access",
+    "score": 0.07813244
+  }
+]

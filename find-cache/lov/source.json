@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.org/dc/terms/source",
+    "prefix_name": "dcterms",
+    "predicate": "source",
+    "score": 2.60421872
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/source",
+    "prefix_name": "dce",
+    "predicate": "source",
+    "score": 2.51243386
+  },
+  {
+    "prefix": "http://rdfunit.aksw.org/ns/core#source",
+    "prefix_name": "ruto",
+    "predicate": "source",
+    "score": 2.28429213
+  },
+  {
+    "prefix": "http://simile.mit.edu/2003/10/ontologies/vraCore3#source",
+    "prefix_name": "vra",
+    "predicate": "source",
+    "score": 2.28429213
+  },
+  {
+    "prefix": "http://inference-web.org/2.0/pml-provenance.owl#hasSource",
+    "prefix_name": "pmlp",
+    "predicate": "hasSource",
+    "score": 0.6166176
+  },
+  {
+    "prefix": "http://purl.org/dsnotify/vocab/eventset/sourceResource",
+    "prefix_name": "dsn",
+    "predicate": "sourceResource",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://purl.org/dsnotify/vocab/eventset/sourceDataset",
+    "prefix_name": "dsn",
+    "predicate": "sourceDataset",
+    "score": 0.55051225
+  },
+  {
+    "prefix": "http://rdf-vocabulary.ddialliance.org/xkos#sourceConcept",
+    "prefix_name": "xkos",
+    "predicate": "sourceConcept",
+    "score": 0.5116405
+  },
+  {
+    "prefix": "http://rdvocab.info/ElementsGr2/sourceConsulted",
+    "prefix_name": "rdag2",
+    "predicate": "sourceConsulted",
+    "score": 0.5020147
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSource",
+    "prefix_name": "ebucore",
+    "predicate": "hasSource",
+    "score": 0.48218277
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/foundedBy",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "foundedBy",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/aSide",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "aSide",
+    "score": 0.55333596
+  },
+  {
+    "prefix": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "prefix_name": "rdf",
+    "predicate": "type",
+    "score": 0.45797333
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/csp",
+    "prefix_name": "mrel",
+    "predicate": "csp",
+    "score": 0.44444445
+  },
+  {
+    "prefix": "http://www.w3.org/2000/01/rdf-schema#label",
+    "prefix_name": "rdfs",
+    "predicate": "label",
+    "score": 0.41090918
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/handedness",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "handedness",
+    "score": 0.35260344
+  },
+  {
+    "prefix": "http://dati.beniculturali.it/cis/reportsTo",
+    "prefix_name": "cis",
+    "predicate": "reportsTo",
+    "score": 0.34446952
+  },
+  {
+    "prefix": "http://ns.inria.fr/nicetag/2010/09/09/voc#sentTo",
+    "prefix_name": "ntag",
+    "predicate": "sentTo",
+    "score": 0.34446952
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/agrelon.owl#hasIllegitimateChild",
+    "prefix_name": "agrelon",
+    "predicate": "hasIllegitimateChild",
+    "score": 0.34100738
+  },
+  {
+    "prefix": "http://www.w3.org/ns/org#basedAt",
+    "prefix_name": "org",
+    "predicate": "basedAt",
+    "score": 0.33324975
+  }
+]

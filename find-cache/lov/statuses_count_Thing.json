@@ -1,0 +1,200 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/status",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "status",
+    "score": 2.3489443999999997
+  },
+  {
+    "prefix": "http://purl.org/ontology/bibo/status",
+    "prefix_name": "bibo",
+    "predicate": "status",
+    "score": 2.3222245999999998
+  },
+  {
+    "prefix": "http://bag.basisregistraties.overheid.nl/def/bag#status",
+    "prefix_name": "bag",
+    "predicate": "status",
+    "score": 2.2203524999999997
+  },
+  {
+    "prefix": "http://swrc.ontoware.org/ontology#status",
+    "prefix_name": "swrc",
+    "predicate": "status",
+    "score": 2.1601383299999997
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/status",
+    "prefix_name": "foaf",
+    "predicate": "status",
+    "score": 2.04790326
+  },
+  {
+    "prefix": "http://open.vocab.org/terms/status",
+    "prefix_name": "ov",
+    "predicate": "status",
+    "score": 2.00855236
+  },
+  {
+    "prefix": "http://www.loc.gov/premis/rdf/v1#hasStatuteCitation",
+    "prefix_name": "premis",
+    "predicate": "hasStatuteCitation",
+    "score": 0.7517401
+  },
+  {
+    "prefix": "http://schema.org/mileageFromOdometer",
+    "prefix_name": "schema",
+    "predicate": "mileageFromOdometer",
+    "score": 0.66036451
+  },
+  {
+    "prefix": "http://delicias.dia.fi.upm.es/ontologies/ObjectWithStates.owl#isStateOf",
+    "prefix_name": "obws",
+    "predicate": "isStateOf",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://www.loc.gov/premis/rdf/v1#hasStatuteJurisdiction",
+    "prefix_name": "premis",
+    "predicate": "hasStatuteJurisdiction",
+    "score": 0.5499479
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/unitedStatesNationalBridgeId",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "unitedStatesNationalBridgeId",
+    "score": 0.5279419
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#availableAtOrFrom",
+    "prefix_name": "gr",
+    "predicate": "availableAtOrFrom",
+    "score": 0.5114235
+  },
+  {
+    "prefix": "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
+    "prefix_name": "vs",
+    "predicate": "term_status",
+    "score": 0.49010876
+  },
+  {
+    "prefix": "http://delicias.dia.fi.upm.es/ontologies/ObjectWithStates.owl#hasState",
+    "prefix_name": "obws",
+    "predicate": "hasState",
+    "score": 0.48833466
+  },
+  {
+    "prefix": "http://www.loc.gov/premis/rdf/v1#hasRelatedStatuteInformation",
+    "prefix_name": "premis",
+    "predicate": "hasRelatedStatuteInformation",
+    "score": 0.41246092
+  },
+  {
+    "prefix": "http://www.w3.org/2003/06/sw-vocab-status/ns#userdocs",
+    "prefix_name": "vs",
+    "predicate": "userdocs",
+    "score": 0.3502622
+  },
+  {
+    "prefix": "http://reference.data.gov.au/def/ont/iso19160-1-address#Address.status",
+    "prefix_name": "isoadr",
+    "predicate": "Address.status",
+    "score": 0.34898105
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/currentStatus",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "currentStatus",
+    "score": 0.34648147
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/legalArticle",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "legalArticle",
+    "score": 0.3304797
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/codeBook",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "codeBook",
+    "score": 0.31294388
+  },
+  {
+    "prefix": "http://www.loc.gov/premis/rdf/v1#hasStatuteInformationDeterminationDate",
+    "prefix_name": "premis",
+    "predicate": "hasStatuteInformationDeterminationDate",
+    "score": 0.30161637
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#RefractiveStateSequence",
+    "prefix_name": "dicom",
+    "predicate": "RefractiveStateSequence",
+    "score": 0.28044897
+  },
+  {
+    "prefix": "http://purl.org/cerif/frapo/supports",
+    "prefix_name": "frapo",
+    "predicate": "supports",
+    "score": 0.2560996
+  },
+  {
+    "prefix": "http://purl.org/cerif/frapo/isSupportedBy",
+    "prefix_name": "frapo",
+    "predicate": "isSupportedBy",
+    "score": 0.24549463
+  },
+  {
+    "prefix": "http://ogp.me/ns#determiner",
+    "prefix_name": "og",
+    "predicate": "determiner",
+    "score": 0.24489778
+  },
+  {
+    "prefix": "http://purl.org/uco/ns#mileageEnd",
+    "prefix_name": "uco",
+    "predicate": "mileageEnd",
+    "score": 0.22621228
+  },
+  {
+    "prefix": "http://purl.org/uco/ns#mileage",
+    "prefix_name": "uco",
+    "predicate": "mileage",
+    "score": 0.22621228
+  },
+  {
+    "prefix": "http://purl.org/uco/ns#mileageInitial",
+    "prefix_name": "uco",
+    "predicate": "mileageInitial",
+    "score": 0.22552204
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#hasPOS",
+    "prefix_name": "gr",
+    "predicate": "hasPOS",
+    "score": 0.19472851
+  },
+  {
+    "prefix": "http://ontology.it/itsmo/v1#hasCustomer",
+    "prefix_name": "itsmo",
+    "predicate": "hasCustomer",
+    "score": 0.17339118
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ReferencedPresentationStateSequence",
+    "prefix_name": "dicom",
+    "predicate": "ReferencedPresentationStateSequence",
+    "score": 0.16338521
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#PatientPhysiologicalStateSequence",
+    "prefix_name": "dicom",
+    "predicate": "PatientPhysiologicalStateSequence",
+    "score": 0.15945636
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#isSimilarTo",
+    "prefix_name": "gr",
+    "predicate": "isSimilarTo",
+    "score": 0.15532528
+  }
+]

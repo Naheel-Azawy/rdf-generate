@@ -1,0 +1,260 @@
+[
+  {
+    "prefix": "http://reference.data.gov/def/govdata/median",
+    "prefix_name": "gd",
+    "predicate": "median",
+    "score": 6.1966376
+  },
+  {
+    "prefix": "http://mex.aksw.org/mex-perf#median",
+    "prefix_name": "mexperf",
+    "predicate": "median",
+    "score": 5.8366484
+  },
+  {
+    "prefix": "http://www.w3.org/1999/xhtml/vocab#meta",
+    "prefix_name": "xhv",
+    "predicate": "meta",
+    "score": 2.4739984
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/medium",
+    "prefix_name": "dcterms",
+    "predicate": "medium",
+    "score": 2.4268444799999997
+  },
+  {
+    "prefix": "http://simile.mit.edu/2003/10/ontologies/vraCore3#medium",
+    "prefix_name": "vra",
+    "predicate": "medium",
+    "score": 2.14249464
+  },
+  {
+    "prefix": "http://rhizomik.net/ontologies/copyrightonto.owl#medium",
+    "prefix_name": "cro",
+    "predicate": "medium",
+    "score": 2.0959008
+  },
+  {
+    "prefix": "http://lod.nl.go.kr/ontology/medium",
+    "prefix_name": "nlon",
+    "predicate": "medium",
+    "score": 2.0881596399999998
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#MedicalAlerts",
+    "prefix_name": "dicom",
+    "predicate": "MedicalAlerts",
+    "score": 1.8469789
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/medalist",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "medalist",
+    "score": 1.7139183
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0010.2000",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0010.2000",
+    "score": 1.5923586
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/silverMedalMixed",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "silverMedalMixed",
+    "score": 1.3831661
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/goldMedalMixed",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "goldMedalMixed",
+    "score": 1.3045973
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0010.1090",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0010.1090",
+    "score": 1.2738869
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/goldMedalSingle",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "goldMedalSingle",
+    "score": 1.260253
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/goldMedalDouble",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "goldMedalDouble",
+    "score": 1.260253
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/bronzeMedalSingle",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "bronzeMedalSingle",
+    "score": 1.260253
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#MedicalRecordLocator",
+    "prefix_name": "dicom",
+    "predicate": "MedicalRecordLocator",
+    "score": 1.193709
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/silverMedalSingle",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "silverMedalSingle",
+    "score": 1.1161408
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/silverMedalDouble",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "silverMedalDouble",
+    "score": 1.1161408
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/bronzeMedalMixed",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "bronzeMedalMixed",
+    "score": 1.1161408
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/bronzeMedalDouble",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "bronzeMedalDouble",
+    "score": 1.1161408
+  },
+  {
+    "prefix": "http://mex.aksw.org/mex-perf#medianAbsoluteDeviation",
+    "prefix_name": "mexperf",
+    "predicate": "medianAbsoluteDeviation",
+    "score": 0.6005461
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/med",
+    "prefix_name": "mrel",
+    "predicate": "med",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://purl.org/linked-data/api/vocab#extendedMetadataVersion",
+    "prefix_name": "api",
+    "predicate": "extendedMetadataVersion",
+    "score": 0.5315652
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/format",
+    "prefix_name": "dcterms",
+    "predicate": "format",
+    "score": 0.49321967
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMedium",
+    "prefix_name": "ebucore",
+    "predicate": "hasMedium",
+    "score": 0.4704204
+  },
+  {
+    "prefix": "http://purl.org/vocommons/voaf#metadataVoc",
+    "prefix_name": "voaf",
+    "predicate": "metadataVoc",
+    "score": 0.4462115
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/format",
+    "prefix_name": "dce",
+    "predicate": "format",
+    "score": 0.35454854
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/type",
+    "prefix_name": "dcterms",
+    "predicate": "type",
+    "score": 0.33666566
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#adminMetadata",
+    "prefix_name": "mads",
+    "predicate": "adminMetadata",
+    "score": 0.333905
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0002.0001",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0002.0001",
+    "score": 0.32557
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#FileMetaInformationVersion",
+    "prefix_name": "dicom",
+    "predicate": "FileMetaInformationVersion",
+    "score": 0.31489003
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/agrelon.owl#hasChannel",
+    "prefix_name": "agrelon",
+    "predicate": "hasChannel",
+    "score": 0.31244144
+  },
+  {
+    "prefix": "http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#metadata",
+    "prefix_name": "om",
+    "predicate": "metadata",
+    "score": 0.27558786
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#FileMetaInformationGroupLength",
+    "prefix_name": "dicom",
+    "predicate": "FileMetaInformationGroupLength",
+    "score": 0.2424674
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0002.0000",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0002.0000",
+    "score": 0.2424674
+  },
+  {
+    "prefix": "http://purl.org/dita/ns#othermeta",
+    "prefix_name": "dita",
+    "predicate": "othermeta",
+    "score": 0.22965656
+  },
+  {
+    "prefix": "http://w3id.org/medred/medred#ofInstrument",
+    "prefix_name": "medred",
+    "predicate": "ofInstrument",
+    "score": 0.19904482
+  },
+  {
+    "prefix": "http://schema.org/sponsor",
+    "prefix_name": "schema",
+    "predicate": "sponsor",
+    "score": 0.17686546
+  },
+  {
+    "prefix": "http://w3id.org/medred/medred#instrument",
+    "prefix_name": "medred",
+    "predicate": "instrument",
+    "score": 0.15571246
+  },
+  {
+    "prefix": "http://w3id.org/medred/medred#hasValue",
+    "prefix_name": "medred",
+    "predicate": "hasValue",
+    "score": 0.15571246
+  },
+  {
+    "prefix": "http://w3id.org/medred/medred#validationShape",
+    "prefix_name": "medred",
+    "predicate": "validationShape",
+    "score": 0.14759235
+  },
+  {
+    "prefix": "http://w3id.org/medred/medred#choices",
+    "prefix_name": "medred",
+    "predicate": "choices",
+    "score": 0.14759235
+  }
+]

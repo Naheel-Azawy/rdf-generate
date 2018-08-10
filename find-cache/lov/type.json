@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "prefix_name": "rdf",
+    "predicate": "type",
+    "score": 2.299009
+  },
+  {
+    "prefix": "http://ogp.me/ns#type",
+    "prefix_name": "og",
+    "predicate": "type",
+    "score": 2.2050601
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/type",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "type",
+    "score": 2.1515231999999997
+  },
+  {
+    "prefix": "http://data.vlaanderen.be/ns/persoon#type",
+    "prefix_name": "bperson",
+    "predicate": "type",
+    "score": 2.1390791399999998
+  },
+  {
+    "prefix": "http://ogp.me/ns#video:type",
+    "prefix_name": "og",
+    "predicate": "type",
+    "score": 2.0024644
+  },
+  {
+    "prefix": "http://ogp.me/ns#audio:type",
+    "prefix_name": "og",
+    "predicate": "type",
+    "score": 2.00230278
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/millType",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "millType",
+    "score": 0.3456225
+  },
+  {
+    "prefix": "http://www.agls.gov.au/agls/terms/serviceType",
+    "prefix_name": "agls",
+    "predicate": "serviceType",
+    "score": 0.3250738
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/tyd",
+    "prefix_name": "mrel",
+    "predicate": "tyd",
+    "score": 0.32280946
+  },
+  {
+    "prefix": "http://www.agls.gov.au/agls/terms/documentType",
+    "prefix_name": "agls",
+    "predicate": "documentType",
+    "score": 0.31830207
+  }
+]

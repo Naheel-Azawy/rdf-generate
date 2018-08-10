@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ImageBoxSmallScrollAmount",
+    "prefix_name": "dicom",
+    "predicate": "ImageBoxSmallScrollAmount",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ImageBoxSmallScrollType",
+    "prefix_name": "dicom",
+    "predicate": "ImageBoxSmallScrollType",
+    "score": 0.49533367
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0072.0314",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0072.0314",
+    "score": 0.49533367
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0072.0312",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0072.0312",
+    "score": 0.4852894
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#relatedDdcWithDegreeOfDeterminacy1",
+    "prefix_name": "gndo",
+    "predicate": "relatedDdcWithDegreeOfDeterminacy1",
+    "score": 0.42141834
+  },
+  {
+    "prefix": "http://data.ordnancesurvey.co.uk/ontology/geometry/extent",
+    "prefix_name": "osgeom",
+    "predicate": "extent",
+    "score": 0.40531433
+  },
+  {
+    "prefix": "http://rdfs.org/ns/void#rootResource",
+    "prefix_name": "void",
+    "predicate": "rootResource",
+    "score": 0.34320554
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#SmallestImagePixelValue",
+    "prefix_name": "dicom",
+    "predicate": "SmallestImagePixelValue",
+    "score": 0.24602063
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#SmallestValidPixelValue",
+    "prefix_name": "dicom",
+    "predicate": "SmallestValidPixelValue",
+    "score": 0.24602063
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#SmallestPixelValueInSeries",
+    "prefix_name": "dicom",
+    "predicate": "SmallestPixelValueInSeries",
+    "score": 0.21526805
+  }
+]

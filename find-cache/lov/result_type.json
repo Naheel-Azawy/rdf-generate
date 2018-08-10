@@ -1,0 +1,188 @@
+[
+  {
+    "prefix": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+    "prefix_name": "rdf",
+    "predicate": "rest",
+    "score": 2.6840728
+  },
+  {
+    "prefix": "http://inference-web.org/2.0/ds.owl#rest",
+    "prefix_name": "dso",
+    "predicate": "rest",
+    "score": 2.397592
+  },
+  {
+    "prefix": "http://www.w3.org/2011/content#rest",
+    "prefix_name": "cnt",
+    "predicate": "rest",
+    "score": 2.2386026
+  },
+  {
+    "prefix": "http://open-services.net/ns/core#results",
+    "prefix_name": "oslc",
+    "predicate": "results",
+    "score": 2.111111
+  },
+  {
+    "prefix": "http://www.w3.org/ns/org#resultingOrganization",
+    "prefix_name": "org",
+    "predicate": "resultingOrganization",
+    "score": 1.4405768
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P123_resulted_in",
+    "prefix_name": "crm",
+    "predicate": "P123_resulted_in",
+    "score": 1.4274436
+  },
+  {
+    "prefix": "http://www.w3.org/ns/org#resultedFrom",
+    "prefix_name": "org",
+    "predicate": "resultedFrom",
+    "score": 1.4234573
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P123i_resulted_from",
+    "prefix_name": "crm",
+    "predicate": "P123i_resulted_from",
+    "score": 1.4234573
+  },
+  {
+    "prefix": "http://reference.data.gov.au/def/ont/dataset#resultedIn",
+    "prefix_name": "donto",
+    "predicate": "resultedIn",
+    "score": 1.2517755
+  },
+  {
+    "prefix": "http://erlangen-crm.org/current/P123i_resulted_from",
+    "prefix_name": "ecrm",
+    "predicate": "P123i_resulted_from",
+    "score": 1.1419549
+  },
+  {
+    "prefix": "http://erlangen-crm.org/current/P123_resulted_in",
+    "prefix_name": "ecrm",
+    "predicate": "P123_resulted_in",
+    "score": 1.1419549
+  },
+  {
+    "prefix": "http://purl.oclc.org/NET/mvco.owl#resultedFrom",
+    "prefix_name": "mvco",
+    "predicate": "resultedFrom",
+    "score": 1.100005
+  },
+  {
+    "prefix": "http://schema.org/name",
+    "prefix_name": "schema",
+    "predicate": "name",
+    "score": 0.45671663
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ResultsComments",
+    "prefix_name": "dicom",
+    "predicate": "ResultsComments",
+    "score": 0.3979745
+  },
+  {
+    "prefix": "http://semanticscience.org/resource/SIO_001156",
+    "prefix_name": "sio",
+    "predicate": "SIO_001156",
+    "score": 0.38606185
+  },
+  {
+    "prefix": "http://www.w3.org/2006/03/test-description#expectedResults",
+    "prefix_name": "test",
+    "predicate": "expectedResults",
+    "score": 0.37545097
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.4008.4000",
+    "prefix_name": "dicom",
+    "predicate": "Tag.4008.4000",
+    "score": 0.37545097
+  },
+  {
+    "prefix": "http://schema.org/about",
+    "prefix_name": "schema",
+    "predicate": "about",
+    "score": 0.37321633
+  },
+  {
+    "prefix": "http://www.irit.fr/recherches/MELODI/ontologies/SAN#actuationResults",
+    "prefix_name": "SAN",
+    "predicate": "actuationResults",
+    "score": 0.3608277
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ResultsID",
+    "prefix_name": "dicom",
+    "predicate": "ResultsID",
+    "score": 0.35688454
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0024.0093",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0024.0093",
+    "score": 0.3472222
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/crest",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "crest",
+    "score": 0.33511704
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#addresses-generic-area-of-interest",
+    "prefix_name": "akt",
+    "predicate": "addresses-generic-area-of-interest",
+    "score": 0.32315865
+  },
+  {
+    "prefix": "http://schema.org/resultReview",
+    "prefix_name": "schema",
+    "predicate": "resultReview",
+    "score": 0.28945643
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/interest",
+    "prefix_name": "foaf",
+    "predicate": "interest",
+    "score": 0.24114984
+  },
+  {
+    "prefix": "http://purl.org/ontology/mo/interpreter",
+    "prefix_name": "mo",
+    "predicate": "interpreter",
+    "score": 0.2198298
+  },
+  {
+    "prefix": "http://erlangen-crm.org/current/P157_is_at_rest_relative_to",
+    "prefix_name": "ecrm",
+    "predicate": "P157_is_at_rest_relative_to",
+    "score": 0.21674721
+  },
+  {
+    "prefix": "http://purl.org/acco/ns#partOf",
+    "prefix_name": "acco",
+    "predicate": "partOf",
+    "score": 0.2066516
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/interest",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "interest",
+    "score": 0.20453998
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#restorer",
+    "prefix_name": "gndo",
+    "predicate": "restorer",
+    "score": 0.19903068
+  },
+  {
+    "prefix": "http://purl.org/ontology/cco/core#interest",
+    "prefix_name": "cco",
+    "predicate": "interest",
+    "score": 0.19903068
+  }
+]

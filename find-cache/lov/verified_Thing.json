@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#StudyVerifiedDate",
+    "prefix_name": "dicom",
+    "predicate": "StudyVerifiedDate",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0032.0032",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0032.0032",
+    "score": 0.51889
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#StudyVerifiedTime",
+    "prefix_name": "dicom",
+    "predicate": "StudyVerifiedTime",
+    "score": 0.5131658
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0032.0033",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0032.0033",
+    "score": 0.5131658
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of",
+    "prefix_name": "crm",
+    "predicate": "P130_shows_features_of",
+    "score": 0.48284666600000004
+  },
+  {
+    "prefix": "http://www.europeana.eu/schemas/edm/isRelatedTo",
+    "prefix_name": "edm",
+    "predicate": "isRelatedTo",
+    "score": 0.4764155
+  },
+  {
+    "prefix": "https://raw.githubusercontent.com/airs-linked-data/lov/latest/src/airs_vocabulary.ttl#dateLastVerified",
+    "prefix_name": "airs",
+    "predicate": "dateLastVerified",
+    "score": 0.3331368
+  },
+  {
+    "prefix": "http://lod.taxonconcept.org/ontology/txn.owl#georeferenceVerificationStatus",
+    "prefix_name": "txn",
+    "predicate": "georeferenceVerificationStatus",
+    "score": 0.20894518
+  },
+  {
+    "prefix": "http://purl.org/ontology/prv/core#shortcut_property",
+    "prefix_name": "pr",
+    "predicate": "shortcut_property",
+    "score": 0.05644998
+  },
+  {
+    "prefix": "http://purl.org/pav/sourceLastAccessedOn",
+    "prefix_name": "pav",
+    "predicate": "sourceLastAccessedOn",
+    "score": 0.03618079
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://www.w3.org/2006/vcard/ns#geo",
+    "prefix_name": "vcard",
+    "predicate": "geo",
+    "score": 2.19955646
+  },
+  {
+    "prefix": "http://schema.org/geo",
+    "prefix_name": "schema",
+    "predicate": "geo",
+    "score": 2.15533383
+  },
+  {
+    "prefix": "http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#geo",
+    "prefix_name": "ncal",
+    "predicate": "geo",
+    "score": 2.05998525
+  },
+  {
+    "prefix": "http://www.w3.org/2002/12/cal/ical#geo",
+    "prefix_name": "cal",
+    "predicate": "geo",
+    "score": 2.05998525
+  },
+  {
+    "prefix": "http://www.w3.org/2003/12/exif/ns#geo",
+    "prefix_name": "exif",
+    "predicate": "geo",
+    "score": 2.0566886
+  },
+  {
+    "prefix": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+    "prefix_name": "geo",
+    "predicate": "long",
+    "score": 0.48524547
+  },
+  {
+    "prefix": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+    "prefix_name": "geo",
+    "predicate": "lat",
+    "score": 0.48176908
+  },
+  {
+    "prefix": "http://cookingbigdata.com/linkeddata/ccregions#geographical_zone",
+    "prefix_name": "ccr",
+    "predicate": "geographical_zone",
+    "score": 0.31372067
+  },
+  {
+    "prefix": "http://cookingbigdata.com/linkeddata/ccregions#region_compilance",
+    "prefix_name": "ccr",
+    "predicate": "region_compilance",
+    "score": 0.30149382
+  },
+  {
+    "prefix": "http://www.w3.org/2006/vcard/ns#hasGeo",
+    "prefix_name": "vcard",
+    "predicate": "hasGeo",
+    "score": 0.30149382
+  }
+]

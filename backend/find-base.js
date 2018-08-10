@@ -1,6 +1,6 @@
 const request = require("request");
 
-const LOG = false;
+const LOG = true;
 
 module.exports = {
     /**

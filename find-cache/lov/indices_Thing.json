@@ -1,0 +1,14 @@
+[
+  {
+    "prefix": "http://www.ontotext.com/proton/protonext#stockExchangeIndex",
+    "prefix_name": "pext",
+    "predicate": "stockExchangeIndex",
+    "score": 0.16841501
+  },
+  {
+    "prefix": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#isString",
+    "prefix_name": "nif",
+    "predicate": "isString",
+    "score": 0.12856345
+  }
+]

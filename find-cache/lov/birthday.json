@@ -1,0 +1,38 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/birthday",
+    "prefix_name": "foaf",
+    "predicate": "birthday",
+    "score": 3
+  },
+  {
+    "prefix": "http://www.w3.org/2000/10/swap/pim/contact#birthday",
+    "prefix_name": "con",
+    "predicate": "birthday",
+    "score": 2.41613767
+  },
+  {
+    "prefix": "http://www.ontotext.com/proton/protonext#birthDate",
+    "prefix_name": "pext",
+    "predicate": "birthDate",
+    "score": 0.49869397
+  },
+  {
+    "prefix": "http://www.identity.org/ontologies/identity.owl#hasBirthDate",
+    "prefix_name": "identity",
+    "predicate": "hasBirthDate",
+    "score": 0.14718519
+  },
+  {
+    "prefix": "http://www.kanzaki.com/ns/whois#born",
+    "prefix_name": "whois",
+    "predicate": "born",
+    "score": 0.05469585
+  },
+  {
+    "prefix": "http://rdf.muninn-project.org/ontologies/military#deathDay",
+    "prefix_name": "mil",
+    "predicate": "deathDay",
+    "score": 0.045249894
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/media",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "media",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://www.w3.org/ns/odrl/2/media",
+    "prefix_name": "odrl",
+    "predicate": "media",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/format",
+    "prefix_name": "dcterms",
+    "predicate": "format",
+    "score": 0.5021894
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/mediator",
+    "prefix_name": "dcterms",
+    "predicate": "mediator",
+    "score": 0.47619963
+  },
+  {
+    "prefix": "http://mex.aksw.org/mex-perf#median",
+    "prefix_name": "mexperf",
+    "predicate": "median",
+    "score": 0.3917661
+  },
+  {
+    "prefix": "http://reference.data.gov/def/govdata/median",
+    "prefix_name": "gd",
+    "predicate": "median",
+    "score": 0.3917661
+  },
+  {
+    "prefix": "http://www.w3.org/ns/dcat#mediaType",
+    "prefix_name": "dcat",
+    "predicate": "mediaType",
+    "score": 0.36609322
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/format",
+    "prefix_name": "dce",
+    "predicate": "format",
+    "score": 0.35960504
+  },
+  {
+    "prefix": "http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#mediaType",
+    "prefix_name": "d2rq",
+    "predicate": "mediaType",
+    "score": 0.35140517
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/mediaType",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "mediaType",
+    "score": 0.34722224
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://data.ordnancesurvey.co.uk/ontology/spatialrelations/northing",
+    "prefix_name": "osspr",
+    "predicate": "northing",
+    "score": 0.6320765
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/homepage",
+    "prefix_name": "foaf",
+    "predicate": "homepage",
+    "score": 0.5703407
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/name",
+    "prefix_name": "foaf",
+    "predicate": "name",
+    "score": 0.5557141
+  },
+  {
+    "prefix": "http://data.press.net/ontology/identifier/hasIdentifier",
+    "prefix_name": "pni",
+    "predicate": "hasIdentifier",
+    "score": 0.50288975
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+    "prefix_name": "foaf",
+    "predicate": "isPrimaryTopicOf",
+    "score": 0.49217057
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/page",
+    "prefix_name": "foaf",
+    "predicate": "page",
+    "score": 0.38281494
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/asWikiText",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "asWikiText",
+    "score": 0.38119876
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/depiction",
+    "prefix_name": "foaf",
+    "predicate": "depiction",
+    "score": 0.37361613
+  },
+  {
+    "prefix": "http://www.bbc.co.uk/ontologies/cms/managedThing",
+    "prefix_name": "bbccms",
+    "predicate": "managedThing",
+    "score": 0.32996896
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/clothingSize",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "clothingSize",
+    "score": 0.32280022
+  }
+]

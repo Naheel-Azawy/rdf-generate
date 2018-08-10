@@ -1,0 +1,56 @@
+[
+  {
+    "prefix": "http://purl.org/ontology/bibo/contributorList",
+    "prefix_name": "bibo",
+    "predicate": "contributorList",
+    "score": 1
+  },
+  {
+    "prefix": "http://ns.inria.fr/provoc#hasCreator",
+    "prefix_name": "provoc",
+    "predicate": "hasCreator",
+    "score": 0.16032082
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/u/P60398",
+    "prefix_name": "rdau",
+    "predicate": "P60398",
+    "score": 0.11605428
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/a/P50161",
+    "prefix_name": "rdaa",
+    "predicate": "P50161",
+    "score": 0.11575695
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/e/P20053",
+    "prefix_name": "rdae",
+    "predicate": "P20053",
+    "score": 0.115740746
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/isniId",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "isniId",
+    "score": 0.09619249
+  },
+  {
+    "prefix": "http://schema.theodi.org/odrs#attributionText",
+    "prefix_name": "odrs",
+    "predicate": "attributionText",
+    "score": 0.09059806
+  },
+  {
+    "prefix": "http://rdvocab.info/roles/contributor",
+    "prefix_name": "rdarole",
+    "predicate": "contributor",
+    "score": 0.06945417
+  },
+  {
+    "prefix": "http://purl.org/pav/contributedBy",
+    "prefix_name": "pav",
+    "predicate": "contributedBy",
+    "score": 0.030199355
+  }
+]

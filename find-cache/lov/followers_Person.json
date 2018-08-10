@@ -1,0 +1,122 @@
+[
+  {
+    "prefix": "http://schema.org/follows",
+    "prefix_name": "schema",
+    "predicate": "follows",
+    "score": 7.09075125
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/follows",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "follows",
+    "score": 6.842711899999999
+  },
+  {
+    "prefix": "http://purl.org/linguistics/gold/follows",
+    "prefix_name": "gold",
+    "predicate": "follows",
+    "score": 6.8299994
+  },
+  {
+    "prefix": "http://purl.org/ontology/storyline/follows",
+    "prefix_name": "nsl",
+    "predicate": "follows",
+    "score": 6.779514300000001
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/expression#follows",
+    "prefix_name": "oc",
+    "predicate": "follows",
+    "score": 6.779514300000001
+  },
+  {
+    "prefix": "http://rdfs.org/sioc/ns#follows",
+    "prefix_name": "sioc",
+    "predicate": "follows",
+    "score": 6.6047241
+  },
+  {
+    "prefix": "http://purl.org/saws/ontology#follows",
+    "prefix_name": "saws",
+    "predicate": "follows",
+    "score": 6.3971445
+  },
+  {
+    "prefix": "http://rdf-vocabulary.ddialliance.org/xkos#follows",
+    "prefix_name": "xkos",
+    "predicate": "follows",
+    "score": 6.3971445
+  },
+  {
+    "prefix": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows",
+    "prefix_name": "dul",
+    "predicate": "follows",
+    "score": 6.2875571
+  },
+  {
+    "prefix": "http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows",
+    "prefix_name": "seq",
+    "predicate": "follows",
+    "score": 6.2875571
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/followedBy",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "followedBy",
+    "score": 2.0170032
+  },
+  {
+    "prefix": "http://purl.org/co/followedBy",
+    "prefix_name": "coll",
+    "predicate": "followedBy",
+    "score": 1.2534673
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#aat2812_followed",
+    "prefix_name": "gvp",
+    "predicate": "aat2812_followed",
+    "score": 1.1372391
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#aat2879_followed-developed_from",
+    "prefix_name": "gvp",
+    "predicate": "aat2879_followed-developed_from",
+    "score": 1.1372391
+  },
+  {
+    "prefix": "http://purl.org/cwmo/#isFollowedBy",
+    "prefix_name": "cwmo",
+    "predicate": "isFollowedBy",
+    "score": 1.0966394
+  },
+  {
+    "prefix": "http://schema.org/followee",
+    "prefix_name": "schema",
+    "predicate": "followee",
+    "score": 0.7354013500000001
+  },
+  {
+    "prefix": "https://data.nasa.gov/ontologies/atmonto/ATM#departureTaxiPath",
+    "prefix_name": "atm",
+    "predicate": "departureTaxiPath",
+    "score": 0.2251768
+  },
+  {
+    "prefix": "https://data.nasa.gov/ontologies/atmonto/ATM#arrivalTaxiPath",
+    "prefix_name": "atm",
+    "predicate": "arrivalTaxiPath",
+    "score": 0.2251768
+  },
+  {
+    "prefix": "http://www.demcare.eu/ontologies/demlab.owl#compliantInstructionsOrder",
+    "prefix_name": "demlab",
+    "predicate": "compliantInstructionsOrder",
+    "score": 0.22080898
+  },
+  {
+    "prefix": "http://purl.org/lobid/lv#subjectChain",
+    "prefix_name": "lv",
+    "predicate": "subjectChain",
+    "score": 0.19320786
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#DisplayedAreaSelectionSequence",
+    "prefix_name": "dicom",
+    "predicate": "DisplayedAreaSelectionSequence",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0070.005A",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0070.005A",
+    "score": 0.49574855
+  },
+  {
+    "prefix": "http://www.w3.org/2007/05/powder-s#text",
+    "prefix_name": "wdrs",
+    "predicate": "text",
+    "score": 0.48611113
+  },
+  {
+    "prefix": "http://www.europeana.eu/schemas/edm/dataProvider",
+    "prefix_name": "edm",
+    "predicate": "dataProvider",
+    "score": 0.4716641
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#DisplayedAreaBottomRightHandCorner",
+    "prefix_name": "dicom",
+    "predicate": "DisplayedAreaBottomRightHandCorner",
+    "score": 0.43278646
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#DisplayedAreaTopLeftHandCorner",
+    "prefix_name": "dicom",
+    "predicate": "DisplayedAreaTopLeftHandCorner",
+    "score": 0.43278646
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0070.0053",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0070.0053",
+    "score": 0.41666666
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0070.0050",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0070.0050",
+    "score": 0.41643053
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#DisplayedAreaTopLeftHandCornerTrial",
+    "prefix_name": "dicom",
+    "predicate": "DisplayedAreaTopLeftHandCornerTrial",
+    "score": 0.415344
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0070.0051",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0070.0051",
+    "score": 0.415344
+  }
+]

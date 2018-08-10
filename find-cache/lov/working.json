@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://www.lingvoj.org/ontology#workingLanguage",
+    "prefix_name": "lingvo",
+    "predicate": "workingLanguage",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://reference.data.gov.uk/def/central-government/workingTime",
+    "prefix_name": "cgov",
+    "predicate": "workingTime",
+    "score": 0.5473012
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#workingTitle",
+    "prefix_name": "ebucore",
+    "predicate": "workingTitle",
+    "score": 0.5473012
+  },
+  {
+    "prefix": "http://www.w3.org/2000/10/swap/pim/contact#nearestAirport",
+    "prefix_name": "con",
+    "predicate": "nearestAirport",
+    "score": 0.49740076
+  },
+  {
+    "prefix": "https://w3id.org/saref4ee#workingModeId",
+    "prefix_name": "s4ee",
+    "predicate": "workingModeId",
+    "score": 0.4881445
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#vmsWorking",
+    "prefix_name": "datex",
+    "predicate": "vmsWorking",
+    "score": 0.38334247
+  },
+  {
+    "prefix": "http://schema.org/employee",
+    "prefix_name": "schema",
+    "predicate": "employee",
+    "score": 0.1580944
+  },
+  {
+    "prefix": "http://schema.org/employees",
+    "prefix_name": "schema",
+    "predicate": "employees",
+    "score": 0.14827764
+  },
+  {
+    "prefix": "http://reference.data.gov.uk/def/central-government/timePeriod",
+    "prefix_name": "cgov",
+    "predicate": "timePeriod",
+    "score": 0.13245356
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaff",
+    "prefix_name": "ebucore",
+    "predicate": "hasStaff",
+    "score": 0.13245356
+  }
+]

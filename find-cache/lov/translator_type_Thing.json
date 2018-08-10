@@ -1,0 +1,182 @@
+[
+  {
+    "prefix": "http://purl.org/linguistics/gold/translation",
+    "prefix_name": "gold",
+    "predicate": "translation",
+    "score": 7.989875
+  },
+  {
+    "prefix": "http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#translation",
+    "prefix_name": "d2rq",
+    "predicate": "translation",
+    "score": 6.9175994
+  },
+  {
+    "prefix": "http://comicmeta.org/cbo/translation",
+    "prefix_name": "cbo",
+    "predicate": "translation",
+    "score": 6.7234678
+  },
+  {
+    "prefix": "http://lexvo.org/ontology#translation",
+    "prefix_name": "lvont",
+    "predicate": "translation",
+    "score": 6.2034716
+  },
+  {
+    "prefix": "http://www.w3.org/ns/adms#translation",
+    "prefix_name": "adms",
+    "predicate": "translation",
+    "score": 6.1573398
+  },
+  {
+    "prefix": "http://purl.org/vocab/frbr/core#translation",
+    "prefix_name": "frbr",
+    "predicate": "translation",
+    "score": 6.151759
+  },
+  {
+    "prefix": "http://www.lingvoj.org/semio#translation",
+    "prefix_name": "semio",
+    "predicate": "translation",
+    "score": 6.151759
+  },
+  {
+    "prefix": "http://lexvo.org/ontology#characterRadical",
+    "prefix_name": "lvont",
+    "predicate": "characterRadical",
+    "score": 1.9863119
+  },
+  {
+    "prefix": "http://vivoweb.org/ontology/core#hasTranslation",
+    "prefix_name": "vivo",
+    "predicate": "hasTranslation",
+    "score": 1.738683
+  },
+  {
+    "prefix": "http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#translateWith",
+    "prefix_name": "d2rq",
+    "predicate": "translateWith",
+    "score": 1.6201919
+  },
+  {
+    "prefix": "http://www.lingvoj.org/ontology#translatedResource",
+    "prefix_name": "lingvo",
+    "predicate": "translatedResource",
+    "score": 1.4631314
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/translatedMotto",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "translatedMotto",
+    "score": 1.45853
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/translatedAs",
+    "prefix_name": "rdarel",
+    "predicate": "translatedAs",
+    "score": 1.45853
+  },
+  {
+    "prefix": "http://purl.org/vocab/frbr/core#translationOf",
+    "prefix_name": "frbr",
+    "predicate": "translationOf",
+    "score": 1.3868396
+  },
+  {
+    "prefix": "http://purl.org/spar/fabio/hasTranslatedSubtitle",
+    "prefix_name": "fabio",
+    "predicate": "hasTranslatedSubtitle",
+    "score": 1.1705052
+  },
+  {
+    "prefix": "http://semanticscience.org/resource/SIO_010082",
+    "prefix_name": "sio",
+    "predicate": "SIO_010082",
+    "score": 1.1539855
+  },
+  {
+    "prefix": "http://purl.uniprot.org/core/translatedTo",
+    "prefix_name": "uniprot",
+    "predicate": "translatedTo",
+    "score": 1.0966394
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/freelyTranslatedAsExpression",
+    "prefix_name": "rdarel",
+    "predicate": "freelyTranslatedAsExpression",
+    "score": 1.0767804
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/e/P20171",
+    "prefix_name": "rdae",
+    "predicate": "P20171",
+    "score": 1.0767804
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/freelyTranslatedAsWork",
+    "prefix_name": "rdarel",
+    "predicate": "freelyTranslatedAsWork",
+    "score": 1.0767804
+  },
+  {
+    "prefix": "http://purl.uniprot.org/core/translatedTo",
+    "prefix_name": "uniprot",
+    "predicate": "translatedTo",
+    "score": 1.0522916
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/w/P10099",
+    "prefix_name": "rdaw",
+    "predicate": "P10099",
+    "score": 1.020971
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/translatedAs",
+    "prefix_name": "rdarel",
+    "predicate": "translatedAs",
+    "score": 0.97662324
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/translatedMotto",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "translatedMotto",
+    "score": 0.83710563
+  },
+  {
+    "prefix": "http://purl.uniprot.org/core/translatedFrom",
+    "prefix_name": "uniprot",
+    "predicate": "translatedFrom",
+    "score": 0.83710563
+  },
+  {
+    "prefix": "http://www.lingvoj.org/ontology#translatedResource",
+    "prefix_name": "lingvo",
+    "predicate": "translatedResource",
+    "score": 0.7315657
+  },
+  {
+    "prefix": "http://purl.org/spar/fabio/hasTranslatedTitle",
+    "prefix_name": "fabio",
+    "predicate": "hasTranslatedTitle",
+    "score": 0.731155
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/freelyTranslatedAs",
+    "prefix_name": "rdarel",
+    "predicate": "freelyTranslatedAs",
+    "score": 0.731155
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/freelyTranslatedAsWork",
+    "prefix_name": "rdarel",
+    "predicate": "freelyTranslatedAsWork",
+    "score": 0.6005461
+  },
+  {
+    "prefix": "http://purl.org/spar/fabio/hasTranslatedSubtitle",
+    "prefix_name": "fabio",
+    "predicate": "hasTranslatedSubtitle",
+    "score": 0.5852526
+  }
+]

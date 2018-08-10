@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://commontag.org/ns#tagged",
+    "prefix_name": "ctag",
+    "predicate": "tagged",
+    "score": 1
+  },
+  {
+    "prefix": "http://commontag.org/ns#means",
+    "prefix_name": "ctag",
+    "predicate": "means",
+    "score": 0.9581373
+  },
+  {
+    "prefix": "http://commontag.org/ns#label",
+    "prefix_name": "ctag",
+    "predicate": "label",
+    "score": 0.9036936
+  },
+  {
+    "prefix": "http://www.w3.org/ns/csvw#valueUrl",
+    "prefix_name": "csvw",
+    "predicate": "valueUrl",
+    "score": 0.51147854
+  },
+  {
+    "prefix": "http://schema.org/significantLinks",
+    "prefix_name": "schema",
+    "predicate": "significantLinks",
+    "score": 0.4867424
+  },
+  {
+    "prefix": "http://commontag.org/ns#taggingDate",
+    "prefix_name": "ctag",
+    "predicate": "taggingDate",
+    "score": 0.4838172
+  },
+  {
+    "prefix": "http://commontag.org/ns#isAbout",
+    "prefix_name": "ctag",
+    "predicate": "isAbout",
+    "score": 0.45924914
+  },
+  {
+    "prefix": "http://reference.data.gov.au/def/ont/dataset#hasDownloadURL",
+    "prefix_name": "donto",
+    "predicate": "hasDownloadURL",
+    "score": 0.45924914
+  },
+  {
+    "prefix": "http://schema.org/department",
+    "prefix_name": "schema",
+    "predicate": "department",
+    "score": 0.3472222
+  },
+  {
+    "prefix": "http://schema.org/significantLink",
+    "prefix_name": "schema",
+    "predicate": "significantLink",
+    "score": 0.34554636
+  }
+]

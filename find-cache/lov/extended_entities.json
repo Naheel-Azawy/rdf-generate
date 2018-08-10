@@ -1,0 +1,242 @@
+[
+  {
+    "prefix": "http://purl.org/spar/cito/extends",
+    "prefix_name": "cito",
+    "predicate": "extends",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://purl.org/vocommons/voaf#extends",
+    "prefix_name": "voaf",
+    "predicate": "extends",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "https://w3id.org/BCI-ontology#extends",
+    "prefix_name": "bci",
+    "predicate": "extends",
+    "score": 1.92928456
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#isExtruded",
+    "prefix_name": "arp",
+    "predicate": "isExtruded",
+    "score": 1.368975
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedData1",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedData1",
+    "score": 1.1426122
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt1Y",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedPt1Y",
+    "score": 1.1114401
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#isExtrudedBy",
+    "prefix_name": "arp",
+    "predicate": "isExtrudedBy",
+    "score": 1.0998958
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedData2",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedData2",
+    "score": 1.09518
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt2Y",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedPt2Y",
+    "score": 1.0522916
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt2X",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedPt2X",
+    "score": 0.99978566
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt1X",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedPt1X",
+    "score": 0.96240884
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt2Z",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedPt2Z",
+    "score": 0.96240884
+  },
+  {
+    "prefix": "http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt1Z",
+    "prefix_name": "arp",
+    "predicate": "hasExtrudedPt1Z",
+    "score": 0.95828253
+  },
+  {
+    "prefix": "http://reegle.info/schema#extendNetwork",
+    "prefix_name": "reegle",
+    "predicate": "extendNetwork",
+    "score": 0.7369993
+  },
+  {
+    "prefix": "http://www.w3.org/ns/prov#hadPrimarySource",
+    "prefix_name": "prov",
+    "predicate": "hadPrimarySource",
+    "score": 0.62495875
+  },
+  {
+    "prefix": "http://purl.org/linked-data/api/vocab#extendedMetadataVersion",
+    "prefix_name": "api",
+    "predicate": "extendedMetadataVersion",
+    "score": 0.6009774
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedAs",
+    "prefix_name": "rdarel",
+    "predicate": "expandedAs",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://www.w3.org/ns/prov#generated",
+    "prefix_name": "prov",
+    "predicate": "generated",
+    "score": 0.52206475
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedAsExpression",
+    "prefix_name": "rdarel",
+    "predicate": "expandedAsExpression",
+    "score": 0.4709562
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/w/P10119",
+    "prefix_name": "rdaw",
+    "predicate": "P10119",
+    "score": 0.4709562
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#full-name",
+    "prefix_name": "akt",
+    "predicate": "full-name",
+    "score": 0.45573
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/u/P60216",
+    "prefix_name": "rdau",
+    "predicate": "P60216",
+    "score": 0.44444448
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/e/P20115",
+    "prefix_name": "rdae",
+    "predicate": "P20115",
+    "score": 0.44157153
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedVersionOfWork",
+    "prefix_name": "rdarel",
+    "predicate": "expandedVersionOfWork",
+    "score": 0.44157153
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedVersionOfExpression",
+    "prefix_name": "rdarel",
+    "predicate": "expandedVersionOfExpression",
+    "score": 0.44157153
+  },
+  {
+    "prefix": "http://iflastandards.info/ns/fr/frad/P4026",
+    "prefix_name": "frad",
+    "predicate": "P4026",
+    "score": 0.43036553
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#has-author",
+    "prefix_name": "akt",
+    "predicate": "has-author",
+    "score": 0.4159228
+  },
+  {
+    "prefix": "http://purl.org/vocommons/voaf#extends",
+    "prefix_name": "voaf",
+    "predicate": "extends",
+    "score": 0.41251215
+  },
+  {
+    "prefix": "https://w3id.org/BCI-ontology#extends",
+    "prefix_name": "bci",
+    "predicate": "extends",
+    "score": 0.41251215
+  },
+  {
+    "prefix": "http://purl.org/spar/cito/extends",
+    "prefix_name": "cito",
+    "predicate": "extends",
+    "score": 0.41251215
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#has-title",
+    "prefix_name": "akt",
+    "predicate": "has-title",
+    "score": 0.40722862
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#has-date",
+    "prefix_name": "akt",
+    "predicate": "has-date",
+    "score": 0.37209642
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#has-publication-reference",
+    "prefix_name": "akt",
+    "predicate": "has-publication-reference",
+    "score": 0.32013553
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#family-name",
+    "prefix_name": "akt",
+    "predicate": "family-name",
+    "score": 0.31827152
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#has-web-address",
+    "prefix_name": "akt",
+    "predicate": "has-web-address",
+    "score": 0.3137115
+  },
+  {
+    "prefix": "http://www.disit.org/km4city/schema#extendName",
+    "prefix_name": "km4c",
+    "predicate": "extendName",
+    "score": 0.2750081
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/dateExtended",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "dateExtended",
+    "score": 0.27393273
+  },
+  {
+    "prefix": "http://open-services.net/ns/core#extendedError",
+    "prefix_name": "oslc",
+    "predicate": "extendedError",
+    "score": 0.27393273
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#pointExtended",
+    "prefix_name": "datex",
+    "predicate": "pointExtended",
+    "score": 0.27393273
+  },
+  {
+    "prefix": "http://purl.org/net/dbm/ontology#atcCodeExtended",
+    "prefix_name": "dbm",
+    "predicate": "atcCodeExtended",
+    "score": 0.2552175
+  }
+]

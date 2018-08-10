@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://schema.org/url",
+    "prefix_name": "schema",
+    "predicate": "url",
+    "score": 2.56848574
+  },
+  {
+    "prefix": "http://www.w3.org/2006/vcard/ns#url",
+    "prefix_name": "vcard",
+    "predicate": "url",
+    "score": 2.50438291
+  },
+  {
+    "prefix": "http://linkeddata.center/kees/v1#url",
+    "prefix_name": "kees",
+    "predicate": "url",
+    "score": 2.33979837
+  },
+  {
+    "prefix": "http://ogp.me/ns#url",
+    "prefix_name": "og",
+    "predicate": "url",
+    "score": 2.33979837
+  },
+  {
+    "prefix": "http://dati.beniculturali.it/cis/url",
+    "prefix_name": "cis",
+    "predicate": "url",
+    "score": 2.33489323
+  },
+  {
+    "prefix": "http://purl.org/ontology/dvia#url",
+    "prefix_name": "dvia",
+    "predicate": "url",
+    "score": 2.33489323
+  },
+  {
+    "prefix": "http://www.oegov.org/core/owl/cc#url",
+    "prefix_name": "oecc",
+    "predicate": "url",
+    "score": 2.33489323
+  },
+  {
+    "prefix": "http://www.w3.org/ns/csvw#url",
+    "prefix_name": "csvw",
+    "predicate": "url",
+    "score": 2.33489323
+  },
+  {
+    "prefix": "http://advene.org/ns/cinelab/ld#url",
+    "prefix_name": "cl",
+    "predicate": "url",
+    "score": 2.3261317
+  },
+  {
+    "prefix": "http://www.w3.org/2002/12/cal/ical#url",
+    "prefix_name": "cal",
+    "predicate": "url",
+    "score": 2.30133667
+  }
+]

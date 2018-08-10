@@ -1,0 +1,20 @@
+[
+  {
+    "prefix": "http://rdf.myexperiment.org/ontologies/base/receive-notifications",
+    "prefix_name": "meb",
+    "predicate": "receive-notifications",
+    "score": 1.5706141
+  },
+  {
+    "prefix": "https://vocab.eccenca.com/pubsub/callback",
+    "prefix_name": "pubsub",
+    "predicate": "callback",
+    "score": 0.33730212
+  },
+  {
+    "prefix": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#lastRefreshed",
+    "prefix_name": "nie",
+    "predicate": "lastRefreshed",
+    "score": 0.1180736
+  }
+]

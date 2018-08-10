@@ -1,0 +1,302 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/theme",
+    "prefix_name": "foaf",
+    "predicate": "theme",
+    "score": 6.833294
+  },
+  {
+    "prefix": "http://semweb.mmlab.be/ns/apps4X#theme",
+    "prefix_name": "apps4X",
+    "predicate": "theme",
+    "score": 6.706999
+  },
+  {
+    "prefix": "http://rhizomik.net/ontologies/copyrightonto.owl#theme",
+    "prefix_name": "cro",
+    "predicate": "theme",
+    "score": 6.706999
+  },
+  {
+    "prefix": "http://www.w3.org/ns/dcat#theme",
+    "prefix_name": "dcat",
+    "predicate": "theme",
+    "score": 6.654597000000001
+  },
+  {
+    "prefix": "http://data.press.net/ontology/event/theme",
+    "prefix_name": "pne",
+    "predicate": "theme",
+    "score": 6.654597000000001
+  },
+  {
+    "prefix": "http://purl.org/limo-ontology/limo#theme",
+    "prefix_name": "limo",
+    "predicate": "theme",
+    "score": 6.589494500000001
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTheme",
+    "prefix_name": "ebucore",
+    "predicate": "hasTheme",
+    "score": 2.5983188
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/title",
+    "prefix_name": "dcterms",
+    "predicate": "title",
+    "score": 2.44665
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/title",
+    "prefix_name": "dce",
+    "predicate": "title",
+    "score": 2.38213895
+  },
+  {
+    "prefix": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "prefix_name": "rdf",
+    "predicate": "type",
+    "score": 2.299009
+  },
+  {
+    "prefix": "http://ogp.me/ns#title",
+    "prefix_name": "og",
+    "predicate": "title",
+    "score": 2.2788806
+  },
+  {
+    "prefix": "http://data.archiveshub.ac.uk/def/title",
+    "prefix_name": "locah",
+    "predicate": "title",
+    "score": 2.27090184
+  },
+  {
+    "prefix": "http://ns.nature.com/terms/title",
+    "prefix_name": "npg",
+    "predicate": "title",
+    "score": 2.2652955500000003
+  },
+  {
+    "prefix": "http://ogp.me/ns#type",
+    "prefix_name": "og",
+    "predicate": "type",
+    "score": 2.2050601
+  },
+  {
+    "prefix": "http://purl.org/ontology/storyline/title",
+    "prefix_name": "nsl",
+    "predicate": "title",
+    "score": 2.20472218
+  },
+  {
+    "prefix": "http://www.bbc.co.uk/ontologies/creativework/title",
+    "prefix_name": "cwork",
+    "predicate": "title",
+    "score": 2.20472218
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/type",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "type",
+    "score": 2.1515231999999997
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/title",
+    "prefix_name": "foaf",
+    "predicate": "title",
+    "score": 2.1445213
+  },
+  {
+    "prefix": "http://data.vlaanderen.be/ns/persoon#type",
+    "prefix_name": "bperson",
+    "predicate": "type",
+    "score": 2.1390791399999998
+  },
+  {
+    "prefix": "http://lemon-model.net/lemon#tree",
+    "prefix_name": "lemon",
+    "predicate": "tree",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://www.w3.org/1999/xhtml/vocab#tree",
+    "prefix_name": "xhv",
+    "predicate": "tree",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/tree",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "tree",
+    "score": 2.1002899
+  },
+  {
+    "prefix": "http://ogp.me/ns#video:type",
+    "prefix_name": "og",
+    "predicate": "type",
+    "score": 2.0024644
+  },
+  {
+    "prefix": "http://ogp.me/ns#audio:type",
+    "prefix_name": "og",
+    "predicate": "type",
+    "score": 2.00230278
+  },
+  {
+    "prefix": "http://reference.data.gov.au/def/ont/dataset#agiftFunction",
+    "prefix_name": "donto",
+    "predicate": "agiftFunction",
+    "score": 1.8477749
+  },
+  {
+    "prefix": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl#hasTheme",
+    "prefix_name": "lsweb",
+    "predicate": "hasTheme",
+    "score": 1.7884521
+  },
+  {
+    "prefix": "http://www.identity.org/ontologies/identity.owl#timeDate",
+    "prefix_name": "identity",
+    "predicate": "timeDate",
+    "score": 1.7139183
+  },
+  {
+    "prefix": "http://www.w3.org/ns/odrl/2/timedCount",
+    "prefix_name": "odrl",
+    "predicate": "timedCount",
+    "score": 1.6877748
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/openingTheme",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "openingTheme",
+    "score": 1.5285331
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#timeDefault",
+    "prefix_name": "datex",
+    "predicate": "timeDefault",
+    "score": 1.0801805
+  },
+  {
+    "prefix": "https://w3id.org/seas/timeDerivative",
+    "prefix_name": "seast",
+    "predicate": "timeDerivative",
+    "score": 0.7510795
+  },
+  {
+    "prefix": "http://www.disit.org/km4city/schema#multimediaResource",
+    "prefix_name": "km4c",
+    "predicate": "multimediaResource",
+    "score": 0.6770028
+  },
+  {
+    "prefix": "http://www.w3.org/2003/12/exif/ns#dateTimeDigitized",
+    "prefix_name": "exif",
+    "predicate": "dateTimeDigitized",
+    "score": 0.62589955
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#TimeDomainFiltering",
+    "prefix_name": "dicom",
+    "predicate": "TimeDomainFiltering",
+    "score": 0.54160225
+  },
+  {
+    "prefix": "http://www.w3.org/2006/time#hasDateTimeDescription",
+    "prefix_name": "time",
+    "predicate": "hasDateTimeDescription",
+    "score": 0.54160225
+  },
+  {
+    "prefix": "http://data.opendiscoveryspace.eu/lom_ontology_ods.owl#dateTimeDescription",
+    "prefix_name": "lom",
+    "predicate": "dateTimeDescription",
+    "score": 0.54009026
+  },
+  {
+    "prefix": "http://www.w3.org/2003/12/exif/ns#subSecTimeDigitized",
+    "prefix_name": "exif",
+    "predicate": "subSecTimeDigitized",
+    "score": 0.54009026
+  },
+  {
+    "prefix": "http://gov.genealogy.net/ontology.owl#hasTitle",
+    "prefix_name": "gov",
+    "predicate": "hasTitle",
+    "score": 0.5344265
+  },
+  {
+    "prefix": "http://sw-portal.deri.org/ontologies/swportal#hasTitle",
+    "prefix_name": "swpo",
+    "predicate": "hasTitle",
+    "score": 0.49897134
+  },
+  {
+    "prefix": "http://www.w3.org/2004/02/skos/core#narrower",
+    "prefix_name": "skos",
+    "predicate": "narrower",
+    "score": 0.476668
+  },
+  {
+    "prefix": "http://www.w3.org/2004/02/skos/core#broader",
+    "prefix_name": "skos",
+    "predicate": "broader",
+    "score": 0.47386518
+  },
+  {
+    "prefix": "http://ns.nature.com/terms/treeDepth",
+    "prefix_name": "npg",
+    "predicate": "treeDepth",
+    "score": 0.37770873
+  },
+  {
+    "prefix": "http://softeng.polito.it/rsctx#street",
+    "prefix_name": "rsctx",
+    "predicate": "street",
+    "score": 0.37478608
+  },
+  {
+    "prefix": "http://www.identity.org/ontologies/identity.owl#street",
+    "prefix_name": "identity",
+    "predicate": "street",
+    "score": 0.36492112
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/millType",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "millType",
+    "score": 0.3456225
+  },
+  {
+    "prefix": "http://www.w3.org/2006/vcard/ns#street-address",
+    "prefix_name": "vcard",
+    "predicate": "street-address",
+    "score": 0.34425813
+  },
+  {
+    "prefix": "http://www.agls.gov.au/agls/terms/serviceType",
+    "prefix_name": "agls",
+    "predicate": "serviceType",
+    "score": 0.3250738
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/tyd",
+    "prefix_name": "mrel",
+    "predicate": "tyd",
+    "score": 0.32280946
+  },
+  {
+    "prefix": "http://www.agls.gov.au/agls/terms/documentType",
+    "prefix_name": "agls",
+    "predicate": "documentType",
+    "score": 0.31830207
+  },
+  {
+    "prefix": "http://www.w3.org/1999/xhtml/vocab#treegrid",
+    "prefix_name": "xhv",
+    "predicate": "treegrid",
+    "score": 0.27369085
+  }
+]

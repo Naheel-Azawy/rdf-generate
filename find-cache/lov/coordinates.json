@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#coordinates",
+    "prefix_name": "gndo",
+    "predicate": "coordinates",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#coordinates",
+    "prefix_name": "gm",
+    "predicate": "coordinates",
+    "score": 1.96402572
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/coverage",
+    "prefix_name": "dcterms",
+    "predicate": "coverage",
+    "score": 0.476608
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/coverage",
+    "prefix_name": "dce",
+    "predicate": "coverage",
+    "score": 0.43771195
+  },
+  {
+    "prefix": "http://www.mindswap.org/2003/owl/geo/geoFeatures20040307.owl#xyCoordinates",
+    "prefix_name": "geof",
+    "predicate": "xyCoordinates",
+    "score": 0.40847012
+  },
+  {
+    "prefix": "http://www.mindswap.org/2003/owl/geo/geoFeatures20040307.owl#xyzCoordinates",
+    "prefix_name": "geof",
+    "predicate": "xyzCoordinates",
+    "score": 0.39646354
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/capitalCoordinates",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "capitalCoordinates",
+    "score": 0.3676978
+  },
+  {
+    "prefix": "http://iflastandards.info/ns/isbd/elements/P1050",
+    "prefix_name": "isbd",
+    "predicate": "P1050",
+    "score": 0.32558116
+  },
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#typeOfCoordinates",
+    "prefix_name": "gndo",
+    "predicate": "typeOfCoordinates",
+    "score": 0.29415825
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ReferenceCoordinates",
+    "prefix_name": "dicom",
+    "predicate": "ReferenceCoordinates",
+    "score": 0.29299206
+  }
+]

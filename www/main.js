@@ -12,6 +12,7 @@ const STEPS = 4;
 main();
 
 const print = s => console.log(s);
+const printj = s => console.log(JSON.stringify(s, null, 2));
 
 function shallowClone(o) {
     return Object.assign({}, o);
@@ -83,6 +84,7 @@ function checkEntities() {
 }
 
 function setEntityInput() {
+    let entity_name = document.getElementById('entity_name');
     let json_path = document.getElementById('json_path');
     let include = document.getElementById('include');
     let type = document.getElementById('type');
@@ -96,6 +98,7 @@ function setEntityInput() {
     }
     checkEntities();
     newDes.entities[json_path.value] = {
+        name: entity_name.value,
         include: inc,
         type: type.value,
         iri_template: iri_template.value
@@ -104,16 +107,18 @@ function setEntityInput() {
     addEntitiesTable(newDes.entities);
 }
 
-function appendEntityInclude(id) {
-    document.getElementById(id).innerHTML
-        += ENTITIES_TABLE_INCLUDE_ITEM_TEMPLATE('');
+function onEntityChange(input, path, prop) {
+    checkEntities();
+    if (!newDes.entities[path])
+        newDes.entities[path] = {};
+    newDes.entities[path][prop] = input.value;
 }
 
 // PROPERTIES ---------------------------------------------
 
 function addPropertiesTable() {
     // Grouping the properties under the entities
-    let e = deepClone(des.entities);
+    let e = deepClone(newDes.entities);
     let s = shallowClone(des.struct);
     for (let base of Object.keys(e)) {
         if (!e[base].properties) e[base].properties = {};
@@ -125,6 +130,37 @@ function addPropertiesTable() {
         }
         if (Object.keys(e[base].properties).length === 0) {
             delete e[base];
+        }
+    }
+    addTable(PROPERTIES_TABLE_TEMPLATE, PROPERTIES_HEADER_TEMPLATE, e);
+}
+
+function addPropertiesTable1() {
+    // Grouping the properties under the entities
+    let e = deepClone(newDes.entities);
+    let s = shallowClone(des.struct);
+    for (let p of Object.keys(s)) {
+        for (let base of Object.keys(e)) {
+            if (!e[base].properties) e[base].properties = {};
+
+            let p_base = p;
+            do {
+                p_base = p_base.split(".");
+                p_base.pop();
+                p_base = p_base.join(".");
+
+                print(`${p_base} ${base}`);
+
+                if (s[p] && p_base === base) {
+                    e[base].properties[p] = s[p];
+                    s[p] = undefined;
+                    break;
+                }
+            } while (p_base);
+
+            if (Object.keys(e[base].properties).length === 0) {
+                delete e[base];
+            }
         }
     }
     addTable(PROPERTIES_TABLE_TEMPLATE, PROPERTIES_HEADER_TEMPLATE, e);
@@ -156,6 +192,10 @@ function onPredChange(sel, path) {
     checkPropObj();
     if (!filteredDes.struct[path])
         filteredDes.struct[path] = {};
+    if (sel.value == des.struct[path].suggested_predicates.length) {
+        print("TODO: add a predicate dialog");
+        return;
+    }
     filteredDes.struct[path].suggested_predicates = [des.struct[path].suggested_predicates[sel.value]];
 }
 

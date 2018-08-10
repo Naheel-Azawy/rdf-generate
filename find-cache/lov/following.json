@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/followingEvent",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "followingEvent",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://purl.org/vocab/bio/0.1/followingEvent",
+    "prefix_name": "bio",
+    "predicate": "followingEvent",
+    "score": 0.55414546
+  },
+  {
+    "prefix": "http://purl.org/vocab/bio/0.1/immediatelyFollowingEvent",
+    "prefix_name": "bio",
+    "predicate": "immediatelyFollowingEvent",
+    "score": 0.44467697
+  },
+  {
+    "prefix": "http://vocab.org/transit/terms/arrivalTime",
+    "prefix_name": "transit",
+    "predicate": "arrivalTime",
+    "score": 0.32502082
+  },
+  {
+    "prefix": "http://vocab.org/transit/terms/departureTime",
+    "prefix_name": "transit",
+    "predicate": "departureTime",
+    "score": 0.32501605
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#validFrom",
+    "prefix_name": "gr",
+    "predicate": "validFrom",
+    "score": 0.30747184
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#validThrough",
+    "prefix_name": "gr",
+    "predicate": "validThrough",
+    "score": 0.3067336
+  },
+  {
+    "prefix": "http://www.lexinfo.net/ontology/2.0/lexinfo#indirectObject",
+    "prefix_name": "lexinfo",
+    "predicate": "indirectObject",
+    "score": 0.30373636
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#opens",
+    "prefix_name": "gr",
+    "predicate": "opens",
+    "score": 0.301434
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#closes",
+    "prefix_name": "gr",
+    "predicate": "closes",
+    "score": 0.301434
+  }
+]

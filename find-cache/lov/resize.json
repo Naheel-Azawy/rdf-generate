@@ -1,0 +1,128 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/regime",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "regime",
+    "score": 6.7230468
+  },
+  {
+    "prefix": "http://data.ign.fr/def/topo#regime",
+    "prefix_name": "topo",
+    "predicate": "regime",
+    "score": 6.3758206
+  },
+  {
+    "prefix": "http://schema.org/recipe",
+    "prefix_name": "schema",
+    "predicate": "recipe",
+    "score": 5.804369
+  },
+  {
+    "prefix": "http://www.w3.org/ns/sparql-service-description#entailmentRegime",
+    "prefix_name": "sd",
+    "predicate": "entailmentRegime",
+    "score": 1.5072601
+  },
+  {
+    "prefix": "http://www.w3.org/ns/sparql-service-description#defaultEntailmentRegime",
+    "prefix_name": "sd",
+    "predicate": "defaultEntailmentRegime",
+    "score": 1.1809132
+  },
+  {
+    "prefix": "http://schema.org/recipeYield",
+    "prefix_name": "schema",
+    "predicate": "recipeYield",
+    "score": 1.0801805
+  },
+  {
+    "prefix": "http://schema.org/recipeCuisine",
+    "prefix_name": "schema",
+    "predicate": "recipeCuisine",
+    "score": 0.89527655
+  },
+  {
+    "prefix": "http://schema.org/recipeCategory",
+    "prefix_name": "schema",
+    "predicate": "recipeCategory",
+    "score": 0.80136126
+  },
+  {
+    "prefix": "http://rdf.muninn-project.org/ontologies/military#RegimentalColours",
+    "prefix_name": "mil",
+    "predicate": "RegimentalColours",
+    "score": 0.6844875
+  },
+  {
+    "prefix": "http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#producedByRecipe",
+    "prefix_name": "spfood",
+    "predicate": "producedByRecipe",
+    "score": 0.667801
+  },
+  {
+    "prefix": "http://schema.org/recipeInstructions",
+    "prefix_name": "schema",
+    "predicate": "recipeInstructions",
+    "score": 0.6658078
+  },
+  {
+    "prefix": "http://schema.org/recipeIngredient",
+    "prefix_name": "schema",
+    "predicate": "recipeIngredient",
+    "score": 0.6394833
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/minTime",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "minTime",
+    "score": 0.5540937
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/maxTime",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "maxTime",
+    "score": 0.55293494
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/complexity",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "complexity",
+    "score": 0.5454576
+  },
+  {
+    "prefix": "http://www.w3.org/ns/shacl#entailment",
+    "prefix_name": "sh",
+    "predicate": "entailment",
+    "score": 0.28849638
+  },
+  {
+    "prefix": "http://www.w3.org/ns/sparql-service-description#defaultSupportedEntailmentProfile",
+    "prefix_name": "sd",
+    "predicate": "defaultSupportedEntailmentProfile",
+    "score": 0.21709232
+  },
+  {
+    "prefix": "http://rdvocab.info/Elements/copyrightDate",
+    "prefix_name": "rdag1",
+    "predicate": "copyrightDate",
+    "score": 0.20952478
+  },
+  {
+    "prefix": "http://rdvocab.info/Elements/copyrightDateManifestation",
+    "prefix_name": "rdag1",
+    "predicate": "copyrightDateManifestation",
+    "score": 0.19233091
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/u/P60069",
+    "prefix_name": "rdau",
+    "predicate": "P60069",
+    "score": 0.19094028
+  },
+  {
+    "prefix": "http://www.biopax.org/release/biopax-level3.owl#featureLocation",
+    "prefix_name": "biopax",
+    "predicate": "featureLocation",
+    "score": 0.101049006
+  }
+]

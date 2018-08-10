@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://purl.org/dc/terms/description",
+    "prefix_name": "dcterms",
+    "predicate": "description",
+    "score": 2.35387992
+  },
+  {
+    "prefix": "http://usefulinc.com/ns/doap#description",
+    "prefix_name": "doap",
+    "predicate": "description",
+    "score": 2.28261792
+  },
+  {
+    "prefix": "http://ogp.me/ns#description",
+    "prefix_name": "og",
+    "predicate": "description",
+    "score": 2.23249556
+  },
+  {
+    "prefix": "http://rdfs.co/bevon/description",
+    "prefix_name": "bevon",
+    "predicate": "description",
+    "score": 2.23249556
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/description",
+    "prefix_name": "dce",
+    "predicate": "description",
+    "score": 2.22636109
+  },
+  {
+    "prefix": "http://www.bbc.co.uk/ontologies/creativework/description",
+    "prefix_name": "cwork",
+    "predicate": "description",
+    "score": 2.20293416
+  },
+  {
+    "prefix": "http://rdf.insee.fr/def/geo#description",
+    "prefix_name": "igeo",
+    "predicate": "description",
+    "score": 2.1987841599999998
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/title",
+    "prefix_name": "dce",
+    "predicate": "title",
+    "score": 0.41258124
+  },
+  {
+    "prefix": "http://usefulinc.com/ns/doap#shortdesc",
+    "prefix_name": "doap",
+    "predicate": "shortdesc",
+    "score": 0.40038696
+  },
+  {
+    "prefix": "http://purl.org/ontology/wo/shortDescription",
+    "prefix_name": "wlo",
+    "predicate": "shortDescription",
+    "score": 0.35414687
+  }
+]

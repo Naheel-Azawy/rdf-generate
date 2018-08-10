@@ -1,0 +1,128 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/siren",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "siren",
+    "score": 7.2588778000000005
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/scene",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "scene",
+    "score": 6.8986116
+  },
+  {
+    "prefix": "http://www.identity.org/ontologies/identity.owl#street",
+    "prefix_name": "identity",
+    "predicate": "street",
+    "score": 2.2119758999999997
+  },
+  {
+    "prefix": "http://softeng.polito.it/rsctx#street",
+    "prefix_name": "rsctx",
+    "predicate": "street",
+    "score": 2.1064906399999996
+  },
+  {
+    "prefix": "https://w3id.org/BCI-ontology#hasScene",
+    "prefix_name": "bci",
+    "predicate": "hasScene",
+    "score": 1.5981864
+  },
+  {
+    "prefix": "http://www.ebusiness-unibw.org/ontologies/consumerelectronics/v1#hasSceneMode",
+    "prefix_name": "ceo",
+    "predicate": "hasSceneMode",
+    "score": 1.4828484
+  },
+  {
+    "prefix": "http://www.w3.org/2003/12/exif/ns#sceneType",
+    "prefix_name": "exif",
+    "predicate": "sceneType",
+    "score": 1.3318219
+  },
+  {
+    "prefix": "http://schema.org/streetAddress",
+    "prefix_name": "schema",
+    "predicate": "streetAddress",
+    "score": 0.76785532
+  },
+  {
+    "prefix": "http://www.w3.org/2003/12/exif/ns#sceneCaptureType",
+    "prefix_name": "exif",
+    "predicate": "sceneCaptureType",
+    "score": 0.7137218
+  },
+  {
+    "prefix": "http://www.w3.org/2006/vcard/ns#street-address",
+    "prefix_name": "vcard",
+    "predicate": "street-address",
+    "score": 0.6990776
+  },
+  {
+    "prefix": "http://sw-portal.deri.org/ontologies/swportal#hasStreetAddress",
+    "prefix_name": "swpo",
+    "predicate": "hasStreetAddress",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://www.aktors.org/ontology/portal#address-street",
+    "prefix_name": "akt",
+    "predicate": "address-street",
+    "score": 0.41904092
+  },
+  {
+    "prefix": "http://ogp.me/ns#street-address",
+    "prefix_name": "og",
+    "predicate": "street-address",
+    "score": 0.36212313
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#streetAddress",
+    "prefix_name": "mads",
+    "predicate": "streetAddress",
+    "score": 0.32056147
+  },
+  {
+    "prefix": "http://purl.org/onto-ocds/ocds#streetAddress",
+    "prefix_name": "ocds",
+    "predicate": "streetAddress",
+    "score": 0.3139278
+  },
+  {
+    "prefix": "http://rdvocab.info/roles/screenwriterWork",
+    "prefix_name": "rdarole",
+    "predicate": "screenwriterWork",
+    "score": 0.29917198
+  },
+  {
+    "prefix": "http://ontology.eil.utoronto.ca/icontact.owl#hasStreet",
+    "prefix_name": "ic",
+    "predicate": "hasStreet",
+    "score": 0.29665047
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/u/P60476",
+    "prefix_name": "rdau",
+    "predicate": "P60476",
+    "score": 0.22630177
+  },
+  {
+    "prefix": "http://rdaregistry.info/Elements/w/P10203",
+    "prefix_name": "rdaw",
+    "predicate": "P10203",
+    "score": 0.22630177
+  },
+  {
+    "prefix": "http://purl.org/net/lio#hasInForeground",
+    "prefix_name": "lio",
+    "predicate": "hasInForeground",
+    "score": 0.2251874
+  },
+  {
+    "prefix": "http://www.w3.org/2003/12/exif/ns#subjectArea",
+    "prefix_name": "exif",
+    "predicate": "subjectArea",
+    "score": 0.21173401
+  }
+]

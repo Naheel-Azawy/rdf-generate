@@ -1,0 +1,302 @@
+[
+  {
+    "prefix": "http://www.w3.org/ns/prov#used",
+    "prefix_name": "prov",
+    "predicate": "used",
+    "score": 2.4589262
+  },
+  {
+    "prefix": "http://purl.org/net/opmv/ns#used",
+    "prefix_name": "opmv",
+    "predicate": "used",
+    "score": 2.2850187
+  },
+  {
+    "prefix": "http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#users",
+    "prefix_name": "itm",
+    "predicate": "users",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://www.data-knowledge.org/dk/uses",
+    "prefix_name": "dk",
+    "predicate": "uses",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/uses",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "uses",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://www.opmw.org/ontology/uses",
+    "prefix_name": "opmw",
+    "predicate": "uses",
+    "score": 2.1049173
+  },
+  {
+    "prefix": "http://premon.fbk.eu/ontology/fn#uses",
+    "prefix_name": "pmofn",
+    "predicate": "uses",
+    "score": 2.1048228
+  },
+  {
+    "prefix": "http://open.vocab.org/terms/uses",
+    "prefix_name": "ov",
+    "predicate": "uses",
+    "score": 2.1048228
+  },
+  {
+    "prefix": "http://vocab.deri.ie/odapp#uses",
+    "prefix_name": "odapp",
+    "predicate": "uses",
+    "score": 2.1001382
+  },
+  {
+    "prefix": "http://ontology.it/itsmo/v1#uses",
+    "prefix_name": "itsmo",
+    "predicate": "uses",
+    "score": 2.1001382
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/ext/common/being#uses",
+    "prefix_name": "being",
+    "predicate": "uses",
+    "score": 2.1001382
+  },
+  {
+    "prefix": "http://www.w3.org/2004/09/fresnel#use",
+    "prefix_name": "fresnel",
+    "predicate": "use",
+    "score": 2.0829622299999997
+  },
+  {
+    "prefix": "http://www.w3.org/ns/ui#use",
+    "prefix_name": "ui",
+    "predicate": "use",
+    "score": 2.03507348
+  },
+  {
+    "prefix": "http://umbel.org/umbel#isLike",
+    "prefix_name": "umbel",
+    "predicate": "isLike",
+    "score": 0.5945956
+  },
+  {
+    "prefix": "http://purl.org/net/provenance/ns#usedData",
+    "prefix_name": "prv",
+    "predicate": "usedData",
+    "score": 0.59452194
+  },
+  {
+    "prefix": "http://purl.org/dqm-vocabulary/v1/dqm#upperLimit",
+    "prefix_name": "dqm",
+    "predicate": "upperLimit",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://purl.org/iso25964/skos-thes#plusUseTerm",
+    "prefix_name": "iso-thes",
+    "predicate": "plusUseTerm",
+    "score": 0.5555556
+  },
+  {
+    "prefix": "http://openprovenance.org/model/opmo#usedStar",
+    "prefix_name": "opmo",
+    "predicate": "usedStar",
+    "score": 0.5363069
+  },
+  {
+    "prefix": "http://purl.org/net/provenance/ns#employedArtifact",
+    "prefix_name": "prv",
+    "predicate": "employedArtifact",
+    "score": 0.5359503
+  },
+  {
+    "prefix": "http://www.lingvoj.org/semio#USE",
+    "prefix_name": "semio",
+    "predicate": "USE",
+    "score": 0.52863926
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/upperAge",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "upperAge",
+    "score": 0.52267206
+  },
+  {
+    "prefix": "http://www.w3.org/ns/prov#used",
+    "prefix_name": "prov",
+    "predicate": "used",
+    "score": 0.5141626
+  },
+  {
+    "prefix": "http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#upperCorner",
+    "prefix_name": "gm",
+    "predicate": "upperCorner",
+    "score": 0.5082368
+  },
+  {
+    "prefix": "http://reference.data.gov.uk/def/central-government/upperBound",
+    "prefix_name": "cgov",
+    "predicate": "upperBound",
+    "score": 0.4650433
+  },
+  {
+    "prefix": "http://data.ign.fr/def/geometrie#upperCorner",
+    "prefix_name": "geom",
+    "predicate": "upperCorner",
+    "score": 0.4650433
+  },
+  {
+    "prefix": "http://www.semanticweb.org/ontologies/2008/11/OntologySecurity.owl#Use",
+    "prefix_name": "ontosec",
+    "predicate": "Use",
+    "score": 0.46352887
+  },
+  {
+    "prefix": "http://purl.uniprot.org/core/fused",
+    "prefix_name": "uniprot",
+    "predicate": "fused",
+    "score": 0.46194515
+  },
+  {
+    "prefix": "http://data.archiveshub.ac.uk/def/useRestrictions",
+    "prefix_name": "locah",
+    "predicate": "useRestrictions",
+    "score": 0.4572914
+  },
+  {
+    "prefix": "http://www.holygoat.co.uk/owl/redwood/0.1/tags/tag",
+    "prefix_name": "tag",
+    "predicate": "tag",
+    "score": 0.44476053
+  },
+  {
+    "prefix": "http://purl.org/twc/vocab/conversion/uses_predicate",
+    "prefix_name": "conversion",
+    "predicate": "uses_predicate",
+    "score": 0.42462987
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/subject",
+    "prefix_name": "dcterms",
+    "predicate": "subject",
+    "score": 0.4241183
+  },
+  {
+    "prefix": "http://www.holygoat.co.uk/owl/redwood/0.1/tags/associatedTag",
+    "prefix_name": "tag",
+    "predicate": "associatedTag",
+    "score": 0.42382157
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#aat2322_use",
+    "prefix_name": "gvp",
+    "predicate": "aat2322_use",
+    "score": 0.42040557
+  },
+  {
+    "prefix": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper.owl#hasUpperBoundInclusive",
+    "prefix_name": "lslife",
+    "predicate": "hasUpperBoundInclusive",
+    "score": 0.41833088
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#UpperLowerPixelValues",
+    "prefix_name": "dicom",
+    "predicate": "UpperLowerPixelValues",
+    "score": 0.41833088
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/subject",
+    "prefix_name": "dcterms",
+    "predicate": "subject",
+    "score": 0.41774884
+  },
+  {
+    "prefix": "http://lexvo.org/ontology#usedIn",
+    "prefix_name": "lvont",
+    "predicate": "usedIn",
+    "score": 0.4174587
+  },
+  {
+    "prefix": "http://purl.org/twc/vocab/conversion/uses_class",
+    "prefix_name": "conversion",
+    "predicate": "uses_class",
+    "score": 0.41120577
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0018.1240",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0018.1240",
+    "score": 0.40658948
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0018.1606",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0018.1606",
+    "score": 0.40658948
+  },
+  {
+    "prefix": "http://purl.org/net/provenance/ns#usedBy",
+    "prefix_name": "prv",
+    "predicate": "usedBy",
+    "score": 0.3997221
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/title",
+    "prefix_name": "dce",
+    "predicate": "title",
+    "score": 0.38700348
+  },
+  {
+    "prefix": "http://www.holygoat.co.uk/owl/redwood/0.1/tags/taggedBy",
+    "prefix_name": "tag",
+    "predicate": "taggedBy",
+    "score": 0.3717604
+  },
+  {
+    "prefix": "http://purl.org/saws/ontology#usedBy",
+    "prefix_name": "saws",
+    "predicate": "usedBy",
+    "score": 0.3703704
+  },
+  {
+    "prefix": "http://www.holygoat.co.uk/owl/redwood/0.1/tags/name",
+    "prefix_name": "tag",
+    "predicate": "name",
+    "score": 0.35308102
+  },
+  {
+    "prefix": "http://semweb.mmlab.be/ns/apps4X#usersRate",
+    "prefix_name": "apps4X",
+    "predicate": "usersRate",
+    "score": 0.3098466
+  },
+  {
+    "prefix": "http://schema.theodi.org/odrs#reuserGuidelines",
+    "prefix_name": "odrs",
+    "predicate": "reuserGuidelines",
+    "score": 0.23562095
+  },
+  {
+    "prefix": "http://purl.org/ontology/mo/recorded_as",
+    "prefix_name": "mo",
+    "predicate": "recorded_as",
+    "score": 0.22776355
+  },
+  {
+    "prefix": "http://www.holygoat.co.uk/owl/redwood/0.1/tags/taggedOn",
+    "prefix_name": "tag",
+    "predicate": "taggedOn",
+    "score": 0.18570442
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#generalMessageToRoadUsers",
+    "prefix_name": "datex",
+    "predicate": "generalMessageToRoadUsers",
+    "score": 0.10308417
+  }
+]

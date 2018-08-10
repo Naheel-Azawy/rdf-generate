@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://vocab.org/whisky/terms/age",
+    "prefix_name": "whisky",
+    "predicate": "age",
+    "score": 2.11530944
+  },
+  {
+    "prefix": "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#age",
+    "prefix_name": "nco",
+    "predicate": "age",
+    "score": 2.09336594
+  },
+  {
+    "prefix": "http://www.identity.org/ontologies/identity.owl#age",
+    "prefix_name": "identity",
+    "predicate": "age",
+    "score": 2.09336594
+  },
+  {
+    "prefix": "http://purl.org/linked-data/sdmx/2009/dimension#age",
+    "prefix_name": "sdmx-dimension",
+    "predicate": "age",
+    "score": 2.07729324
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/age",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "age",
+    "score": 2.0755413799999998
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/age",
+    "prefix_name": "foaf",
+    "predicate": "age",
+    "score": 2.06137771
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/homepage",
+    "prefix_name": "foaf",
+    "predicate": "homepage",
+    "score": 0.55975384
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentAge",
+    "prefix_name": "ebucore",
+    "predicate": "agentAge",
+    "score": 0.51578754
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/language",
+    "prefix_name": "dcterms",
+    "predicate": "language",
+    "score": 0.48235455
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/page",
+    "prefix_name": "foaf",
+    "predicate": "page",
+    "score": 0.4747025
+  }
+]

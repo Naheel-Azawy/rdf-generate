@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require("path");
 const rdf_gen = require("./backend/rdf-gen.js");
+const { exec } = require('child_process');
+const formidable = require('formidable');
+const fs = require('fs');
 
 const PORT = 3000;
 
@@ -43,6 +46,19 @@ app.post('/out', async (req, res) => {
     }) }));
 
 	  console.log("post to out");
+});
+
+app.post('/fileupload', async (req, res) => {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        console.log(JSON.stringify(files, null, 2));
+        var oldpath = files.filetoupload.path;
+        var newpath = './aaa/' + files.filetoupload.name;
+        exec(`mv '${oldpath}' '${newpath}'`, (err, stdout, stderr) => {
+            if (err) throw err;
+            res.end();
+        });
+    });
 });
 
 //wait for a connection

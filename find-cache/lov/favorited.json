@@ -1,0 +1,44 @@
+[
+  {
+    "prefix": "http://open.vocab.org/terms/hasFavourited",
+    "prefix_name": "ov",
+    "predicate": "hasFavourited",
+    "score": 2.5142972
+  },
+  {
+    "prefix": "http://open.vocab.org/terms/favouritedBy",
+    "prefix_name": "ov",
+    "predicate": "favouritedBy",
+    "score": 2.330264
+  },
+  {
+    "prefix": "http://open.vocab.org/terms/favouriteDrink",
+    "prefix_name": "ov",
+    "predicate": "favouriteDrink",
+    "score": 1.456415
+  },
+  {
+    "prefix": "http://www.eclap.eu/schema/eclap/hasFavorite",
+    "prefix_name": "eclap",
+    "predicate": "hasFavorite",
+    "score": 1.3494124
+  },
+  {
+    "prefix": "http://www.eclap.eu/schema/eclap/hasFavorite",
+    "prefix_name": "eclap",
+    "predicate": "hasFavorite",
+    "score": 1.2027842
+  },
+  {
+    "prefix": "http://www.eclap.eu/schema/eclap/isFavoriteOf",
+    "prefix_name": "eclap",
+    "predicate": "isFavoriteOf",
+    "score": 1.2026191
+  },
+  {
+    "prefix": "http://www.semanticdesktop.org/ontologies/2007/08/15/nao#favouritedBy",
+    "prefix_name": "nao",
+    "predicate": "favouritedBy",
+    "score": 1.0522916
+  }
+]

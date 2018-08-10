@@ -1,0 +1,176 @@
+[
+  {
+    "prefix": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expands",
+    "prefix_name": "dul",
+    "predicate": "expands",
+    "score": 5.8111368
+  },
+  {
+    "prefix": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expands",
+    "prefix_name": "dul",
+    "predicate": "expands",
+    "score": 1.750236
+  },
+  {
+    "prefix": "http://purl.obolibrary.org/obo/IAO_0000424",
+    "prefix_name": "obo",
+    "predicate": "IAO_0000424",
+    "score": 1.3778474
+  },
+  {
+    "prefix": "http://purl.obolibrary.org/obo/IAO_0000425",
+    "prefix_name": "obo",
+    "predicate": "IAO_0000425",
+    "score": 1.309961
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedAs",
+    "prefix_name": "rdarel",
+    "predicate": "expandedAs",
+    "score": 1.2564913
+  },
+  {
+    "prefix": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpandedIn",
+    "prefix_name": "dul",
+    "predicate": "isExpandedIn",
+    "score": 0.9950842
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedAsWork",
+    "prefix_name": "rdarel",
+    "predicate": "expandedAsWork",
+    "score": 0.85292935
+  },
+  {
+    "prefix": "http://purl.org/linked-data/api/vocab#extendedMetadataVersion",
+    "prefix_name": "api",
+    "predicate": "extendedMetadataVersion",
+    "score": 0.8042135
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedVersionOf",
+    "prefix_name": "rdarel",
+    "predicate": "expandedVersionOf",
+    "score": 0.7107744
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedVersionOfWork",
+    "prefix_name": "rdarel",
+    "predicate": "expandedVersionOfWork",
+    "score": 0.60323274
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedAsExpression",
+    "prefix_name": "rdarel",
+    "predicate": "expandedAsExpression",
+    "score": 0.583412
+  },
+  {
+    "prefix": "http://purl.org/oslo/ns/localgov#extended_address",
+    "prefix_name": "oslo",
+    "predicate": "extended_address",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#extendedAddress",
+    "prefix_name": "mads",
+    "predicate": "extendedAddress",
+    "score": 0.5011045
+  },
+  {
+    "prefix": "http://purl.org/vocab/frbr/extended#hasPartManifestation",
+    "prefix_name": "frbre",
+    "predicate": "hasPartManifestation",
+    "score": 0.46808836
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedVersionOfExpression",
+    "prefix_name": "rdarel",
+    "predicate": "expandedVersionOfExpression",
+    "score": 0.45242456
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/dateExtended",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "dateExtended",
+    "score": 0.44971135
+  },
+  {
+    "prefix": "http://www.w3.org/2006/vcard/ns#extended-address",
+    "prefix_name": "vcard",
+    "predicate": "extended-address",
+    "score": 0.44946545
+  },
+  {
+    "prefix": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#extendedElementInformation",
+    "prefix_name": "md",
+    "predicate": "extendedElementInformation",
+    "score": 0.40922484
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ExtendedDepthOfField",
+    "prefix_name": "dicom",
+    "predicate": "ExtendedDepthOfField",
+    "score": 0.3961034
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0048.0012",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0048.0012",
+    "score": 0.39077243
+  },
+  {
+    "prefix": "http://purl.org/vocab/frbr/extended#isASummaryOfWork",
+    "prefix_name": "frbre",
+    "predicate": "isASummaryOfWork",
+    "score": 0.3608387
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/space#orbit-around",
+    "prefix_name": "osr",
+    "predicate": "orbit-around",
+    "score": 0.22029406
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/space#is-boundary-of",
+    "prefix_name": "osr",
+    "predicate": "is-boundary-of",
+    "score": 0.22029406
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/expandedAsExpression",
+    "prefix_name": "rdarel",
+    "predicate": "expandedAsExpression",
+    "score": 0.21771435
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/space#adjacent-above",
+    "prefix_name": "osr",
+    "predicate": "adjacent-above",
+    "score": 0.20616706
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/space#has-dividing-item",
+    "prefix_name": "osr",
+    "predicate": "has-dividing-item",
+    "score": 0.1880126
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/space#has-boundary",
+    "prefix_name": "osr",
+    "predicate": "has-boundary",
+    "score": 0.1880126
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/space#adjacent-below",
+    "prefix_name": "osr",
+    "predicate": "adjacent-below",
+    "score": 0.18485376
+  },
+  {
+    "prefix": "http://iflastandards.info/ns/isbd/elements/P1002",
+    "prefix_name": "isbd",
+    "predicate": "P1002",
+    "score": 0.14634264
+  }
+]

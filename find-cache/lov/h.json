@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://d-nb.info/standards/elementset/gnd#academicDegree",
+    "prefix_name": "gndo",
+    "predicate": "academicDegree",
+    "score": 0.8957152
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#ulan2697_leader_was",
+    "prefix_name": "gvp",
+    "predicate": "ulan2697_leader_was",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#ulan2696_leader_of",
+    "prefix_name": "gvp",
+    "predicate": "ulan2696_leader_of",
+    "score": 0.49860463
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#ulan1313_partner_in",
+    "prefix_name": "gvp",
+    "predicate": "ulan1313_partner_in",
+    "score": 0.48476738
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#ulan1314_partner_was",
+    "prefix_name": "gvp",
+    "predicate": "ulan1314_partner_was",
+    "score": 0.43627906
+  },
+  {
+    "prefix": "http://data.lirmm.fr/ontologies/food#biotinPer100g",
+    "prefix_name": "food",
+    "predicate": "biotinPer100g",
+    "score": 0.40767056
+  },
+  {
+    "prefix": "http://www.biopax.org/release/biopax-level3.owl#deltaH",
+    "prefix_name": "biopax",
+    "predicate": "deltaH",
+    "score": 0.35233358
+  },
+  {
+    "prefix": "http://lod.nl.go.kr/ontology/titleOfSeries",
+    "prefix_name": "nlon",
+    "predicate": "titleOfSeries",
+    "score": 0.30178785
+  },
+  {
+    "prefix": "http://purl.org/vso/ns#acceleration",
+    "prefix_name": "vso",
+    "predicate": "acceleration",
+    "score": 0.29517594
+  },
+  {
+    "prefix": "http://www.biopax.org/release/biopax-level3.owl#deltaS",
+    "prefix_name": "biopax",
+    "predicate": "deltaS",
+    "score": 0.20721179
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/friend",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "friend",
+    "score": 2.1849738
+  },
+  {
+    "prefix": "http://purl.org/onto-ocds/ocds#changes",
+    "prefix_name": "ocds",
+    "predicate": "changes",
+    "score": 1.5666276
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#VisualFieldShape",
+    "prefix_name": "dicom",
+    "predicate": "VisualFieldShape",
+    "score": 0.731155
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/primaryTopic",
+    "prefix_name": "foaf",
+    "predicate": "primaryTopic",
+    "score": 0.6294182
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#MagneticFieldStrength",
+    "prefix_name": "dicom",
+    "predicate": "MagneticFieldStrength",
+    "score": 0.62665105
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/homepage",
+    "prefix_name": "foaf",
+    "predicate": "homepage",
+    "score": 0.584692
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/name",
+    "prefix_name": "foaf",
+    "predicate": "name",
+    "score": 0.5281545
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+    "prefix_name": "foaf",
+    "predicate": "isPrimaryTopicOf",
+    "score": 0.52516675
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/page",
+    "prefix_name": "foaf",
+    "predicate": "page",
+    "score": 0.4034352
+  },
+  {
+    "prefix": "http://purl.org/net/soron/friendOf",
+    "prefix_name": "sor",
+    "predicate": "friendOf",
+    "score": 0.3929727
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/depiction",
+    "prefix_name": "foaf",
+    "predicate": "depiction",
+    "score": 0.38176784
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/topic",
+    "prefix_name": "foaf",
+    "predicate": "topic",
+    "score": 0.37285623
+  },
+  {
+    "prefix": "http://sw-portal.deri.org/ontologies/swportal#hasInterests",
+    "prefix_name": "swpo",
+    "predicate": "hasInterests",
+    "score": 0.36298227
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/sha1",
+    "prefix_name": "foaf",
+    "predicate": "sha1",
+    "score": 0.33270514
+  },
+  {
+    "prefix": "http://www.w3.org/ns/ui#property",
+    "prefix_name": "ui",
+    "predicate": "property",
+    "score": 0.292462
+  },
+  {
+    "prefix": "http://data.europa.eu/eli/ontology#amends",
+    "prefix_name": "eli",
+    "predicate": "amends",
+    "score": 0.25751385
+  },
+  {
+    "prefix": "http://data.europa.eu/eli/ontology#changed_by",
+    "prefix_name": "eli",
+    "predicate": "changed_by",
+    "score": 0.25751385
+  },
+  {
+    "prefix": "http://data.europa.eu/eli/ontology#corrected_by",
+    "prefix_name": "eli",
+    "predicate": "corrected_by",
+    "score": 0.25751385
+  },
+  {
+    "prefix": "http://data.europa.eu/eli/ontology#implements",
+    "prefix_name": "eli",
+    "predicate": "implements",
+    "score": 0.25751385
+  },
+  {
+    "prefix": "http://data.europa.eu/eli/ontology#jurisdiction",
+    "prefix_name": "eli",
+    "predicate": "jurisdiction",
+    "score": 0.25751385
+  }
+]

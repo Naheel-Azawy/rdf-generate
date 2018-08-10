@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://data.archiveshub.ac.uk/def/location",
+    "prefix_name": "locah",
+    "predicate": "location",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+    "prefix_name": "geo",
+    "predicate": "location",
+    "score": 2.04812883
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/location",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "location",
+    "score": 2.0407370499999997
+  },
+  {
+    "prefix": "http://schema.org/location",
+    "prefix_name": "schema",
+    "predicate": "location",
+    "score": 1.99403812
+  },
+  {
+    "prefix": "http://sw-portal.deri.org/ontologies/swportal#hasLocation",
+    "prefix_name": "swpo",
+    "predicate": "hasLocation",
+    "score": 0.5470897
+  },
+  {
+    "prefix": "http://vocab.resc.info/communication#incidentLocation",
+    "prefix_name": "comm",
+    "predicate": "incidentLocation",
+    "score": 0.54364187
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/coverage",
+    "prefix_name": "dcterms",
+    "predicate": "coverage",
+    "score": 0.46363044
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocation",
+    "prefix_name": "ebucore",
+    "predicate": "hasLocation",
+    "score": 0.4605525
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/coverage",
+    "prefix_name": "dce",
+    "predicate": "coverage",
+    "score": 0.41957158
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/based_near",
+    "prefix_name": "foaf",
+    "predicate": "based_near",
+    "score": 0.40659124
+  }
+]

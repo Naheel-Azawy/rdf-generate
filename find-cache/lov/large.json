@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://lemon-model.net/lemon#broader",
+    "prefix_name": "lemon",
+    "predicate": "broader",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/largestSettlement",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "largestSettlement",
+    "score": 0.5091393
+  },
+  {
+    "prefix": "http://data.ign.fr/def/topo#largeurVF",
+    "prefix_name": "topo",
+    "predicate": "largeurVF",
+    "score": 0.4408109
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/numberingOfPartWork",
+    "prefix_name": "rdarel",
+    "predicate": "numberingOfPartWork",
+    "score": 0.39468956
+  },
+  {
+    "prefix": "http://www.w3.org/ns/org#hasSubOrganization",
+    "prefix_name": "org",
+    "predicate": "hasSubOrganization",
+    "score": 0.37575933
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/largestCity",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "largestCity",
+    "score": 0.35264874
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/largestWin",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "largestWin",
+    "score": 0.35264874
+  },
+  {
+    "prefix": "http://rdvocab.info/RDARelationshipsWEMI/workManifested",
+    "prefix_name": "rdarel",
+    "predicate": "workManifested",
+    "score": 0.32297125
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0072.0316",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0072.0316",
+    "score": 0.31458414
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0072.0318",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0072.0318",
+    "score": 0.29414865
+  }
+]

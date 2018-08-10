@@ -89,7 +89,7 @@ async function find(property, cls) {
         let arr;
         if (results.length === 0) {
             arr = [];
-            let suggestions_res = await suggest(property.replace("_", "+"));
+            let suggestions_res = await suggest(property.split("_").join("+"));
             let suggestions = suggestions_res.suggestions;
             for (let i = 0; i < suggestions.length; ++i) {
                 property = suggestions[i].text;

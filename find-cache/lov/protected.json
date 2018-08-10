@@ -1,0 +1,32 @@
+[
+  {
+    "prefix": "http://securitytoolbox.appspot.com/stac#isProtectedBy",
+    "prefix_name": "stac",
+    "predicate": "isProtectedBy",
+    "score": 0.9965646
+  },
+  {
+    "prefix": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#isPasswordProtected",
+    "prefix_name": "nfo",
+    "predicate": "isPasswordProtected",
+    "score": 0.60130954
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/numberOfHouses",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "numberOfHouses",
+    "score": 0.35591596
+  },
+  {
+    "prefix": "http://www.loc.gov/premis/rdf/v1#hasInhibitorTarget",
+    "prefix_name": "premis",
+    "predicate": "hasInhibitorTarget",
+    "score": 0.2646286
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/protectionStatus",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "protectionStatus",
+    "score": 0.20075062
+  }
+]

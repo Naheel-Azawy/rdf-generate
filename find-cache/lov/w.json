@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://dbpedia.org/ontology/powerOutput",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "powerOutput",
+    "score": 1.4701145
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/effectiveRadiatedPower",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "effectiveRadiatedPower",
+    "score": 1.3492085
+  },
+  {
+    "prefix": "http://gov.genealogy.net/ontology.owl#hasWNumber",
+    "prefix_name": "gov",
+    "predicate": "hasWNumber",
+    "score": 1.1724256
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/installedCapacity",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "installedCapacity",
+    "score": 1.0793668
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/atomicNumber",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "atomicNumber",
+    "score": 0.3373531
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/elementGroup",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "elementGroup",
+    "score": 0.3373531
+  },
+  {
+    "prefix": "http://www.w3.org/2000/10/swap/pim/doc#mayWrite",
+    "prefix_name": "doc",
+    "predicate": "mayWrite",
+    "score": 0.33730212
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/filmColourType",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "filmColourType",
+    "score": 0.25472954
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#ulan1557_step-sibling_of",
+    "prefix_name": "gvp",
+    "predicate": "ulan1557_step-sibling_of",
+    "score": 0.24157475
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#ulan1204_donor_was",
+    "prefix_name": "gvp",
+    "predicate": "ulan1204_donor_was",
+    "score": 0.2361472
+  }
+]

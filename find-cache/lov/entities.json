@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://rdfs.org/ns/void#entities",
+    "prefix_name": "void",
+    "predicate": "entities",
+    "score": 2.3197452
+  },
+  {
+    "prefix": "http://www.ics.forth.gr/isl/oncm/core#entitiesSpecFrom",
+    "prefix_name": "onc",
+    "predicate": "entitiesSpecFrom",
+    "score": 0.39921963
+  },
+  {
+    "prefix": "http://www.ics.forth.gr/isl/oncm/core#ranksEntitiesUsing",
+    "prefix_name": "onc",
+    "predicate": "ranksEntitiesUsing",
+    "score": 0.39921963
+  },
+  {
+    "prefix": "http://swa.cefriel.it/ontologies/botdcat-ap#hasEntitiesList",
+    "prefix_name": "bot",
+    "predicate": "hasEntitiesList",
+    "score": 0.3911119
+  },
+  {
+    "prefix": "http://www.w3.org/ns/prov#startedAtTime",
+    "prefix_name": "prov",
+    "predicate": "startedAtTime",
+    "score": 0.37327904
+  },
+  {
+    "prefix": "http://w3id.org/charta77/jup/partOf",
+    "prefix_name": "jup",
+    "predicate": "partOf",
+    "score": 0.36753073
+  },
+  {
+    "prefix": "http://www.w3.org/2006/time#hasEnd",
+    "prefix_name": "time",
+    "predicate": "hasEnd",
+    "score": 0.36039087
+  },
+  {
+    "prefix": "http://www.w3.org/2006/time#hasBeginning",
+    "prefix_name": "time",
+    "predicate": "hasBeginning",
+    "score": 0.35739115
+  },
+  {
+    "prefix": "http://www.w3.org/ns/prov#used",
+    "prefix_name": "prov",
+    "predicate": "used",
+    "score": 0.35626683
+  },
+  {
+    "prefix": "http://www.w3.org/ns/prov#generated",
+    "prefix_name": "prov",
+    "predicate": "generated",
+    "score": 0.35465798
+  }
+]

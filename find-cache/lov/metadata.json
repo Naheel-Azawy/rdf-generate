@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#metadata",
+    "prefix_name": "om",
+    "predicate": "metadata",
+    "score": 2.03743312
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/mdc",
+    "prefix_name": "mrel",
+    "predicate": "mdc",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://purl.org/vocommons/voaf#metadataVoc",
+    "prefix_name": "voaf",
+    "predicate": "metadataVoc",
+    "score": 0.51045394
+  },
+  {
+    "prefix": "http://www.loc.gov/mads/rdf/v1#adminMetadata",
+    "prefix_name": "mads",
+    "predicate": "adminMetadata",
+    "score": 0.49482813
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMetadataAttributor",
+    "prefix_name": "ebucore",
+    "predicate": "hasMetadataAttributor",
+    "score": 0.47061396
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/title",
+    "prefix_name": "dcterms",
+    "predicate": "title",
+    "score": 0.45677447
+  },
+  {
+    "prefix": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#metadataConstraints",
+    "prefix_name": "md",
+    "predicate": "metadataConstraints",
+    "score": 0.44995892
+  },
+  {
+    "prefix": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#metadataMaintenance",
+    "prefix_name": "md",
+    "predicate": "metadataMaintenance",
+    "score": 0.44995892
+  },
+  {
+    "prefix": "http://purl.org/dqm-vocabulary/v1/dqm#reqMetadata",
+    "prefix_name": "dqm",
+    "predicate": "reqMetadata",
+    "score": 0.44081095
+  },
+  {
+    "prefix": "http://www.linkedmodel.org/schema/vaem#hasMetadata",
+    "prefix_name": "vaem",
+    "predicate": "hasMetadata",
+    "score": 0.44073313
+  }
+]

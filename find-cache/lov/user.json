@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://ns.inria.fr/prissma/v2#user",
+    "prefix_name": "prissma",
+    "predicate": "user",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#user",
+    "prefix_name": "itm",
+    "predicate": "user",
+    "score": 2.1111112
+  },
+  {
+    "prefix": "http://uri4uri.net/vocab#user",
+    "prefix_name": "uri4uri",
+    "predicate": "user",
+    "score": 2.07861467
+  },
+  {
+    "prefix": "http://softeng.polito.it/rsctx#user",
+    "prefix_name": "rsctx",
+    "predicate": "user",
+    "score": 2.07775696
+  },
+  {
+    "prefix": "http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#users",
+    "prefix_name": "itm",
+    "predicate": "users",
+    "score": 0.44450077
+  },
+  {
+    "prefix": "http://www.w3.org/2003/06/sw-vocab-status/ns#userdocs",
+    "prefix_name": "vs",
+    "predicate": "userdocs",
+    "score": 0.3896227
+  },
+  {
+    "prefix": "http://usefulinc.com/ns/doap#audience",
+    "prefix_name": "doap",
+    "predicate": "audience",
+    "score": 0.37321854
+  },
+  {
+    "prefix": "http://voag.linkedmodel.org/voag#userID",
+    "prefix_name": "voag",
+    "predicate": "userID",
+    "score": 0.34870604
+  },
+  {
+    "prefix": "http://www.w3.org/ns/ui#prompt",
+    "prefix_name": "ui",
+    "predicate": "prompt",
+    "score": 0.33679682
+  },
+  {
+    "prefix": "http://www.europeana.eu/schemas/edm/userTag",
+    "prefix_name": "edm",
+    "predicate": "userTag",
+    "score": 0.30657503
+  }
+]

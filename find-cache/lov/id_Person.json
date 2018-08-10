@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://ns.nature.com/terms/id",
+    "prefix_name": "npg",
+    "predicate": "id",
+    "score": 2.6666665000000003
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/id",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "id",
+    "score": 2.49631525
+  },
+  {
+    "prefix": "http://schema.mobivoc.org/id",
+    "prefix_name": "mv",
+    "predicate": "id",
+    "score": 2.1053862
+  },
+  {
+    "prefix": "http://www.biopax.org/release/biopax-level3.owl#id",
+    "prefix_name": "biopax",
+    "predicate": "id",
+    "score": 2.1003957
+  },
+  {
+    "prefix": "http://rdfs.org/sioc/ns#id",
+    "prefix_name": "sioc",
+    "predicate": "id",
+    "score": 2.0860729
+  },
+  {
+    "prefix": "http://purl.org/net/hifm/ontology#id",
+    "prefix_name": "hifm",
+    "predicate": "id",
+    "score": 2.0638835
+  },
+  {
+    "prefix": "http://voag.linkedmodel.org/voag#id",
+    "prefix_name": "voag",
+    "predicate": "id",
+    "score": 2.0638835
+  },
+  {
+    "prefix": "http://ontologi.es/doap-bugs#id",
+    "prefix_name": "dbug",
+    "predicate": "id",
+    "score": 2.05074785
+  },
+  {
+    "prefix": "http://simile.mit.edu/2003/10/ontologies/vraCore3#id",
+    "prefix_name": "vra",
+    "predicate": "id",
+    "score": 2.05074785
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/identifier",
+    "prefix_name": "dcterms",
+    "predicate": "identifier",
+    "score": 0.50542134
+  }
+]

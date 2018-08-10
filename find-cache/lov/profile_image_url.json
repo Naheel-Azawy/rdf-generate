@@ -1,0 +1,164 @@
+[
+  {
+    "prefix": "http://purl.org/wai#profiles",
+    "prefix_name": "wai",
+    "predicate": "profiles",
+    "score": 6.0259652
+  },
+  {
+    "prefix": "http://www.eclap.eu/schema/eclap/provide",
+    "prefix_name": "eclap",
+    "predicate": "provide",
+    "score": 2.2529087
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#hasWarrantyPromise",
+    "prefix_name": "gr",
+    "predicate": "hasWarrantyPromise",
+    "score": 1.2534673
+  },
+  {
+    "prefix": "http://purl.org/wai#plays",
+    "prefix_name": "wai",
+    "predicate": "plays",
+    "score": 1.1707411
+  },
+  {
+    "prefix": "http://purl.org/wai#isActive",
+    "prefix_name": "wai",
+    "predicate": "isActive",
+    "score": 1.166824
+  },
+  {
+    "prefix": "http://purl.org/wai#specializes",
+    "prefix_name": "wai",
+    "predicate": "specializes",
+    "score": 1.166824
+  },
+  {
+    "prefix": "http://purl.org/wai#participates",
+    "prefix_name": "wai",
+    "predicate": "participates",
+    "score": 1.1571695
+  },
+  {
+    "prefix": "http://purl.org/wai#requires",
+    "prefix_name": "wai",
+    "predicate": "requires",
+    "score": 0.9331813
+  },
+  {
+    "prefix": "http://purl.org/wai#personalizes",
+    "prefix_name": "wai",
+    "predicate": "personalizes",
+    "score": 0.9331813
+  },
+  {
+    "prefix": "http://purl.org/wai#atContext",
+    "prefix_name": "wai",
+    "predicate": "atContext",
+    "score": 0.9331813
+  },
+  {
+    "prefix": "http://www.cidoc-crm.org/cidoc-crm/P29_custody_received_by",
+    "prefix_name": "crm",
+    "predicate": "P29_custody_received_by",
+    "score": 0.904356
+  },
+  {
+    "prefix": "http://schema.org/warrantyPromise",
+    "prefix_name": "schema",
+    "predicate": "warrantyPromise",
+    "score": 0.85695916
+  },
+  {
+    "prefix": "http://www.europeana.eu/schemas/edm/provider",
+    "prefix_name": "edm",
+    "predicate": "provider",
+    "score": 0.6973531
+  },
+  {
+    "prefix": "http://www.europeana.eu/schemas/edm/dataProvider",
+    "prefix_name": "edm",
+    "predicate": "dataProvider",
+    "score": 0.52326363
+  },
+  {
+    "prefix": "http://vocab.deri.ie/tao#hasProfileSimilarityTrust",
+    "prefix_name": "tao",
+    "predicate": "hasProfileSimilarityTrust",
+    "score": 0.5104855
+  },
+  {
+    "prefix": "http://schema.org/warrantyScope",
+    "prefix_name": "schema",
+    "predicate": "warrantyScope",
+    "score": 0.38807267
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#ContrastAdministrationProfileSequence",
+    "prefix_name": "dicom",
+    "predicate": "ContrastAdministrationProfileSequence",
+    "score": 0.3646325
+  },
+  {
+    "prefix": "http://schema.org/warranty",
+    "prefix_name": "schema",
+    "predicate": "warranty",
+    "score": 0.36161545
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#availableAtOrFrom",
+    "prefix_name": "gr",
+    "predicate": "availableAtOrFrom",
+    "score": 0.34442496
+  },
+  {
+    "prefix": "http://purl.org/goodrelations/v1#includes",
+    "prefix_name": "gr",
+    "predicate": "includes",
+    "score": 0.34365743
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#summary",
+    "prefix_name": "ebucore",
+    "predicate": "summary",
+    "score": 0.31226277
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#aat2806_provide_context",
+    "prefix_name": "gvp",
+    "predicate": "aat2806_provide_context",
+    "score": 0.3047913
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#alternativeTitle",
+    "prefix_name": "ebucore",
+    "predicate": "alternativeTitle",
+    "score": 0.2852623
+  },
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/accountServiceHomepage",
+    "prefix_name": "foaf",
+    "predicate": "accountServiceHomepage",
+    "score": 0.28461656
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/provides",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "provides",
+    "score": 0.2778753
+  },
+  {
+    "prefix": "http://schema.org/durationOfWarranty",
+    "prefix_name": "schema",
+    "predicate": "durationOfWarranty",
+    "score": 0.2560996
+  },
+  {
+    "prefix": "http://schema.org/sponsor",
+    "prefix_name": "schema",
+    "predicate": "sponsor",
+    "score": 0.16169696
+  }
+]

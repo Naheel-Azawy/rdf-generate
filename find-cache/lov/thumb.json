@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/thumbnail",
+    "prefix_name": "foaf",
+    "predicate": "thumbnail",
+    "score": 0.9984491
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/thumbnail",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "thumbnail",
+    "score": 0.75236297
+  },
+  {
+    "prefix": "http://lod.taxonconcept.org/ontology/txn.owl#thumbnail",
+    "prefix_name": "txn",
+    "predicate": "thumbnail",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://schema.org/thumbnail",
+    "prefix_name": "schema",
+    "predicate": "thumbnail",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://www.bbc.co.uk/ontologies/creativework/thumbnail",
+    "prefix_name": "cwork",
+    "predicate": "thumbnail",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://lod.taxonconcept.org/ontology/txn.owl#thumbnailOf",
+    "prefix_name": "txn",
+    "predicate": "thumbnailOf",
+    "score": 0.51581466
+  },
+  {
+    "prefix": "http://schema.org/thumbnailUrl",
+    "prefix_name": "schema",
+    "predicate": "thumbnailUrl",
+    "score": 0.41885042
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/thumbnailCaption",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "thumbnailCaption",
+    "score": 0.3975826
+  },
+  {
+    "prefix": "http://www.bbc.co.uk/ontologies/creativework/thumbnailType",
+    "prefix_name": "cwork",
+    "predicate": "thumbnailType",
+    "score": 0.39318833
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/sizeThumbnail",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "sizeThumbnail",
+    "score": 0.38888893
+  }
+]

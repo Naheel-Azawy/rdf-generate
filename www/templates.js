@@ -68,13 +68,6 @@ const ENTITIES_HEADER_TEMPLATE = `
 </a>
 `;
 
-const ENTITIES_TABLE_INCLUDE_ITEM_TEMPLATE = v => `
-<li class="w3-display-container"><input class="contentText trStyle form-control" type="text"
-                                                    value="${v}"> <span
-                    onclick="this.parentElement.style.display='none'"
-                    class="w3-button w3-transparent w3-display-right">&times;</span></li>
-`;
-
 const ENTITIES_TABLE_TEMPLATE = `
 <div class="contentText">
     {{#each this}}
@@ -82,23 +75,16 @@ const ENTITIES_TABLE_TEMPLATE = `
         <ul class="w3-ul w3-card-4 list-entities">
             <li class="w3-display-container"><div class="paddingRL title">Path: {{@key}}</div></li>
             <div class="paddingRL">Entity name (optional):</div>
-            <li class="w3-display-container"><input class="contentText trStyle form-control" type="text"
-                                                    value=""></li> <!-- TODO -->
+            <li class="w3-display-container"><input class="contentText trStyle form-control" type="text" value="" onchange="onEntityChange(this, '{{@key}}', 'name')"></li>
+
             <div class="paddingRL">IRI template:</div>
-            <li class="w3-display-container"><input class="contentText trStyle form-control" type="text"
-                                                    value="{{iri_template}}"></li>
+            <li class="w3-display-container"><input class="contentText trStyle form-control" type="text" value="{{iri_template}}" onchange="onEntityChange(this, '{{@key}}', 'iri_template')"></li>
+
             <div class="paddingRL">Type:</div>
-            <li class="w3-display-container"><input class="contentText trStyle form-control" type="text"
-                                                    value="{{type}}"></li>
-            <div class="paddingRL">Inculde:</div>
-            {{#each include}}
-            ${ENTITIES_TABLE_INCLUDE_ITEM_TEMPLATE("{{this}}")}
-            {{/each}}
-            <div id="append_{{@key}}"></div>
-            <a id="addAttribute" class="btn btn-info" onclick="appendEntityInclude('append_{{@key}}')">
-                <i class="fa fa-plus"></i>+
-                {{! TODO: btn for adding to the include }}
-            </a>
+            <li class="w3-display-container"><input class="contentText trStyle form-control" type="text" value="{{type}}" onchange="onEntityChange(this, '{{@key}}', 'type')""></li>
+
+            <div class="paddingRL">Include:</div>
+            <li class="w3-display-container"><input class="contentText trStyle form-control" type="text" value="{{include}}" onchange="onEntityChange(this, '{{@key}}', 'include')""></li>
         </ul><br>
     </div>
     {{/each}}
@@ -118,6 +104,7 @@ const PROPERTIES_TABLE_TEMPLATE = `
     {{#each this}}
     <div class="w3-container">
         <ul class="w3-ul w3-card-4 list-entities paddingRL">
+            <div class="title"><b>{{name}}</b></div>
             <div class="title">{{@key}}</div>
 
             {{#each properties}}
@@ -140,6 +127,7 @@ const PROPERTIES_TABLE_TEMPLATE = `
                 {{#each suggested_predicates}}
                     <option value="{{@index}}">{{prefix_name}}:{{predicate}}</option>
                 {{/each}}
+                    <option value="{{suggested_predicates.length}}">ADD A PREDICATE</option>
                 </select>
                 </td>
                 <td></td>
@@ -188,8 +176,7 @@ const FINAL_STUFF = `
     <label class="radio-inline"><input type="radio" name="formatRadio">RDF/XML</label>
     </td>
     <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-    <td><input id="fileUploader" type="file" class="form-control-file"></td>
-    <td><button id="upload" type="button" class="btn btn-info">UPLOAD</button></td>
+    <td><form action="fileupload" method="post" enctype="multipart/form-data"><input type="file" name="filetoupload"><input type="submit"></form></td>
 </table>
 `;
 

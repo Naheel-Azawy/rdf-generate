@@ -1,0 +1,122 @@
+[
+  {
+    "prefix": "http://schema.org/contributor",
+    "prefix_name": "schema",
+    "predicate": "contributor",
+    "score": 3.0287171
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/contributor",
+    "prefix_name": "dcterms",
+    "predicate": "contributor",
+    "score": 2.80943048
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/contributor",
+    "prefix_name": "dce",
+    "predicate": "contributor",
+    "score": 2.70752584
+  },
+  {
+    "prefix": "http://bblfish.net/work/atom-owl/2006-06-06/#contributor",
+    "prefix_name": "awol",
+    "predicate": "contributor",
+    "score": 2.46027084
+  },
+  {
+    "prefix": "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#contributor",
+    "prefix_name": "nco",
+    "predicate": "contributor",
+    "score": 2.44816254
+  },
+  {
+    "prefix": "http://www.semanticdesktop.org/ontologies/2007/08/15/nao#contributor",
+    "prefix_name": "nao",
+    "predicate": "contributor",
+    "score": 2.4027713200000003
+  },
+  {
+    "prefix": "http://linked.earth/ontology#contributor",
+    "prefix_name": "earth",
+    "predicate": "contributor",
+    "score": 2.37767774
+  },
+  {
+    "prefix": "http://purl.org/dc/terms/contributor",
+    "prefix_name": "dcterms",
+    "predicate": "contributor",
+    "score": 0.5879773
+  },
+  {
+    "prefix": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContributor",
+    "prefix_name": "ebucore",
+    "predicate": "hasContributor",
+    "score": 0.5612608
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/makesContribution",
+    "prefix_name": "scoro",
+    "predicate": "makesContribution",
+    "score": 0.5555555
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/isRelatedToContributionSituation",
+    "prefix_name": "scoro",
+    "predicate": "isRelatedToContributionSituation",
+    "score": 0.554924
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/withEffort",
+    "prefix_name": "scoro",
+    "predicate": "withEffort",
+    "score": 0.554924
+  },
+  {
+    "prefix": "http://id.loc.gov/vocabulary/relators/ctb",
+    "prefix_name": "mrel",
+    "predicate": "ctb",
+    "score": 0.54778445
+  },
+  {
+    "prefix": "http://purl.org/dc/elements/1.1/contributor",
+    "prefix_name": "dce",
+    "predicate": "contributor",
+    "score": 0.5265915
+  },
+  {
+    "prefix": "http://vivoweb.org/ontology/core#contributingRole",
+    "prefix_name": "vivo",
+    "predicate": "contributingRole",
+    "score": 0.49805608
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/hasContributionContext",
+    "prefix_name": "scoro",
+    "predicate": "hasContributionContext",
+    "score": 0.4799116
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/isEqualToRoleInTIme",
+    "prefix_name": "scoro",
+    "predicate": "isEqualToRoleInTIme",
+    "score": 0.4799116
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/isMadeBy",
+    "prefix_name": "scoro",
+    "predicate": "isMadeBy",
+    "score": 0.4799116
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/hasPersonalIdentifier",
+    "prefix_name": "scoro",
+    "predicate": "hasPersonalIdentifier",
+    "score": 0.4611815
+  },
+  {
+    "prefix": "http://purl.org/spar/scoro/withContribution",
+    "prefix_name": "scoro",
+    "predicate": "withContribution",
+    "score": 0.4611815
+  }
+]

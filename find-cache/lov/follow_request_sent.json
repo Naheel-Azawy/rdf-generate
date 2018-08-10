@@ -1,0 +1,182 @@
+[
+  {
+    "prefix": "http://purl.org/linguistics/gold/follows",
+    "prefix_name": "gold",
+    "predicate": "follows",
+    "score": 6.8299994
+  },
+  {
+    "prefix": "http://purl.org/ontology/storyline/follows",
+    "prefix_name": "nsl",
+    "predicate": "follows",
+    "score": 6.779514300000001
+  },
+  {
+    "prefix": "http://contextus.net/ontology/ontomedia/core/expression#follows",
+    "prefix_name": "oc",
+    "predicate": "follows",
+    "score": 6.779514300000001
+  },
+  {
+    "prefix": "http://schema.org/follows",
+    "prefix_name": "schema",
+    "predicate": "follows",
+    "score": 6.6047241
+  },
+  {
+    "prefix": "http://rdfs.org/sioc/ns#follows",
+    "prefix_name": "sioc",
+    "predicate": "follows",
+    "score": 6.6047241
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/follows",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "follows",
+    "score": 6.3971445
+  },
+  {
+    "prefix": "http://rdf-vocabulary.ddialliance.org/xkos#follows",
+    "prefix_name": "xkos",
+    "predicate": "follows",
+    "score": 6.3971445
+  },
+  {
+    "prefix": "http://purl.org/saws/ontology#follows",
+    "prefix_name": "saws",
+    "predicate": "follows",
+    "score": 6.3971445
+  },
+  {
+    "prefix": "http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows",
+    "prefix_name": "seq",
+    "predicate": "follows",
+    "score": 6.2875571
+  },
+  {
+    "prefix": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows",
+    "prefix_name": "dul",
+    "predicate": "follows",
+    "score": 6.2875571
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/inflow",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "inflow",
+    "score": 1.9309582
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/flower",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "flower",
+    "score": 1.7768729
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/followedBy",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "followedBy",
+    "score": 1.5714358
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#Tag.0018.9010",
+    "prefix_name": "dicom",
+    "predicate": "Tag.0018.9010",
+    "score": 1.5370462
+  },
+  {
+    "prefix": "https://data.nasa.gov/ontologies/atmonto/ATM#flowCapacity",
+    "prefix_name": "atm",
+    "predicate": "flowCapacity",
+    "score": 1.5317343
+  },
+  {
+    "prefix": "http://purl.org/healthcarevocab/v1#FlowCompensation",
+    "prefix_name": "dicom",
+    "predicate": "FlowCompensation",
+    "score": 1.4725684
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#axleFlow",
+    "prefix_name": "datex",
+    "predicate": "axleFlow",
+    "score": 1.4482186
+  },
+  {
+    "prefix": "http://purl.org/ontology/similarity/workflow",
+    "prefix_name": "sim",
+    "predicate": "workflow",
+    "score": 1.4482186
+  },
+  {
+    "prefix": "http://dbpedia.org/ontology/outflow",
+    "prefix_name": "dbpedia-owl",
+    "predicate": "outflow",
+    "score": 1.3603405
+  },
+  {
+    "prefix": "http://www.data-knowledge.org/dk/flowsTo",
+    "prefix_name": "dk",
+    "predicate": "flowsTo",
+    "score": 1.3603405
+  },
+  {
+    "prefix": "http://vocab.datex.org/terms#pcuFlow",
+    "prefix_name": "datex",
+    "predicate": "pcuFlow",
+    "score": 1.3326547
+  },
+  {
+    "prefix": "http://purl.org/co/followedBy",
+    "prefix_name": "coll",
+    "predicate": "followedBy",
+    "score": 1.2534673
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#aat2812_followed",
+    "prefix_name": "gvp",
+    "predicate": "aat2812_followed",
+    "score": 1.1372391
+  },
+  {
+    "prefix": "http://vocab.getty.edu/ontology#aat2879_followed-developed_from",
+    "prefix_name": "gvp",
+    "predicate": "aat2879_followed-developed_from",
+    "score": 1.1372391
+  },
+  {
+    "prefix": "http://purl.org/cwmo/#isFollowedBy",
+    "prefix_name": "cwmo",
+    "predicate": "isFollowedBy",
+    "score": 1.0966394
+  },
+  {
+    "prefix": "http://schema.org/followee",
+    "prefix_name": "schema",
+    "predicate": "followee",
+    "score": 0.2493742
+  },
+  {
+    "prefix": "https://data.nasa.gov/ontologies/atmonto/ATM#departureTaxiPath",
+    "prefix_name": "atm",
+    "predicate": "departureTaxiPath",
+    "score": 0.2251768
+  },
+  {
+    "prefix": "https://data.nasa.gov/ontologies/atmonto/ATM#arrivalTaxiPath",
+    "prefix_name": "atm",
+    "predicate": "arrivalTaxiPath",
+    "score": 0.2251768
+  },
+  {
+    "prefix": "http://www.demcare.eu/ontologies/demlab.owl#compliantInstructionsOrder",
+    "prefix_name": "demlab",
+    "predicate": "compliantInstructionsOrder",
+    "score": 0.22080898
+  },
+  {
+    "prefix": "http://purl.org/lobid/lv#subjectChain",
+    "prefix_name": "lv",
+    "predicate": "subjectChain",
+    "score": 0.19320786
+  }
+]
