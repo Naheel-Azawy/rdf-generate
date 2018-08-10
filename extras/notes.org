@@ -212,4 +212,4 @@ An Empirical Comparison of Ontology Matching Techniques
 ** DONE no-pred option. UPDATE: Done but this is a bad idea. Predicates are need initially to find the types of the entites.
 ** TODO fix lists
 ** TODO fix the unlabeled blanck nodes
-** TODO implement get_values_from_paths correctly
+** TODO implement get_values_from_paths correctly. UPDATE: implemented simple solution initially on one level

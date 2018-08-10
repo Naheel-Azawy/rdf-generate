@@ -135,37 +135,6 @@ function addPropertiesTable() {
     addTable(PROPERTIES_TABLE_TEMPLATE, PROPERTIES_HEADER_TEMPLATE, e);
 }
 
-function addPropertiesTable1() {
-    // Grouping the properties under the entities
-    let e = deepClone(newDes.entities);
-    let s = shallowClone(des.struct);
-    for (let p of Object.keys(s)) {
-        for (let base of Object.keys(e)) {
-            if (!e[base].properties) e[base].properties = {};
-
-            let p_base = p;
-            do {
-                p_base = p_base.split(".");
-                p_base.pop();
-                p_base = p_base.join(".");
-
-                print(`${p_base} ${base}`);
-
-                if (s[p] && p_base === base) {
-                    e[base].properties[p] = s[p];
-                    s[p] = undefined;
-                    break;
-                }
-            } while (p_base);
-
-            if (Object.keys(e[base].properties).length === 0) {
-                delete e[base];
-            }
-        }
-    }
-    addTable(PROPERTIES_TABLE_TEMPLATE, PROPERTIES_HEADER_TEMPLATE, e);
-}
-
 function checkPropObj() {
     if (!filteredDes) filteredDes = {};
     if (!filteredDes.entities) filteredDes.entities = (newDes || des).entities;

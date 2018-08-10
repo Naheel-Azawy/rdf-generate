@@ -47,15 +47,23 @@ let sss = {
         {id: 3, name: "ddd", aaa: {i:2, j:943, k: {l:5}}}
     ]
 };
-let aaa = ["id", "aaa.i", "aaa.k.l"];
+let aaa = ["id", "name", "aaa"];
 let bbb = "$.test[*]";
 
 function get_values_from_paths(base, paths, src) {
     // This is just for testing
-    let p = `${base}.${paths[0]}`.split('.');
-    p.pop(); // considering the last element to be '*'
-    p = p.join('.');
-    return JSONPath({path: p, json: src}); // TODO: implement get_values_from_paths correctly
+    let res = JSONPath({path: base, json: src});
+    if (paths.includes("*")) {
+        return res;
+    }
+    for (let i in res) {
+        for (let k of Object.keys(res[i])) {
+            if (!paths.includes(k)) {
+                res[i][k] = undefined;
+            }
+        }
+    }
+    return res;
 
     let arr = []; // the final result
     for (let path of paths) {
@@ -181,9 +189,6 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
  */
 async function run(args) {
 
-    //printj(get_values_from_paths(bbb, aaa, sss));
-    //return;
-
     //printj(args.in_obj);
 
     let sp = args.in ? args.in.split("/") : undefined;
@@ -258,6 +263,9 @@ async function run(args) {
 
 async function main(args) {
 
+    printj(get_values_from_paths(bbb, aaa, sss));
+    return;
+
     if (!args.in) args.in = args.i || args._[0];
     if (!args.out_descriptor) args.out_descriptor = args.d;
     if (!args.out_rdf) args.out_rdf = args.r;
@@ -287,6 +295,6 @@ node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogl
 
 }
 
-//main(require('minimist')(process.argv.slice(2)));
+main(require('minimist')(process.argv.slice(2)));
 
 module.exports = run;
