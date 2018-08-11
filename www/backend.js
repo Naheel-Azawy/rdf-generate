@@ -47,7 +47,11 @@ const FAKE_INPUT = JSON.parse(`
 ]
 `);
 
-
+/**
+ * Promissifyed version of jquery ajax
+ * @param {Object} obj - The object passed to ajax function
+ * @returns {Promise<Object>} Responce from ajax
+ */
 function promiseAjax(obj) {
     return new Promise((fulfill, reject) => {
         obj.data = { data: JSON.stringify(obj.data) };

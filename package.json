@@ -2,7 +2,7 @@
     "name": "rdf-generate",
     "version": "1.0.0",
     "description": "* KEEP OUT! Under development..",
-    "main": "server.js",
+    "main": "main.js",
     "directories": {
         "test": "tests"
     },
@@ -21,7 +21,7 @@
     "devDependencies": {},
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
+        "start": "node main.js --server"
     },
     "repository": {
         "type": "git",

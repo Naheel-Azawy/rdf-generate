@@ -10,48 +10,15 @@ const PathFollower = require("./path-follower.js");
 const str_format = require("./str-format.js");
 const $rdf = require("rdflib");
 
-function nullify(obj) {
-    for (let k of Object.keys(obj)) {
-        if ((typeof obj[k] === "object") && (obj[k] !== null)) {
-            obj[k] = nullify(obj[k]);
-        } else {
-            obj[k] = null;
-        }
-    }
-    return obj;
-}
-
-function get_values_from_paths_helper(obj, path) {
-    if (path.length === 0) {
-        return obj;
-    }
-    path.shift();
-    if (Array.isArray(obj)) {
-        for (let i = 0; i < obj.length; ++i) {
-            obj[i] = get_values_from_paths_helper(obj[i], path);
-        }
-    } else if ((typeof obj === "object") && (obj !== null)) {
-        for (let k of Object.keys(obj)) {
-            obj[k] = get_values_from_paths_helper(obj[k], path);
-        }
-    }
-    return obj;
-}
-
-let sss = {
-    aaa: 123,
-    test: [
-        {id: 0, name: "aaa"},
-        {id: 1, name: "bbb", aaa: {i:1,y:[{i:0, j:1}]}},
-        {id: 2, name: "ccc"},
-        {id: 3, name: "ddd", aaa: {i:2, j:943, k: {l:5}}}
-    ]
-};
-let aaa = ["id", "name", "aaa"];
-let bbb = "$.test[*]";
-
+/**
+ * Gets the values from different paths. Will return all if "*" is included. This function is used to get the included items from an entity
+ * @param {string} base - Base path
+ * @param {string[]} paths - included paths
+ * @param {Object} src - Source object
+ * @returns {Object[]} values
+ */
 function get_values_from_paths(base, paths, src) {
-    // This is just for testing
+    // TODO: implement nesting for get_values_from_paths
     let res = JSONPath({path: base, json: src});
     if (paths.includes("*")) {
         return res;
@@ -64,60 +31,15 @@ function get_values_from_paths(base, paths, src) {
         }
     }
     return res;
-
-    let arr = []; // the final result
-    for (let path of paths) {
-        if (base) {
-            path = `${base}.${path}`;
-        }
-        path = path.split('.');
-        let k = path.pop();
-        path = path.join('.');
-        let res = JSONPath({path: path, json: src});
-        // checking the parent if it contains this element
-        let p_parent = path.split('.');
-        let k_parent = p_parent.pop();
-        p_parent = p_parent.join('.');
-        p_parent = JSONPath({path: p_parent, json: src});
-        let availability_array = [];
-        for (let i in p_parent) {
-            if (p_parent[i][k_parent]) {
-                availability_array.push(i);
-            }
-        }
-        // adding the results to 'arr'
-        for (let i in res) {
-            let j = availability_array[i] || i;
-            if (!arr[j]) {
-                arr[j] = {};
-            }
-            if (k === "*") {
-                arr[j] = {...arr[j], ...res[i]};
-            } else {
-                arr[j][k] = res[i][k];
-            }
-        }
-    }
-    // removing garbage
-    for (let i = 0; i < arr.length; ++i) {
-        if (!arr[i]) { // removing undefined items
-            arr.splice(i, 1);
-        } else { // removing items with keys of undefined values. e.g. : { aaa: undefined }
-            let keys = Object.keys(arr[i]);
-            let all_undefined = true;
-            for (let k of keys) {
-                if (arr[i][k]) {
-                    all_undefined = false;
-                }
-            }
-            if (all_undefined) {
-                arr.splice(i, 1);
-            }
-        }
-    }
-    return arr;
 }
 
+/**
+ * This function is called for nested objects. It returns the entity iri if it is an entity. Otherwise it returns an unlabeled blank node.
+ * @param {Object} src - Source object
+ * @param {Object} entity_check - The entity object if it is an entity. Otherwise, undefined
+ * @param {string} path - JSONPath to this item
+ * @returns {Object} The rdf object
+ */
 function get_entity_or_unlabeled(src, entity_check, path) {
     let rdf_obj;
     if (entity_check === undefined) {
@@ -132,6 +54,18 @@ function get_entity_or_unlabeled(src, entity_check, path) {
     return rdf_obj;
 }
 
+/**
+ * Handle one item in the tree
+ * @param {Object} src - The source object
+ * @param {Object} store - The RDF graph store
+ * @param {Object} prefixes - Map of the prefixes
+ * @param {Object} des - The descriptor file
+ * @param {string} path - JSONPath to this item
+ * @param {string} key - Key of this item
+ * @param {string} subject - Subject iri of this item
+ * @param {*} obj - RDF listral object
+ * @returns {Object[]} Array of 3 element representing a triple
+ */
 function handle_item(src, store, prefixes, des, path, key, subject, obj) {
     let content_path = path;
     if (key !== "")
@@ -185,11 +119,9 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
 /**
  * The main function here that will generate the output.
  * @param {Object} args - Options to this function: { returned_value: (DES or OUT), in_obj: OBJ, init_base_obj: OBJ, in: FILE, out_descriptor: FILE, out_rdf: FILE, init_base: FILE, no_pred: BOOL, format: FORMAT, api: API }
- * @returns {Promise<void>}
+ * @returns {Promise<*>}
  */
 async function run(args) {
-
-    //printj(args.in_obj);
 
     let sp = args.in ? args.in.split("/") : undefined;
     sp = sp ? sp[sp.length - 1].split(".") : undefined;
@@ -260,41 +192,5 @@ async function run(args) {
 
     return undefined;
 }
-
-async function main(args) {
-
-    printj(get_values_from_paths(bbb, aaa, sss));
-    return;
-
-    if (!args.in) args.in = args.i || args._[0];
-    if (!args.out_descriptor) args.out_descriptor = args.d;
-    if (!args.out_rdf) args.out_rdf = args.r;
-    if (!args.init_base) args.init_base = args.b;
-    if (!args.format) args.format = args.f;
-    if (!args.format && args.out_rdf) args.format = args.out_rdf.split(".")[1] || "ttl";
-    if (!args.api) args.api = args.a || "swoogle";
-
-    if (args.help || args.h || !args.in || (!args.out_descriptor && !args.out_rdf)) {
-        print(
-            `Usage: node rdf-gen.js [OPTION]...
--i, --in=FILE                input file
--d, --out_descriptor=FILE    out descriptor file
--r, --out_rdf=FILE           out RDF file
--b, --init_base=FILE         initial descriptor json file used as a base for the generated descriptor
--f, --format=FORMAT          out RDF format (ttl, xml)
--a, --api=API                predicates finding API (lov, swoogle, test)
--h, --help                   display this help and exit
-
-Example usage:
-node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
-`);
-        return;
-    }
-
-    run(args);
-
-}
-
-main(require('minimist')(process.argv.slice(2)));
 
 module.exports = run;

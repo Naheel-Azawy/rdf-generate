@@ -127,6 +127,10 @@ class Builder {
         }
     }
 
+    /**
+     * Gets the type of the parent node
+     * @returns {string} The type
+     */
     parent_type() {
         let e = this.init;
         if (!e) return undefined;
@@ -240,6 +244,11 @@ class Builder {
         }
     }
 
+    /**
+     * Generate the descriptor
+     * @param {Object} src - The source object
+     * @returns {Object} The descriptor file
+     */
     async build(src) {
         await this.iter(src);
         if (this.init && this.init.prefixes)
