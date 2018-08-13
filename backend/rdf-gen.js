@@ -95,7 +95,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         return [
             rdf_subj,
             store.sym(pred),
-            store.list([])//rdf_list)
+            store.list(rdf_list)
         ];
     } else if (s.node_type === 'object') {
         return [
@@ -146,7 +146,8 @@ async function run(args) {
         let des_str = JSON.stringify(des, null, 2);
         if (args.out_descriptor)
             fs.writeFileAsync(args.out_descriptor, des_str);
-        return des_str;
+        if (args.returned_value === "DES")
+            return des_str;
     }
 
     if (args.out_rdf || args.returned_value === "OUT") {

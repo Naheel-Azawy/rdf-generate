@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/index.rdf",
+    "prefix_name": "p0",
+    "predicate": "Name",
+    "score": 0
+  },
+  {
+    "prefix": "http://purl.org/rss/1.0",
+    "prefix_name": "p1",
+    "predicate": "name",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdfs.org/sioc/ns",
+    "prefix_name": "p2",
+    "predicate": "name",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2001/vcard-rdf/3.0",
+    "prefix_name": "p3",
+    "predicate": "NAME",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdf.geospecies.org/ont/gsontology",
+    "prefix_name": "p4",
+    "predicate": "Name",
+    "score": 0
+  },
+  {
+    "prefix": "http://nulllogicone.net/schema.rdfs",
+    "prefix_name": "p5",
+    "predicate": "name",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdf.geospecies.org/ont/geospecies",
+    "prefix_name": "p6",
+    "predicate": "Name",
+    "score": 0
+  },
+  {
+    "prefix": "http://swrc.ontoware.org/ontology",
+    "prefix_name": "p7",
+    "predicate": "name",
+    "score": 0
+  },
+  {
+    "prefix": "http://inferenceweb.stanford.edu/2004/07/iw.owl",
+    "prefix_name": "p8",
+    "predicate": "Name",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2000/10/swap/pim/contact",
+    "prefix_name": "p9",
+    "predicate": "Name",
+    "score": 0
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://morpheus.cs.umbc.edu/aks1/ontosem.owl",
+    "prefix_name": "p0",
+    "predicate": "test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2000/10/rdf-tests/rdfcore/testSchema",
+    "prefix_name": "p1",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2002/03owlt/testOntology",
+    "prefix_name": "p2",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.daml.org/2003/08/lifecycle/tool-assessment-ont",
+    "prefix_name": "p3",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2008/07/powder-test/testSchema",
+    "prefix_name": "p4",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2001/03/earl/0.95",
+    "prefix_name": "p5",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2001/sw/DataAccess/tests/test-manifest",
+    "prefix_name": "p6",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://veggente.berlios.de/ns/RIMOntology",
+    "prefix_name": "p7",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/ns/earl",
+    "prefix_name": "p8",
+    "predicate": "Test",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2002/03owlt/resultsOntology",
+    "prefix_name": "p9",
+    "predicate": "Test",
+    "score": 0
+  }
+]

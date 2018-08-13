@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/index.rdf",
+    "prefix_name": "p0",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2002/07/owl",
+    "prefix_name": "p1",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2003/01/geo/wgs84_pos",
+    "prefix_name": "p2",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdf.geospecies.org/ont/gsontology",
+    "prefix_name": "p3",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdf.geospecies.org/ont/geospecies",
+    "prefix_name": "p4",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://swrc.ontoware.org/ontology",
+    "prefix_name": "p5",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.daml.org/2001/03/daml+oil",
+    "prefix_name": "p6",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://spire.umbc.edu/ontologies/ethan_keywords.owl",
+    "prefix_name": "p7",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://lod.taxonconcept.org/ontology/txn.owl",
+    "prefix_name": "p8",
+    "predicate": "Thing",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.geonames.org/ontology",
+    "prefix_name": "p9",
+    "predicate": "Thing",
+    "score": 0
+  }
+]

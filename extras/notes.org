@@ -1,3 +1,4 @@
+
 #+TITLE  RDF GENERATE
 #+AUTHOR Naheel
 #+DATE   2018-07-01
@@ -177,6 +178,7 @@ WHERE {
 ** DONE step 1: add entity dialog: dark theme
 ** DONE step 1: add entity dialog: use the same order of input items as used in the table
 ** TODO step 2: option to add a predicate that is not listed in the dropdown
+** TODO cover the case when there are no predicates
 ** TODO step 2: show the datatype as [["unlabeled", "entity"], "list"] for items with no datatype
 ** DONE connect to the backend
 ** TODO (low priority) step 1: include: dropdown with autocomplete
@@ -186,7 +188,6 @@ WHERE {
 - http://resumablejs.com/
 ** DONE entity names (screen 2)
 ** DONE entities onchange
-** TODO cover the case when there are no predicates
 * Build the "descriptor builder":
 ** extract the details from the original object and add all the necessary data to construct the turtle.
 ** DONE check this paper:

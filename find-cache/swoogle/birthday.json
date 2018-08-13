@@ -1,0 +1,50 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/index.rdf",
+    "prefix_name": "p0",
+    "predicate": "birthday",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2000/10/swap/pim/contact",
+    "prefix_name": "p1",
+    "predicate": "birthday",
+    "score": 0
+  },
+  {
+    "prefix": "http://morpheus.cs.umbc.edu/aks1/ontosem.owl",
+    "prefix_name": "p2",
+    "predicate": "birthday",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.mindswap.org/2003/owl/foaf",
+    "prefix_name": "p3",
+    "predicate": "birthday",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.openmetadir.org/om2/prim-3.owl",
+    "prefix_name": "p4",
+    "predicate": "birthDay",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.apps.ag-nbi.de/makna/semwebexport?language=rdf&model=inferenced",
+    "prefix_name": "p5",
+    "predicate": "birthday",
+    "score": 0
+  },
+  {
+    "prefix": "http://wwwradig.in.tum.de/ontology/organisation",
+    "prefix_name": "p6",
+    "predicate": "Birthday",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.cs.umd.edu/~golbeck/daml/slaveOnt.daml",
+    "prefix_name": "p7",
+    "predicate": "BIRTHDAY",
+    "score": 0
+  }
+]

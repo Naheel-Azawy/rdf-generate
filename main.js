@@ -8,6 +8,7 @@ const fs = require('fs');
 
 function start_server(args_port) {
 
+    // PORT=4000 node main.js -s # (env)
     let port = args_port || process.env.PORT || 3000;
 
     let app = express();
@@ -22,30 +23,32 @@ function start_server(args_port) {
     app.use(express.static(path.join(__dirname, 'www')));
 
     app.post('/des', async (req, res) => {
-	      res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
 
         req.body = JSON.parse(req.body.data);
-		    res.send(JSON.stringify(await rdf_gen({
+        res.send(JSON.stringify(await rdf_gen({
             in_obj: req.body.json,
             init_base_obj: req.body.base_des,
             returned_value: "DES"
         })));
 
-	      console.log("post to des");
+        console.log("post to des");
     });
 
     app.post('/out', async (req, res) => {
-	      res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
 
         req.body = JSON.parse(req.body.data);
-		    res.send(JSON.stringify({ data: await rdf_gen({
-            in_obj: req.body.json,
-            init_base_obj: req.body.base_des,
-            format: req.body.type,
-            returned_value: "OUT"
-        }) }));
+        res.send(JSON.stringify({
+            data: await rdf_gen({
+                in_obj: req.body.json,
+                init_base_obj: req.body.base_des,
+                format: req.body.type,
+                returned_value: "OUT"
+            })
+        }));
 
-	      console.log("post to out");
+        console.log("post to out");
     });
 
     app.post('/fileupload', async (req, res) => {
@@ -73,7 +76,7 @@ function main(args) {
     args.server = args.server || args.s;
 
     if (args.server) {
-        if (typeof(args.server) !== "number")
+        if (typeof (args.server) !== "number")
             args.server = undefined;
         start_server(args.server);
         return;

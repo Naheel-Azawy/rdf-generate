@@ -1,0 +1,32 @@
+[
+  {
+    "prefix": "http://www.aktors.org/ontology/portal",
+    "prefix_name": "p0",
+    "predicate": "Working",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.lingvoj.org/ontology",
+    "prefix_name": "p1",
+    "predicate": "Working",
+    "score": 0
+  },
+  {
+    "prefix": "http://veggente.berlios.de/ns/RIMOntology",
+    "prefix_name": "p2",
+    "predicate": "Working",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.mindswap.org/~evren/services/sensor-jpa.daml",
+    "prefix_name": "p3",
+    "predicate": "Working",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.csd.abdn.ac.uk/~cmckenzi/playpen/rdf/akt_ontology_LITE.owl",
+    "prefix_name": "p4",
+    "predicate": "Working",
+    "score": 0
+  }
+]

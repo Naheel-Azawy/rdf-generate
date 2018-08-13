@@ -1,0 +1,44 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/index.rdf",
+    "prefix_name": "p0",
+    "predicate": "ID",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdfs.org/sioc/ns",
+    "prefix_name": "p1",
+    "predicate": "id",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdf.geospecies.org/ont/gsontology",
+    "prefix_name": "p2",
+    "predicate": "ID",
+    "score": 0
+  },
+  {
+    "prefix": "http://rdf.geospecies.org/ont/geospecies",
+    "prefix_name": "p3",
+    "predicate": "ID",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2004/02/skos/core",
+    "prefix_name": "p4",
+    "predicate": "ID",
+    "score": 0
+  },
+  {
+    "prefix": "http://lod.taxonconcept.org/ontology/txn.owl",
+    "prefix_name": "p5",
+    "predicate": "ID",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2003/12/exif/ns",
+    "prefix_name": "p6",
+    "predicate": "ID",
+    "score": 0
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "prefix": "http://xmlns.com/foaf/0.1/index.rdf",
+    "prefix_name": "p0",
+    "predicate": "age",
+    "score": 0
+  },
+  {
+    "prefix": "http://spire.umbc.edu/ontologies/ethan_keywords.owl",
+    "prefix_name": "p1",
+    "predicate": "age",
+    "score": 0
+  },
+  {
+    "prefix": "http://morpheus.cs.umbc.edu/aks1/ontosem.owl",
+    "prefix_name": "p2",
+    "predicate": "age",
+    "score": 0
+  },
+  {
+    "prefix": "http://web-semantics.org/ns/opensocial",
+    "prefix_name": "p3",
+    "predicate": "age",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.mindswap.org/2004/terrorOnt.owl",
+    "prefix_name": "p4",
+    "predicate": "age",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.daml.org/validator/examples/ont1.daml",
+    "prefix_name": "p5",
+    "predicate": "age",
+    "score": 0
+  },
+  {
+    "prefix": "http://semweb.mcdonaldbradley.com/OWL/Cyc/FreeToGov/060704/FreeToGovCyc.owl",
+    "prefix_name": "p6",
+    "predicate": "Age",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.w3.org/2002/01/p3prdfv1",
+    "prefix_name": "p7",
+    "predicate": "age",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.daml.org/2001/12/factbook/factbook-ont",
+    "prefix_name": "p8",
+    "predicate": "Age",
+    "score": 0
+  },
+  {
+    "prefix": "http://www.ontoweb.org/ontology/1",
+    "prefix_name": "p9",
+    "predicate": "age",
+    "score": 0
+  }
+]
