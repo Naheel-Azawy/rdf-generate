@@ -95,7 +95,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         return [
             rdf_subj,
             store.sym(pred),
-            store.list(rdf_list)
+            store.list([])//rdf_list)
         ];
     } else if (s.node_type === 'object') {
         return [
