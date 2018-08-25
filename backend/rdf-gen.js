@@ -36,17 +36,26 @@ function get_values_from_paths(base, paths, src) {
 /**
  * This function is called for nested objects. It returns the entity iri if it is an entity. Otherwise it returns an unlabeled blank node.
  * @param {Object} src - Source object
- * @param {Object} entity_check - The entity object if it is an entity. Otherwise, undefined
+ * @param {Object} store - The RDF graph store
+ * @param {Object} prefixes - Map of the prefixes
+ * @param {Object} des - The descriptor file
  * @param {string} path - JSONPath to this item
+ * @param {Object} entity_check - The entity object if it is an entity. Otherwise, undefined
  * @returns {Object} The rdf object
  */
-function get_entity_or_unlabeled(src, entity_check, path) {
+function get_entity_or_unlabeled(src, store, prefixes, des, path, entity_check) {
     let rdf_obj;
-    if (entity_check === undefined) {
-        // TODO: create an unlabeled blank node
-        rdf_obj = $rdf.literal("nothing");
+    if (!entity_check) {
+        rdf_obj = store.bnode();
+        let vals = get_values_from_paths(path, "*", src);
+        for (let val of vals) {
+            for (let key of Object.keys(val)) {
+                let item = handle_item(src, store, prefixes, des, path, key, rdf_obj, val[key]);
+                store.add(item[0], item[1], item[2]);
+            }
+        }
     } else {
-        rdf_obj = $rdf.sym(str_format(
+        rdf_obj = store.sym(str_format(
             entity_check.iri_template,
             get_values_from_paths(path, entity_check.include, src)[0] // It should be only one element as it is a normal object and not an array
         ));
@@ -67,6 +76,7 @@ function get_entity_or_unlabeled(src, entity_check, path) {
  * @returns {Object[]} Array of 3 element representing a triple
  */
 function handle_item(src, store, prefixes, des, path, key, subject, obj) {
+    print(`>>> ${path}.${key}`);
     let content_path = path;
     if (key !== "")
         content_path += (key === "[*]" ? key : "." + key);
@@ -81,7 +91,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         pred = pred.substring(0, pred.length - 2);
     }
     pred += "#" + p.predicate;
-    let rdf_subj = subject === undefined ? store.bnode() : store.sym(subject);
+    let rdf_subj = typeof(subject) === "string" ? store.sym(subject) : subject;
     if (s.node_type === 'array') {
         // TODO: implement if it is an array
         content_path += "[*]";
@@ -89,7 +99,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         let rdf_list = [];
         for (let i in arr) {
             for (let k of Object.keys(arr[i])) {
-                rdf_list.push(handle_item(src, store, prefixes, des, content_path, k, undefined, get_entity_or_unlabeled(src, des.entities[path + '.' + key], k)));
+                rdf_list.push(handle_item(src, store, prefixes, des, content_path, k, undefined, get_entity_or_unlabeled(src, store, prefixes, des, k, des.entities[path + '.' + key])));
             }
         }
         return [
@@ -101,7 +111,7 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
         return [
             rdf_subj,
             store.sym(pred),
-            get_entity_or_unlabeled(src, des.entities[path + '.' + key], path + '.' + key)
+            get_entity_or_unlabeled(src, store, prefixes, des, path + '.' + key, des.entities[path + '.' + key])
         ];
     } else {
         obj = `${obj}`; // rdflib require everything to be string
