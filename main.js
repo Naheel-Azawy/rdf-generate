@@ -88,11 +88,11 @@ function main(args) {
     if (!args.init_base) args.init_base = args.b;
     if (!args.format) args.format = args.f;
     if (!args.format && args.out_rdf) args.format = args.out_rdf.split(".")[1] || "ttl";
-    if (!args.api) args.api = args.a || "swoogle";
+    if (!args.api) args.api = args.a || "lov";
 
     if (args.help || args.h || !args.in || (!args.out_descriptor && !args.out_rdf)) {
         console.log(
-            `Usage: node rdf-gen.js [OPTION]...
+            `Usage: node main.js [OPTION]...
 -s, --server                 start server
 -i, --in=FILE                input file
 -d, --out_descriptor=FILE    out descriptor file
@@ -103,7 +103,7 @@ function main(args) {
 -h, --help                   display this help and exit
 
 Example usage:
-node rdf-gen.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
+node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
 `);
         return;
     }

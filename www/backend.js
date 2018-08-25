@@ -67,11 +67,11 @@ function promiseAjax(obj) {
  * @param {Object} jsonElement - One element from the entire data
  * @returns {Promise<Object>} - The complete descriptor
  */
-async function getDescriptor(jsonElement, baseDescriptor) {
+async function getDescriptor(json, baseDescriptor) {
     return JSON.parse(await promiseAjax({
         url: "/des",
         type: "POST",
-        data: { json: [jsonElement], base_des: baseDescriptor },
+        data: { json: json, base_des: baseDescriptor },
     }));
 }
 
@@ -80,10 +80,10 @@ async function getDescriptor(jsonElement, baseDescriptor) {
  * @param {string} type - The type of the output (ttl or xml)
  * @returns {Promise<string>} - The output!
  */
-async function getOutput(jsonElement, baseDescriptor, type) {
+async function getOutput(json, baseDescriptor, type) {
     return (await promiseAjax({
         url: "/out",
         type: "POST",
-        data: { json: [jsonElement], base_des: baseDescriptor, type: type },
+        data: { json: json, base_des: baseDescriptor, type: type },
     })).data;
 }

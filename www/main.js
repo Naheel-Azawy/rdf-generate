@@ -196,7 +196,7 @@ async function setStep(i) {
         document.getElementById("entityTable").innerHTML = THE_DRAMATIC_INTRO;
         break;
     case 1: // Entities
-        des = await getDescriptor(editor.get()[0], undefined);
+        des = await getDescriptor(editor.get(), undefined);
         document.getElementById("nextBtn").innerHTML = "NEXT";
         document.getElementById("prevBtn").style.display = "inline-block";
         document.getElementById("finalDestination").innerHTML = "";
@@ -205,7 +205,7 @@ async function setStep(i) {
         break;
     case 2: // Properties
         checkEntities();
-        des = await getDescriptor(editor.get()[0], newDes);
+        des = await getDescriptor(editor.get(), newDes);
         document.getElementById("nextBtn").innerHTML = "NEXT";
         document.getElementById("prevBtn").style.display = "inline-block";
         document.getElementById("finalDestination").innerHTML = "";
@@ -215,7 +215,7 @@ async function setStep(i) {
         break;
     case 3: // FINAL
         setPropPrefixes();
-        out = await getOutput(editor.get()[0], filteredDes, "ttl");
+        out = await getOutput(editor.get(), filteredDes, "ttl");
         document.getElementById("nextBtn").innerHTML = "CONVERT";
         document.getElementById("prevBtn").style.display = "inline-block";
         document.getElementById("finalDestination").innerHTML = FINAL_STUFF;
@@ -224,7 +224,7 @@ async function setStep(i) {
         let formatRadioBtns = document.getElementsByName("formatRadio");
         for (let b of formatRadioBtns) {
             b.onclick = async () => {
-                out = await getOutput(editor.get()[0], filteredDes, formatRadioBtns[0].checked ? "ttl" : "xml");
+                out = await getOutput(editor.get(), filteredDes, formatRadioBtns[0].checked ? "ttl" : "xml");
                 addFinalContainer(out);
             };
         }
