@@ -176,7 +176,9 @@ const FINAL_STUFF = `
     <label class="radio-inline"><input type="radio" name="formatRadio">RDF/XML</label>
     </td>
     <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    <!-- TODO: uncomment this and implement file uploading
     <td><form action="fileupload" method="post" enctype="multipart/form-data"><input type="file" name="filetoupload"><input type="submit"></form></td>
+    -->
 </table>
 `;
 
