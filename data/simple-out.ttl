@@ -1,27 +1,36 @@
 @prefix ex: <https://example.com/>.
 @prefix schem: <http://schema.org/>.
-@prefix onto: <http://www.atelier12.it/ontoatelier12.owl#>.
+@prefix nor: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/northing#>.
+@prefix h: <http://dbpedia.org/ontology/handedness#>.
+@prefix n: <http://ns.nature.com/terms/name#>.
+@prefix fol: <http://schema.org/followee#>.
+@prefix dep: <http://xmlns.com/foaf/0.1/depiction#>.
 @prefix XML: <http://www.w3.org/2001/XMLSchema#>.
-@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
 
-ex:1 a schem:Thing; onto:ID 1.0; onto:Name "aaa"; onto:Thing "nothing".
+ex:1
+    a schem:Thing;
+    nor:northing [ h:foundedBy "a" ];
+    n:name "aaa";
+    <http://rdfs.org/sioc/ns#follows#id> "1".
+ex:2 a schem:Thing; n:name "bbb"; <http://rdfs.org/sioc/ns#follows#id> "2".
 
-ex:2 a schem:Thing; onto:ID 2.0; onto:Name "bbb".
-
-ex:2018-07-18 a schem:Thing; onto:ID 2018-07-18.0; onto:Name "eee".
-
+ex:2018-07-18
+a schem:Thing; n:name "eee"; <http://rdfs.org/sioc/ns#follows#id> "2018-07-18".
 ex:21
     a schem:Person;
-    onto:age 21.0;
-    onto:birthday "1997-03-28"^^XML:date;
-    onto:Followers ( );
-    onto:ID 0.0;
-    onto:Name "Mariam";
-    onto:Working false;
-    wgs:test "nothing".
-ex:3 a schem:Thing; onto:ID 3.0; onto:Name "ccc"; onto:Thing "nothing".
+    n:id 0.0;
+    n:name "Mariam";
+    fol:employee false;
+    fol:follows ( ex:1 ex:2 ex:3 ex:a ex:2018-07-18 );
+    <http://www.w3.org/ns/earl#test#test> [ n:name "nnnnnn"; dep:age 91.0 ];
+    dep:age 21.0;
+    dep:birthday "1997-03-28"^^XML:date.
+ex:3
+    a schem:Thing;
+    nor:northing [ h:foundedBy "a" ];
+    n:name "ccc";
+    <http://rdfs.org/sioc/ns#follows#id> "3".
+ex:999 a schem:Person; n:id 1.0; n:name "Naheel"; dep:age 999.0 .
 
-ex:999 a schem:Person; onto:age 999.0; onto:ID 1.0; onto:Name "Naheel".
-
-ex:a a schem:Thing; onto:ID a.0; onto:Name "ddd".
+ex:a a schem:Thing; n:name "ddd"; <http://rdfs.org/sioc/ns#follows#id> "a".
 

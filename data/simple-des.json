@@ -1,15 +1,64 @@
 {
   "prefixes": {
-    "p0": "http://www.atelier12.it/ontoatelier12.owl",
-    "p1": "http://www.w3.org/2002/07/owl",
-    "p2": "http://www.w3.org/2003/01/geo/wgs84_pos",
-    "p3": "http://www.daml.org/2003/08/lifecycle/tool-assessment-ont",
-    "p4": "http://www.w3.org/2008/07/powder-test/testSchema",
-    "p5": "http://www.w3.org/2001/03/earl/0.95",
-    "p6": "http://www.daml.org/2001/03/daml+oil",
-    "p7": "http://www.cs.umd.edu/~golbeck/daml/slaveOnt.daml",
-    "p8": "http://www.w3.org/ns/earl",
-    "p9": "http://www.geonames.org/ontology"
+    "npg": "http://ns.nature.com/terms/name",
+    "dbpedia-owl": "http://dbpedia.org/ontology/handedness",
+    "mv": "http://schema.mobivoc.org/name",
+    "biopax": "http://www.biopax.org/release/biopax-level3.owl#id",
+    "sioc": "http://rdfs.org/sioc/ns#follows",
+    "hifm": "http://purl.org/net/hifm/ontology#id",
+    "voag": "http://voag.linkedmodel.org/voag#id",
+    "dbug": "http://ontologi.es/doap-bugs#id",
+    "vra": "http://simile.mit.edu/2003/10/ontologies/vraCore3#id",
+    "dcterms": "http://purl.org/dc/terms/language",
+    "wlo": "http://purl.org/ontology/wo/name",
+    "locah": "http://data.archiveshub.ac.uk/def/name",
+    "bevon": "http://rdfs.co/bevon/name",
+    "juso": "http://rdfs.co/juso/name",
+    "doap": "http://usefulinc.com/ns/doap#tester",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#label",
+    "gov": "http://gov.genealogy.net/ontology.owl#hasName",
+    "foaf": "http://xmlns.com/foaf/0.1/depiction",
+    "whisky": "http://vocab.org/whisky/terms/age",
+    "nco": "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#age",
+    "identity": "http://www.identity.org/ontologies/identity.owl#hasBirthDate",
+    "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#age",
+    "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaff",
+    "con": "http://www.w3.org/2000/10/swap/pim/contact#nearestAirport",
+    "pext": "http://www.ontotext.com/proton/protonext#birthDate",
+    "whois": "http://www.kanzaki.com/ns/whois#born",
+    "mil": "http://rdf.muninn-project.org/ontologies/military#deathDay",
+    "schema": "http://schema.org/followee",
+    "lingvo": "http://www.lingvoj.org/ontology#workingLanguage",
+    "cgov": "http://reference.data.gov.uk/def/central-government/timePeriod",
+    "s4ee": "https://w3id.org/saref4ee#workingModeId",
+    "datex": "http://vocab.datex.org/terms#vmsWorking",
+    "earl": "http://www.w3.org/ns/earl#test",
+    "transit": "http://vocab.org/transit/terms/routeStop",
+    "lsc": "http://linkedscience.org/lsc/ns#tests",
+    "deps": "http://ontologi.es/doap-deps#test-suggestion",
+    "test": "http://www.w3.org/2006/03/test-description#informationResourceInput",
+    "gold": "http://purl.org/linguistics/gold/follows",
+    "nsl": "http://purl.org/ontology/storyline/follows",
+    "oc": "http://contextus.net/ontology/ontomedia/core/expression#follows",
+    "saws": "http://purl.org/saws/ontology#follows",
+    "xkos": "http://rdf-vocabulary.ddialliance.org/xkos#follows",
+    "dul": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows",
+    "seq": "http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows",
+    "coll": "http://purl.org/co/followedBy",
+    "gvp": "http://vocab.getty.edu/ontology#aat2879_followed-developed_from",
+    "cwmo": "http://purl.org/cwmo/#isFollowedBy",
+    "atm": "https://data.nasa.gov/ontologies/atmonto/ATM#departureTaxiPath",
+    "demlab": "http://www.demcare.eu/ontologies/demlab.owl#compliantInstructionsOrder",
+    "lv": "http://purl.org/lobid/lv#subjectChain",
+    "osspr": "http://data.ordnancesurvey.co.uk/ontology/spatialrelations/northing",
+    "pni": "http://data.press.net/ontology/identifier/hasIdentifier",
+    "bbccms": "http://www.bbc.co.uk/ontologies/cms/managedThing",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "mrel": "http://id.loc.gov/vocabulary/relators/csp",
+    "cis": "http://dati.beniculturali.it/cis/reportsTo",
+    "ntag": "http://ns.inria.fr/nicetag/2010/09/09/voc#sentTo",
+    "agrelon": "http://d-nb.info/standards/elementset/agrelon.owl#hasIllegitimateChild",
+    "org": "http://www.w3.org/ns/org#basedAt"
   },
   "struct": {
     "$": {
@@ -20,39 +69,54 @@
       "attribute": "id",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "ID",
-          "score": 0
-        },
-        {
-          "prefix_name": "p1",
+          "prefix_name": "npg",
           "predicate": "id",
-          "score": 0
+          "score": 2.6666665000000003
         },
         {
-          "prefix_name": "p2",
-          "predicate": "ID",
-          "score": 0
+          "prefix_name": "dbpedia-owl",
+          "predicate": "id",
+          "score": 2.48354123
         },
         {
-          "prefix_name": "p3",
-          "predicate": "ID",
-          "score": 0
+          "prefix_name": "biopax",
+          "predicate": "id",
+          "score": 2.099055
         },
         {
-          "prefix_name": "p4",
-          "predicate": "ID",
-          "score": 0
+          "prefix_name": "sioc",
+          "predicate": "id",
+          "score": 2.0844612000000002
         },
         {
-          "prefix_name": "p5",
-          "predicate": "ID",
-          "score": 0
+          "prefix_name": "mv",
+          "predicate": "id",
+          "score": 2.07749
         },
         {
-          "prefix_name": "p6",
-          "predicate": "ID",
-          "score": 0
+          "prefix_name": "hifm",
+          "predicate": "id",
+          "score": 2.0625428
+        },
+        {
+          "prefix_name": "voag",
+          "predicate": "id",
+          "score": 2.0625428
+        },
+        {
+          "prefix_name": "dbug",
+          "predicate": "id",
+          "score": 2.0483617
+        },
+        {
+          "prefix_name": "vra",
+          "predicate": "id",
+          "score": 2.0483617
+        },
+        {
+          "prefix_name": "dcterms",
+          "predicate": "identifier",
+          "score": 0.5053469
         }
       ],
       "data_types": [
@@ -64,54 +128,54 @@
       "attribute": "name",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p1",
+          "prefix_name": "npg",
           "predicate": "name",
-          "score": 0
+          "score": 2.6045720400000003
         },
         {
-          "prefix_name": "p1",
+          "prefix_name": "dbpedia-owl",
           "predicate": "name",
-          "score": 0
+          "score": 2.45866553
         },
         {
-          "prefix_name": "p3",
-          "predicate": "NAME",
-          "score": 0
-        },
-        {
-          "prefix_name": "p2",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p5",
+          "prefix_name": "wlo",
           "predicate": "name",
-          "score": 0
+          "score": 2.111111
         },
         {
-          "prefix_name": "p3",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p7",
+          "prefix_name": "locah",
           "predicate": "name",
-          "score": 0
+          "score": 2.01795203
         },
         {
-          "prefix_name": "p8",
-          "predicate": "Name",
-          "score": 0
+          "prefix_name": "doap",
+          "predicate": "name",
+          "score": 2.01265178
         },
         {
-          "prefix_name": "p9",
-          "predicate": "Name",
-          "score": 0
+          "prefix_name": "bevon",
+          "predicate": "name",
+          "score": 2.00874335
+        },
+        {
+          "prefix_name": "juso",
+          "predicate": "name",
+          "score": 2.00874335
+        },
+        {
+          "prefix_name": "mv",
+          "predicate": "name",
+          "score": 1.9858162000000001
+        },
+        {
+          "prefix_name": "rdfs",
+          "predicate": "label",
+          "score": 0.49229443
+        },
+        {
+          "prefix_name": "gov",
+          "predicate": "hasName",
+          "score": 0.44849426
         }
       ],
       "data_types": [
@@ -123,54 +187,54 @@
       "attribute": "age",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
+          "prefix_name": "foaf",
           "predicate": "age",
-          "score": 0
+          "score": 2.82376149
         },
         {
-          "prefix_name": "p1",
+          "prefix_name": "dbpedia-owl",
           "predicate": "age",
-          "score": 0
+          "score": 2.51690418
         },
         {
-          "prefix_name": "p2",
+          "prefix_name": "whisky",
           "predicate": "age",
-          "score": 0
+          "score": 2.11493085
         },
         {
-          "prefix_name": "p3",
+          "prefix_name": "identity",
           "predicate": "age",
-          "score": 0
+          "score": 2.09223345
         },
         {
-          "prefix_name": "p4",
+          "prefix_name": "nco",
           "predicate": "age",
-          "score": 0
+          "score": 2.09223345
         },
         {
-          "prefix_name": "p5",
+          "prefix_name": "sdmx-dimension",
           "predicate": "age",
-          "score": 0
+          "score": 2.0762043
         },
         {
-          "prefix_name": "p6",
-          "predicate": "Age",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "homepage",
+          "score": 1.31768295
         },
         {
-          "prefix_name": "p7",
-          "predicate": "age",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "page",
+          "score": 1.2326481
         },
         {
-          "prefix_name": "p8",
-          "predicate": "Age",
-          "score": 0
+          "prefix_name": "ebucore",
+          "predicate": "agentAge",
+          "score": 0.5223493
         },
         {
-          "prefix_name": "p9",
-          "predicate": "age",
-          "score": 0
+          "prefix_name": "dcterms",
+          "predicate": "language",
+          "score": 0.48212513
         }
       ],
       "data_types": [
@@ -182,44 +246,34 @@
       "attribute": "birthday",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
+          "prefix_name": "foaf",
           "predicate": "birthday",
-          "score": 0
+          "score": 3.7583076
         },
         {
-          "prefix_name": "p9",
+          "prefix_name": "con",
           "predicate": "birthday",
-          "score": 0
+          "score": 2.41534427
         },
         {
-          "prefix_name": "p2",
-          "predicate": "birthday",
-          "score": 0
+          "prefix_name": "pext",
+          "predicate": "birthDate",
+          "score": 0.4990152
         },
         {
-          "prefix_name": "p3",
-          "predicate": "birthday",
-          "score": 0
+          "prefix_name": "identity",
+          "predicate": "hasBirthDate",
+          "score": 0.1480409
         },
         {
-          "prefix_name": "p4",
-          "predicate": "birthDay",
-          "score": 0
+          "prefix_name": "whois",
+          "predicate": "born",
+          "score": 0.05455102
         },
         {
-          "prefix_name": "p5",
-          "predicate": "birthday",
-          "score": 0
-        },
-        {
-          "prefix_name": "p6",
-          "predicate": "Birthday",
-          "score": 0
-        },
-        {
-          "prefix_name": "p7",
-          "predicate": "BIRTHDAY",
-          "score": 0
+          "prefix_name": "mil",
+          "predicate": "deathDay",
+          "score": 0.04512571
         }
       ],
       "data_types": [
@@ -231,29 +285,54 @@
       "attribute": "working",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "Working",
-          "score": 0
+          "prefix_name": "schema",
+          "predicate": "employee",
+          "score": 0.64388615
         },
         {
-          "prefix_name": "p1",
-          "predicate": "Working",
-          "score": 0
+          "prefix_name": "schema",
+          "predicate": "employees",
+          "score": 0.63884752
         },
         {
-          "prefix_name": "p2",
-          "predicate": "Working",
-          "score": 0
+          "prefix_name": "lingvo",
+          "predicate": "workingLanguage",
+          "score": 0.5555556
         },
         {
-          "prefix_name": "p3",
-          "predicate": "Working",
-          "score": 0
+          "prefix_name": "cgov",
+          "predicate": "workingTime",
+          "score": 0.52345425
         },
         {
-          "prefix_name": "p4",
-          "predicate": "Working",
-          "score": 0
+          "prefix_name": "ebucore",
+          "predicate": "workingTitle",
+          "score": 0.52345425
+        },
+        {
+          "prefix_name": "s4ee",
+          "predicate": "workingModeId",
+          "score": 0.50243205
+        },
+        {
+          "prefix_name": "con",
+          "predicate": "nearestAirport",
+          "score": 0.49913344
+        },
+        {
+          "prefix_name": "datex",
+          "predicate": "vmsWorking",
+          "score": 0.3772456
+        },
+        {
+          "prefix_name": "cgov",
+          "predicate": "timePeriod",
+          "score": 0.13252221
+        },
+        {
+          "prefix_name": "ebucore",
+          "predicate": "hasStaff",
+          "score": 0.13252221
         }
       ],
       "data_types": [
@@ -265,54 +344,54 @@
       "attribute": "test",
       "suggested_predicates": [
         {
-          "prefix_name": "p2",
+          "prefix_name": "earl",
           "predicate": "test",
-          "score": 0
+          "score": 2.22956256
         },
         {
-          "prefix_name": "p1",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "dbpedia-owl",
+          "predicate": "latestReleaseVersion",
+          "score": 0.80737923
         },
         {
-          "prefix_name": "p2",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "transit",
+          "predicate": "routeStop",
+          "score": 0.67400706
         },
         {
-          "prefix_name": "p3",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "lsc",
+          "predicate": "tests",
+          "score": 0.4703732
         },
         {
-          "prefix_name": "p4",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "doap",
+          "predicate": "tester",
+          "score": 0.36730018
         },
         {
-          "prefix_name": "p5",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "deps",
+          "predicate": "test-recommendation",
+          "score": 0.3411088
         },
         {
-          "prefix_name": "p6",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "deps",
+          "predicate": "test-requirement",
+          "score": 0.3411088
         },
         {
-          "prefix_name": "p2",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "deps",
+          "predicate": "test-suggestion",
+          "score": 0.31329927
         },
         {
-          "prefix_name": "p8",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "test",
+          "predicate": "expectedResults",
+          "score": 0.29783767
         },
         {
-          "prefix_name": "p9",
-          "predicate": "Test",
-          "score": 0
+          "prefix_name": "test",
+          "predicate": "informationResourceInput",
+          "score": 0.29783767
         }
       ]
     },
@@ -321,54 +400,54 @@
       "attribute": "name",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p1",
+          "prefix_name": "npg",
           "predicate": "name",
-          "score": 0
+          "score": 2.6045720400000003
         },
         {
-          "prefix_name": "p1",
+          "prefix_name": "dbpedia-owl",
           "predicate": "name",
-          "score": 0
+          "score": 2.45866553
         },
         {
-          "prefix_name": "p3",
-          "predicate": "NAME",
-          "score": 0
-        },
-        {
-          "prefix_name": "p2",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p5",
+          "prefix_name": "wlo",
           "predicate": "name",
-          "score": 0
+          "score": 2.111111
         },
         {
-          "prefix_name": "p3",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p7",
+          "prefix_name": "locah",
           "predicate": "name",
-          "score": 0
+          "score": 2.01795203
         },
         {
-          "prefix_name": "p8",
-          "predicate": "Name",
-          "score": 0
+          "prefix_name": "doap",
+          "predicate": "name",
+          "score": 2.01265178
         },
         {
-          "prefix_name": "p9",
-          "predicate": "Name",
-          "score": 0
+          "prefix_name": "bevon",
+          "predicate": "name",
+          "score": 2.00874335
+        },
+        {
+          "prefix_name": "juso",
+          "predicate": "name",
+          "score": 2.00874335
+        },
+        {
+          "prefix_name": "mv",
+          "predicate": "name",
+          "score": 1.9858162000000001
+        },
+        {
+          "prefix_name": "rdfs",
+          "predicate": "label",
+          "score": 0.49229443
+        },
+        {
+          "prefix_name": "gov",
+          "predicate": "hasName",
+          "score": 0.44849426
         }
       ],
       "data_types": [
@@ -380,54 +459,54 @@
       "attribute": "age",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
+          "prefix_name": "foaf",
           "predicate": "age",
-          "score": 0
+          "score": 2.82376149
         },
         {
-          "prefix_name": "p1",
+          "prefix_name": "dbpedia-owl",
           "predicate": "age",
-          "score": 0
+          "score": 2.51690418
         },
         {
-          "prefix_name": "p2",
+          "prefix_name": "whisky",
           "predicate": "age",
-          "score": 0
+          "score": 2.11493085
         },
         {
-          "prefix_name": "p3",
+          "prefix_name": "identity",
           "predicate": "age",
-          "score": 0
+          "score": 2.09223345
         },
         {
-          "prefix_name": "p4",
+          "prefix_name": "nco",
           "predicate": "age",
-          "score": 0
+          "score": 2.09223345
         },
         {
-          "prefix_name": "p5",
+          "prefix_name": "sdmx-dimension",
           "predicate": "age",
-          "score": 0
+          "score": 2.0762043
         },
         {
-          "prefix_name": "p6",
-          "predicate": "Age",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "homepage",
+          "score": 1.31768295
         },
         {
-          "prefix_name": "p7",
-          "predicate": "age",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "page",
+          "score": 1.2326481
         },
         {
-          "prefix_name": "p8",
-          "predicate": "Age",
-          "score": 0
+          "prefix_name": "ebucore",
+          "predicate": "agentAge",
+          "score": 0.5223493
         },
         {
-          "prefix_name": "p9",
-          "predicate": "age",
-          "score": 0
+          "prefix_name": "dcterms",
+          "predicate": "language",
+          "score": 0.48212513
         }
       ],
       "data_types": [
@@ -439,9 +518,104 @@
       "attribute": "followers",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "Followers",
-          "score": 0
+          "prefix_name": "schema",
+          "predicate": "follows",
+          "score": 7.09820737
+        },
+        {
+          "prefix_name": "dbpedia-owl",
+          "predicate": "follows",
+          "score": 6.84468883
+        },
+        {
+          "prefix_name": "gold",
+          "predicate": "follows",
+          "score": 6.835646
+        },
+        {
+          "prefix_name": "nsl",
+          "predicate": "follows",
+          "score": 6.791722999999999
+        },
+        {
+          "prefix_name": "oc",
+          "predicate": "follows",
+          "score": 6.791722999999999
+        },
+        {
+          "prefix_name": "sioc",
+          "predicate": "follows",
+          "score": 6.612489
+        },
+        {
+          "prefix_name": "saws",
+          "predicate": "follows",
+          "score": 6.4095093
+        },
+        {
+          "prefix_name": "xkos",
+          "predicate": "follows",
+          "score": 6.4095093
+        },
+        {
+          "prefix_name": "seq",
+          "predicate": "follows",
+          "score": 6.3107108
+        },
+        {
+          "prefix_name": "dul",
+          "predicate": "follows",
+          "score": 6.3107108
+        },
+        {
+          "prefix_name": "dbpedia-owl",
+          "predicate": "followedBy",
+          "score": 2.01934043
+        },
+        {
+          "prefix_name": "coll",
+          "predicate": "followedBy",
+          "score": 1.2585179
+        },
+        {
+          "prefix_name": "gvp",
+          "predicate": "aat2812_followed",
+          "score": 1.1397237
+        },
+        {
+          "prefix_name": "gvp",
+          "predicate": "aat2879_followed-developed_from",
+          "score": 1.1397237
+        },
+        {
+          "prefix_name": "cwmo",
+          "predicate": "isFollowedBy",
+          "score": 1.1008306
+        },
+        {
+          "prefix_name": "schema",
+          "predicate": "followee",
+          "score": 0.73760742
+        },
+        {
+          "prefix_name": "atm",
+          "predicate": "arrivalTaxiPath",
+          "score": 0.22552717
+        },
+        {
+          "prefix_name": "atm",
+          "predicate": "departureTaxiPath",
+          "score": 0.22552717
+        },
+        {
+          "prefix_name": "demlab",
+          "predicate": "compliantInstructionsOrder",
+          "score": 0.22197571
+        },
+        {
+          "prefix_name": "lv",
+          "predicate": "subjectChain",
+          "score": 0.19422875
         }
       ]
     },
@@ -450,54 +624,54 @@
       "attribute": "name",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p1",
+          "prefix_name": "npg",
           "predicate": "name",
-          "score": 0
+          "score": 2.6045720400000003
         },
         {
-          "prefix_name": "p1",
+          "prefix_name": "dbpedia-owl",
           "predicate": "name",
-          "score": 0
+          "score": 2.45866553
         },
         {
-          "prefix_name": "p3",
-          "predicate": "NAME",
-          "score": 0
-        },
-        {
-          "prefix_name": "p2",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p5",
+          "prefix_name": "wlo",
           "predicate": "name",
-          "score": 0
+          "score": 2.111111
         },
         {
-          "prefix_name": "p3",
-          "predicate": "Name",
-          "score": 0
-        },
-        {
-          "prefix_name": "p7",
+          "prefix_name": "locah",
           "predicate": "name",
-          "score": 0
+          "score": 2.01795203
         },
         {
-          "prefix_name": "p8",
-          "predicate": "Name",
-          "score": 0
+          "prefix_name": "doap",
+          "predicate": "name",
+          "score": 2.01265178
         },
         {
-          "prefix_name": "p9",
-          "predicate": "Name",
-          "score": 0
+          "prefix_name": "bevon",
+          "predicate": "name",
+          "score": 2.00874335
+        },
+        {
+          "prefix_name": "juso",
+          "predicate": "name",
+          "score": 2.00874335
+        },
+        {
+          "prefix_name": "mv",
+          "predicate": "name",
+          "score": 1.9858162000000001
+        },
+        {
+          "prefix_name": "rdfs",
+          "predicate": "label",
+          "score": 0.49229443
+        },
+        {
+          "prefix_name": "gov",
+          "predicate": "hasName",
+          "score": 0.44849426
         }
       ],
       "data_types": [
@@ -509,45 +683,13 @@
       "attribute": "id",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "ID",
-          "score": 0
-        },
-        {
-          "prefix_name": "p1",
+          "prefix_name": "sioc",
           "predicate": "id",
-          "score": 0
-        },
-        {
-          "prefix_name": "p2",
-          "predicate": "ID",
-          "score": 0
-        },
-        {
-          "prefix_name": "p3",
-          "predicate": "ID",
-          "score": 0
-        },
-        {
-          "prefix_name": "p4",
-          "predicate": "ID",
-          "score": 0
-        },
-        {
-          "prefix_name": "p5",
-          "predicate": "ID",
-          "score": 0
-        },
-        {
-          "prefix_name": "p6",
-          "predicate": "ID",
-          "score": 0
+          "score": 2.0844612000000002
         }
       ],
       "data_types": [
-        "xsd:decimal",
-        "xsd:string",
-        "xsd:date"
+        "xsd:string"
       ]
     },
     "$[*].followers[*].thing": {
@@ -555,61 +697,112 @@
       "attribute": "thing",
       "suggested_predicates": [
         {
-          "prefix_name": "p0",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "osspr",
+          "predicate": "northing",
+          "score": 0.63207644
         },
         {
-          "prefix_name": "p1",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "homepage",
+          "score": 0.5660172
         },
         {
-          "prefix_name": "p2",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "name",
+          "score": 0.5573267
         },
         {
-          "prefix_name": "p2",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "pni",
+          "predicate": "hasIdentifier",
+          "score": 0.5027996
         },
         {
-          "prefix_name": "p3",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "isPrimaryTopicOf",
+          "score": 0.49084422
         },
         {
-          "prefix_name": "p7",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "page",
+          "score": 0.38230422
         },
         {
-          "prefix_name": "p6",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "dbpedia-owl",
+          "predicate": "asWikiText",
+          "score": 0.3796892
         },
         {
-          "prefix_name": "p1",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "foaf",
+          "predicate": "depiction",
+          "score": 0.3720803
         },
         {
-          "prefix_name": "p5",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "bbccms",
+          "predicate": "managedThing",
+          "score": 0.32779172
         },
         {
-          "prefix_name": "p9",
-          "predicate": "Thing",
-          "score": 0
+          "prefix_name": "dbpedia-owl",
+          "predicate": "clothingSize",
+          "score": 0.32266587
         }
       ]
     },
     "$[*].followers[*].thing.a": {
       "node_type": "value",
       "attribute": "a",
-      "suggested_predicates": [],
+      "suggested_predicates": [
+        {
+          "prefix_name": "dbpedia-owl",
+          "predicate": "foundedBy",
+          "score": 0.5555555
+        },
+        {
+          "prefix_name": "dbpedia-owl",
+          "predicate": "aSide",
+          "score": 0.5538256
+        },
+        {
+          "prefix_name": "rdf",
+          "predicate": "type",
+          "score": 0.458276
+        },
+        {
+          "prefix_name": "mrel",
+          "predicate": "csp",
+          "score": 0.44444445
+        },
+        {
+          "prefix_name": "rdfs",
+          "predicate": "label",
+          "score": 0.4112724
+        },
+        {
+          "prefix_name": "dbpedia-owl",
+          "predicate": "handedness",
+          "score": 0.35270312
+        },
+        {
+          "prefix_name": "cis",
+          "predicate": "reportsTo",
+          "score": 0.34852153
+        },
+        {
+          "prefix_name": "ntag",
+          "predicate": "sentTo",
+          "score": 0.34852153
+        },
+        {
+          "prefix_name": "agrelon",
+          "predicate": "hasIllegitimateChild",
+          "score": 0.34501868
+        },
+        {
+          "prefix_name": "org",
+          "predicate": "basedAt",
+          "score": 0.33504617
+        }
+      ],
       "data_types": [
         "xsd:string"
       ]

@@ -41,13 +41,15 @@ function get_values_from_paths(base, paths, src) {
  * @param {Object} des - The descriptor file
  * @param {string} path - JSONPath to this item
  * @param {Object} entity_check - The entity object if it is an entity. Otherwise, undefined
+ * @param {string} path_arrys - JSONPath to this item but with '*' instead of numbers (optional)
  * @returns {Object} The rdf object
  */
-function get_entity_or_unlabeled(src, store, prefixes, des, path, entity_check) {
+function get_entity_or_unlabeled(src, store, prefixes, des, path, entity_check, path_arrays) {
     let rdf_obj;
     if (!entity_check) {
         rdf_obj = store.bnode();
         let vals = get_values_from_paths(path, "*", src);
+        path = path_arrays || path;
         for (let val of vals) {
             for (let key of Object.keys(val)) {
                 let item = handle_item(src, store, prefixes, des, path, key, rdf_obj, val[key]);
@@ -76,7 +78,7 @@ function get_entity_or_unlabeled(src, store, prefixes, des, path, entity_check) 
  * @returns {Object[]} Array of 3 element representing a triple
  */
 function handle_item(src, store, prefixes, des, path, key, subject, obj) {
-    print(`>>> ${path}.${key}`);
+    //print(`>>> ${path}.${key}: ${subject}`);
     let content_path = path;
     if (key !== "")
         content_path += (key === "[*]" ? key : "." + key);
@@ -93,19 +95,16 @@ function handle_item(src, store, prefixes, des, path, key, subject, obj) {
     pred += "#" + p.predicate;
     let rdf_subj = typeof(subject) === "string" ? store.sym(subject) : subject;
     if (s.node_type === 'array') {
-        // TODO: implement if it is an array
-        content_path += "[*]";
-        let arr = JSONPath({path: content_path, json: src});
+        let arr = JSONPath({path: content_path + "[*]", json: src});
         let rdf_list = [];
         for (let i in arr) {
-            for (let k of Object.keys(arr[i])) {
-                rdf_list.push(handle_item(src, store, prefixes, des, content_path, k, undefined, get_entity_or_unlabeled(src, store, prefixes, des, k, des.entities[path + '.' + key])));
-            }
+            let subj = get_entity_or_unlabeled(src, store, prefixes, des, content_path + `[${i}]`, des.entities[content_path + '[*]'], content_path + '[*]');
+            rdf_list.push(subj);
         }
         return [
             rdf_subj,
             store.sym(pred),
-            store.list([])//rdf_list)
+            store.list(rdf_list)
         ];
     } else if (s.node_type === 'object') {
         return [

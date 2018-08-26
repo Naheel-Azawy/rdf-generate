@@ -119,10 +119,19 @@ class Builder {
             return; // do not add it regardless
         }
         if (await this.is_entity(obj, keys)) {
+            let template_key;
+            for (let k of keys) {
+                if ((typeof obj[k] !== "object")) {
+                    template_key = k;
+                    if (k === "id") {
+                        break;
+                    }
+                }
+            }
             this.entities[path] = {
                 include: i_inc || [ "*" ],
                 type: i_type || await this.find_entity_type(predicates, keys),
-                iri_template: i_tmp || `https://example.com/{${keys[0]}}`
+                iri_template: i_tmp || `https://example.com/{${template_key}}`
             };
         }
     }
