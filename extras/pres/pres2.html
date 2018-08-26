@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(Naheel)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="author">Naheel</h2><p class="date">Created: 2018-08-27 Mon 01:26</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgd67e0db">1. Objectives</a></li>
+<li><a href="#/slide-orgbd85234">2. Motivation</a></li>
+<li><a href="#/slide-orga90efb4">3. Concepts</a>
+<ul>
+<li><a href="#/slide-org0f15d0d">3.1. RDF</a>
+<ul>
+<li><a href="#/slide-org4636864">3.1.1. Triples</a></li>
+<li><a href="#/slide-org474e1bb">3.1.2. Nodes</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orge97a627">3.2. Representations</a>
+<ul>
+<li><a href="#/slide-orgf3e22ec">3.2.1. RDF/XML</a></li>
+<li><a href="#/slide-org181e927">3.2.2. Turtle (TTL)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#/slide-org85400a5">4. Challenges</a></li>
+<li><a href="#/slide-orge6c0ce5">5. Design</a></li>
+<li><a href="#/slide-org52eb295">6. Implementation</a>
+<ul>
+<li><a href="#/slide-org72404db">6.1. Backend</a></li>
+<li><a href="#/slide-org69d7c9d">6.2. Frontend</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org1331399">7. Demo</a>
+<ul>
+<li><a href="#/slide-org4c50d22">7.1. Command-line interface</a>
+<ul>
+<li><a href="#/slide-org62fb15a">7.1.1. Help</a></li>
+<li><a href="#/slide-org361a756">7.1.2. Sample input</a></li>
+<li><a href="#/slide-org0615e2b">7.1.3. Usage (step 1)</a></li>
+<li><a href="#/slide-org890e8d6">7.1.4. Generated Descriptor</a></li>
+<li><a href="#/slide-org1136bd8">7.1.5. Usage (step 2)</a></li>
+<li><a href="#/slide-org41e91e1">7.1.6. Final Output</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org052ec0d">7.2. Web interface</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org93d811f">8. Questions?</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-orgd67e0db">
+<h2 id="orgd67e0db"><span class="section-number-2">1</span> Objectives</h2>
+<ul>
+<li>Find a mechanism for converting non-structured or semi-structured data (JSON, XML, CSV, etc..) to RDF.</li>
+<li>Building a tool to automate the conversion using node.js.</li>
+<li>Build a user friendly interface.</li>
+<li>Investigating the RDF conversion pipeline to identify the main modules.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgbd85234">
+<h2 id="orgbd85234"><span class="section-number-2">2</span> Motivation</h2>
+<ul>
+<li>Enrich the Arabic content in the semantic web</li>
+<li>Further process existing data</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orga90efb4">
+<h2 id="orga90efb4"><span class="section-number-2">3</span> Concepts</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-org0f15d0d">
+<h3 id="org0f15d0d"><span class="section-number-3">3.1</span> RDF</h3>
+<p>
+Resource Description Framework (RDF) is a framework for data representation in the web.
+</p>
+</section>
+<section id="slide-org4636864">
+<h4 id="org4636864"><span class="section-number-4">3.1.1</span> Triples</h4>
+<p>
+In RDF data is stored in triples and represented as graphs. Each triple consists of a <b>subject</b>, a <b>predicate</b>, and an <b>object</b>
+<img src="./images/g1.png" alt="g1.png" />
+</p>
+</section>
+<section id="slide-org474e1bb">
+<h4 id="org474e1bb"><span class="section-number-4">3.1.2</span> Nodes</h4>
+<p>
+Nodes can be blank nodes, litrals, or URI references
+</p>
+<pre  class="example">
+&lt;http://example.org/#Alice&gt; &lt;http://xmlns.com/foaf/0.1/knows&gt; &lt;http://example.org/#Bob&gt; .
+</pre>
+
+<div class="figure">
+<p><img src="./images/g2.png" alt="g2.png" />
+</p>
+</div>
+</section>
+<section id="slide-orge97a627">
+<h3 id="orge97a627"><span class="section-number-3">3.2</span> Representations</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+</section>
+<section id="slide-orgf3e22ec">
+<h4 id="orgf3e22ec"><span class="section-number-4">3.2.1</span> RDF/XML</h4>
+<div class="org-src-container">
+
+<pre  class="src src-xml">&lt;<span style="color: #4f97d7;">rdf</span>:<span style="color: #bc6ec5; font-weight: bold;">RDF</span>
+ <span style="color: #4f97d7;">xmlns</span>:<span style="color: #7590db;">rdf</span>=<span style="color: #2d9574;">"http://www.w3.org/1999/02/22-rdf-syntax-ns#"</span>
+ <span style="color: #4f97d7;">xmlns</span>:<span style="color: #7590db;">foaf</span>=<span style="color: #2d9574;">"http://xmlns.com/foaf/0.1/"</span>&gt;
+    &lt;<span style="color: #4f97d7;">rdf</span>:<span style="color: #bc6ec5; font-weight: bold;">Description</span> <span style="color: #4f97d7;">rdf</span>:<span style="color: #7590db;">about</span>=<span style="color: #2d9574;">"http://example.org/#Alice"</span>&gt;
+       &lt;<span style="color: #4f97d7;">foaf</span>:<span style="color: #bc6ec5; font-weight: bold;">knows</span> <span style="color: #4f97d7;">rdf</span>:<span style="color: #7590db;">resource</span>=<span style="color: #2d9574;">"http://example.org/#Bob"</span>/&gt;
+    &lt;/<span style="color: #4f97d7;">rdf</span>:<span style="color: #bc6ec5; font-weight: bold;">Description</span>&gt;
+&lt;/<span style="color: #4f97d7;">rdf</span>:<span style="color: #bc6ec5; font-weight: bold;">RDF</span>&gt;
+</pre>
+</div>
+</section>
+<section id="slide-org181e927">
+<h4 id="org181e927"><span class="section-number-4">3.2.2</span> Turtle (TTL)</h4>
+<pre  class="example">
+@prefix e: &lt;http://example.org/#&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+e:Alice foaf:knows e:Bob .
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-org85400a5">
+<h2 id="org85400a5"><span class="section-number-2">4</span> Challenges</h2>
+<ul>
+<li>Logic</li>
+<li>Third party libraries</li>
+<li>Web APIs</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge6c0ce5">
+<h2 id="orge6c0ce5"><span class="section-number-2">5</span> Design</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Layer</th>
+<th scope="col" class="org-left">Architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Web interface</td>
+<td class="org-left">Presentation</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Command-line interface</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">RDF generator</td>
+<td class="org-left">Logic</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Descriptor builder</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Predicates finder</td>
+<td class="org-left">Data</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-org52eb295">
+<h2 id="org52eb295"><span class="section-number-2">6</span> Implementation</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+</section>
+<section id="slide-org72404db">
+<h3 id="org72404db"><span class="section-number-3">6.1</span> Backend</h3>
+<ul>
+<li>Node.js</li>
+<li>JSONPath</li>
+<li>BlueBird</li>
+<li>RDFLib.js</li>
+<li>Express</li>
+
+</ul>
+</section>
+<section id="slide-org69d7c9d">
+<h3 id="org69d7c9d"><span class="section-number-3">6.2</span> Frontend</h3>
+<ul>
+<li>JQuery</li>
+<li>Handlebars</li>
+<li>Bootstrap</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org1331399">
+<h2 id="org1331399"><span class="section-number-2">7</span> Demo</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+</section>
+<section id="slide-org4c50d22">
+<h3 id="org4c50d22"><span class="section-number-3">7.1</span> Command-line interface</h3>
+<div class="outline-text-3" id="text-7-1">
+</div>
+</section>
+<section id="slide-org62fb15a">
+<h4 id="org62fb15a"><span class="section-number-4">7.1.1</span> Help</h4>
+<div class="org-src-container">
+
+<pre  class="src src-sh">Usage: node main.js <span style="color: #4f97d7;">[</span>OPTION<span style="color: #4f97d7;">]</span>...
+-s, --server                 start server
+-i, --in=FILE                input file
+-d, --out_descriptor=FILE    out descriptor file
+-r, --out_rdf=FILE           out RDF file
+-b, --init_base=FILE         initial descriptor json file used as a bas...
+-f, --format=FORMAT          out RDF format <span style="color: #4f97d7;">(</span>ttl, xml<span style="color: #4f97d7;">)</span>
+-a, --api=API                predicates finding API <span style="color: #4f97d7;">(</span>lov, swoogle, test<span style="color: #4f97d7;">)</span>
+-h, --help                   display this help and exit
+
+Example usage:
+node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api ...
+</pre>
+</div>
+</section>
+<section id="slide-org361a756">
+<h4 id="org361a756"><span class="section-number-4">7.1.2</span> Sample input</h4>
+<div class="org-src-container">
+
+<pre  class="src src-json"><span style="color: #4f97d7;">[</span>
+    <span style="color: #bc6ec5;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">"id"</span>: <span style="color: #a45bad;">0</span>,
+        <span style="color: #4f97d7; font-weight: bold;">"name"</span>: <span style="color: #2d9574;">"Alice"</span>,
+        <span style="color: #4f97d7; font-weight: bold;">"birthday"</span>: "<span style="color: #a45bad;">1990</span>-<span style="color: #a45bad;">01</span>-<span style="color: #a45bad;">01</span>"
+    <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #bc6ec5;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">"id"</span>: <span style="color: #a45bad;">1</span>,
+        <span style="color: #4f97d7; font-weight: bold;">"name"</span>: <span style="color: #2d9574;">"Bob"</span>,
+        <span style="color: #4f97d7; font-weight: bold;">"birthday"</span>: "<span style="color: #a45bad;">1990</span>-<span style="color: #a45bad;">01</span>-<span style="color: #a45bad;">02</span>"
+    <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">]</span>
+</pre>
+</div>
+</section>
+<section id="slide-org0615e2b">
+<h4 id="org0615e2b"><span class="section-number-4">7.1.3</span> Usage (step 1)</h4>
+<div class="org-src-container">
+
+<pre  class="src src-sh">$ node main.js <span style="color: #2d9574;">\</span>
+    --in             ./data/very-simple.json <span style="color: #2d9574;">\</span>
+    --out_descriptor ./data/very-simple-des-base.json
+</pre>
+</div>
+</section>
+<section id="slide-org890e8d6">
+<h4 id="org890e8d6"><span class="section-number-4">7.1.4</span> Generated Descriptor</h4>
+<div class="org-src-container">
+
+<pre  class="src src-json"><span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">"prefixes"</span>: <span style="color: #bc6ec5;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">"e"</span>: <span style="color: #2d9574;">"https://example.com"</span>, ...
+    <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"struct"</span>: <span style="color: #bc6ec5;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">"$.json.path.to.the.object"</span>: <span style="color: #2d9574;">{</span>
+            <span style="color: #4f97d7; font-weight: bold;">"suggested_predicates"</span>: <span style="color: #67b11d;">[</span>
+                <span style="color: #b1951d;">{</span>
+                    <span style="color: #4f97d7; font-weight: bold;">"prefix_name"</span>: <span style="color: #2d9574;">"e"</span>,
+                    <span style="color: #4f97d7; font-weight: bold;">"predicate"</span>: <span style="color: #2d9574;">"id"</span>,
+                    <span style="color: #4f97d7; font-weight: bold;">"score"</span>: <span style="color: #a45bad;">1</span>.<span style="color: #a45bad;">123</span>
+                <span style="color: #b1951d;">}</span>,
+                ...
+            <span style="color: #67b11d;">]</span>,
+            <span style="color: #4f97d7; font-weight: bold;">"data_types"</span>: <span style="color: #67b11d;">[</span> <span style="color: #2d9574;">"xsd:string"</span>, ... <span style="color: #67b11d;">]</span>
+            ...
+        <span style="color: #2d9574;">}</span>, ...
+    <span style="color: #bc6ec5;">}</span>,
+    <span style="color: #4f97d7; font-weight: bold;">"entities"</span>: <span style="color: #bc6ec5;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">"$.json.path.to.the.other.object"</span>: <span style="color: #2d9574;">{</span>
+            <span style="color: #4f97d7; font-weight: bold;">"include"</span>: <span style="color: #67b11d;">[</span> <span style="color: #2d9574;">"*"</span> <span style="color: #67b11d;">]</span>,
+            <span style="color: #4f97d7; font-weight: bold;">"type"</span>: <span style="color: #2d9574;">"http://schema.org/Thing"</span>,
+            <span style="color: #4f97d7; font-weight: bold;">"iri_template"</span>: <span style="color: #2d9574;">"https://example.com/{post.id}"</span>
+        <span style="color: #2d9574;">}</span>, ...
+    <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
+</pre>
+</div>
+</section>
+<section id="slide-org1136bd8">
+<h4 id="org1136bd8"><span class="section-number-4">7.1.5</span> Usage (step 2)</h4>
+<div class="org-src-container">
+
+<pre  class="src src-sh">$ node main.js <span style="color: #2d9574;">\</span>
+    --in             ./data/very-simple.json <span style="color: #2d9574;">\</span>
+    --init_base      ./data/very-simple-des-base.json <span style="color: #2d9574;">\</span>
+    --out_descriptor ./data/very-simple-des-final.json <span style="color: #2d9574;">\</span>
+    --out_rdf        ./data/very-simple-out.ttl
+</pre>
+</div>
+</section>
+<section id="slide-org41e91e1">
+<h4 id="org41e91e1"><span class="section-number-4">7.1.6</span> Final Output</h4>
+<div class="org-src-container">
+
+<pre  class="src src-ttl"><span style="color: #bc6ec5;">@prefix</span> <span style="color: #ce537a; font-weight: bold;">ex:</span> <span style="color: #bc6ec5; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">&lt;https://example.com/&gt;</a></span><span style="color: #4f97d7; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">.</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">
+</a><span style="color: #bc6ec5;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">@prefix</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #ce537a; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">schem:</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #bc6ec5; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">&lt;http://schema.org/&gt;</a></span><span style="color: #4f97d7; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">.</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">
+</a><span style="color: #bc6ec5;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">@prefix</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #ce537a; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">n:</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #bc6ec5; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">&lt;http://ns.nature.com/terms/name&gt;</a></span><span style="color: #4f97d7; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">.</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">
+</a><span style="color: #bc6ec5;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">@prefix</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #ce537a; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">ns0:</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #bc6ec5; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">&lt;http://rdfs.org/sioc/ns&gt;</a></span><span style="color: #4f97d7; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">.</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">
+</a><span style="color: #bc6ec5;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">@prefix</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #ce537a; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">bir:</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #bc6ec5; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">&lt;http://xmlns.com/foaf/0.1/birthday&gt;</a></span><span style="color: #4f97d7; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">.</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">
+</a><span style="color: #bc6ec5;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">@prefix</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #ce537a; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">XML:</a></span><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema"> </a><span style="color: #bc6ec5; font-weight: bold;"><a href="https://example.com/&gt;.
+@prefix schem: &lt;http://schema.org/&gt;.
+@prefix n: &lt;http://ns.nature.com/terms/name&gt;.
+@prefix ns0: &lt;http://rdfs.org/sioc/ns&gt;.
+@prefix bir: &lt;http://xmlns.com/foaf/0.1/birthday&gt;.
+@prefix XML: &lt;http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema&gt;</a></span><span style="color: #ce537a; font-weight: bold;">.</span>
+
+<span style="color: #ce537a; font-weight: bold;">ex:</span><span style="color: #a45bad;">0</span> <span style="color: #4f97d7; font-weight: bold;">a</span> <span style="color: #ce537a; font-weight: bold;">schem:</span><span style="color: #a45bad;">Thing</span><span style="color: #4f97d7; font-weight: bold;">;</span> <span style="color: #ce537a; font-weight: bold;">n:</span><span style="color: #a45bad;">name</span> <span style="color: #2d9574;">"Alice"</span><span style="color: #4f97d7; font-weight: bold;">;</span> <span style="color: #ce537a; font-weight: bold;">ns0:</span><span style="color: #a45bad;">id</span> <span style="color: #a45bad;">0</span><span style="color: #4f97d7; font-weight: bold;">.</span><span style="color: #a45bad;">0</span><span style="color: #4f97d7; font-weight: bold;">;</span> <span style="color: #ce537a; font-weight: bold;">bir:</span><span style="color: #a45bad;">birthday</span> <span style="color: #2d9574;">"1990-01-01"</span><span style="color: #bc6ec5;">^^XML:date</span><span style="color: #4f97d7; font-weight: bold;">.</span>
+ex:<span style="color: #a45bad;">1</span> <span style="color: #4f97d7; font-weight: bold;">a</span> <span style="color: #ce537a; font-weight: bold;">schem:</span><span style="color: #a45bad;">Thing</span><span style="color: #4f97d7; font-weight: bold;">;</span> <span style="color: #ce537a; font-weight: bold;">n:</span><span style="color: #a45bad;">name</span> <span style="color: #2d9574;">"Bob"</span><span style="color: #4f97d7; font-weight: bold;">;</span> <span style="color: #ce537a; font-weight: bold;">ns0:</span><span style="color: #a45bad;">id</span> <span style="color: #a45bad;">1</span><span style="color: #4f97d7; font-weight: bold;">.</span><span style="color: #a45bad;">0</span><span style="color: #4f97d7; font-weight: bold;">;</span> <span style="color: #ce537a; font-weight: bold;">bir:</span><span style="color: #a45bad;">birthday</span> <span style="color: #2d9574;">"1990-01-02"</span><span style="color: #bc6ec5;">^^XML:date</span><span style="color: #4f97d7; font-weight: bold;">.</span>
+</pre>
+</div>
+</section>
+<section id="slide-org052ec0d">
+<h3 id="org052ec0d"><span class="section-number-3">7.2</span> Web interface</h3>
+
+<div class="figure">
+<p><img src="./images/g4.png" alt="g4.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org93d811f">
+<h2 id="org93d811f"><span class="section-number-2">8</span> Questions?</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

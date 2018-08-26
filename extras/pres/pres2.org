@@ -1,0 +1,158 @@
+* Objectives
+- Find a mechanism for converting non-structured or semi-structured data (JSON, XML, CSV, etc..) to RDF.
+- Building a tool to automate the conversion using node.js.
+- Build a user friendly interface.
+- Investigating the RDF conversion pipeline to identify the main modules.
+* Motivation
+- Enrich the Arabic content in the semantic web
+- Further process existing data
+* Concepts
+** RDF
+Resource Description Framework (RDF) is a framework for data representation in the web.
+*** Triples
+In RDF data is stored in triples and represented as graphs. Each triple consists of a *subject*, a *predicate*, and an *object*
+[[./images/g1.png]]
+*** Nodes
+Nodes can be blank nodes, litrals, or URI references
+#+BEGIN_SRC
+<http://example.org/#Alice> <http://xmlns.com/foaf/0.1/knows> <http://example.org/#Bob> .
+#+END_SRC
+[[./images/g2.png]]
+** Representations
+*** RDF/XML
+#+BEGIN_SRC xml
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <rdf:Description rdf:about="http://example.org/#Alice">
+       <foaf:knows rdf:resource="http://example.org/#Bob"/>
+    </rdf:Description>
+</rdf:RDF>
+#+END_SRC
+*** Turtle (TTL)
+#+BEGIN_SRC
+@prefix e: <http://example.org/#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+e:Alice foaf:knows e:Bob .
+#+END_SRC
+
+* Challenges
+- Logic
+- Third party libraries
+- Web APIs
+* Design
+|------------------------+--------------|
+| Layer                  | Architecture |
+|------------------------+--------------|
+| Web interface          | Presentation |
+|------------------------+--------------|
+| Command-line interface |              |
+|------------------------+--------------|
+| RDF generator          | Logic        |
+|------------------------+--------------|
+| Descriptor builder     |              |
+|------------------------+--------------|
+| Predicates finder      | Data         |
+|------------------------+--------------|
+* Implementation
+** Backend
+- Node.js
+- JSONPath
+- BlueBird
+- RDFLib.js
+- Express
+** Frontend
+- JQuery
+- Handlebars
+- Bootstrap
+* Demo
+** Command-line interface
+*** Help
+#+BEGIN_SRC sh
+Usage: node main.js [OPTION]...
+-s, --server                 start server
+-i, --in=FILE                input file
+-d, --out_descriptor=FILE    out descriptor file
+-r, --out_rdf=FILE           out RDF file
+-b, --init_base=FILE         initial descriptor json file used as a bas...
+-f, --format=FORMAT          out RDF format (ttl, xml)
+-a, --api=API                predicates finding API (lov, swoogle, test)
+-h, --help                   display this help and exit
+
+Example usage:
+node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api ...
+#+END_SRC
+*** Sample input
+#+BEGIN_SRC json
+[
+    {
+        "id": 0,
+        "name": "Alice",
+        "birthday": "1990-01-01"
+    },
+    {
+        "id": 1,
+        "name": "Bob",
+        "birthday": "1990-01-02"
+    }
+]
+#+END_SRC
+*** Usage (step 1)
+#+BEGIN_SRC sh
+$ node main.js \
+    --in             ./data/very-simple.json \
+    --out_descriptor ./data/very-simple-des-base.json
+#+END_SRC
+*** Generated Descriptor
+#+BEGIN_SRC json
+{
+    "prefixes": {
+        "e": "https://example.com", ...
+    },
+    "struct": {
+        "$.json.path.to.the.object": {
+            "suggested_predicates": [
+                {
+                    "prefix_name": "e",
+                    "predicate": "id",
+                    "score": 1.123
+                },
+                ...
+            ],
+            "data_types": [ "xsd:string", ... ]
+            ...
+        }, ...
+    },
+    "entities": {
+        "$.json.path.to.the.other.object": {
+            "include": [ "*" ],
+            "type": "http://schema.org/Thing",
+            "iri_template": "https://example.com/{post.id}"
+        }, ...
+    }
+}
+#+END_SRC
+*** Usage (step 2)
+#+BEGIN_SRC sh
+$ node main.js \
+    --in             ./data/very-simple.json \
+    --init_base      ./data/very-simple-des-base.json \
+    --out_descriptor ./data/very-simple-des-final.json \
+    --out_rdf        ./data/very-simple-out.ttl
+#+END_SRC
+*** Final Output
+#+BEGIN_SRC ttl
+@prefix ex: <https://example.com/>.
+@prefix schem: <http://schema.org/>.
+@prefix n: <http://ns.nature.com/terms/name>.
+@prefix ns0: <http://rdfs.org/sioc/ns>.
+@prefix bir: <http://xmlns.com/foaf/0.1/birthday>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema>.
+
+ex:0 a schem:Thing; n:name "Alice"; ns0:id 0.0; bir:birthday "1990-01-01"^^XML:date.
+ex:1 a schem:Thing; n:name "Bob"; ns0:id 1.0; bir:birthday "1990-01-02"^^XML:date.
+#+END_SRC
+** Web interface
+[[./images/g4.png]]
+* Questions?
