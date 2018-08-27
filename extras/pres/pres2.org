@@ -1,8 +1,8 @@
 * Objectives
 - Find a mechanism for converting non-structured or semi-structured data (JSON, XML, CSV, etc..) to RDF.
-- Building a tool to automate the conversion using node.js.
-- Build a user friendly interface.
 - Investigating the RDF conversion pipeline to identify the main modules.
+- Building a tool to automate the conversion.
+- Build a user friendly interface.
 * Motivation
 - Enrich the Arabic content in the semantic web
 - Further process existing data
@@ -37,6 +37,8 @@ Nodes can be blank nodes, litrals, or URI references
 e:Alice foaf:knows e:Bob .
 #+END_SRC
 
+* Timeline
+[[./images/timeline.png]]
 * Challenges
 - Logic
 - Third party libraries
@@ -155,4 +157,7 @@ ex:1 a schem:Thing; n:name "Bob"; ns0:id 1.0; bir:birthday "1990-01-02"^^XML:dat
 #+END_SRC
 ** Web interface
 [[./images/g4.png]]
+* Conclusion
+- The goal was achieved by having the system functioning correctly
+- Future improvements (Local database, Machine learning)
 * Questions?

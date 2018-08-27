@@ -26,74 +26,76 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h2 class="author">Naheel</h2><p class="date">Created: 2018-08-27 Mon 01:26</p>
+<section id="sec-title-slide"><h2 class="author">Naheel</h2><p class="date">Created: 2018-08-27 Mon 10:30</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orgd67e0db">1. Objectives</a></li>
-<li><a href="#/slide-orgbd85234">2. Motivation</a></li>
-<li><a href="#/slide-orga90efb4">3. Concepts</a>
+<li><a href="#/slide-org810a7c2">1. Objectives</a></li>
+<li><a href="#/slide-orgefdada3">2. Motivation</a></li>
+<li><a href="#/slide-orgb3e301a">3. Concepts</a>
 <ul>
-<li><a href="#/slide-org0f15d0d">3.1. RDF</a>
+<li><a href="#/slide-orgd1ffdaa">3.1. RDF</a>
 <ul>
-<li><a href="#/slide-org4636864">3.1.1. Triples</a></li>
-<li><a href="#/slide-org474e1bb">3.1.2. Nodes</a></li>
+<li><a href="#/slide-org50c1f1b">3.1.1. Triples</a></li>
+<li><a href="#/slide-org877e5ed">3.1.2. Nodes</a></li>
 </ul>
 </li>
-<li><a href="#/slide-orge97a627">3.2. Representations</a>
+<li><a href="#/slide-org195f53c">3.2. Representations</a>
 <ul>
-<li><a href="#/slide-orgf3e22ec">3.2.1. RDF/XML</a></li>
-<li><a href="#/slide-org181e927">3.2.2. Turtle (TTL)</a></li>
+<li><a href="#/slide-org4527014">3.2.1. RDF/XML</a></li>
+<li><a href="#/slide-orgd3c4970">3.2.2. Turtle (TTL)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#/slide-org85400a5">4. Challenges</a></li>
-<li><a href="#/slide-orge6c0ce5">5. Design</a></li>
-<li><a href="#/slide-org52eb295">6. Implementation</a>
+<li><a href="#/slide-org5080c7b">4. Timeline</a></li>
+<li><a href="#/slide-orgf5ba199">5. Challenges</a></li>
+<li><a href="#/slide-org2ba6ccf">6. Design</a></li>
+<li><a href="#/slide-orgbf76224">7. Implementation</a>
 <ul>
-<li><a href="#/slide-org72404db">6.1. Backend</a></li>
-<li><a href="#/slide-org69d7c9d">6.2. Frontend</a></li>
+<li><a href="#/slide-orgf36771a">7.1. Backend</a></li>
+<li><a href="#/slide-org92f0c1c">7.2. Frontend</a></li>
 </ul>
 </li>
-<li><a href="#/slide-org1331399">7. Demo</a>
+<li><a href="#/slide-org2547ff1">8. Demo</a>
 <ul>
-<li><a href="#/slide-org4c50d22">7.1. Command-line interface</a>
+<li><a href="#/slide-orgf52b78f">8.1. Command-line interface</a>
 <ul>
-<li><a href="#/slide-org62fb15a">7.1.1. Help</a></li>
-<li><a href="#/slide-org361a756">7.1.2. Sample input</a></li>
-<li><a href="#/slide-org0615e2b">7.1.3. Usage (step 1)</a></li>
-<li><a href="#/slide-org890e8d6">7.1.4. Generated Descriptor</a></li>
-<li><a href="#/slide-org1136bd8">7.1.5. Usage (step 2)</a></li>
-<li><a href="#/slide-org41e91e1">7.1.6. Final Output</a></li>
+<li><a href="#/slide-org48ae2b6">8.1.1. Help</a></li>
+<li><a href="#/slide-orgdf466ef">8.1.2. Sample input</a></li>
+<li><a href="#/slide-org91a10ac">8.1.3. Usage (step 1)</a></li>
+<li><a href="#/slide-org602e9b4">8.1.4. Generated Descriptor</a></li>
+<li><a href="#/slide-org66bada0">8.1.5. Usage (step 2)</a></li>
+<li><a href="#/slide-org1e3a693">8.1.6. Final Output</a></li>
 </ul>
 </li>
-<li><a href="#/slide-org052ec0d">7.2. Web interface</a></li>
+<li><a href="#/slide-org8f15e9f">8.2. Web interface</a></li>
 </ul>
 </li>
-<li><a href="#/slide-org93d811f">8. Questions?</a></li>
+<li><a href="#/slide-orgfb29044">9. Conclusion</a></li>
+<li><a href="#/slide-org2e1ad68">10. Questions?</a></li>
 </ul>
 </div>
 </div>
 </section>
 <section>
-<section id="slide-orgd67e0db">
-<h2 id="orgd67e0db"><span class="section-number-2">1</span> Objectives</h2>
+<section id="slide-org810a7c2">
+<h2 id="org810a7c2"><span class="section-number-2">1</span> Objectives</h2>
 <ul>
 <li>Find a mechanism for converting non-structured or semi-structured data (JSON, XML, CSV, etc..) to RDF.</li>
-<li>Building a tool to automate the conversion using node.js.</li>
-<li>Build a user friendly interface.</li>
 <li>Investigating the RDF conversion pipeline to identify the main modules.</li>
+<li>Building a tool to automate the conversion.</li>
+<li>Build a user friendly interface.</li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-orgbd85234">
-<h2 id="orgbd85234"><span class="section-number-2">2</span> Motivation</h2>
+<section id="slide-orgefdada3">
+<h2 id="orgefdada3"><span class="section-number-2">2</span> Motivation</h2>
 <ul>
 <li>Enrich the Arabic content in the semantic web</li>
 <li>Further process existing data</li>
@@ -102,26 +104,26 @@
 </section>
 </section>
 <section>
-<section id="slide-orga90efb4">
-<h2 id="orga90efb4"><span class="section-number-2">3</span> Concepts</h2>
+<section id="slide-orgb3e301a">
+<h2 id="orgb3e301a"><span class="section-number-2">3</span> Concepts</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 </section>
-<section id="slide-org0f15d0d">
-<h3 id="org0f15d0d"><span class="section-number-3">3.1</span> RDF</h3>
+<section id="slide-orgd1ffdaa">
+<h3 id="orgd1ffdaa"><span class="section-number-3">3.1</span> RDF</h3>
 <p>
 Resource Description Framework (RDF) is a framework for data representation in the web.
 </p>
 </section>
-<section id="slide-org4636864">
-<h4 id="org4636864"><span class="section-number-4">3.1.1</span> Triples</h4>
+<section id="slide-org50c1f1b">
+<h4 id="org50c1f1b"><span class="section-number-4">3.1.1</span> Triples</h4>
 <p>
 In RDF data is stored in triples and represented as graphs. Each triple consists of a <b>subject</b>, a <b>predicate</b>, and an <b>object</b>
 <img src="./images/g1.png" alt="g1.png" />
 </p>
 </section>
-<section id="slide-org474e1bb">
-<h4 id="org474e1bb"><span class="section-number-4">3.1.2</span> Nodes</h4>
+<section id="slide-org877e5ed">
+<h4 id="org877e5ed"><span class="section-number-4">3.1.2</span> Nodes</h4>
 <p>
 Nodes can be blank nodes, litrals, or URI references
 </p>
@@ -134,13 +136,13 @@ Nodes can be blank nodes, litrals, or URI references
 </p>
 </div>
 </section>
-<section id="slide-orge97a627">
-<h3 id="orge97a627"><span class="section-number-3">3.2</span> Representations</h3>
+<section id="slide-org195f53c">
+<h3 id="org195f53c"><span class="section-number-3">3.2</span> Representations</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
 </section>
-<section id="slide-orgf3e22ec">
-<h4 id="orgf3e22ec"><span class="section-number-4">3.2.1</span> RDF/XML</h4>
+<section id="slide-org4527014">
+<h4 id="org4527014"><span class="section-number-4">3.2.1</span> RDF/XML</h4>
 <div class="org-src-container">
 
 <pre  class="src src-xml">&lt;<span style="color: #4f97d7;">rdf</span>:<span style="color: #bc6ec5; font-weight: bold;">RDF</span>
@@ -153,8 +155,8 @@ Nodes can be blank nodes, litrals, or URI references
 </pre>
 </div>
 </section>
-<section id="slide-org181e927">
-<h4 id="org181e927"><span class="section-number-4">3.2.2</span> Turtle (TTL)</h4>
+<section id="slide-orgd3c4970">
+<h4 id="orgd3c4970"><span class="section-number-4">3.2.2</span> Turtle (TTL)</h4>
 <pre  class="example">
 @prefix e: &lt;http://example.org/#&gt; .
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -165,8 +167,18 @@ e:Alice foaf:knows e:Bob .
 </section>
 </section>
 <section>
-<section id="slide-org85400a5">
-<h2 id="org85400a5"><span class="section-number-2">4</span> Challenges</h2>
+<section id="slide-org5080c7b">
+<h2 id="org5080c7b"><span class="section-number-2">4</span> Timeline</h2>
+
+<div class="figure">
+<p><img src="./images/timeline.png" alt="timeline.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf5ba199">
+<h2 id="orgf5ba199"><span class="section-number-2">5</span> Challenges</h2>
 <ul>
 <li>Logic</li>
 <li>Third party libraries</li>
@@ -176,8 +188,8 @@ e:Alice foaf:knows e:Bob .
 </section>
 </section>
 <section>
-<section id="slide-orge6c0ce5">
-<h2 id="orge6c0ce5"><span class="section-number-2">5</span> Design</h2>
+<section id="slide-org2ba6ccf">
+<h2 id="org2ba6ccf"><span class="section-number-2">6</span> Design</h2>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -226,13 +238,13 @@ e:Alice foaf:knows e:Bob .
 </section>
 </section>
 <section>
-<section id="slide-org52eb295">
-<h2 id="org52eb295"><span class="section-number-2">6</span> Implementation</h2>
-<div class="outline-text-2" id="text-6">
+<section id="slide-orgbf76224">
+<h2 id="orgbf76224"><span class="section-number-2">7</span> Implementation</h2>
+<div class="outline-text-2" id="text-7">
 </div>
 </section>
-<section id="slide-org72404db">
-<h3 id="org72404db"><span class="section-number-3">6.1</span> Backend</h3>
+<section id="slide-orgf36771a">
+<h3 id="orgf36771a"><span class="section-number-3">7.1</span> Backend</h3>
 <ul>
 <li>Node.js</li>
 <li>JSONPath</li>
@@ -242,8 +254,8 @@ e:Alice foaf:knows e:Bob .
 
 </ul>
 </section>
-<section id="slide-org69d7c9d">
-<h3 id="org69d7c9d"><span class="section-number-3">6.2</span> Frontend</h3>
+<section id="slide-org92f0c1c">
+<h3 id="org92f0c1c"><span class="section-number-3">7.2</span> Frontend</h3>
 <ul>
 <li>JQuery</li>
 <li>Handlebars</li>
@@ -253,18 +265,18 @@ e:Alice foaf:knows e:Bob .
 </section>
 </section>
 <section>
-<section id="slide-org1331399">
-<h2 id="org1331399"><span class="section-number-2">7</span> Demo</h2>
-<div class="outline-text-2" id="text-7">
+<section id="slide-org2547ff1">
+<h2 id="org2547ff1"><span class="section-number-2">8</span> Demo</h2>
+<div class="outline-text-2" id="text-8">
 </div>
 </section>
-<section id="slide-org4c50d22">
-<h3 id="org4c50d22"><span class="section-number-3">7.1</span> Command-line interface</h3>
-<div class="outline-text-3" id="text-7-1">
+<section id="slide-orgf52b78f">
+<h3 id="orgf52b78f"><span class="section-number-3">8.1</span> Command-line interface</h3>
+<div class="outline-text-3" id="text-8-1">
 </div>
 </section>
-<section id="slide-org62fb15a">
-<h4 id="org62fb15a"><span class="section-number-4">7.1.1</span> Help</h4>
+<section id="slide-org48ae2b6">
+<h4 id="org48ae2b6"><span class="section-number-4">8.1.1</span> Help</h4>
 <div class="org-src-container">
 
 <pre  class="src src-sh">Usage: node main.js <span style="color: #4f97d7;">[</span>OPTION<span style="color: #4f97d7;">]</span>...
@@ -282,8 +294,8 @@ node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api ...
 </pre>
 </div>
 </section>
-<section id="slide-org361a756">
-<h4 id="org361a756"><span class="section-number-4">7.1.2</span> Sample input</h4>
+<section id="slide-orgdf466ef">
+<h4 id="orgdf466ef"><span class="section-number-4">8.1.2</span> Sample input</h4>
 <div class="org-src-container">
 
 <pre  class="src src-json"><span style="color: #4f97d7;">[</span>
@@ -301,8 +313,8 @@ node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api ...
 </pre>
 </div>
 </section>
-<section id="slide-org0615e2b">
-<h4 id="org0615e2b"><span class="section-number-4">7.1.3</span> Usage (step 1)</h4>
+<section id="slide-org91a10ac">
+<h4 id="org91a10ac"><span class="section-number-4">8.1.3</span> Usage (step 1)</h4>
 <div class="org-src-container">
 
 <pre  class="src src-sh">$ node main.js <span style="color: #2d9574;">\</span>
@@ -311,8 +323,8 @@ node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api ...
 </pre>
 </div>
 </section>
-<section id="slide-org890e8d6">
-<h4 id="org890e8d6"><span class="section-number-4">7.1.4</span> Generated Descriptor</h4>
+<section id="slide-org602e9b4">
+<h4 id="org602e9b4"><span class="section-number-4">8.1.4</span> Generated Descriptor</h4>
 <div class="org-src-container">
 
 <pre  class="src src-json"><span style="color: #4f97d7;">{</span>
@@ -344,8 +356,8 @@ node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api ...
 </pre>
 </div>
 </section>
-<section id="slide-org1136bd8">
-<h4 id="org1136bd8"><span class="section-number-4">7.1.5</span> Usage (step 2)</h4>
+<section id="slide-org66bada0">
+<h4 id="org66bada0"><span class="section-number-4">8.1.5</span> Usage (step 2)</h4>
 <div class="org-src-container">
 
 <pre  class="src src-sh">$ node main.js <span style="color: #2d9574;">\</span>
@@ -356,8 +368,8 @@ node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api ...
 </pre>
 </div>
 </section>
-<section id="slide-org41e91e1">
-<h4 id="org41e91e1"><span class="section-number-4">7.1.6</span> Final Output</h4>
+<section id="slide-org1e3a693">
+<h4 id="org1e3a693"><span class="section-number-4">8.1.6</span> Final Output</h4>
 <div class="org-src-container">
 
 <pre  class="src src-ttl"><span style="color: #bc6ec5;">@prefix</span> <span style="color: #ce537a; font-weight: bold;">ex:</span> <span style="color: #bc6ec5; font-weight: bold;"><a href="https://example.com/&gt;.
@@ -552,8 +564,8 @@ ex:<span style="color: #a45bad;">1</span> <span style="color: #4f97d7; font-weig
 </pre>
 </div>
 </section>
-<section id="slide-org052ec0d">
-<h3 id="org052ec0d"><span class="section-number-3">7.2</span> Web interface</h3>
+<section id="slide-org8f15e9f">
+<h3 id="org8f15e9f"><span class="section-number-3">8.2</span> Web interface</h3>
 
 <div class="figure">
 <p><img src="./images/g4.png" alt="g4.png" />
@@ -562,8 +574,18 @@ ex:<span style="color: #a45bad;">1</span> <span style="color: #4f97d7; font-weig
 </section>
 </section>
 <section>
-<section id="slide-org93d811f">
-<h2 id="org93d811f"><span class="section-number-2">8</span> Questions?</h2>
+<section id="slide-orgfb29044">
+<h2 id="orgfb29044"><span class="section-number-2">9</span> Conclusion</h2>
+<ul>
+<li>The goal was achieved by having the system functioning correctly</li>
+<li>Future improvements (Local database, Machine learning)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org2e1ad68">
+<h2 id="org2e1ad68"><span class="section-number-2">10</span> Questions?</h2>
 </section>
 </section>
 </div>
