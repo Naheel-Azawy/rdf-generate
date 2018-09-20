@@ -2,7 +2,7 @@
 
 
 
-1.	Features:
+*Features:*
 
 	- Import data into a json editor.
 	- predict entities based on written rules (require further development)
@@ -10,7 +10,7 @@
 	- Perform operations  such as add, remove, and edit entities and predicates information.
 	- provides two output formats Turtle and RDF/ XML.
 
-2.	configuration:
+*configuration:*
 
 To run the web app open a terminal window and type the following command:
 	node main.js -s
@@ -19,8 +19,7 @@ By default the port number= 3000. To change the port type:
     #: any number
 
 
-
-3.Command line interface:
+*Command line interface:*
 Aside from the user interface, a command line interface is available for usage as follows:
 Usage: node main.js [OPTION]...
 -s, --server                  start server
