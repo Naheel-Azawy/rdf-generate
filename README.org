@@ -17,26 +17,3 @@
 	- By default the port number= 3000. To change the port type:
    		- node main.js -s #
    		- #: any number
-
-
-*Command line interface:*
-Aside from the user interface, a command line interface is available for usage as follows:
-Usage: node main.js [OPTION]...
--s, --server                  start server
--i, --in=FILE                 input file
--d, --out_descriptor=FILE     out descriptor file
--r, --out_rdf=FILE            out RDF file 
--b, --init_base=FILE          initial descriptor json file used as a base for the generated descriptor
--f, --format=FORMAT           out RDF format (ttl, xml)
--a, --api=API                 predicates finding API (lov, swoogle, test) 
--h, --help                    display this help and exit 
-
-Example usage: node main.js -i simple.json -r simple-out.ttl -d simple-des.json --api swoogle
-
-4. Used APIs:
-
-4.1.	Swoogle:
-    http://swoogle.umbc.edu/2006/index.php?option=com_frontpage&service=search&queryType=search_swd_ontology&view=raw&searchString=
-4.2.	Linked open vocabularies (Lov): https://lov.okfn.org/dataset/lov/api/v2/term/suggest?type=property&q=
-
-
