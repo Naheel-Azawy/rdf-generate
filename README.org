@@ -2,21 +2,21 @@
 
 
 
-*Features:
+*Features:*
 
 	- Import data into a json editor.
 	- predict entities based on written rules (require further development)
 	- Retrieve predicated from two used APIs using text matching criteria.
 	- Perform operations  such as add, remove, and edit entities and predicates information.
-	- provides two output formats Turtle and RDF/ XML.*
+	- provides two output formats Turtle and RDF/ XML.
 
 *configuration:*
 
-To run the web app open a terminal window and type the following command:
-	node main.js -s
-By default the port number= 3000. To change the port type:
-    node main.js -s #
-    #: any number
+	- To run the web app open a terminal window and type the following command:
+		node main.js -s
+	- By default the port number= 3000. To change the port type:
+   		 node main.js -s #
+   		 #: any number
 
 
 *Command line interface:*
