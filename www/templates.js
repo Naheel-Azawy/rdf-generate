@@ -127,7 +127,8 @@ const PROPERTIES_TABLE_TEMPLATE = `
                 {{#each suggested_predicates}}
                     <option value="{{@index}}">{{prefix_name}}:{{predicate}}</option>
                 {{/each}}
-                    <option value="{{suggested_predicates.length}}">ADD A PREDICATE</option>
+                <!--COMMENTED FOR NOW-->
+                    <!--<option value="{{suggested_predicates.length}}">ADD A PREDICATE</option>-->
                 </select>
                 </td>
                 <td></td>
