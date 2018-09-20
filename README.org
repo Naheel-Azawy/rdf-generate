@@ -13,10 +13,10 @@
 *configuration:*
 
 	- To run the web app open a terminal window and type the following command:
-		node main.js -s
+		- node main.js -s
 	- By default the port number= 3000. To change the port type:
-   		 node main.js -s #
-   		 #: any number
+   		- node main.js -s #
+   		- #: any number
 
 
 *Command line interface:*
