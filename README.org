@@ -1,8 +1,8 @@
-* Under development..*
+ Under development..
 
 
 
-**Features:*
+*Features:
 
 	- Import data into a json editor.
 	- predict entities based on written rules (require further development)
