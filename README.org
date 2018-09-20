@@ -1,14 +1,14 @@
-* Under development..
+* Under development..*
 
 
 
-*Features:*
+**Features:*
 
 	- Import data into a json editor.
 	- predict entities based on written rules (require further development)
 	- Retrieve predicated from two used APIs using text matching criteria.
 	- Perform operations  such as add, remove, and edit entities and predicates information.
-	- provides two output formats Turtle and RDF/ XML.
+	- provides two output formats Turtle and RDF/ XML.*
 
 *configuration:*
 
