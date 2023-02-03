@@ -13,7 +13,7 @@
         "formidable": "^1.2.1",
         "jsonpath": "^1.0.0",
         "minimist": "^1.2.6",
-        "rdflib": "^0.17.0",
+        "rdflib": "^2.2.25",
         "request": "^2.87.0",
         "xml2js": "^0.4.19",
         "xmlhttprequest": "^1.8.0"
